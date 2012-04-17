@@ -9,9 +9,9 @@ This model has some obvious scalability problems as the number of peers
 increases.  The obvious solution then was to move to a more DNS-like model and
 this protocol is meant to be akin to the DNS query protocol.  So, some scoping
 requirements are:
- * very simple protocol - we don't want 100 different options that end up behaving in strange ways when used together
- * metadata format agnostic - we startd with SAML metadata but it shouldn't be the only format we support
- * good net citizen - we need to work well with proxies, caching infrastructure, etc.
+* very simple protocol - we don't want 100 different options that end up behaving in strange ways when used together
+* metadata format agnostic - we startd with SAML metadata but it shouldn't be the only format we support
+* good net citizen - we need to work well with proxies, caching infrastructure, etc.
 
 Providing Feedback
 ------------------
