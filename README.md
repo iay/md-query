@@ -28,7 +28,12 @@ Git pull requests are fine as well but are probably a bit of an overkill here.
 
 Building the Documents
 ----------------------
-The protocol document uses the [xml2rfc tool](http://xml.resource.org/) in
-order to generate the documents needed for publication to the IETF and others.
+The protocol document uses [rfc2629xslt](http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html) 
+in order to generate the documents needed for publication to the IETF and others.
 
-TODO: fill in directions for building the documents
+To generate the HTML form of the protocol document using xsltproc, run:
+
+    xsltproc rfc2629xslt/rfc2629.xslt draft-lajoie-md-query.xml > <OUTPUT_FILE>
+
+Alternatively, you can always use the online [xml2rfc](http://xml.resource.org/)
+tools.
