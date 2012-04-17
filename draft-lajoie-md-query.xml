@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?rfc toc="yes"?>
 
-<!DOCTYPE rfc SYSTEM "rfc2629xslt/rfc2629.dtd" [
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
     <!ENTITY rfc2119 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml'>
     <!ENTITY rfc2616 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml'>
 ]>
 
-<rfc ipr="pre5378Trust200902" docName="draft-lajoie-md-query-00" submissionType="IETF" category="exp">
+<rfc ipr="pre5378Trust200902" docName="draft-lajoie-md-query-01" submissionType="IETF" category="exp">
     <front>
         <title>Metadata Query Protocol</title>
         <author initials="C" fullname="Chad LaJoie" surname="LaJoie" role="editor">
@@ -15,7 +15,7 @@
                 <email>lajoie@itumi.biz</email>
             </address>
         </author>
-        <date day="30" month="June" year="2010"/>
+        <date day="31" month="December" year="2010"/>
         <keyword>metadata</keyword>
         <keyword>web service</keyword>
         <abstract>
@@ -43,7 +43,7 @@
                 <t>Metadata retrieval protocol responders MUST use <xref target="RFC2616">HTTP, version 1.1</xref></t>
             </section>
             <section title="HTTP Method">
-                <t>All metadata retrieval request MUST use the GET method.</t>
+                <t>All metadata retrieval requests MUST use the GET method.</t>
             </section>
             <section title="Request Headers">
                 <t>
@@ -57,18 +57,22 @@
                     <list>
                         <t>Accept-Charset</t>
                         <t>Accept-Encoding</t>
-                        <t>If-Modified-Since</t>
+                    </list>
+                </t>
+                <t>
+                    A metadata request to the same URL, after an initial request, MUST include the following header per section 13.3.4 of <xref target="RFC2616">RFC2616</xref>: 
+                    <list>
                         <t>If-None-Match</t>
                     </list>
                 </t>
             </section>
             <section title="Response Headers">
                 <t>
-                    All metadata retrieval responses MUST include the following headers: 
+                    All successful metadata retrieval responses (even those that return no results) MUST include the following headers: 
                     <list>
                         <t>Content-Encoding - required if, and only if, content is compressed</t>
                         <t>Content-Type</t>
-                        <t>ETag - required if, and only if, the request status code is 200</t>
+                        <t>ETag</t>
                     </list>
                 </t>
                 <t>
@@ -150,8 +154,9 @@ Content-Type: application/samlmetadata+xml
 ETag: abcdefg
 Last-Modified: Thu, 15 Apr 2010 12:45:26 GMT
 Content-Length: 1234
-								
-<EntityDescriptor entityID="http://example.org/idp">
+
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor entityID="http://example.org/idp" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
 ....
                             ]]></artwork>
                         </figure>
@@ -161,7 +166,7 @@ Content-Length: 1234
         </section>
         <section title="Efficient Retrieval and Caching">
             <section title="Conditional Retrieval">
-                <t>Upon a successful response the responder is required to return an ETag header and may return a Last-Modified header as well.  Requesters SHOULD user either or both, with the ETag being preferred, in any subsequent requests for the same resource.  In the event that a resource has not changed since the previous request, the requester will receive a 302 (Not Modified) status code as a response.</t>
+                <t>Upon a successful response the responder is required to return an ETag header and may return a Last-Modified header as well.  Requesters SHOULD user either or both, with the ETag being preferred, in any subsequent requests for the same resource.  In the event that a resource has not changed since the previous request, the requester will receive a 304 (Not Modified) status code as a response.</t>
             </section>
             <section title="Content Caching">
                 <t>Responders SHOULD include cache control information with successful (200 status code) responses, assuming the responder knows when retrieved metadata is meant to expire.  The responder should also include cache control information with 404 Not Found responses.  This allows the requester to create and maintain a negative-response cache.  When cache controls are used only the 'max-age' directive SHOULD be used.</t>
@@ -179,7 +184,7 @@ Content-Length: 1234
                 <t>In many cases service metadata is public information and therefore confidentiality is not required.  In the cases where such functionality is required, it is RECOMMENDED that both the requester and responder support SSL/TLS.  Other mechanisms, such as XML encryption, MAY also be supported.</t>
             </section>
             <section title="Authentication">
-                <t>All responders which require client authentication to view retrieved information MUST support the use of HTTP basic authentication over SSL/TLS. Responses SHOULD also support the use of X.509 client certificate authentication.</t>
+                <t>All responders which require client authentication to view retrieved information MUST support the use of HTTP basic authentication over SSL/TLS. Responders SHOULD also support the use of X.509 client certificate authentication.</t>
             </section>
         </section>
     </middle>
@@ -192,7 +197,7 @@ Content-Length: 1234
             <t>The editor would like to acknowledge the following individuals for their contributions to this document:
                 <list>
                     <t>Scott Cantor (The Ohio State University)</t>
-                    <t>Leif Johansson (TODO)</t>
+                    <t>Leif Johansson (SUNET)</t>
                     <t>Thomas Lenggenhager (SWITCH)</t>
                     <t>Ian Young (EDINA, University of Edinburgh)</t>
                 </list>
