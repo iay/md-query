@@ -36,4 +36,5 @@ To generate the HTML form of the protocol document using xsltproc, run:
     xsltproc rfc2629xslt/rfc2629.xslt draft-lajoie-md-query.xml > <OUTPUT_FILE>
 
 Alternatively, you can always use the online [xml2rfc](http://xml.resource.org/)
-tools.
+tools.  Or, if you have the `xml2rfc` tool installed locally, a `Makefile` is provided
+which produces both the HTML and text forms of the document.
