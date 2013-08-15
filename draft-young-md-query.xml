@@ -6,16 +6,16 @@
     <!ENTITY rfc2616 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml'>
 ]>
 
-<rfc ipr="pre5378Trust200902" docName="draft-lajoie-md-query-01" submissionType="IETF" category="exp">
+<rfc ipr="pre5378Trust200902" docName="draft-young-md-query-00" submissionType="IETF" category="exp">
     <front>
         <title>Metadata Query Protocol</title>
-        <author initials="C" fullname="Chad LaJoie" surname="LaJoie" role="editor">
-            <organization>Itumi, LLC</organization>
+        <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
+            <organization>Independent</organization>
             <address>
-                <email>lajoie@itumi.biz</email>
+                <email>ian@iay.org.uk</email>
             </address>
         </author>
-        <date day="31" month="December" year="2010"/>
+        <date day="15" month="August" year="2013"/>
         <keyword>metadata</keyword>
         <keyword>web service</keyword>
         <abstract>
@@ -199,8 +199,11 @@ Content-Length: 1234
                     <t>Scott Cantor (The Ohio State University)</t>
                     <t>Leif Johansson (SUNET)</t>
                     <t>Thomas Lenggenhager (SWITCH)</t>
-                    <t>Ian Young (EDINA, University of Edinburgh)</t>
                 </list>
+            </t>
+            <t>
+                Special acknowledgement is due to Chad LaJoie (Covisint) for his work in editing
+                previous versions of this specification.
             </t>
         </section>
     </back>

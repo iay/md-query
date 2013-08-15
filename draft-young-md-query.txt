@@ -1,14 +1,14 @@
 
 
 
-Network Working Group                                     C. LaJoie, Ed.
-Internet-Draft                                                Itumi, LLC
-Intended status: Experimental                          December 31, 2010
-Expires: July 4, 2011
+Network Working Group                                      I. Young, Ed.
+Internet-Draft                                               Independent
+Intended status: Experimental                            August 15, 2013
+Expires: February 16, 2014
 
 
                         Metadata Query Protocol
-                        draft-lajoie-md-query-01
+                        draft-young-md-query-00
 
 Abstract
 
@@ -32,11 +32,11 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 4, 2011.
+   This Internet-Draft will expire on February 16, 2014.
 
 Copyright Notice
 
-   Copyright (c) 2010 IETF Trust and the persons identified as the
+   Copyright (c) 2013 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -52,9 +52,9 @@ Copyright Notice
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 1]
+Young                   Expires February 16, 2014               [Page 1]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
    This document may contain material from IETF Documents or IETF
@@ -108,9 +108,9 @@ Table of Contents
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 2]
+Young                   Expires February 16, 2014               [Page 2]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 1.  Introduction
@@ -164,9 +164,9 @@ Internet-Draft           Metadata Query Protocol           December 2010
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 3]
+Young                   Expires February 16, 2014               [Page 3]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 2.  Protocol Transport
@@ -220,9 +220,9 @@ Internet-Draft           Metadata Query Protocol           December 2010
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 4]
+Young                   Expires February 16, 2014               [Page 4]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
       Cache-Control
@@ -276,9 +276,9 @@ Internet-Draft           Metadata Query Protocol           December 2010
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 5]
+Young                   Expires February 16, 2014               [Page 5]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 2.7.  Content Negotiation
@@ -332,9 +332,9 @@ Internet-Draft           Metadata Query Protocol           December 2010
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 6]
+Young                   Expires February 16, 2014               [Page 6]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 3.  Metadata Query Protocol
@@ -388,9 +388,9 @@ Internet-Draft           Metadata Query Protocol           December 2010
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 7]
+Young                   Expires February 16, 2014               [Page 7]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
    <base_url>/entities/{ID}+{ID}+...
@@ -444,9 +444,9 @@ Content-Length: 1234
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 8]
+Young                   Expires February 16, 2014               [Page 8]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 4.  Efficient Retrieval and Caching
@@ -500,9 +500,9 @@ Internet-Draft           Metadata Query Protocol           December 2010
 
 
 
-LaJoie                    Expires July 4, 2011                  [Page 9]
+Young                   Expires February 16, 2014               [Page 9]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 5.  Security Considerations
@@ -556,9 +556,9 @@ Internet-Draft           Metadata Query Protocol           December 2010
 
 
 
-LaJoie                    Expires July 4, 2011                 [Page 10]
+Young                   Expires February 16, 2014              [Page 10]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 6.  Normative References
@@ -612,9 +612,9 @@ Internet-Draft           Metadata Query Protocol           December 2010
 
 
 
-LaJoie                    Expires July 4, 2011                 [Page 11]
+Young                   Expires February 16, 2014              [Page 11]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 Appendix A.  Acknowledgements
@@ -628,7 +628,8 @@ Appendix A.  Acknowledgements
 
       Thomas Lenggenhager (SWITCH)
 
-      Ian Young (EDINA, University of Edinburgh)
+   Special acknowledgement is due to Chad LaJoie (Covisint) for his work
+   in editing previous versions of this specification.
 
 
 
@@ -667,20 +668,17 @@ Appendix A.  Acknowledgements
 
 
 
-
-LaJoie                    Expires July 4, 2011                 [Page 12]
+Young                   Expires February 16, 2014              [Page 12]
 
-Internet-Draft           Metadata Query Protocol           December 2010
+Internet-Draft           Metadata Query Protocol             August 2013
 
 
 Author's Address
 
-   Chad LaJoie (editor)
-   Itumi, LLC
+   Ian A. Young (editor)
+   Independent
 
-   Email: lajoie@itumi.biz
-
-
+   Email: ian@iay.org.uk
 
 
 
@@ -724,5 +722,7 @@ Author's Address
 
 
 
-LaJoie                    Expires July 4, 2011                 [Page 13]
+
+
+Young                   Expires February 16, 2014              [Page 13]
 
