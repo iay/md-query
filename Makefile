@@ -1,4 +1,4 @@
-all: draft-lajoie-md-query.txt draft-lajoie-md-query.html
+all: draft-young-md-query.txt draft-young-md-query.html
 
 %.txt: %.xml
 	xml2rfc $< $@
