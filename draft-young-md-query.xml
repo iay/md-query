@@ -156,7 +156,8 @@ Last-Modified: Thu, 15 Apr 2010 12:45:26 GMT
 Content-Length: 1234
 
 <?xml version="1.0" encoding="UTF-8"?>
-<EntityDescriptor entityID="http://example.org/idp" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+<EntityDescriptor entityID="http://example.org/idp"
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
 ....
                             ]]></artwork>
                         </figure>

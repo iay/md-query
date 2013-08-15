@@ -424,18 +424,18 @@ Internet-Draft           Metadata Query Protocol             August 2013
                       Example Metadata Query Request
 
 
-HTTP/1.x 200 OK
-Content-Type: application/samlmetadata+xml
-ETag: abcdefg
-Last-Modified: Thu, 15 Apr 2010 12:45:26 GMT
-Content-Length: 1234
+   HTTP/1.x 200 OK
+   Content-Type: application/samlmetadata+xml
+   ETag: abcdefg
+   Last-Modified: Thu, 15 Apr 2010 12:45:26 GMT
+   Content-Length: 1234
 
-<?xml version="1.0" encoding="UTF-8"?>
-<EntityDescriptor entityID="http://example.org/idp" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
-....
+   <?xml version="1.0" encoding="UTF-8"?>
+   <EntityDescriptor entityID="http://example.org/idp"
+       xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+   ....
 
                       Example Metadata Query Response
-
 
 
 
