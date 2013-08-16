@@ -196,12 +196,6 @@ Content-Length: 1234
             </t>
         </section>
 
-    </middle>
-    <back>
-        <references title="Normative References">
-            &rfc2119;
-            &rfc2616;
-        </references>
         <section title="Acknowledgements">
             <t>The editor would like to acknowledge the following individuals for their contributions to this document:
                 <list>
@@ -215,5 +209,12 @@ Content-Length: 1234
                 previous versions of this specification.
             </t>
         </section>
+
+    </middle>
+    <back>
+        <references title="Normative References">
+            &rfc2119;
+            &rfc2616;
+        </references>
     </back>
 </rfc>

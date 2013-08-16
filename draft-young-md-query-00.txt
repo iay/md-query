@@ -86,8 +86,8 @@ Table of Contents
      5.2.  Confidentiality  . . . . . . . . . . . . . . . . . . . . . 10
      5.3.  Authentication . . . . . . . . . . . . . . . . . . . . . . 10
    6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 11
-   7.  Normative References . . . . . . . . . . . . . . . . . . . . . 12
-   Appendix A.  Acknowledgements  . . . . . . . . . . . . . . . . . . 13
+   7.  Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 12
+   8.  Normative References . . . . . . . . . . . . . . . . . . . . . 13
    Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 14
 
 
@@ -617,19 +617,19 @@ Young                   Expires February 16, 2014              [Page 11]
 Internet-Draft           Metadata Query Protocol             August 2013
 
 
-7.  Normative References
+7.  Acknowledgements
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
+   The editor would like to acknowledge the following individuals for
+   their contributions to this document:
 
-   [RFC2616]  Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
-              Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
-              Transfer Protocol -- HTTP/1.1", RFC 2616, June 1999.
+      Scott Cantor (The Ohio State University)
 
+      Leif Johansson (SUNET)
 
+      Thomas Lenggenhager (SWITCH)
 
-
-
+   Special acknowledgement is due to Chad LaJoie (Covisint) for his work
+   in editing previous versions of this specification.
 
 
 
@@ -673,19 +673,19 @@ Young                   Expires February 16, 2014              [Page 12]
 Internet-Draft           Metadata Query Protocol             August 2013
 
 
-Appendix A.  Acknowledgements
+8.  Normative References
 
-   The editor would like to acknowledge the following individuals for
-   their contributions to this document:
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119, March 1997.
 
-      Scott Cantor (The Ohio State University)
+   [RFC2616]  Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
+              Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
+              Transfer Protocol -- HTTP/1.1", RFC 2616, June 1999.
 
-      Leif Johansson (SUNET)
 
-      Thomas Lenggenhager (SWITCH)
 
-   Special acknowledgement is due to Chad LaJoie (Covisint) for his work
-   in editing previous versions of this specification.
+
+
 
 
 
