@@ -3,7 +3,7 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Experimental                            August 15, 2013
+Intended status: Informational                           August 15, 2013
 Expires: February 16, 2014
 
 

@@ -7,7 +7,7 @@
     <!ENTITY rfc2616 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml'>
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-00" submissionType="independent" category="exp">
+<rfc ipr="trust200902" docName="draft-young-md-query-00" submissionType="independent" category="info">
     <front>
         <title>Metadata Query Protocol</title>
         <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
