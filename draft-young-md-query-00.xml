@@ -7,7 +7,7 @@
     <!ENTITY rfc2616 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml'>
 ]>
 
-<rfc ipr="pre5378Trust200902" docName="draft-young-md-query-00" submissionType="IETF" category="exp">
+<rfc ipr="pre5378Trust200902" docName="draft-young-md-query-00" submissionType="independent" category="exp">
     <front>
         <title>Metadata Query Protocol</title>
         <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
@@ -195,7 +195,7 @@ Content-Length: 1234
                 This document has no actions for IANA.
             </t>
         </section>
-        
+
     </middle>
     <back>
         <references title="Normative References">
