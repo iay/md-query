@@ -98,10 +98,10 @@ Table of Contents
      5.1.  Integrity  . . . . . . . . . . . . . . . . . . . . . . . . 10
      5.2.  Confidentiality  . . . . . . . . . . . . . . . . . . . . . 10
      5.3.  Authentication . . . . . . . . . . . . . . . . . . . . . . 10
-   6.  Normative References . . . . . . . . . . . . . . . . . . . . . 11
-   Appendix A.  Acknowledgements  . . . . . . . . . . . . . . . . . . 12
-   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 13
-
+   6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 11
+   7.  Normative References . . . . . . . . . . . . . . . . . . . . . 12
+   Appendix A.  Acknowledgements  . . . . . . . . . . . . . . . . . . 13
+   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 14
 
 
 
@@ -561,7 +561,63 @@ Young                   Expires February 16, 2014              [Page 10]
 Internet-Draft           Metadata Query Protocol             August 2013
 
 
-6.  Normative References
+6.  IANA Considerations
+
+   This document has no actions for IANA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                   Expires February 16, 2014              [Page 11]
+
+Internet-Draft           Metadata Query Protocol             August 2013
+
+
+7.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
@@ -612,7 +668,7 @@ Internet-Draft           Metadata Query Protocol             August 2013
 
 
 
-Young                   Expires February 16, 2014              [Page 11]
+Young                   Expires February 16, 2014              [Page 12]
 
 Internet-Draft           Metadata Query Protocol             August 2013
 
@@ -668,7 +724,7 @@ Appendix A.  Acknowledgements
 
 
 
-Young                   Expires February 16, 2014              [Page 12]
+Young                   Expires February 16, 2014              [Page 13]
 
 Internet-Draft           Metadata Query Protocol             August 2013
 
@@ -724,5 +780,5 @@ Author's Address
 
 
 
-Young                   Expires February 16, 2014              [Page 13]
+Young                   Expires February 16, 2014              [Page 14]
 
