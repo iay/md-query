@@ -7,7 +7,7 @@
     <!ENTITY rfc2616 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml'>
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-00" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-01" submissionType="independent" category="info">
     <front>
         <title>Metadata Query Protocol</title>
         <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
@@ -16,7 +16,7 @@
                 <email>ian@iay.org.uk</email>
             </address>
         </author>
-        <date day="16" month="August" year="2013"/>
+        <date day="5" month="September" year="2013"/>
         <keyword>metadata</keyword>
         <keyword>web service</keyword>
         <abstract>
