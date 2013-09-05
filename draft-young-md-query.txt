@@ -88,11 +88,11 @@ Table of Contents
    6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 11
    7.  Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 12
    8.  Normative References . . . . . . . . . . . . . . . . . . . . . 13
-   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 14
-
-
-
-
+   Appendix A.  Change Log (to be removed by RFC Editor before
+                publication)  . . . . . . . . . . . . . . . . . . . . 14
+     A.1.  Since draft-young-md-query-00  . . . . . . . . . . . . . . 14
+     A.2.  Since draft-lajoie-md-query-01 . . . . . . . . . . . . . . 14
+   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 15
 
 
 
@@ -729,6 +729,62 @@ Young                     Expires March 9, 2014                [Page 13]
 Internet-Draft           Metadata Query Protocol          September 2013
 
 
+Appendix A.  Change Log (to be removed by RFC Editor before publication)
+
+A.1.  Since draft-young-md-query-00
+
+   Added Change Log modelled on draft-ietf-httpbis-http2.
+
+A.2.  Since draft-lajoie-md-query-01
+
+   Adopted as base for draft-young-md-query-00.
+
+   Updated author and list of contributors.
+
+   Changed ipr from "pre5378Trust200902" to "trust200902", submission
+   type from IETF to independent and category from experimental to
+   informational.
+
+   Added empty IANA considerations section.
+
+   Minor typographical nits but (intentionally) no substantive content
+   changes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                     Expires March 9, 2014                [Page 14]
+
+Internet-Draft           Metadata Query Protocol          September 2013
+
+
 Author's Address
 
    Ian A. Young (editor)
@@ -780,5 +836,5 @@ Author's Address
 
 
 
-Young                     Expires March 9, 2014                [Page 14]
+Young                     Expires March 9, 2014                [Page 15]
 

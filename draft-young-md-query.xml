@@ -216,5 +216,37 @@ Content-Length: 1234
             &rfc2119;
             &rfc2616;
         </references>
+
+        <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+            <section title="Since draft-young-md-query-00" anchor="changes.since.draft-young-md-query-00">
+                <t>
+                    Added Change Log modelled on draft-ietf-httpbis-http2.
+                </t>
+            </section>
+
+            <section title="Since draft-lajoie-md-query-01" anchor="changes.since.draft-lajoie-md-query-01">
+                <t>
+                    Adopted as base for draft-young-md-query-00.
+                </t>
+                <t>
+                    Updated author and list of contributors.
+                </t>
+                <t>
+                    Changed ipr from "pre5378Trust200902" to "trust200902",
+                    submission type from IETF to independent and
+                    category from experimental to informational.
+                </t>
+                <t>
+                    Added empty IANA considerations section.
+                </t>
+                <t>
+                    Minor typographical nits but (intentionally) no substantive
+                    content changes.
+                </t>
+            </section>
+
+        </section>
+
     </back>
 </rfc>
