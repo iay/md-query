@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?rfc toc="yes"?>
+<?rfc symrefs="yes"?>
+
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+    <!ENTITY rfc2119 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml'>
+    <!ENTITY rfc2616 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml'>
+]>
+
+<rfc ipr="trust200902" docName="draft-young-md-query-00" submissionType="independent" category="info">
+    <front>
+        <title>Metadata Query Protocol</title>
+        <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
+            <organization>Independent</organization>
+            <address>
+                <email>ian@iay.org.uk</email>
+            </address>
+        </author>
+        <date day="16" month="August" year="2013"/>
+        <keyword>metadata</keyword>
+        <keyword>web service</keyword>
+        <abstract>
+            <t>This document defines a simple protocol for retrieving metadata about entities.  The goal of the protocol is to profile various aspects of HTTP to allow requesters to rely on certain, rigorously defined, behaviour.</t>
+        </abstract>
+    </front>
+    <middle>
+        <section title="Introduction">
+            <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g.. JSON, XML) and content varies between services this document attempts to specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and allow the responder to scale in various ways.</t>
+            <section title="Notation and Convention">
+                <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <xref target="RFC2119">RFC2119</xref>.</t>
+            </section>
+            <section title="Terminology">
+                <t>
+                    <list>
+                        <t>entity - A single logical construct for which metadata may be asserted. Generally this is a network accessible service.</t>
+                        <t>metadata - A machine readable description of certain entity characteristics. Generally metadata provides information such as end point references, service contact information, etc.</t>
+                    </list>                    
+                </t>
+            </section>
+        </section>
+        <section title="Protocol Transport">
+            <t>The metadata retrieval protocol seeks to fully employ the features of the HTTP protocol. Additionally this specification makes mandatory some optional HTTP features.</t>
+            <section title="HTTP Version">
+                <t>Metadata retrieval protocol responders MUST use <xref target="RFC2616">HTTP, version 1.1</xref></t>
+            </section>
+            <section title="HTTP Method">
+                <t>All metadata retrieval requests MUST use the GET method.</t>
+            </section>
+            <section title="Request Headers">
+                <t>
+                    All metadata retrieval requests MUST include the following HTTP headers:
+                    <list>
+                        <t>Accept - this header MUST contain the content-type identifying the type, or form, of metadata to be retrieved</t>
+                    </list>
+                </t>
+                <t>
+                    All metadata retrieval requests SHOULD include the following HTTP headers:
+                    <list>
+                        <t>Accept-Charset</t>
+                        <t>Accept-Encoding</t>
+                    </list>
+                </t>
+                <t>
+                    A metadata request to the same URL, after an initial request, MUST include the following header per section 13.3.4 of <xref target="RFC2616">RFC2616</xref>: 
+                    <list>
+                        <t>If-None-Match</t>
+                    </list>
+                </t>
+            </section>
+            <section title="Response Headers">
+                <t>
+                    All successful metadata retrieval responses (even those that return no results) MUST include the following headers: 
+                    <list>
+                        <t>Content-Encoding - required if, and only if, content is compressed</t>
+                        <t>Content-Type</t>
+                        <t>ETag</t>
+                    </list>
+                </t>
+                <t>
+                    All metadata retrieval responses SHOULD include the following headers: 
+                    <list>
+                        <t>Cache-Control</t>
+                        <t>Content-Length</t>
+                        <t>Last-Modified</t>
+                    </list>
+                </t>
+            </section>
+            <section title="Status Codes">
+                <t>
+                    This protocol uses the following HTTP status codes: 
+                    <list>
+                        <t>200 - standard response code when returning requested metadata</t>
+                        <t>304 - response code indicating requested metadata has not been updated since the last request</t>
+                        <t>400 - response code indicating that the requester's request was malformed in some fashion</t>
+                        <t>401 - response code indicating the request must be authenticated before requesting metadata</t>
+                        <t>404 - indicates that the requested metadata could not be found; this MUST NOT be used in order to indicate a general service error.</t>
+                        <t>405 - response code indicating that a non-GET method was used</t>
+                        <t>406 - response code indicating that metadata is not available in the request content-type</t>
+                        <t>500 - standard response code when something goes wrong within the responder</t>
+                        <t>501 - response code indicating that a given identifier transformation is not supported</t>
+                        <t>505 - response code indicating that HTTP/1.1 was not used</t>
+                    </list>
+                </t>
+            </section>
+            <section title="Base URL">
+                <t>Requests defined in this document are performed by issuing an HTTP GET request to a particular URL. The final component of the path to which requests are issued is defined by the requests specified within this document. A base URL precedes such paths. Such a base URL MUST contain at least the scheme and host name components. It MAY also include a port as well as a path. It MUST NOT include URL fragments. If a path is included the path required by the particular defined request is appended to the path in the base URL.</t>
+            </section>
+            <section title="Content Negotiation">
+                <t>As there may be many representations for a given piece of metadata, agent-driven content negotiation is used to ensure the proper representation is delivered to the requester. In addition to the required usage of the Accept header a response SHOULD also support the use of the Accept-Charset header.</t>
+            </section>
+        </section>
+        <section title="Metadata Query Protocol">
+            <t>The metadata query protocol retrieves metadata based on one or more "tag" or "keyword" identifiers.  A request may return information for none, one, or a collection of entities.</t>
+            <section title="Identifiers">
+                <t>The query protocol uses identifiers to "tag" metadata for single- and multi-entity metadata collections.  An identifier MAY contain any URL-encodable character but MUST NOT start with '{' (ASCII 0x7B) as this character has a special meaning in the first position (see below).  The assignment of such identifiers to a particular metadata document is the responsibility of the query responder.  If a metadata collection already contains a well known identifier it is RECOMMENDED that such a natural identifier is used when possible.  Any given metadata collection MAY have more than one identifier associated with it.</t>
+                <section title="Transforms">
+                    <t>In some cases it may be advantageous to query for metadata using a transformed identifier. For example, some protocols will transmit hashed entity identifiers. This may be done to reduce the overall size of the identifier, escape special characters, obfuscate the identifier, etc.</t>
+                    <t>A transformed identifier is represented by pre-pending the identifier with '{' + transformation indicator + '}'. The transformation indicator MUST be composed exclusively of printable ASCII characters (0x21-0x7E) excluding '{' (0x7B) and '}' (0x7D).   Such an identifier need only make sense in the context within which it is used. Responders MUST support the MD5 (transformation indicator 'md5') and SHA1 (transformation indicator 'sha1') hashing algorithms as identifier transformations.  The responder MAY support other transformation indicators.</t>
+                    <t>For example, the identifier 
+                        <figure>
+                            <artwork>http://example.org/service</artwork>
+                        </figure>
+                        transformed by means of MD5 hashing would become 
+                        <figure>
+                            <artwork>{md5}f3678248a29ab8e8e5b1b00bee4060e0</artwork>
+                        </figure>
+                    </t>
+                </section>
+            </section>
+            <section title="Protocol">
+                <section title="Request">
+                    <t>A Metadata Query request is performed by issuing an HTTP GET request. All Metadata Query requests MUST use the URL format: 
+                        <figure>
+                            <artwork><![CDATA[<base_url>/entities/{ID}+{ID}+...]]></artwork>
+                        </figure>
+                        The request MUST contain at least one identifier but MAY contain more than one.  Each identifier must be properly URL encoded. If more than one identifier is used the returned metadata MUST have been labelled with each identifier.  That is to say a search with multiple identifiers results in the intersection of the metadata that would be retrieved by searching for each identifier individually.
+                    </t>
+                </section>
+                <section title="Response">
+                    <t>The response to a Metadata Query request MUST be a document that provides metadata for the given request identifiers in the format described by the request's Content-Type header.  Note, in the event that multiple identifiers were used in the request, it is the responder's responsibility to ensure that the metadata returned is valid.  If the responder can not create a valid document it MUST respond with a 500 status code.  An example of such an error would be the case where the result of the query is metadata for multiple entities but the request content type does not support returning multiple results in a single document.</t>
+                </section>
+                <section title="Example Request and Response">
+                    <t>
+                        <figure title="Example Metadata Query Request">
+                            <artwork><![CDATA[
+GET /service/entities/http%3A%2F%2Fexample.org%2Fidp HTTP/1.1
+Host: metadata.example.org
+Accept: application/samlmetadata+xml
+                            ]]></artwork>
+                        </figure>
+                        <figure title="Example Metadata Query Response">
+                            <artwork><![CDATA[
+HTTP/1.x 200 OK
+Content-Type: application/samlmetadata+xml
+ETag: abcdefg
+Last-Modified: Thu, 15 Apr 2010 12:45:26 GMT
+Content-Length: 1234
+
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor entityID="http://example.org/idp"
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+....
+                            ]]></artwork>
+                        </figure>
+                    </t>
+                </section>
+            </section>
+        </section>
+        <section title="Efficient Retrieval and Caching">
+            <section title="Conditional Retrieval">
+                <t>Upon a successful response the responder is required to return an ETag header and may return a Last-Modified header as well.  Requesters SHOULD user either or both, with the ETag being preferred, in any subsequent requests for the same resource.  In the event that a resource has not changed since the previous request, the requester will receive a 304 (Not Modified) status code as a response.</t>
+            </section>
+            <section title="Content Caching">
+                <t>Responders SHOULD include cache control information with successful (200 status code) responses, assuming the responder knows when retrieved metadata is meant to expire.  The responder should also include cache control information with 404 Not Found responses.  This allows the requester to create and maintain a negative-response cache.  When cache controls are used only the 'max-age' directive SHOULD be used.</t>
+            </section>
+            <section title="Content Compression">
+                <t>As should be apparent from the required request and response headers this protocol encourages the use of content compression.  This is in recognition that some metadata documents can be quite large or fetched with relatively high frequency.</t>
+                <t>Requesters SHOULD support, and advertise support for, gzip compression unless such usage would put exceptional demands on constrained environments. Responders MUST support gzip compression.  Requesters and responders MAY support other compression algorithms.</t>
+            </section>
+        </section>
+        <section title="Security Considerations">
+            <section title="Integrity">
+                <t>As metadata often contains information necessary for the secure operation of interacting services it is RECOMMENDED that some form of content integrity checking be performed. This may include the use of SSL/TLS at the transport layer, digital signatures present within the metadata document, or any other such mechanism.</t>                
+            </section>
+            <section title="Confidentiality">
+                <t>In many cases service metadata is public information and therefore confidentiality is not required.  In the cases where such functionality is required, it is RECOMMENDED that both the requester and responder support SSL/TLS.  Other mechanisms, such as XML encryption, MAY also be supported.</t>
+            </section>
+            <section title="Authentication">
+                <t>All responders which require client authentication to view retrieved information MUST support the use of HTTP basic authentication over SSL/TLS. Responders SHOULD also support the use of X.509 client certificate authentication.</t>
+            </section>
+        </section>
+
+        <section title="IANA Considerations">
+            <t>
+                This document has no actions for IANA.
+            </t>
+        </section>
+
+        <section title="Acknowledgements">
+            <t>The editor would like to acknowledge the following individuals for their contributions to this document:
+                <list>
+                    <t>Scott Cantor (The Ohio State University)</t>
+                    <t>Leif Johansson (SUNET)</t>
+                    <t>Thomas Lenggenhager (SWITCH)</t>
+                </list>
+            </t>
+            <t>
+                Special acknowledgement is due to Chad LaJoie (Covisint) for his work in editing
+                previous versions of this specification.
+            </t>
+        </section>
+
+    </middle>
+    <back>
+        <references title="Normative References">
+            &rfc2119;
+            &rfc2616;
+        </references>
+    </back>
+</rfc>
