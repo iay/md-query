@@ -3,8 +3,6 @@
 <?rfc symrefs="yes"?>
 
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
-    <!ENTITY rfc2119 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml'>
-    <!ENTITY rfc2616 PUBLIC '' 'http://xml.resource.org/public/rfc/bibxml/reference.RFC.2616.xml'>
 ]>
 
 <rfc ipr="trust200902" docName="draft-young-md-query-01" submissionType="independent" category="info">
@@ -213,8 +211,66 @@ Content-Length: 1234
     </middle>
     <back>
         <references title="Normative References">
-            &rfc2119;
-            &rfc2616;
+            
+            <reference anchor="RFC2119">
+                <front>
+                    <title>
+                        Key words for use in RFCs to Indicate Requirement Levels
+                    </title>
+                    <author initials="S." surname="Bradner" fullname="Scott Bradner">
+                        <organization>Harvard University</organization>
+                        <address><email>sob@harvard.edu</email></address>
+                    </author>
+                    <date month="March" year="1997"/>
+                </front>
+                <seriesInfo name="BCP" value="14"/>
+                <seriesInfo name="RFC" value="2119"/>
+                <format type='TXT' octets='4723' target='http://www.rfc-editor.org/rfc/rfc2119.txt' />
+                <format type='HTML' octets='17970' target='http://xml.resource.org/public/rfc/html/rfc2119.html' />
+                <format type='XML' octets='5777' target='http://xml.resource.org/public/rfc/xml/rfc2119.xml' />
+            </reference>
+
+            <reference anchor='RFC2616'>
+                <front>
+                    <title abbrev='HTTP/1.1'>Hypertext Transfer Protocol -- HTTP/1.1</title>
+                    <author initials='R.' surname='Fielding' fullname='Roy T. Fielding'>
+                        <organization abbrev='UC Irvine'>Department of Information and Computer Science</organization>
+                        <address><email>fielding@ics.uci.edu</email></address>
+                    </author>
+                    <author initials='J.' surname='Gettys' fullname='James Gettys'>
+                        <organization abbrev='Compaq/W3C'>World Wide Web Consortium</organization>
+                        <address><email>jg@w3.org</email></address>
+                    </author>
+                    <author initials='J.' surname='Mogul' fullname='Jeffrey C. Mogul'>
+                        <organization abbrev='Compaq'>Compaq Computer Corporation</organization>
+                        <address><email>mogul@wrl.dec.com</email></address>
+                    </author>
+                    <author initials='H.' surname='Frystyk' fullname='Henrik Frystyk Nielsen'>
+                        <organization abbrev='W3C/MIT'>World Wide Web Consortium</organization>
+                        <address><email>frystyk@w3.org</email></address>
+                    </author>
+                    <author initials='L.' surname='Masinter' fullname='Larry Masinter'>
+                        <organization abbrev='Xerox'>Xerox Corporation</organization>
+                        <address><email>masinter@parc.xerox.com</email></address>
+                    </author>
+                    <author initials='P.' surname='Leach' fullname='Paul J. Leach'>
+                        <organization abbrev='Microsoft'>Microsoft Corporation</organization>
+                        <address><email>paulle@microsoft.com</email></address>
+                    </author>
+                    <author initials='T.' surname='Berners-Lee' fullname='Tim Berners-Lee'>
+                        <organization abbrev='W3C/MIT'>World Wide Web Consortium</organization>
+                        <address><email>timbl@w3.org</email></address>
+                    </author>
+                    <date year='1999' month='June' />
+                </front>
+                <seriesInfo name='RFC' value='2616' />
+                <format type='TXT' octets='422317' target='http://www.rfc-editor.org/rfc/rfc2616.txt' />
+                <format type='PS' octets='5529857' target='http://www.rfc-editor.org/rfc/rfc2616.ps' />
+                <format type='PDF' octets='550558' target='http://www.rfc-editor.org/rfc/rfc2616.pdf' />
+                <format type='HTML' octets='637302' target='http://xml.resource.org/public/rfc/html/rfc2616.html' />
+                <format type='XML' octets='493420' target='http://xml.resource.org/public/rfc/xml/rfc2616.xml' />
+            </reference>
+
         </references>
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
