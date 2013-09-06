@@ -4,7 +4,27 @@ This is the working area for the draft Metadata Query Protocol specification.
 The main directory contains the editor's working copy of the draft in its XML
 and plain text forms.
 
-The document's current status in the IETF process can be viewed at [its tracker page](https://datatracker.ietf.org/doc/draft-young-md-query/).  Prior versions submitted as internet-drafts are also archived in the `history` directory here for quick comparison between versions.
+The document's current status in the IETF process can be viewed at
+[its tracker page](https://datatracker.ietf.org/doc/draft-young-md-query/).
+The editor's working copy may be fresher, but less stable, than the most
+recent formally submitted Internet Draft.
+
+Prior versions submitted as Internet Drafts are also archived in the `history`
+directory here for quick comparison between versions.
+
+## Contributing
+
+If you wish to participate in the protocol development discussions you should
+join the mailing list.  You can do this by means of
+[this webform](http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk)
+and then sending emails to [mdx@lists.iay.org.uk](mailto:mdx@lists.iay.org.uk).
+
+If you'd like to contribute specific text to the document, you can submit a 
+ticket to the project's [issue tracker](https://github.com/iay/md-query/issues).
+GitHub pull requests are fine as well but are probably a bit of overkill here.
+
+Please don't use the GitHub issue tracking system for substantive discussion;
+that should always be done on the mailing list.
 
 ## Background
 
@@ -23,18 +43,6 @@ requirements are:
 * very simple protocol - we don't want 100 different options that end up behaving in strange ways when used together
 * metadata format agnostic - we started with SAML metadata but it shouldn't be the only format we support
 * good net citizen - we need to work well with proxies, caching infrastructure, etc.
-
-Providing Feedback
-------------------
-There are a couple of ways to provide feedback to this project.
-
-If you wish to participate in the protocol development discussions  you should
-join the mailing list.  You can do this by means of [this webform](http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk)
-and then sending emails to [mdx@lists.iay.org.uk](mailto:mdx@lists.iay.org.uk).
-
-If you'd like to contribute specific text to the document, you can submit a 
-ticket to the project's [issue tracker](https://github.com/iay/md-query/issues).
-GitHub pull requests are fine as well but are probably a bit of overkill here.
 
 Building the Documents
 ----------------------
