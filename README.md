@@ -1,4 +1,4 @@
-# Metadata Query Protocol Specification
+# Metadata Query Protocol Specification
 
 This is the working area for the draft Metadata Query Protocol specification.
 The main directory contains the editor's working copy of the draft in its XML
