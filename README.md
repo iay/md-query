@@ -1,5 +1,13 @@
-Metadata Query Protocol
-=======================
+# Metadata Query Protocol Draft Specification
+
+This is the working area for the draft Metadata Query Protocol specification.
+The main directory contains the editor's working copy of the draft in its XML
+and plain text forms.
+
+The document's current status in the IETF process can be viewed at [its tracker page](https://datatracker.ietf.org/doc/draft-young-md-query/).  Prior versions submitted as internet-drafts are also archived in the `history` directory here for quick comparison between versions.
+
+## Background
+
 This protocol work started out within the [Shibboleth](http://shibboleth.net)
 project.  The current Shibboleth products consume large SAML metadata 
 files that provide all the information necessary to communicate with peers.  
@@ -28,13 +36,9 @@ If you'd like to contribute specific text to the document, you can submit a
 ticket to the project's [issue tracker](https://github.com/iay/md-query/issues).
 GitHub pull requests are fine as well but are probably a bit of overkill here.
 
-IETF Process
-----------------
-The document's current status in the IETF process can be viewed at [its tracker page](https://datatracker.ietf.org/doc/draft-young-md-query/).
-
 Building the Documents
 ----------------------
-The canonical source of the document is the `.xml` source file.  The repository always includes that form plus HTML and `.txt` versions.  Submission to the IETF datatracker requires the `.txt` version but I always supply the `.xml` as well.
+The canonical source of the document is the `.xml` source file.  The repository always includes that form `.txt` versions.  Submission to the IETF datatracker requires the `.txt` version but I always supply the `.xml` as well.
 
 I'm using the supplied `Makefile` to build the HTML and text forms of the document.  This requires a locally installed copy of the `xml2rfc` tool.  An [online version](http://xml.resource.org) of `xml2rfc` is also available.
 
