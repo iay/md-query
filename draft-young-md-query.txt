@@ -129,7 +129,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC2119 [RFC2119].
+   document are to be interpreted as described in RFC 2119 [RFC2119].
 
 1.2.  Terminology
 
@@ -200,7 +200,8 @@ Internet-Draft           Metadata Query Protocol          September 2013
       Accept-Encoding
 
    A metadata request to the same URL, after an initial request, MUST
-   include the following header per section 13.3.4 of RFC2616 [RFC2616]:
+   include the following header per section 13.3.4 of RFC 2616
+   [RFC2616]:
 
       If-None-Match
 
@@ -216,7 +217,6 @@ Internet-Draft           Metadata Query Protocol          September 2013
       ETag
 
    All metadata retrieval responses SHOULD include the following
-   headers:
 
 
 
@@ -224,6 +224,8 @@ Young                     Expires March 9, 2014                 [Page 4]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
+
+   headers:
 
       Cache-Control
 
@@ -271,8 +273,6 @@ Internet-Draft           Metadata Query Protocol          September 2013
    this document.  A base URL precedes such paths.  Such a base URL MUST
    contain at least the scheme and host name components.  It MAY also
    include a port as well as a path.  It MUST NOT include URL fragments.
-   If a path is included the path required by the particular defined
-   request is appended to the path in the base URL.
 
 
 
@@ -281,6 +281,9 @@ Young                     Expires March 9, 2014                 [Page 5]
 Internet-Draft           Metadata Query Protocol          September 2013
 
 
+   If a path is included the path required by the particular defined
+   request is appended to the path in the base URL.
+
 2.7.  Content Negotiation
 
    As there may be many representations for a given piece of metadata,
@@ -288,9 +291,6 @@ Internet-Draft           Metadata Query Protocol          September 2013
    representation is delivered to the requester.  In addition to the
    required usage of the Accept header a response SHOULD also support
    the use of the Accept-Charset header.
-
-
-
 
 
 
