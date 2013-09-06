@@ -23,7 +23,7 @@
     </front>
     <middle>
         <section title="Introduction">
-            <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g.. JSON, XML) and content varies between services this document attempts to specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and allow the responder to scale in various ways.</t>
+            <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g., JSON, XML) and content varies between services this document attempts to specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and allow the responder to scale in various ways.</t>
             <section title="Notation and Convention">
                 <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <xref target="RFC2119">RFC2119</xref>.</t>
             </section>
@@ -166,7 +166,7 @@ Content-Length: 1234
         </section>
         <section title="Efficient Retrieval and Caching">
             <section title="Conditional Retrieval">
-                <t>Upon a successful response the responder is required to return an ETag header and may return a Last-Modified header as well.  Requesters SHOULD user either or both, with the ETag being preferred, in any subsequent requests for the same resource.  In the event that a resource has not changed since the previous request, the requester will receive a 304 (Not Modified) status code as a response.</t>
+                <t>Upon a successful response the responder is required to return an ETag header and may return a Last-Modified header as well.  Requesters SHOULD use either or both, with the ETag being preferred, in any subsequent requests for the same resource.  In the event that a resource has not changed since the previous request, the requester will receive a 304 (Not Modified) status code as a response.</t>
             </section>
             <section title="Content Caching">
                 <t>Responders SHOULD include cache control information with successful (200 status code) responses, assuming the responder knows when retrieved metadata is meant to expire.  The responder should also include cache control information with 404 Not Found responses.  This allows the requester to create and maintain a negative-response cache.  When cache controls are used only the 'max-age' directive SHOULD be used.</t>
@@ -211,7 +211,7 @@ Content-Length: 1234
     </middle>
     <back>
         <references title="Normative References">
-            
+
             <reference anchor="RFC2119">
                 <front>
                     <title>

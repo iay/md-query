@@ -118,7 +118,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
    Many clients of web-based services are capable of consuming
    descriptive metadata about a service in order to customize or
    information the client's connection parameters.  While the form of
-   the metadata (e.g..  JSON, XML) and content varies between services
+   the metadata (e.g., JSON, XML) and content varies between services
    this document attempts to specifies a set of semantics for HTTP
    [RFC2616] that allow clients to rely on certain behavior.  The
    defined behavior is meant to make it easy for clients to perform
@@ -455,7 +455,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
    Upon a successful response the responder is required to return an
    ETag header and may return a Last-Modified header as well.
-   Requesters SHOULD user either or both, with the ETag being preferred,
+   Requesters SHOULD use either or both, with the ETag being preferred,
    in any subsequent requests for the same resource.  In the event that
    a resource has not changed since the previous request, the requester
    will receive a 304 (Not Modified) status code as a response.
