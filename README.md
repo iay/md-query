@@ -12,6 +12,12 @@ recent formally submitted Internet Draft.
 Prior versions submitted as Internet Drafts are also archived in the `history`
 directory here for quick comparison between versions.
 
+## Terminology
+
+Please don't use the term "MDX" to refer to this specification or the protocol specified by it.  "MDX" as an acronym for MetaData eXchange refers to a more general concept of which the Metadata Query Protocol is just one component.
+
+If you need to refer to this specification, md-query or even MDQ is more appropriate.
+
 ## Contributing
 
 If you wish to participate in the protocol development discussions you should
@@ -24,7 +30,7 @@ ticket to the project's [issue tracker](https://github.com/iay/md-query/issues).
 GitHub pull requests are fine as well but are probably a bit of overkill here.
 
 Please don't use the GitHub issue tracking system for substantive discussion;
-that should always be done on the mailing list.
+that should always be done on the mailing list.  The issue tracker is used only to organize the outstanding substantive issues and to process minor editorial changes.
 
 ## Background
 
@@ -44,14 +50,8 @@ requirements are:
 * metadata format agnostic - we started with SAML metadata but it shouldn't be the only format we support
 * good net citizen - we need to work well with proxies, caching infrastructure, etc.
 
-Building the Documents
-----------------------
-The canonical source of the document is the `.xml` source file.  The repository always includes that form `.txt` versions.  Submission to the IETF datatracker requires the `.txt` version but I always supply the `.xml` as well.
+## Building the Documents
 
-I'm using the supplied `Makefile` to build the HTML and text forms of the document.  This requires a locally installed copy of the `xml2rfc` tool.  An [online version](http://xml.resource.org) of `xml2rfc` is also available.
+The canonical source of the document is the `.xml` source file.  The repository always includes that form plus `.txt` versions.  Submission to the IETF datatracker requires the `.txt` version but I always supply the `.xml` as well.
 
-Alternatively, you can use [rfc2629xslt](http://greenbytes.de/tech/webdav/rfc2629xslt/rfc2629xslt.html) to generate the output files.  For example, to generate the HTML form of the protocol document using `xsltproc`, run:
-
-    xsltproc rfc2629xslt/rfc2629.xslt draft-young-md-query-00.xml > <OUTPUT_FILE>
-
-
+I'm using the included `Makefile` to build the HTML and text forms of the document.  This requires a locally installed copy of the `xml2rfc` tool.  An [online version](http://xml.resource.org) of `xml2rfc` is also available.
