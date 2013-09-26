@@ -129,7 +129,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC 2119 [RFC2119].
+   document are to be interpreted as described in RFC 2119 [BCP14].
 
 1.2.  Terminology
 
@@ -370,7 +370,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
    (0x21-0x7E) excluding '{' (0x7B) and '}' (0x7D).  Such an identifier
    need only make sense in the context within which it is used.
    Responders MUST support the MD5 (transformation indicator 'md5') and
-   SHA1 (transformation indicator 'sha1') hashing algorithms as
+   SHA-1 (transformation indicator 'sha1') hashing algorithms as
    identifier transformations.  The responder MAY support other
    transformation indicators.
 
@@ -675,7 +675,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 8.  Normative References
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+   [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
 
    [RFC2616]  Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
