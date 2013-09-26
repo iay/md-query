@@ -25,7 +25,7 @@
         <section title="Introduction">
             <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g., JSON, XML) and content varies between services this document attempts to specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and allow the responder to scale in various ways.</t>
             <section title="Notation and Convention">
-                <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <xref target="RFC2119">RFC 2119</xref>.</t>
+                <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <xref target="BCP14">RFC 2119</xref>.</t>
             </section>
             <section title="Terminology">
                 <t>
@@ -212,7 +212,7 @@ Content-Length: 1234
     <back>
         <references title="Normative References">
 
-            <reference anchor="RFC2119">
+            <reference anchor="BCP14">
                 <front>
                     <title>
                         Key words for use in RFCs to Indicate Requirement Levels
