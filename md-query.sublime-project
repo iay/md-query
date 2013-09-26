@@ -9,5 +9,21 @@
 				"*.sublime-*"
 			]
 		}
+	],
+
+	"build_systems":
+	[
+		{
+			//
+			// generate text and html versions of the document
+			// whenever we're editing the XML source
+			//
+			"name": "generate text and html",
+			"cmd": ["make"],
+			// set the path to include xml2rfc
+			"path": "/opt/local/bin:/usr/bin:/bin",
+			// in any XML file
+			"selector": "text.xml"
+		}
 	]
 }
