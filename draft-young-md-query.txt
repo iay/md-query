@@ -684,12 +684,12 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
       Thomas Lenggenhager (SWITCH)
 
+      Joe St Sauver (University of Oregon)
+
+      Tom Scavo (Internet2)
+
    Special acknowledgement is due to Chad LaJoie (Covisint) for his work
    in editing previous versions of this specification.
-
-
-
-
 
 
 
