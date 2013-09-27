@@ -399,7 +399,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
    A Metadata Query request is performed by issuing an HTTP GET request.
    All Metadata Query requests MUST use the URL format:
-   <base_url>/entities/{ID}+{ID}+...
+   <base_url>/entities/<ID>+<ID>+...
    The request MUST contain at least one identifier but MAY contain more
    than one.  Each identifier must be properly URL encoded.  If more
    than one identifier is used the returned metadata MUST have been
