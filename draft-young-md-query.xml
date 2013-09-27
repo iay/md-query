@@ -14,7 +14,7 @@
                 <email>ian@iay.org.uk</email>
             </address>
         </author>
-        <date day="5" month="September" year="2013"/>
+        <date day="27" month="September" year="2013"/>
         <keyword>metadata</keyword>
         <keyword>web service</keyword>
         <abstract>
@@ -109,11 +109,20 @@
         </section>
         <section title="Metadata Query Protocol">
             <t>The metadata query protocol retrieves metadata based on one or more "tag" or "keyword" identifiers.  A request may return information for none, one, or a collection of entities.</t>
+
             <section title="Identifiers">
                 <t>The query protocol uses identifiers to "tag" metadata for single- and multi-entity metadata collections.  An identifier MAY contain any URL-encodable character but MUST NOT start with '{' (ASCII 0x7B) as this character has a special meaning in the first position (see below).  The assignment of such identifiers to a particular metadata document is the responsibility of the query responder.  If a metadata collection already contains a well known identifier it is RECOMMENDED that such a natural identifier is used when possible.  Any given metadata collection MAY have more than one identifier associated with it.</t>
+
                 <section title="Transforms">
+
                     <t>In some cases it may be advantageous to query for metadata using a transformed identifier. For example, some protocols will transmit hashed entity identifiers. This may be done to reduce the overall size of the identifier, escape special characters, obfuscate the identifier, etc.</t>
+
+                    <t>
+                        In order to support clients which may be in possession only of such a transformed representation of an entity identifier without any way to establish the original entity identifier, the metadata query protocol allows a transformed identifier to be used as a synonym for the original identifier.
+                    </t>
+
                     <t>A transformed identifier is represented by pre-pending the identifier with '{' + transformation indicator + '}'. The transformation indicator MUST be composed exclusively of printable ASCII characters (0x21-0x7E) excluding '{' (0x7B) and '}' (0x7D).   Such an identifier need only make sense in the context within which it is used. Responders MUST support the MD5 (transformation indicator 'md5') and SHA-1 (transformation indicator 'sha1') hashing algorithms as identifier transformations.  The responder MAY support other transformation indicators.</t>
+
                     <t>For example, the identifier 
                         <figure>
                             <artwork>http://example.org/service</artwork>
@@ -278,6 +287,9 @@ Content-Length: 1234
             <section title="Since draft-young-md-query-00" anchor="changes.since.draft-young-md-query-00">
                 <t>
                     Added Change Log modelled on draft-ietf-httpbis-http2.
+                </t>
+                <t>
+                    Added additional explanation of use case for transformed identifiers.
                 </t>
             </section>
 

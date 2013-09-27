@@ -3,8 +3,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                         September 5, 2013
-Expires: March 9, 2014
+Intended status: Informational                        September 27, 2013
+Expires: March 31, 2014
 
 
                         Metadata Query Protocol
@@ -32,7 +32,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 9, 2014.
+   This Internet-Draft will expire on March 31, 2014.
 
 Copyright Notice
 
@@ -52,7 +52,7 @@ Copyright Notice
 
 
 
-Young                     Expires March 9, 2014                 [Page 1]
+Young                    Expires March 31, 2014                 [Page 1]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -73,26 +73,26 @@ Table of Contents
    3.  Metadata Query Protocol  . . . . . . . . . . . . . . . . . . .  7
      3.1.  Identifiers  . . . . . . . . . . . . . . . . . . . . . . .  7
        3.1.1.  Transforms . . . . . . . . . . . . . . . . . . . . . .  7
-     3.2.  Protocol . . . . . . . . . . . . . . . . . . . . . . . . .  7
-       3.2.1.  Request  . . . . . . . . . . . . . . . . . . . . . . .  7
+     3.2.  Protocol . . . . . . . . . . . . . . . . . . . . . . . . .  8
+       3.2.1.  Request  . . . . . . . . . . . . . . . . . . . . . . .  8
        3.2.2.  Response . . . . . . . . . . . . . . . . . . . . . . .  8
        3.2.3.  Example Request and Response . . . . . . . . . . . . .  8
-   4.  Efficient Retrieval and Caching  . . . . . . . . . . . . . . .  9
-     4.1.  Conditional Retrieval  . . . . . . . . . . . . . . . . . .  9
-     4.2.  Content Caching  . . . . . . . . . . . . . . . . . . . . .  9
-     4.3.  Content Compression  . . . . . . . . . . . . . . . . . . .  9
-   5.  Security Considerations  . . . . . . . . . . . . . . . . . . . 10
-     5.1.  Integrity  . . . . . . . . . . . . . . . . . . . . . . . . 10
-     5.2.  Confidentiality  . . . . . . . . . . . . . . . . . . . . . 10
-     5.3.  Authentication . . . . . . . . . . . . . . . . . . . . . . 10
-   6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 11
-   7.  Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 12
-   8.  Normative References . . . . . . . . . . . . . . . . . . . . . 13
+   4.  Efficient Retrieval and Caching  . . . . . . . . . . . . . . . 10
+     4.1.  Conditional Retrieval  . . . . . . . . . . . . . . . . . . 10
+     4.2.  Content Caching  . . . . . . . . . . . . . . . . . . . . . 10
+     4.3.  Content Compression  . . . . . . . . . . . . . . . . . . . 10
+   5.  Security Considerations  . . . . . . . . . . . . . . . . . . . 11
+     5.1.  Integrity  . . . . . . . . . . . . . . . . . . . . . . . . 11
+     5.2.  Confidentiality  . . . . . . . . . . . . . . . . . . . . . 11
+     5.3.  Authentication . . . . . . . . . . . . . . . . . . . . . . 11
+   6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 12
+   7.  Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 13
+   8.  Normative References . . . . . . . . . . . . . . . . . . . . . 14
    Appendix A.  Change Log (to be removed by RFC Editor before
-                publication)  . . . . . . . . . . . . . . . . . . . . 14
-     A.1.  Since draft-young-md-query-00  . . . . . . . . . . . . . . 14
-     A.2.  Since draft-lajoie-md-query-01 . . . . . . . . . . . . . . 14
-   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 15
+                publication)  . . . . . . . . . . . . . . . . . . . . 15
+     A.1.  Since draft-young-md-query-00  . . . . . . . . . . . . . . 15
+     A.2.  Since draft-lajoie-md-query-01 . . . . . . . . . . . . . . 15
+   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 16
 
 
 
@@ -108,7 +108,7 @@ Table of Contents
 
 
 
-Young                     Expires March 9, 2014                 [Page 2]
+Young                    Expires March 31, 2014                 [Page 2]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -164,7 +164,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                 [Page 3]
+Young                    Expires March 31, 2014                 [Page 3]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -220,7 +220,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                 [Page 4]
+Young                    Expires March 31, 2014                 [Page 4]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -276,7 +276,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                 [Page 5]
+Young                    Expires March 31, 2014                 [Page 5]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -332,7 +332,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                 [Page 6]
+Young                    Expires March 31, 2014                 [Page 6]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -364,6 +364,12 @@ Internet-Draft           Metadata Query Protocol          September 2013
    size of the identifier, escape special characters, obfuscate the
    identifier, etc.
 
+   In order to support clients which may be in possession only of such a
+   transformed representation of an entity identifier without any way to
+   establish the original entity identifier, the metadata query protocol
+   allows a transformed identifier to be used as a synonym for the
+   original identifier.
+
    A transformed identifier is represented by pre-pending the identifier
    with '{' + transformation indicator + '}'.  The transformation
    indicator MUST be composed exclusively of printable ASCII characters
@@ -379,20 +385,20 @@ Internet-Draft           Metadata Query Protocol          September 2013
    transformed by means of MD5 hashing would become
    {md5}f3678248a29ab8e8e5b1b00bee4060e0
 
+
+
+
+Young                    Expires March 31, 2014                 [Page 7]
+
+Internet-Draft           Metadata Query Protocol          September 2013
+
+
 3.2.  Protocol
 
 3.2.1.  Request
 
    A Metadata Query request is performed by issuing an HTTP GET request.
    All Metadata Query requests MUST use the URL format:
-
-
-
-Young                     Expires March 9, 2014                 [Page 7]
-
-Internet-Draft           Metadata Query Protocol          September 2013
-
-
    <base_url>/entities/{ID}+{ID}+...
    The request MUST contain at least one identifier but MAY contain more
    than one.  Each identifier must be properly URL encoded.  If more
@@ -435,6 +441,14 @@ Internet-Draft           Metadata Query Protocol          September 2013
        xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
    ....
 
+
+
+
+Young                    Expires March 31, 2014                 [Page 8]
+
+Internet-Draft           Metadata Query Protocol          September 2013
+
+
                       Example Metadata Query Response
 
 
@@ -444,7 +458,49 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                 [Page 8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                    Expires March 31, 2014                 [Page 9]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -500,7 +556,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                 [Page 9]
+Young                    Expires March 31, 2014                [Page 10]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -556,7 +612,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                [Page 10]
+Young                    Expires March 31, 2014                [Page 11]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -612,7 +668,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                [Page 11]
+Young                    Expires March 31, 2014                [Page 12]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -668,7 +724,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                [Page 12]
+Young                    Expires March 31, 2014                [Page 13]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -724,7 +780,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 
 
-Young                     Expires March 9, 2014                [Page 13]
+Young                    Expires March 31, 2014                [Page 14]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -734,6 +790,8 @@ Appendix A.  Change Log (to be removed by RFC Editor before publication)
 A.1.  Since draft-young-md-query-00
 
    Added Change Log modelled on draft-ietf-httpbis-http2.
+
+   Added additional explanation of use case for transformed identifiers.
 
 A.2.  Since draft-lajoie-md-query-01
 
@@ -778,9 +836,7 @@ A.2.  Since draft-lajoie-md-query-01
 
 
 
-
-
-Young                     Expires March 9, 2014                [Page 14]
+Young                    Expires March 31, 2014                [Page 15]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
@@ -836,5 +892,5 @@ Author's Address
 
 
 
-Young                     Expires March 9, 2014                [Page 15]
+Young                    Expires March 31, 2014                [Page 16]
 
