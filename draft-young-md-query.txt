@@ -122,7 +122,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
    this document attempts to specifies a set of semantics for HTTP
    [RFC2616] that allow clients to rely on certain behavior.  The
    defined behavior is meant to make it easy for clients to perform
-   queries, to be efficient for both requesters and responders, and
+   queries, to be efficient for both requesters and responders, and to
    allow the responder to scale in various ways.
 
 1.1.  Notation and Convention
@@ -171,28 +171,27 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 2.  Protocol Transport
 
-   The metadata retrieval protocol seeks to fully employ the features of
-   the HTTP protocol.  Additionally this specification makes mandatory
-   some optional HTTP features.
+   The metadata query protocol seeks to fully employ the features of the
+   HTTP protocol.  Additionally this specification makes mandatory some
+   optional HTTP features.
 
 2.1.  HTTP Version
 
-   Metadata retrieval protocol responders MUST use HTTP, version 1.1
+   Metadata query protocol responders MUST use HTTP, version 1.1
    [RFC2616]
 
 2.2.  HTTP Method
 
-   All metadata retrieval requests MUST use the GET method.
+   All metadata query requests MUST use the GET method.
 
 2.3.  Request Headers
 
-   All metadata retrieval requests MUST include the following HTTP
-   headers:
+   All metadata query requests MUST include the following HTTP headers:
 
       Accept - this header MUST contain the content-type identifying the
       type, or form, of metadata to be retrieved
 
-   All metadata retrieval requests SHOULD include the following HTTP
+   All metadata query requests SHOULD include the following HTTP
    headers:
 
       Accept-Charset
@@ -207,8 +206,8 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 2.4.  Response Headers
 
-   All successful metadata retrieval responses (even those that return
-   no results) MUST include the following headers:
+   All successful metadata query responses (even those that return no
+   results) MUST include the following headers:
 
       Content-Encoding - required if, and only if, content is compressed
 
@@ -217,6 +216,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
       ETag
 
    All metadata retrieval responses SHOULD include the following
+   headers:
 
 
 
@@ -224,8 +224,6 @@ Young                    Expires March 31, 2014                 [Page 4]
 
 Internet-Draft           Metadata Query Protocol          September 2013
 
-
-   headers:
 
       Cache-Control
 
@@ -273,6 +271,8 @@ Internet-Draft           Metadata Query Protocol          September 2013
    this document.  A base URL precedes such paths.  Such a base URL MUST
    contain at least the scheme and host name components.  It MAY also
    include a port as well as a path.  It MUST NOT include URL fragments.
+   If a path is included the path required by the particular defined
+   request is appended to the path in the base URL.
 
 
 
@@ -281,9 +281,6 @@ Young                    Expires March 31, 2014                 [Page 5]
 Internet-Draft           Metadata Query Protocol          September 2013
 
 
-   If a path is included the path required by the particular defined
-   request is appended to the path in the base URL.
-
 2.7.  Content Negotiation
 
    As there may be many representations for a given piece of metadata,
@@ -291,6 +288,9 @@ Internet-Draft           Metadata Query Protocol          September 2013
    representation is delivered to the requester.  In addition to the
    required usage of the Accept header a response SHOULD also support
    the use of the Accept-Charset header.
+
+
+
 
 
 
@@ -397,8 +397,8 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 3.2.1.  Request
 
-   A Metadata Query request is performed by issuing an HTTP GET request.
-   All Metadata Query requests MUST use the URL format:
+   A metadata query request is performed by issuing an HTTP GET request.
+   All metadata query requests MUST use the URL format:
    <base_url>/entities/<ID>+<ID>+...
    The request MUST contain at least one identifier but MAY contain more
    than one.  Each identifier must be properly URL encoded.  If more
@@ -409,7 +409,7 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
 3.2.2.  Response
 
-   The response to a Metadata Query request MUST be a document that
+   The response to a metadata query request MUST be a document that
    provides metadata for the given request identifiers in the format
    described by the request's Content-Type header.  Note, in the event
    that multiple identifiers were used in the request, it is the

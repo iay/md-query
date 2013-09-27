@@ -23,7 +23,7 @@
     </front>
     <middle>
         <section title="Introduction">
-            <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g., JSON, XML) and content varies between services this document attempts to specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and allow the responder to scale in various ways.</t>
+            <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g., JSON, XML) and content varies between services this document attempts to specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and to allow the responder to scale in various ways.</t>
             <section title="Notation and Convention">
                 <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <xref target="BCP14">RFC 2119</xref>.</t>
             </section>
@@ -37,22 +37,22 @@
             </section>
         </section>
         <section title="Protocol Transport">
-            <t>The metadata retrieval protocol seeks to fully employ the features of the HTTP protocol. Additionally this specification makes mandatory some optional HTTP features.</t>
+            <t>The metadata query protocol seeks to fully employ the features of the HTTP protocol. Additionally this specification makes mandatory some optional HTTP features.</t>
             <section title="HTTP Version">
-                <t>Metadata retrieval protocol responders MUST use <xref target="RFC2616">HTTP, version 1.1</xref></t>
+                <t>Metadata query protocol responders MUST use <xref target="RFC2616">HTTP, version 1.1</xref></t>
             </section>
             <section title="HTTP Method">
-                <t>All metadata retrieval requests MUST use the GET method.</t>
+                <t>All metadata query requests MUST use the GET method.</t>
             </section>
             <section title="Request Headers">
                 <t>
-                    All metadata retrieval requests MUST include the following HTTP headers:
+                    All metadata query requests MUST include the following HTTP headers:
                     <list>
                         <t>Accept - this header MUST contain the content-type identifying the type, or form, of metadata to be retrieved</t>
                     </list>
                 </t>
                 <t>
-                    All metadata retrieval requests SHOULD include the following HTTP headers:
+                    All metadata query requests SHOULD include the following HTTP headers:
                     <list>
                         <t>Accept-Charset</t>
                         <t>Accept-Encoding</t>
@@ -67,7 +67,7 @@
             </section>
             <section title="Response Headers">
                 <t>
-                    All successful metadata retrieval responses (even those that return no results) MUST include the following headers: 
+                    All successful metadata query responses (even those that return no results) MUST include the following headers: 
                     <list>
                         <t>Content-Encoding - required if, and only if, content is compressed</t>
                         <t>Content-Type</t>
@@ -136,7 +136,7 @@
             </section>
             <section title="Protocol">
                 <section title="Request">
-                    <t>A Metadata Query request is performed by issuing an HTTP GET request. All Metadata Query requests MUST use the URL format: 
+                    <t>A metadata query request is performed by issuing an HTTP GET request. All metadata query requests MUST use the URL format: 
                         <figure>
                             <artwork><![CDATA[<base_url>/entities/<ID>+<ID>+...]]></artwork>
                         </figure>
@@ -144,7 +144,7 @@
                     </t>
                 </section>
                 <section title="Response">
-                    <t>The response to a Metadata Query request MUST be a document that provides metadata for the given request identifiers in the format described by the request's Content-Type header.  Note, in the event that multiple identifiers were used in the request, it is the responder's responsibility to ensure that the metadata returned is valid.  If the responder can not create a valid document it MUST respond with a 500 status code.  An example of such an error would be the case where the result of the query is metadata for multiple entities but the request content type does not support returning multiple results in a single document.</t>
+                    <t>The response to a metadata query request MUST be a document that provides metadata for the given request identifiers in the format described by the request's Content-Type header.  Note, in the event that multiple identifiers were used in the request, it is the responder's responsibility to ensure that the metadata returned is valid.  If the responder can not create a valid document it MUST respond with a 500 status code.  An example of such an error would be the case where the result of the query is metadata for multiple entities but the request content type does not support returning multiple results in a single document.</t>
                 </section>
                 <section title="Example Request and Response">
                     <t>
