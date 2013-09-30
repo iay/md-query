@@ -32,7 +32,7 @@ GitHub pull requests are fine as well but are probably a bit of overkill here.
 Please don't use the GitHub issue tracking system for substantive discussion;
 that should always be done on the mailing list.  The issue tracker is used only to organize the outstanding substantive issues and to process minor editorial changes.
 
-## Background
+## Background
 
 This protocol work started out within the [Shibboleth](http://shibboleth.net)
 project.  The current Shibboleth products consume large SAML metadata 
