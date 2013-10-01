@@ -1,10 +1,11 @@
 
 
 
+
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                           October 1, 2013
-Expires: April 4, 2014
+Intended status: Informational                          October 01, 2013
+Expires: April 04, 2014
 
 
                         Metadata Query Protocol
@@ -17,7 +18,7 @@ Abstract
    HTTP to allow requesters to rely on certain, rigorously defined,
    behaviour.
 
-Status of this Memo
+Status of This Memo
 
    This Internet-Draft is submitted in full conformance with the
    provisions of BCP 78 and BCP 79.
@@ -32,7 +33,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 4, 2014.
+   This Internet-Draft will expire on April 04, 2014.
 
 Copyright Notice
 
@@ -52,48 +53,50 @@ Copyright Notice
 
 
 
-Young                     Expires April 4, 2014                 [Page 1]
+Young                    Expires April 04, 2014                 [Page 1]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
 
 Table of Contents
 
-   1.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  3
-     1.1.  Notation and Convention  . . . . . . . . . . . . . . . . .  3
-     1.2.  Terminology  . . . . . . . . . . . . . . . . . . . . . . .  3
-   2.  Protocol Transport . . . . . . . . . . . . . . . . . . . . . .  4
-     2.1.  Transport Protocol . . . . . . . . . . . . . . . . . . . .  4
-     2.2.  HTTP Version . . . . . . . . . . . . . . . . . . . . . . .  4
-     2.3.  HTTP Method  . . . . . . . . . . . . . . . . . . . . . . .  4
-     2.4.  Request Headers  . . . . . . . . . . . . . . . . . . . . .  4
-     2.5.  Response Headers . . . . . . . . . . . . . . . . . . . . .  5
-     2.6.  Status Codes . . . . . . . . . . . . . . . . . . . . . . .  5
-     2.7.  Base URL . . . . . . . . . . . . . . . . . . . . . . . . .  6
-     2.8.  Content Negotiation  . . . . . . . . . . . . . . . . . . .  6
-   3.  Metadata Query Protocol  . . . . . . . . . . . . . . . . . . .  7
-     3.1.  Identifiers  . . . . . . . . . . . . . . . . . . . . . . .  7
-       3.1.1.  Transforms . . . . . . . . . . . . . . . . . . . . . .  7
-     3.2.  Protocol . . . . . . . . . . . . . . . . . . . . . . . . .  8
-       3.2.1.  Request  . . . . . . . . . . . . . . . . . . . . . . .  8
-       3.2.2.  Response . . . . . . . . . . . . . . . . . . . . . . .  8
-       3.2.3.  Example Request and Response . . . . . . . . . . . . .  8
-   4.  Efficient Retrieval and Caching  . . . . . . . . . . . . . . . 10
-     4.1.  Conditional Retrieval  . . . . . . . . . . . . . . . . . . 10
-     4.2.  Content Caching  . . . . . . . . . . . . . . . . . . . . . 10
-     4.3.  Content Compression  . . . . . . . . . . . . . . . . . . . 10
-   5.  Security Considerations  . . . . . . . . . . . . . . . . . . . 11
-     5.1.  Integrity  . . . . . . . . . . . . . . . . . . . . . . . . 11
-     5.2.  Confidentiality  . . . . . . . . . . . . . . . . . . . . . 11
-     5.3.  Authentication . . . . . . . . . . . . . . . . . . . . . . 11
-   6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 12
-   7.  Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 13
-   8.  Normative References . . . . . . . . . . . . . . . . . . . . . 14
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+     1.1.  Notation and Convention . . . . . . . . . . . . . . . . .   3
+     1.2.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   3
+   2.  Protocol Transport  . . . . . . . . . . . . . . . . . . . . .   3
+     2.1.  Transport Protocol  . . . . . . . . . . . . . . . . . . .   3
+     2.2.  HTTP Version  . . . . . . . . . . . . . . . . . . . . . .   3
+     2.3.  HTTP Method . . . . . . . . . . . . . . . . . . . . . . .   4
+     2.4.  Request Headers . . . . . . . . . . . . . . . . . . . . .   4
+     2.5.  Response Headers  . . . . . . . . . . . . . . . . . . . .   4
+     2.6.  Status Codes  . . . . . . . . . . . . . . . . . . . . . .   4
+     2.7.  Base URL  . . . . . . . . . . . . . . . . . . . . . . . .   5
+     2.8.  Content Negotiation . . . . . . . . . . . . . . . . . . .   5
+   3.  Metadata Query Protocol . . . . . . . . . . . . . . . . . . .   6
+     3.1.  Identifiers . . . . . . . . . . . . . . . . . . . . . . .   6
+       3.1.1.  Transforms  . . . . . . . . . . . . . . . . . . . . .   6
+     3.2.  Protocol  . . . . . . . . . . . . . . . . . . . . . . . .   7
+       3.2.1.  Request . . . . . . . . . . . . . . . . . . . . . . .   7
+       3.2.2.  Response  . . . . . . . . . . . . . . . . . . . . . .   7
+       3.2.3.  Example Request and Response  . . . . . . . . . . . .   7
+   4.  Efficient Retrieval and Caching . . . . . . . . . . . . . . .   8
+     4.1.  Conditional Retrieval . . . . . . . . . . . . . . . . . .   8
+     4.2.  Content Caching . . . . . . . . . . . . . . . . . . . . .   8
+     4.3.  Content Compression . . . . . . . . . . . . . . . . . . .   8
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+     5.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   8
+     5.2.  Confidentiality . . . . . . . . . . . . . . . . . . . . .   9
+     5.3.  Authentication  . . . . . . . . . . . . . . . . . . . . .   9
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
+   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   9
+   8.  Normative References  . . . . . . . . . . . . . . . . . . . .   9
    Appendix A.  Change Log (to be removed by RFC Editor before
-                publication)  . . . . . . . . . . . . . . . . . . . . 15
-     A.1.  Since draft-young-md-query-00  . . . . . . . . . . . . . . 15
-     A.2.  Since draft-lajoie-md-query-01 . . . . . . . . . . . . . . 15
-   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 16
+                publication) . . . . . . . . . . . . . . . . . . . .  10
+     A.1.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  10
+     A.2.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  10
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
+
+1.  Introduction
 
 
 
@@ -106,14 +109,10 @@ Table of Contents
 
 
 
-
-
-Young                     Expires April 4, 2014                 [Page 2]
+Young                    Expires April 04, 2014                 [Page 2]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
-
-1.  Introduction
 
    Many clients of web-based services are capable of consuming
    descriptive metadata about a service in order to customize or
@@ -140,35 +139,6 @@ Internet-Draft           Metadata Query Protocol            October 2013
       characteristics.  Generally metadata provides information such as
       end point references, service contact information, etc.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                 [Page 3]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
-
 2.  Protocol Transport
 
    The metadata query protocol seeks to fully employ the features of the
@@ -192,6 +162,13 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
    Protocol responders MUST support requests using HTTP version 1.1, and
    MAY support later versions.
+
+
+
+Young                    Expires April 04, 2014                 [Page 3]
+
+Internet-Draft           Metadata Query Protocol            October 2013
+
 
 2.3.  HTTP Method
 
@@ -217,14 +194,6 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
       If-None-Match
 
-
-
-
-Young                     Expires April 4, 2014                 [Page 4]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
-
 2.5.  Response Headers
 
    All successful metadata query responses (even those that return no
@@ -249,6 +218,14 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
    This protocol uses the following HTTP status codes:
 
+
+
+
+Young                    Expires April 04, 2014                 [Page 4]
+
+Internet-Draft           Metadata Query Protocol            October 2013
+
+
       200 - standard response code when returning requested metadata
 
       304 - response code indicating requested metadata has not been
@@ -271,15 +248,6 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
       500 - standard response code when something goes wrong within the
       responder
-
-
-
-
-
-Young                     Expires April 4, 2014                 [Page 5]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
 
       501 - response code indicating that a given identifier
       transformation is not supported
@@ -309,30 +277,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                 [Page 6]
+Young                    Expires April 04, 2014                 [Page 5]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -380,17 +325,20 @@ Internet-Draft           Metadata Query Protocol            October 2013
    responder MAY support other transformation indicators.
 
    For example, the identifier
+
    http://example.org/service
+
+
    transformed by means of SHA-1 hashing would become
-   {sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb
 
 
 
-
-
-Young                     Expires April 4, 2014                 [Page 7]
+Young                    Expires April 04, 2014                 [Page 6]
 
 Internet-Draft           Metadata Query Protocol            October 2013
+
+
+   {sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb
 
 
 3.2.  Protocol
@@ -399,7 +347,10 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
    A metadata query request is performed by issuing an HTTP GET request.
    All metadata query requests MUST use the URL format:
+
    <base_url>/entities/<ID>+<ID>+...
+
+
    The request MUST contain at least one identifier but MAY contain more
    than one.  Each identifier must be properly URL encoded.  If more
    than one identifier is used the returned metadata MUST have been
@@ -422,13 +373,11 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 3.2.3.  Example Request and Response
 
-
    GET /service/entities/http%3A%2F%2Fexample.org%2Fidp HTTP/1.1
    Host: metadata.example.org
    Accept: application/samlmetadata+xml
 
                       Example Metadata Query Request
-
 
    HTTP/1.x 200 OK
    Content-Type: application/samlmetadata+xml
@@ -437,73 +386,19 @@ Internet-Draft           Metadata Query Protocol            October 2013
    Content-Length: 1234
 
    <?xml version="1.0" encoding="UTF-8"?>
+
+
+
+Young                    Expires April 04, 2014                 [Page 7]
+
+Internet-Draft           Metadata Query Protocol            October 2013
+
+
    <EntityDescriptor entityID="http://example.org/idp"
        xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
    ....
 
-
-
-
-Young                     Expires April 4, 2014                 [Page 8]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
-
                       Example Metadata Query Response
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                 [Page 9]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
 
 4.  Efficient Retrieval and Caching
 
@@ -538,29 +433,6 @@ Internet-Draft           Metadata Query Protocol            October 2013
    constrained environments.  Responders MUST support gzip compression.
    Requesters and responders MAY support other compression algorithms.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                [Page 10]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
-
 5.  Security Considerations
 
 5.1.  Integrity
@@ -570,6 +442,13 @@ Internet-Draft           Metadata Query Protocol            October 2013
    content integrity checking be performed.  This may include the use of
    SSL/TLS at the transport layer, digital signatures present within the
    metadata document, or any other such mechanism.
+
+
+
+Young                    Expires April 04, 2014                 [Page 8]
+
+Internet-Draft           Metadata Query Protocol            October 2013
+
 
 5.2.  Confidentiality
 
@@ -586,92 +465,9 @@ Internet-Draft           Metadata Query Protocol            October 2013
    SSL/TLS.  Responders SHOULD also support the use of X.509 client
    certificate authentication.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                [Page 11]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
-
 6.  IANA Considerations
 
    This document has no actions for IANA.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                [Page 12]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
 
 7.  Acknowledgements
 
@@ -691,48 +487,10 @@ Internet-Draft           Metadata Query Protocol            October 2013
    Special acknowledgement is due to Chad LaJoie (Covisint) for his work
    in editing previous versions of this specification.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                [Page 13]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
-
 8.  Normative References
 
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
+              Requirement Levels ", BCP 14, RFC 2119, March 1997.
 
    [RFC2616]  Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
               Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
@@ -743,44 +501,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                [Page 14]
+Young                    Expires April 04, 2014                 [Page 9]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -817,30 +538,6 @@ A.2.  Since draft-lajoie-md-query-01
    Minor typographical nits but (intentionally) no substantive content
    changes.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                [Page 15]
-
-Internet-Draft           Metadata Query Protocol            October 2013
-
-
 Author's Address
 
    Ian A. Young (editor)
@@ -860,37 +557,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires April 4, 2014                [Page 16]
-
+Young                    Expires April 04, 2014                [Page 10]

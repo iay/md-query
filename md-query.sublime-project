@@ -21,7 +21,7 @@
 			"name": "generate text and html",
 			"cmd": ["make"],
 			// set the path to include xml2rfc
-			"path": "/opt/local/bin:/usr/bin:/bin",
+			"path": "/usr/local/bin:/opt/local/bin:/usr/bin:/bin",
 			// in any XML file
 			"selector": "text.xml"
 		}
