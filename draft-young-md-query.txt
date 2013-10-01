@@ -63,13 +63,14 @@ Table of Contents
      1.1.  Notation and Convention  . . . . . . . . . . . . . . . . .  3
      1.2.  Terminology  . . . . . . . . . . . . . . . . . . . . . . .  3
    2.  Protocol Transport . . . . . . . . . . . . . . . . . . . . . .  4
-     2.1.  HTTP Version . . . . . . . . . . . . . . . . . . . . . . .  4
-     2.2.  HTTP Method  . . . . . . . . . . . . . . . . . . . . . . .  4
-     2.3.  Request Headers  . . . . . . . . . . . . . . . . . . . . .  4
-     2.4.  Response Headers . . . . . . . . . . . . . . . . . . . . .  4
-     2.5.  Status Codes . . . . . . . . . . . . . . . . . . . . . . .  5
-     2.6.  Base URL . . . . . . . . . . . . . . . . . . . . . . . . .  5
-     2.7.  Content Negotiation  . . . . . . . . . . . . . . . . . . .  6
+     2.1.  Transport Protocol . . . . . . . . . . . . . . . . . . . .  4
+     2.2.  HTTP Version . . . . . . . . . . . . . . . . . . . . . . .  4
+     2.3.  HTTP Method  . . . . . . . . . . . . . . . . . . . . . . .  4
+     2.4.  Request Headers  . . . . . . . . . . . . . . . . . . . . .  4
+     2.5.  Response Headers . . . . . . . . . . . . . . . . . . . . .  5
+     2.6.  Status Codes . . . . . . . . . . . . . . . . . . . . . . .  5
+     2.7.  Base URL . . . . . . . . . . . . . . . . . . . . . . . . .  6
+     2.8.  Content Negotiation  . . . . . . . . . . . . . . . . . . .  6
    3.  Metadata Query Protocol  . . . . . . . . . . . . . . . . . . .  7
      3.1.  Identifiers  . . . . . . . . . . . . . . . . . . . . . . .  7
        3.1.1.  Transforms . . . . . . . . . . . . . . . . . . . . . .  7
@@ -93,7 +94,6 @@ Table of Contents
      A.1.  Since draft-young-md-query-00  . . . . . . . . . . . . . . 15
      A.2.  Since draft-lajoie-md-query-01 . . . . . . . . . . . . . . 15
    Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 16
-
 
 
 
@@ -175,16 +175,29 @@ Internet-Draft           Metadata Query Protocol          September 2013
    HTTP protocol.  Additionally this specification makes mandatory some
    optional HTTP features.
 
-2.1.  HTTP Version
+2.1.  Transport Protocol
 
-   Metadata query protocol responders MUST use HTTP, version 1.1
-   [RFC2616]
+   The metadata query protocol makes use of the HTTP protocol to
+   transmit requests and responses.  The underlying HTTP connection may
+   make use of any appropriate transport protocol.  In particular, the
+   HTTP connection MAY make use of either TCP or SSL/TLS at the
+   transport layer.  See the Security Considerations section for
+   guidance in choosing an appropriate transport protocol.
 
-2.2.  HTTP Method
+2.2.  HTTP Version
+
+   Requests from clients MUST NOT use an HTTP version prior to version
+   1.1.  Responders MUST reply to such requests using status code 505,
+   "HTTP Version Not Supported".
+
+   Protocol responders MUST support requests using HTTP version 1.1, and
+   MAY support later versions.
+
+2.3.  HTTP Method
 
    All metadata query requests MUST use the GET method.
 
-2.3.  Request Headers
+2.4.  Request Headers
 
    All metadata query requests MUST include the following HTTP headers:
 
@@ -204,7 +217,15 @@ Internet-Draft           Metadata Query Protocol          September 2013
 
       If-None-Match
 
-2.4.  Response Headers
+
+
+
+Young                    Expires March 31, 2014                 [Page 4]
+
+Internet-Draft           Metadata Query Protocol          September 2013
+
+
+2.5.  Response Headers
 
    All successful metadata query responses (even those that return no
    results) MUST include the following headers:
@@ -218,20 +239,13 @@ Internet-Draft           Metadata Query Protocol          September 2013
    All metadata retrieval responses SHOULD include the following
    headers:
 
-
-
-Young                    Expires March 31, 2014                 [Page 4]
-
-Internet-Draft           Metadata Query Protocol          September 2013
-
-
       Cache-Control
 
       Content-Length
 
       Last-Modified
 
-2.5.  Status Codes
+2.6.  Status Codes
 
    This protocol uses the following HTTP status codes:
 
@@ -258,12 +272,21 @@ Internet-Draft           Metadata Query Protocol          September 2013
       500 - standard response code when something goes wrong within the
       responder
 
+
+
+
+
+Young                    Expires March 31, 2014                 [Page 5]
+
+Internet-Draft           Metadata Query Protocol          September 2013
+
+
       501 - response code indicating that a given identifier
       transformation is not supported
 
       505 - response code indicating that HTTP/1.1 was not used
 
-2.6.  Base URL
+2.7.  Base URL
 
    Requests defined in this document are performed by issuing an HTTP
    GET request to a particular URL.  The final component of the path to
@@ -274,36 +297,13 @@ Internet-Draft           Metadata Query Protocol          September 2013
    If a path is included the path required by the particular defined
    request is appended to the path in the base URL.
 
-
-
-Young                    Expires March 31, 2014                 [Page 5]
-
-Internet-Draft           Metadata Query Protocol          September 2013
-
-
-2.7.  Content Negotiation
+2.8.  Content Negotiation
 
    As there may be many representations for a given piece of metadata,
    agent-driven content negotiation is used to ensure the proper
    representation is delivered to the requester.  In addition to the
    required usage of the Accept header a response SHOULD also support
    the use of the Accept-Charset header.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -789,6 +789,12 @@ Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
 A.1.  Since draft-young-md-query-00
 
+   Added Section 2.1 to clarify that the transport protocol underlying
+   HTTP may be either TCP or SSL/TLS.
+
+   Clarify position on HTTP versions (Section 2.2) which may be used to
+   underly this protocol.
+
    Added Change Log modelled on draft-ietf-httpbis-http2.
 
    Added additional explanation of use case for transformed identifiers.
@@ -810,12 +816,6 @@ A.2.  Since draft-lajoie-md-query-01
 
    Minor typographical nits but (intentionally) no substantive content
    changes.
-
-
-
-
-
-
 
 
 

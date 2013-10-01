@@ -38,9 +38,27 @@
         </section>
         <section title="Protocol Transport">
             <t>The metadata query protocol seeks to fully employ the features of the HTTP protocol. Additionally this specification makes mandatory some optional HTTP features.</t>
-            <section title="HTTP Version">
-                <t>Metadata query protocol responders MUST use <xref target="RFC2616">HTTP, version 1.1</xref></t>
+
+            <section title="Transport Protocol" anchor="transport_protocol">
+                <t>
+                    The metadata query protocol makes use of the HTTP protocol to transmit requests and responses.
+                    The underlying HTTP connection may make use of any appropriate transport protocol.
+                    In particular, the HTTP connection MAY make use of either TCP or SSL/TLS at the transport layer.
+                    See the <xref target="sec_cons" format="title"/> section for guidance in choosing an
+                    appropriate transport protocol.
+                </t>
             </section>
+
+            <section title="HTTP Version" anchor="http_version">
+                <t>
+                    Requests from clients MUST NOT use an HTTP version prior to version 1.1.
+                    Responders MUST reply to such requests using status code 505, "HTTP Version Not Supported".
+                </t>
+                <t>
+                    Protocol responders MUST support requests using HTTP version 1.1, and MAY support later versions.
+                </t>
+            </section>
+
             <section title="HTTP Method">
                 <t>All metadata query requests MUST use the GET method.</t>
             </section>
@@ -189,7 +207,8 @@ Content-Length: 1234
                 <t>Requesters SHOULD support, and advertise support for, gzip compression unless such usage would put exceptional demands on constrained environments. Responders MUST support gzip compression.  Requesters and responders MAY support other compression algorithms.</t>
             </section>
         </section>
-        <section title="Security Considerations">
+
+        <section title="Security Considerations" anchor="sec_cons">
             <section title="Integrity">
                 <t>As metadata often contains information necessary for the secure operation of interacting services it is RECOMMENDED that some form of content integrity checking be performed. This may include the use of SSL/TLS at the transport layer, digital signatures present within the metadata document, or any other such mechanism.</t>                
             </section>
@@ -306,6 +325,13 @@ Content-Length: 1234
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
             <section title="Since draft-young-md-query-00" anchor="changes.since.draft-young-md-query-00">
+                <t>
+                    Added <xref target="transport_protocol"/> to clarify that the transport protocol underlying HTTP
+                    may be either TCP or SSL/TLS.
+                </t>
+                <t>
+                    Clarify position on <xref target="http_version">HTTP versions</xref> which may be used to underly this protocol.
+                </t>
                 <t>
                     Added Change Log modelled on draft-ietf-httpbis-http2.
                 </t>
