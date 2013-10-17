@@ -147,7 +147,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
    grammar as as equivalent to the corresponding untransformed
    identifier:
 
-   SHA1     = %d115 %d104 %d97 %d49 ; lower case "{sha1}"
+   SHA1     = %d115 %d104 %d97 %d49 ; lower case "sha1"
    DIGIT    = %d30-39
    HEXDIGIT = DIGIT | %d97-102 ; lower case a-f
    sha1id   = "{" SHA1 "}" 40*HEXDIGIT
