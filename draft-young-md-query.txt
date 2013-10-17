@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          October 01, 2013
-Expires: April 04, 2014
+Intended status: Informational                          October 17, 2013
+Expires: April 20, 2014
 
 
                         Metadata Query Protocol
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 04, 2014.
+   This Internet-Draft will expire on April 20, 2014.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Young                    Expires April 04, 2014                 [Page 1]
+Young                    Expires April 20, 2014                 [Page 1]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -61,7 +61,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-     1.1.  Notation and Convention . . . . . . . . . . . . . . . . .   3
+     1.1.  Notation and Conventions  . . . . . . . . . . . . . . . .   3
      1.2.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   3
    2.  Protocol Transport  . . . . . . . . . . . . . . . . . . . . .   3
      2.1.  Transport Protocol  . . . . . . . . . . . . . . . . . . .   3
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Young                    Expires April 04, 2014                 [Page 2]
+Young                    Expires April 20, 2014                 [Page 2]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -124,7 +124,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
    queries, to be efficient for both requesters and responders, and to
    allow the responder to scale in various ways.
 
-1.1.  Notation and Convention
+1.1.  Notation and Conventions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
@@ -165,7 +165,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 04, 2014                 [Page 3]
+Young                    Expires April 20, 2014                 [Page 3]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -221,7 +221,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 04, 2014                 [Page 4]
+Young                    Expires April 20, 2014                 [Page 4]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -277,7 +277,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 04, 2014                 [Page 5]
+Young                    Expires April 20, 2014                 [Page 5]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -333,7 +333,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 04, 2014                 [Page 6]
+Young                    Expires April 20, 2014                 [Page 6]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -389,7 +389,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 04, 2014                 [Page 7]
+Young                    Expires April 20, 2014                 [Page 7]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -445,7 +445,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 04, 2014                 [Page 8]
+Young                    Expires April 20, 2014                 [Page 8]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -501,7 +501,7 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 04, 2014                 [Page 9]
+Young                    Expires April 20, 2014                 [Page 9]
 
 Internet-Draft           Metadata Query Protocol            October 2013
 
@@ -557,4 +557,4 @@ Author's Address
 
 
 
-Young                    Expires April 04, 2014                [Page 10]
+Young                    Expires April 20, 2014                [Page 10]
