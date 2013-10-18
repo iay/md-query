@@ -33,7 +33,7 @@
 
         <abstract>
             <t>
-                This document profiles the <xref target="draft-young-md-query">Metadata Query Protocol</xref> for use
+                This document profiles the <xref target="I-D.young-md-query">Metadata Query Protocol</xref> for use
                 by SAML protocol entities (<xref target="SAMLCore"/>, <xref target="SAML2Core"/>) that make use of
                 <xref target="SAML2Meta">SAML metadata</xref>.
             </t>
@@ -44,7 +44,7 @@
         <section title="Introduction">
 
             <t>
-                This document profiles the <xref target="draft-young-md-query">Metadata Query Protocol</xref> for use
+                This document profiles the <xref target="I-D.young-md-query">Metadata Query Protocol</xref> for use
                 by SAML protocol entities (<xref target="SAMLCore"/>, <xref target="SAML2Core"/>) that make use of
                 <xref target="SAML2Meta">SAML metadata</xref>.
             </t>
@@ -281,15 +281,10 @@ sha1id   = "{" SHA1 "}" 40*HEXDIGIT]]></artwork>
                 <seriesInfo name='RFC' value='3174'/>
             </reference>
 
-            <reference anchor="draft-young-md-query">
+            <reference anchor="I-D.young-md-query">
                 <front>
                     <title>Metadata Query Protocol</title>
-                    <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
-                        <organization>Independent</organization>
-                        <address>
-                            <email>ian@iay.org.uk</email>
-                        </address>
-                    </author>
+                    <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
                     <date year='2013' month='October'/>
                 </front>
                 <seriesInfo name="Internet-Draft" value="draft-young-md-query-01"/>

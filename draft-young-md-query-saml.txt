@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          October 17, 2013
-Expires: April 20, 2014
+Intended status: Informational                          October 18, 2013
+Expires: April 21, 2014
 
 
               SAML Profile for the Metadata Query Protocol
@@ -14,7 +14,7 @@ Expires: April 20, 2014
 Abstract
 
    This document profiles the Metadata Query Protocol
-   [draft-young-md-query] for use by SAML protocol entities ([SAMLCore],
+   [I-D.young-md-query] for use by SAML protocol entities ([SAMLCore],
    [SAML2Core]) that make use of SAML metadata [SAML2Meta].
 
 Status of This Memo
@@ -32,7 +32,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 20, 2014.
+   This Internet-Draft will expire on April 21, 2014.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Young                    Expires April 20, 2014                 [Page 1]
+Young                    Expires April 21, 2014                 [Page 1]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
@@ -85,7 +85,7 @@ Table of Contents
 1.  Introduction
 
    This document profiles the Metadata Query Protocol
-   [draft-young-md-query] for use by SAML protocol entities ([SAMLCore],
+   [I-D.young-md-query] for use by SAML protocol entities ([SAMLCore],
    [SAML2Core]) that make use of SAML metadata [SAML2Meta].
 
    The following use cases are not in scope for this profile:
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Young                    Expires April 20, 2014                 [Page 2]
+Young                    Expires April 21, 2014                 [Page 2]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
@@ -165,7 +165,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 3]
+Young                    Expires April 21, 2014                 [Page 3]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
@@ -221,7 +221,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 4]
+Young                    Expires April 21, 2014                 [Page 4]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
@@ -277,7 +277,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 5]
+Young                    Expires April 21, 2014                 [Page 5]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
@@ -306,6 +306,10 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels ", BCP 14, RFC 2119, March 1997.
 
+   [I-D.young-md-query]
+              Young, I., Ed., "Metadata Query Protocol", draft-young-md-
+              query-01 (work in progress), October 2013.
+
    [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
               (SHA1)", RFC 3174, September 2001.
 
@@ -326,20 +330,16 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
               (SAML) V2.0", OASIS Standard saml-metadata-2.0-os, March
               2005.
 
-   [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
-              Specifications: ABNF", STD 68, RFC 5234, January 2008.
-
-   [draft-young-md-query]
 
 
 
-Young                    Expires April 20, 2014                 [Page 6]
+Young                    Expires April 21, 2014                 [Page 6]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
 
-              Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-01 (work in progress), October 2013.
+   [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, RFC 5234, January 2008.
 
 7.2.  Informative References
 
@@ -389,4 +389,4 @@ Author's Address
 
 
 
-Young                    Expires April 20, 2014                 [Page 7]
+Young                    Expires April 21, 2014                 [Page 7]
