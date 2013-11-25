@@ -25,7 +25,7 @@
             <t>This document defines a simple protocol for retrieving metadata about entities.  The goal of the protocol is to profile various aspects of HTTP to allow requesters to rely on certain, rigorously defined, behaviour.</t>
         </abstract>
     </front>
-    
+
     <middle>
         <section title="Introduction">
             <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g., JSON, XML) and content varies between services this document attempts to specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and to allow the responder to scale in various ways.</t>
@@ -127,7 +127,7 @@
                 <t>Requests defined in this document are performed by issuing an HTTP GET request to a particular URL. The final component of the path to which requests are issued is defined by the requests specified within this document. A base URL precedes such paths. Such a base URL MUST contain at least the scheme and host name components. It MAY also include a port as well as a path. It MUST NOT include URL fragments. If a path is included the path required by the particular defined request is appended to the path in the base URL.</t>
             </section>
             <section title="Content Negotiation">
-                <t>As there may be many representations for a given piece of metadata, agent-driven content negotiation is used to ensure the proper representation is delivered to the requester. In addition to the required usage of the Accept header a response SHOULD also support the use of the Accept-Charset header.</t>
+                <t>As there may be many representations for a given piece of metadata, agent-driven content negotiation is used to ensure the proper representation is delivered to the requester. In addition to the required usage of the Accept header a responder SHOULD also support the use of the Accept-Charset header.</t>
             </section>
         </section>
         <section title="Metadata Query Protocol">

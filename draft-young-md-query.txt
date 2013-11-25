@@ -270,7 +270,7 @@ Internet-Draft           Metadata Query Protocol           November 2013
    As there may be many representations for a given piece of metadata,
    agent-driven content negotiation is used to ensure the proper
    representation is delivered to the requester.  In addition to the
-   required usage of the Accept header a response SHOULD also support
+   required usage of the Accept header a responder SHOULD also support
    the use of the Accept-Charset header.
 
 
