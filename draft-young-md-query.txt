@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          October 17, 2013
-Expires: April 20, 2014
+Intended status: Informational                         November 25, 2013
+Expires: May 29, 2014
 
 
                         Metadata Query Protocol
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 20, 2014.
+   This Internet-Draft will expire on May 29, 2014.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young                    Expires April 20, 2014                 [Page 1]
+Young                     Expires May 29, 2014                  [Page 1]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                    Expires April 20, 2014                 [Page 2]
+Young                     Expires May 29, 2014                  [Page 2]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
    Many clients of web-based services are capable of consuming
@@ -165,9 +165,9 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 3]
+Young                     Expires May 29, 2014                  [Page 3]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
 2.3.  HTTP Method
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 4]
+Young                     Expires May 29, 2014                  [Page 4]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
       200 - standard response code when returning requested metadata
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 5]
+Young                     Expires May 29, 2014                  [Page 5]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
 3.  Metadata Query Protocol
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 6]
+Young                     Expires May 29, 2014                  [Page 6]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
    {sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 7]
+Young                     Expires May 29, 2014                  [Page 7]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
    <EntityDescriptor entityID="http://example.org/idp"
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 8]
+Young                     Expires May 29, 2014                  [Page 8]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
 5.2.  Confidentiality
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol            October 2013
 
 
 
-Young                    Expires April 20, 2014                 [Page 9]
+Young                     Expires May 29, 2014                  [Page 9]
 
-Internet-Draft           Metadata Query Protocol            October 2013
+Internet-Draft           Metadata Query Protocol           November 2013
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -557,4 +557,4 @@ Author's Address
 
 
 
-Young                    Expires April 20, 2014                [Page 10]
+Young                     Expires May 29, 2014                 [Page 10]
