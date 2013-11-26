@@ -208,20 +208,42 @@ DIGIT    = %x30-39
             </section>
 
             <section title="Protocol">
-                <section title="Request">
-                    <t>A metadata query request is performed by issuing an HTTP GET request. All metadata query requests MUST use the URL format: 
+
+                <section title="Request" anchor="protocol_request">
+                    <t>
+                        A metadata query request is performed by issuing an HTTP GET request to a URL constructed as a concatenation
+                        of the following components:
+                        <list style="symbols">
+                            <t>The responder's base URL.</t>
+                            <t>A single "/" character, unless the base URL already ends in a "/".</t>
+                            <t>The string "entities/"</t>
+                            <t>
+                                At least one URL-encoded identifier.
+                                If more than one identifier is present, they are separated by unencoded "+" characters.
+                            </t>
+                        </list>
+                    </t>
+                    <t>
+                        For example, with a base URL of <spanx style="verb">http://example.org/mdq</spanx>, a query for the
+                        identifier <spanx style="verb">foo</spanx> would be performed by an HTTP GET request to the
+                        following URL:
+                    </t>
                         <figure>
-                            <artwork type="abnf"><![CDATA[
-query    = baseurl "/" entities "/" id *( "+" id )
-entities = %x65.6e.74.69.74.69.65.73 ; lower case "entities"
-]]></artwork>
+                            <artwork><![CDATA[
+http://example.org/mdq/entities/foo
+                            ]]></artwork>
                         </figure>
-                        The request MUST contain at least one identifier but MAY contain more than one.  Each identifier must be properly URL encoded. If more than one identifier is used the returned metadata MUST have been labelled with each identifier.  That is to say a search with multiple identifiers results in the intersection of the metadata that would be retrieved by searching for each identifier individually.
+                    <t>
+                        If more than one identifier is used the returned metadata MUST have been labelled with each identifier.
+                        That is to say a search with multiple identifiers results in the intersection of the metadata that would
+                        be retrieved by searching for each identifier individually.
                     </t>
                 </section>
+
                 <section title="Response">
                     <t>The response to a metadata query request MUST be a document that provides metadata for the given request identifiers in the format described by the request's Content-Type header.  Note, in the event that multiple identifiers were used in the request, it is the responder's responsibility to ensure that the metadata returned is valid.  If the responder can not create a valid document it MUST respond with a 500 status code.  An example of such an error would be the case where the result of the query is metadata for multiple entities but the request content type does not support returning multiple results in a single document.</t>
                 </section>
+
                 <section title="Example Request and Response">
                     <t>
                         <figure title="Example Metadata Query Request">
@@ -390,6 +412,10 @@ Content-Length: 1234
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
             <section title="Since draft-young-md-query-00" anchor="changes.since.draft-young-md-query-00">
+                <t>
+                    Rewrite <xref target="protocol_request"/> to clarify construction of the request URL and its relationship
+                    to the base URL.
+                </t>
                 <t>
                     Added <xref target="transport_protocol"/> to clarify that the transport protocol underlying HTTP
                     may be either TCP or SSL/TLS.

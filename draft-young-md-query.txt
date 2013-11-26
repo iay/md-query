@@ -77,7 +77,7 @@ Table of Contents
      3.2.  Protocol  . . . . . . . . . . . . . . . . . . . . . . . .   7
        3.2.1.  Request . . . . . . . . . . . . . . . . . . . . . . .   7
        3.2.2.  Response  . . . . . . . . . . . . . . . . . . . . . .   7
-       3.2.3.  Example Request and Response  . . . . . . . . . . . .   7
+       3.2.3.  Example Request and Response  . . . . . . . . . . . .   8
    4.  Efficient Retrieval and Caching . . . . . . . . . . . . . . .   8
      4.1.  Conditional Retrieval . . . . . . . . . . . . . . . . . .   8
      4.2.  Content Caching . . . . . . . . . . . . . . . . . . . . .   8
@@ -348,19 +348,29 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
 3.2.1.  Request
 
-   A metadata query request is performed by issuing an HTTP GET request.
-   All metadata query requests MUST use the URL format:
+   A metadata query request is performed by issuing an HTTP GET request
+   to a URL constructed as a concatenation of the following components:
 
-   query    = baseurl "/" entities "/" id *( "+" id )
-   entities = %x65.6e.74.69.74.69.65.73 ; lower case "entities"
+   o  The responder's base URL.
+
+   o  A single "/" character, unless the base URL already ends in a "/".
+
+   o  The string "entities/"
+
+   o  At least one URL-encoded identifier.  If more than one identifier
+      is present, they are separated by unencoded "+" characters.
+
+   For example, with a base URL of "http://example.org/mdq", a query for
+   the identifier "foo" would be performed by an HTTP GET request to the
+   following URL:
+
+   http://example.org/mdq/entities/foo
 
 
-   The request MUST contain at least one identifier but MAY contain more
-   than one.  Each identifier must be properly URL encoded.  If more
-   than one identifier is used the returned metadata MUST have been
-   labelled with each identifier.  That is to say a search with multiple
-   identifiers results in the intersection of the metadata that would be
-   retrieved by searching for each identifier individually.
+   If more than one identifier is used the returned metadata MUST have
+   been labelled with each identifier.  That is to say a search with
+   multiple identifiers results in the intersection of the metadata that
+   would be retrieved by searching for each identifier individually.
 
 3.2.2.  Response
 
@@ -375,6 +385,15 @@ Internet-Draft           Metadata Query Protocol           November 2013
    entities but the request content type does not support returning
    multiple results in a single document.
 
+
+
+
+
+Young                     Expires May 30, 2014                  [Page 7]
+
+Internet-Draft           Metadata Query Protocol           November 2013
+
+
 3.2.3.  Example Request and Response
 
    GET /service/entities/http%3A%2F%2Fexample.org%2Fidp HTTP/1.1
@@ -386,14 +405,6 @@ Internet-Draft           Metadata Query Protocol           November 2013
    HTTP/1.x 200 OK
    Content-Type: application/samlmetadata+xml
    ETag: abcdefg
-
-
-
-Young                     Expires May 30, 2014                  [Page 7]
-
-Internet-Draft           Metadata Query Protocol           November 2013
-
-
    Last-Modified: Thu, 15 Apr 2010 12:45:26 GMT
    Content-Length: 1234
 
@@ -432,23 +443,17 @@ Internet-Draft           Metadata Query Protocol           November 2013
    recognition that some metadata documents can be quite large or
    fetched with relatively high frequency.
 
-   Requesters SHOULD support, and advertise support for, gzip
-   compression unless such usage would put exceptional demands on
-   constrained environments.  Responders MUST support gzip compression.
-   Requesters and responders MAY support other compression algorithms.
-
-
-
-
-
-
-
 
 
 Young                     Expires May 30, 2014                  [Page 8]
 
 Internet-Draft           Metadata Query Protocol           November 2013
 
+
+   Requesters SHOULD support, and advertise support for, gzip
+   compression unless such usage would put exceptional demands on
+   constrained environments.  Responders MUST support gzip compression.
+   Requesters and responders MAY support other compression algorithms.
 
 5.  Security Considerations
 
@@ -494,17 +499,15 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
       Tom Scavo (Internet2)
 
-   Special acknowledgement is due to Chad LaJoie (Covisint) for his work
-   in editing previous versions of this specification.
-
-
-
 
 
 Young                     Expires May 30, 2014                  [Page 9]
 
 Internet-Draft           Metadata Query Protocol           November 2013
 
+
+   Special acknowledgement is due to Chad LaJoie (Covisint) for his work
+   in editing previous versions of this specification.
 
 8.  Normative References
 
@@ -524,6 +527,9 @@ Internet-Draft           Metadata Query Protocol           November 2013
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
 A.1.  Since draft-young-md-query-00
+
+   Rewrite Section 3.2.1 to clarify construction of the request URL and
+   its relationship to the base URL.
 
    Added Section 2.1 to clarify that the transport protocol underlying
    HTTP may be either TCP or SSL/TLS.
@@ -549,12 +555,6 @@ A.2.  Since draft-lajoie-md-query-01
    type from IETF to independent and category from experimental to
    informational.
 
-   Added empty IANA considerations section.
-
-   Minor typographical nits but (intentionally) no substantive content
-   changes.
-
-
 
 
 Young                     Expires May 30, 2014                 [Page 10]
@@ -562,17 +562,17 @@ Young                     Expires May 30, 2014                 [Page 10]
 Internet-Draft           Metadata Query Protocol           November 2013
 
 
+   Added empty IANA considerations section.
+
+   Minor typographical nits but (intentionally) no substantive content
+   changes.
+
 Author's Address
 
    Ian A. Young (editor)
    Independent
 
    Email: ian@iay.org.uk
-
-
-
-
-
 
 
 
