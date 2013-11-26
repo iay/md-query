@@ -94,7 +94,7 @@
                     In order to support use cases in which clients may be in possession of only such a transformed
                     representation of a SAML entity's unique identifier without any way to establish the original
                     entity identifier,
-                    a responder compliant with this profile MUST accept an identifier matching the
+                    a responder compliant with this profile MUST accept an extended identifier matching the
                     <spanx style="verb">sha1id</spanx> production in the following ABNF grammar as as equivalent to
                     the corresponding untransformed identifier:
                 </t>
@@ -103,10 +103,12 @@
 SHA1     = %x73 %x68 %x61 %x31 ; lower case "sha1"
 DIGIT    = %x30-39
 HEXDIGIT = DIGIT | %x61-66 ; lower case a-f
-sha1id   = "{" SHA1 "}" 40*HEXDIGIT]]></artwork>
+sha1id   = "{" SHA1 "}" sha1hex
+sha1hex  = 40*HEXDIGIT
+]]></artwork>
                 </figure>
                 <t>
-                    In the above, the <spanx style="verb">40*HEXDIGIT</spanx> component encodes the 20-octet
+                    In the above, the <spanx style="verb">sha1hex</spanx> component encodes the 20-octet
                     (160-bit) binary SHA-1 hash value as a sequence of 40 lower case hexadecimal digits.
                 </t>
                 <t>
@@ -121,6 +123,12 @@ sha1id   = "{" SHA1 "}" 40*HEXDIGIT]]></artwork>
                 <figure>
                     <artwork>{sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb</artwork>
                 </figure>
+                <t>
+                    Malformed SHA-1 transformed extended identifiers, for example where the string of characters
+                    following the "}" contains characters other than hexadecimal digits, or is other than
+                    exactly 40 characters in length, MUST result in an HTTP status code of 400
+                    ("bad request").
+                </t>
             </section>
 
         </section>
