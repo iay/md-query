@@ -101,7 +101,7 @@
                 <figure>
                     <artwork type="abnf"><![CDATA[
 SHA1     = %d115 %d104 %d97 %d49 ; lower case "sha1"
-DIGIT    = %d30-39
+DIGIT    = %d48-57
 HEXDIGIT = DIGIT | %d97-102 ; lower case a-f
 sha1id   = "{" SHA1 "}" 40*HEXDIGIT]]></artwork>
                 </figure>
