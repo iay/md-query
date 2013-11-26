@@ -314,7 +314,7 @@ Internet-Draft           Metadata Query Protocol           November 2013
    extarg   = 1*( %x00-7c / %x7e-7f ) ; anything other than a "}"
    extmore  = *idchar
    idchar   = %x00-ff ; any encodable character
-   ALPHA    = %d65-90 / %d97-122
+   ALPHA    = %x41-5a / %x61-7a
    DIGIT    = %x30-39
 
 
