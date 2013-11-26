@@ -127,7 +127,7 @@
                         <t>405 - response code indicating that a non-GET method was used</t>
                         <t>406 - response code indicating that metadata is not available in the request content-type</t>
                         <t>500 - standard response code when something goes wrong within the responder</t>
-                        <t>501 - response code indicating that a given identifier transformation is not supported</t>
+                        <t>501 - response code indicating that a given extended identifier is not supported</t>
                         <t>505 - response code indicating that HTTP/1.1 was not used</t>
                     </list>
                 </t>
@@ -161,6 +161,15 @@ id       = basicid / extid
 ]]></artwork>
                 </figure>
                 <t>
+                    Identifiers starting with anything other than "{" are basic identifiers:
+                </t>
+                <figure>
+                    <artwork type="abnf"><![CDATA[
+basicid  = notlb *idchar
+notlb    = %x00-7a / %x7c-7f ; anything other than a "{"
+]]></artwork>
+                </figure>
+                <t>
                     An identifier starting with "{" (ASCII 0x7B) is an extended identifier, and MUST match
                     the <spanx style="verb">extid</spanx> production in the following ABNF grammar:
                 </t>
@@ -182,11 +191,10 @@ DIGIT    = %x30-39
                     <spanx style="verb">extarg</spanx> and <spanx style="verb">extmore</spanx> components.
                 </t>
                 <t>
-                    A responder MUST return a 400 (request malformed) status code if any of the following
+                    A responder MUST return a 400 (bad request) status code if either of the following
                     conditions hold:
                     <list>
                         <t>An identifier starting with "{" does not match the <spanx style="verb">extid</spanx> production.</t>
-                        <t>The <spanx style="verb">extname</spanx> value is not supported by the responder.
                         <t>
                             Either the <spanx style="verb">extarg</spanx> or <spanx style="verb">extmore</spanx>
                             components fail to meet the requirements for the named extension.
@@ -194,14 +202,9 @@ DIGIT    = %x30-39
                     </list>
                 </t>
                 <t>
-                    Identifiers starting with anything other than "{" are basic identifiers:
+                    A responder MUST return a 501 (not implemented) status code if the <spanx style="verb">extname</spanx>
+                    value is not supported by the responder.
                 </t>
-                <figure>
-                    <artwork type="abnf"><![CDATA[
-basicid  = notlb *idchar
-notlb    = %x00-7a / %x7c-7f ; anything other than a "{"
-]]></artwork>
-                </figure>
             </section>
 
             <section title="Protocol">
