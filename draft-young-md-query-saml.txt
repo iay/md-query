@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          October 18, 2013
-Expires: April 21, 2014
+Intended status: Informational                         November 26, 2013
+Expires: May 30, 2014
 
 
               SAML Profile for the Metadata Query Protocol
@@ -14,8 +14,7 @@ Expires: April 21, 2014
 Abstract
 
    This document profiles the Metadata Query Protocol
-   [I-D.young-md-query] for use by SAML protocol entities ([SAMLCore],
-   [SAML2Core]) that make use of SAML metadata [SAML2Meta].
+   [I-D.young-md-query] for use with SAML metadata [SAML2Meta].
 
 Status of This Memo
 
@@ -32,7 +31,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 21, 2014.
+   This Internet-Draft will expire on May 30, 2014.
 
 Copyright Notice
 
@@ -53,9 +52,10 @@ Copyright Notice
 
 
 
-Young                    Expires April 21, 2014                 [Page 1]
+
+Young                     Expires May 30, 2014                  [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
+Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
 
 
 Table of Contents
@@ -63,36 +63,29 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
      1.1.  Notation and Conventions  . . . . . . . . . . . . . . . .   2
    2.  Request Profile . . . . . . . . . . . . . . . . . . . . . . .   2
-     2.1.  Content Type  . . . . . . . . . . . . . . . . . . . . . .   3
+     2.1.  Content Type  . . . . . . . . . . . . . . . . . . . . . .   2
      2.2.  Identifiers . . . . . . . . . . . . . . . . . . . . . . .   3
-   3.  Response Profile  . . . . . . . . . . . . . . . . . . . . . .   4
-     3.1.  Response Cardinality  . . . . . . . . . . . . . . . . . .   4
+   3.  Response Profile  . . . . . . . . . . . . . . . . . . . . . .   3
+     3.1.  Response Cardinality  . . . . . . . . . . . . . . . . . .   3
        3.1.1.  No Entity Descriptors Returned  . . . . . . . . . . .   4
        3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   4
        3.1.3.  More Than One Entity Descriptor Returned  . . . . . .   4
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
-     4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   5
+     4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   4
      4.2.  Use of SHA-1 in Transformed Identifiers . . . . . . . . .   5
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
-   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
+   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   5
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
-     7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .   6
    Appendix A.  Change Log (to be removed by RFC Editor before
-                publication) . . . . . . . . . . . . . . . . . . . .   7
+                publication) . . . . . . . . . . . . . . . . . . . .   6
      A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
    This document profiles the Metadata Query Protocol
-   [I-D.young-md-query] for use by SAML protocol entities ([SAMLCore],
-   [SAML2Core]) that make use of SAML metadata [SAML2Meta].
-
-   The following use cases are not in scope for this profile:
-
-   o  The use of SAML metadata by entities other than SAML entities.
-
-   o  The use of metadata other than SAML metadata by SAML entities.
+   [I-D.young-md-query] for use with SAML metadata [SAML2Meta].
 
 1.1.  Notation and Conventions
 
@@ -105,15 +98,6 @@ Table of Contents
 
 2.  Request Profile
 
-
-
-
-
-Young                    Expires April 21, 2014                 [Page 2]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
-
-
 2.1.  Content Type
 
    Requests compliant with this profile MUST include the following HTTP
@@ -123,21 +107,28 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
    Accept: application/samlmetadata+xml
 
 
+
+
+Young                     Expires May 30, 2014                  [Page 2]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
+
+
 2.2.  Identifiers
 
    Each identifier in a request may be either:
 
-   o  The unique identifier of a SAML entity, corresponding to the
+   o  The unique identifier of an entity, corresponding to the
       "entityID" attribute of the entity's "EntityDescriptor" element in
       SAML metadata, or
 
    o  The responder-defined identifier of an arbitrary group of
       entities.
 
-   SAML 2.0 includes profiles based on the transfer of an "artifact"
-   containing the unique identifier of a SAML entity transformed by
-   means of the SHA-1 [RFC3174] hash algorithm (see [SAML2Bind] sections
-   3.6 and 3.6.4).
+   SAML 2.0 [SAML2Core] includes profiles based on the transfer of an
+   "artifact" containing the unique identifier of a SAML entity
+   transformed by means of the SHA-1 [RFC3174] hash algorithm (see
+   [SAML2Bind] sections 3.6 and 3.6.4).
 
    In order to support use cases in which clients may be in possession
    of only such a transformed representation of a SAML entity's unique
@@ -162,14 +153,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
    http://example.org/service
 
 
-
-
-
-Young                    Expires April 21, 2014                 [Page 3]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
-
-
    transformed by means of SHA-1 hashing would become
 
    {sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb
@@ -178,6 +161,14 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 3.  Response Profile
 
 3.1.  Response Cardinality
+
+
+
+
+Young                     Expires May 30, 2014                  [Page 3]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
+
 
    A request may return information for any number of entities,
    including none.  Responses compliant with this profile MUST use the
@@ -218,14 +209,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
 
 4.  Security Considerations
 
-
-
-
-Young                    Expires April 21, 2014                 [Page 4]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
-
-
 4.1.  Integrity
 
    As SAML metadata contains information necessary for the secure
@@ -235,6 +218,13 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
    It is RECOMMENDED that the integrity checking mechanism provided by a
    responder is a digital signature embedded in the returned metadata
    document, as defined by [SAML2Meta] section 3.
+
+
+
+Young                     Expires May 30, 2014                  [Page 4]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
+
 
    Such digital signatures:
 
@@ -269,19 +259,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
    indicator of malicious intent on the part of the owner of one of the
    entities.
 
-
-
-
-
-
-
-
-
-Young                    Expires April 21, 2014                 [Page 5]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
-
-
 5.  IANA Considerations
 
    This document has no actions for IANA.
@@ -296,6 +273,14 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
       Leif Johansson (SUNET)
 
       Joe St Sauver (University of Oregon)
+
+
+
+
+Young                     Expires May 30, 2014                  [Page 5]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
+
 
       Tom Scavo (Internet2)
 
@@ -330,14 +315,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
               (SAML) V2.0", OASIS Standard saml-metadata-2.0-os, March
               2005.
 
-
-
-
-Young                    Expires April 21, 2014                 [Page 6]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
-
-
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234, January 2008.
 
@@ -350,14 +327,16 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2013
               core-2.0-os, March 2005, <http://docs.oasis-open.org/
               security/saml/v2.0/saml-core-2.0-os.pdf>.
 
-   [SAMLCore]
-              Hallam-Baker, P. and E. Maler, "Assertions and Protocol
-              for the OASIS Security Assertion Markup Language (SAML)",
-              OASIS Committee Specification sstc-core, May 2002, <http:/
-              /www.oasis-open.org/committees/security/docs/cs-sstc-
-              core-01.pdf>.
-
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
+
+
+
+
+
+Young                     Expires May 30, 2014                  [Page 6]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
+
 
 A.1.  draft-young-md-query-saml-00
 
@@ -389,4 +368,25 @@ Author's Address
 
 
 
-Young                    Expires April 21, 2014                 [Page 7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                     Expires May 30, 2014                  [Page 7]

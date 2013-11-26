@@ -34,8 +34,7 @@
         <abstract>
             <t>
                 This document profiles the <xref target="I-D.young-md-query">Metadata Query Protocol</xref> for use
-                by SAML protocol entities (<xref target="SAMLCore"/>, <xref target="SAML2Core"/>) that make use of
-                <xref target="SAML2Meta">SAML metadata</xref>.
+                with <xref target="SAML2Meta">SAML metadata</xref>.
             </t>
         </abstract>
     </front>
@@ -45,20 +44,7 @@
 
             <t>
                 This document profiles the <xref target="I-D.young-md-query">Metadata Query Protocol</xref> for use
-                by SAML protocol entities (<xref target="SAMLCore"/>, <xref target="SAML2Core"/>) that make use of
-                <xref target="SAML2Meta">SAML metadata</xref>.
-            </t>
-
-            <t>
-                The following use cases are not in scope for this profile:
-                <list style="symbols">
-                    <t>
-                        The use of SAML metadata by entities other than SAML entities.
-                    </t>
-                    <t>
-                        The use of metadata other than SAML metadata by SAML entities.
-                    </t>
-                </list>
+                with <xref target="SAML2Meta">SAML metadata</xref>.
             </t>
 
             <section title="Notation and Conventions">
@@ -91,7 +77,7 @@
                     Each identifier in a request may be either:
                     <list style="symbols">
                         <t>
-                            The unique identifier of a SAML entity, corresponding to the <spanx style="verb">entityID</spanx>
+                            The unique identifier of an entity, corresponding to the <spanx style="verb">entityID</spanx>
                             attribute of the entity's <spanx style="verb">EntityDescriptor</spanx> element in SAML metadata, or
                         </t>
                         <t>
@@ -100,7 +86,7 @@
                     </list>
                 </t>
                 <t>
-                    SAML 2.0 includes profiles based on the transfer of an "artifact" containing the 
+                    <xref target="SAML2Core">SAML 2.0</xref> includes profiles based on the transfer of an "artifact" containing the 
                     unique identifier of a SAML entity transformed by means of the <xref target="RFC3174">SHA-1</xref>
                     hash algorithm (see <xref target="SAML2Bind"/> sections 3.6 and 3.6.4).
                 </t>
@@ -367,27 +353,6 @@ sha1id   = "{" SHA1 "}" 40*HEXDIGIT]]></artwork>
         </references>
 
         <references title="Informative References">
-
-            <reference anchor="SAMLCore"
-                target="http://www.oasis-open.org/committees/security/docs/cs-sstc-core-01.pdf">
-              <front>
-                <title>Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)</title>
-                <author initials="P." surname="Hallam-Baker" fullname="Phillip Hallam-Baker">
-                  <organization>VeriSign</organization>
-                  <address>
-                    <email>pbaker@verisign.com</email>
-                  </address>
-                </author>
-                <author initials="E." surname="Maler" fullname="Eve Maler">
-                  <organization>Sun Microsystems</organization>
-                  <address>
-                    <email>eve.maler@sun.com</email>
-                  </address>
-                </author>
-                <date day="31" month="May" year="2002"/>
-              </front>
-              <seriesInfo name="OASIS Committee Specification" value="sstc-core"/>
-            </reference>
 
             <reference anchor="SAML2Core"
                     target="http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">
