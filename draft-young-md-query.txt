@@ -349,13 +349,14 @@ Internet-Draft           Metadata Query Protocol           November 2013
 3.2.1.  Request
 
    A metadata query request is performed by issuing an HTTP GET request
-   to a URL constructed as a concatenation of the following components:
+   to a URL constructed as the concatenation of the following
+   components:
 
    o  The responder's base URL.
 
    o  A single "/" character, unless the base URL already ends in a "/".
 
-   o  The string "entities/"
+   o  The string "entities/".
 
    o  At least one URL-encoded identifier.  If more than one identifier
       is present, they are separated by unencoded "+" characters.
@@ -384,7 +385,6 @@ Internet-Draft           Metadata Query Protocol           November 2013
    the case where the result of the query is metadata for multiple
    entities but the request content type does not support returning
    multiple results in a single document.
-
 
 
 

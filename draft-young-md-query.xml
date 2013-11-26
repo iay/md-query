@@ -211,12 +211,12 @@ DIGIT    = %x30-39
 
                 <section title="Request" anchor="protocol_request">
                     <t>
-                        A metadata query request is performed by issuing an HTTP GET request to a URL constructed as a concatenation
+                        A metadata query request is performed by issuing an HTTP GET request to a URL constructed as the concatenation
                         of the following components:
                         <list style="symbols">
                             <t>The responder's base URL.</t>
                             <t>A single "/" character, unless the base URL already ends in a "/".</t>
-                            <t>The string "entities/"</t>
+                            <t>The string "entities/".</t>
                             <t>
                                 At least one URL-encoded identifier.
                                 If more than one identifier is present, they are separated by unencoded "+" characters.
