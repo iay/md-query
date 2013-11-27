@@ -22,13 +22,18 @@
         <keyword>web service</keyword>
 
         <abstract>
-            <t>This document defines a simple protocol for retrieving metadata about entities.  The goal of the protocol is to profile various aspects of HTTP to allow requesters to rely on certain, rigorously defined, behaviour.</t>
+            <t>
+                This document defines a simple protocol for retrieving metadata about named entities, or named
+                collections of entities.
+                The goal of the protocol is to profile various aspects of HTTP to allow requesters to rely on
+                certain, rigorously defined, behaviour.
+            </t>
         </abstract>
     </front>
 
     <middle>
         <section title="Introduction">
-            <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g., JSON, XML) and content varies between services this document attempts to specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and to allow the responder to scale in various ways.</t>
+            <t>Many clients of web-based services are capable of consuming descriptive metadata about a service in order to customize or information the client's connection parameters.  While the form of the metadata (e.g., JSON, XML) and content varies between services this document specifies a set of semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.  The defined behavior is meant to make it easy for clients to perform queries, to be efficient for both requesters and responders, and to allow the responder to scale in various ways.</t>
 
             <section title="Notation and Conventions">
                 <t>
@@ -46,7 +51,7 @@
                     <list>
                         <t>entity - A single logical construct for which metadata may be asserted. Generally this is a network accessible service.</t>
                         <t>metadata - A machine readable description of certain entity characteristics. Generally metadata provides information such as end point references, service contact information, etc.</t>
-                    </list>                    
+                    </list>
                 </t>
             </section>
         </section>
@@ -91,7 +96,7 @@
                     </list>
                 </t>
                 <t>
-                    A metadata request to the same URL, after an initial request, MUST include the following header per section 13.3.4 of <xref target="RFC2616">RFC 2616</xref>: 
+                    A metadata request to the same URL, after an initial request, MUST include the following header per section 13.3.4 of <xref target="RFC2616">RFC 2616</xref>:
                     <list>
                         <t>If-None-Match</t>
                     </list>
@@ -107,7 +112,7 @@
                     </list>
                 </t>
                 <t>
-                    All metadata retrieval responses SHOULD include the following headers: 
+                    All metadata retrieval responses SHOULD include the following headers:
                     <list>
                         <t>Cache-Control</t>
                         <t>Content-Length</t>
@@ -117,7 +122,7 @@
             </section>
             <section title="Status Codes">
                 <t>
-                    This protocol uses the following HTTP status codes: 
+                    This protocol uses the following HTTP status codes:
                     <list>
                         <t>200 - standard response code when returning requested metadata</t>
                         <t>304 - response code indicating requested metadata has not been updated since the last request</t>
@@ -286,7 +291,7 @@ Content-Length: 1234
 
         <section title="Security Considerations" anchor="sec_cons">
             <section title="Integrity">
-                <t>As metadata often contains information necessary for the secure operation of interacting services it is RECOMMENDED that some form of content integrity checking be performed. This may include the use of SSL/TLS at the transport layer, digital signatures present within the metadata document, or any other such mechanism.</t>                
+                <t>As metadata often contains information necessary for the secure operation of interacting services it is RECOMMENDED that some form of content integrity checking be performed. This may include the use of SSL/TLS at the transport layer, digital signatures present within the metadata document, or any other such mechanism.</t>
             </section>
             <section title="Confidentiality">
                 <t>In many cases service metadata is public information and therefore confidentiality is not required.  In the cases where such functionality is required, it is RECOMMENDED that both the requester and responder support SSL/TLS.  Other mechanisms, such as XML encryption, MAY also be supported.</t>
