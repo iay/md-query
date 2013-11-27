@@ -119,7 +119,7 @@ sha1hex  = 40*HEXDIGIT
                 </figure>
                 <t>
                     transformed by means of SHA-1 hashing would become
-                </t> 
+                </t>
                 <figure>
                     <artwork>{sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb</artwork>
                 </figure>
