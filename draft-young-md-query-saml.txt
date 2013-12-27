@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                         November 27, 2013
-Expires: May 31, 2014
+Intended status: Informational                         December 27, 2013
+Expires: June 30, 2014
 
 
               SAML Profile for the Metadata Query Protocol
@@ -31,7 +31,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 31, 2014.
+   This Internet-Draft will expire on June 30, 2014.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young                     Expires May 31, 2014                  [Page 1]
+Young                     Expires June 30, 2014                 [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
+Internet-DraftSAML Profile for the Metadata Query Protocol December 2013
 
 
 Table of Contents
@@ -71,16 +71,16 @@ Table of Contents
        3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   4
        3.1.3.  More Than One Entity Descriptor Returned  . . . . . .   4
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
-     4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   5
+     4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   4
      4.2.  Use of SHA-1 in Transformed Identifiers . . . . . . . . .   5
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
-   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
+   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   5
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
-     7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .   6
    Appendix A.  Change Log (to be removed by RFC Editor before
-                publication) . . . . . . . . . . . . . . . . . . . .   7
-     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   7
+                publication) . . . . . . . . . . . . . . . . . . . .   6
+     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   6
 
 1.  Introduction
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                     Expires May 31, 2014                  [Page 2]
+Young                     Expires June 30, 2014                 [Page 2]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
+Internet-DraftSAML Profile for the Metadata Query Protocol December 2013
 
 
 2.2.  Identifiers
@@ -144,7 +144,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
    sha1id   = "{" SHA1 "}" sha1hex
    sha1hex  = 40*HEXDIGIT
 
-
    In the above, the "sha1hex" component encodes the 20-octet (160-bit)
    binary SHA-1 hash value as a sequence of 40 lower case hexadecimal
    digits.
@@ -153,27 +152,23 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
 
    http://example.org/service
 
-
    transformed by means of SHA-1 hashing would become
 
    {sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb
-
-
-
-
-
-
-
-
-Young                     Expires May 31, 2014                  [Page 3]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
-
 
    Malformed SHA-1 transformed extended identifiers, for example where
    the string of characters following the "}" contains characters other
    than hexadecimal digits, or is other than exactly 40 characters in
    length, MUST result in an HTTP status code of 400 ("bad request").
+
+
+
+
+
+Young                     Expires June 30, 2014                 [Page 3]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol December 2013
+
 
 3.  Response Profile
 
@@ -201,7 +196,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
 
    Content-Type: application/samlmetadata+xml
 
-
 3.1.3.  More Than One Entity Descriptor Returned
 
    A response which returns more than one "EntityDescriptor" element
@@ -215,22 +209,22 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
 
    Content-Type: application/samlmetadata+xml
 
-
 4.  Security Considerations
-
-
-
-
-Young                     Expires May 31, 2014                  [Page 4]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
-
 
 4.1.  Integrity
 
    As SAML metadata contains information necessary for the secure
    operation of interacting services it is strongly RECOMMENDED that a
    mechanism for integrity checking is provided to clients.
+
+
+
+
+
+Young                     Expires June 30, 2014                 [Page 4]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol December 2013
+
 
    It is RECOMMENDED that the integrity checking mechanism provided by a
    responder is a digital signature embedded in the returned metadata
@@ -269,19 +263,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
    indicator of malicious intent on the part of the owner of one of the
    entities.
 
-
-
-
-
-
-
-
-
-Young                     Expires May 31, 2014                  [Page 5]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
-
-
 5.  IANA Considerations
 
    This document has no actions for IANA.
@@ -292,6 +273,14 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
    their contributions to this document:
 
       Scott Cantor (The Ohio State University)
+
+
+
+
+Young                     Expires June 30, 2014                 [Page 5]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol December 2013
+
 
       Leif Johansson (SUNET)
 
@@ -304,11 +293,11 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
 7.1.  Normative References
 
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels ", BCP 14, RFC 2119, March 1997.
+              Requirement Levels", BCP 14, RFC 2119, March 1997.
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-01 (work in progress), October 2013.
+              query-01 (work in progress), December 2013.
 
    [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
               (SHA1)", RFC 3174, September 2001.
@@ -316,27 +305,14 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
    [SAML2Bind]
               Cantor, S., Hirsch, F., Kemp, J., Philpott, R., and E.
               Maler, "Bindings for the Security Assertion Markup
-              Language (SAML) V2.0 ", OASIS Standard saml-
+              Language (SAML) V2.0", OASIS Standard saml-
               bindings-2.0-os, March 2005.
-
-   [SAML2MetaIOP]
-              Cantor, S., "SAML V2.0 Metadata Interoperability Profile
-              Version 1.0 ", OASIS Committee Specification sstc-
-              metadata-iop-cs-01, August 2009.
 
    [SAML2Meta]
               Cantor, S., Moreh, J., Philpott, R., and E. Maler,
               "Metadata for the Security Assertion Markup Language
               (SAML) V2.0", OASIS Standard saml-metadata-2.0-os, March
               2005.
-
-
-
-
-Young                     Expires May 31, 2014                  [Page 6]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
-
 
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234, January 2008.
@@ -353,6 +329,14 @@ Internet-DraftSAML Profile for the Metadata Query Protocol November 2013
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
 A.1.  draft-young-md-query-saml-00
+
+
+
+
+Young                     Expires June 30, 2014                 [Page 6]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol December 2013
+
 
    Initial version.
 
@@ -389,4 +373,20 @@ Author's Address
 
 
 
-Young                     Expires May 31, 2014                  [Page 7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                     Expires June 30, 2014                 [Page 7]

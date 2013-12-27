@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                         November 27, 2013
-Expires: May 31, 2014
+Intended status: Informational                         December 27, 2013
+Expires: June 30, 2014
 
 
                         Metadata Query Protocol
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 31, 2014.
+   This Internet-Draft will expire on June 30, 2014.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young                     Expires May 31, 2014                  [Page 1]
+Young                     Expires June 30, 2014                 [Page 1]
 
-Internet-Draft           Metadata Query Protocol           November 2013
+Internet-Draft           Metadata Query Protocol           December 2013
 
 
 Table of Contents
@@ -77,7 +77,7 @@ Table of Contents
      3.2.  Protocol  . . . . . . . . . . . . . . . . . . . . . . . .   7
        3.2.1.  Request . . . . . . . . . . . . . . . . . . . . . . .   7
        3.2.2.  Response  . . . . . . . . . . . . . . . . . . . . . .   7
-       3.2.3.  Example Request and Response  . . . . . . . . . . . .   8
+       3.2.3.  Example Request and Response  . . . . . . . . . . . .   7
    4.  Efficient Retrieval and Caching . . . . . . . . . . . . . . .   8
      4.1.  Conditional Retrieval . . . . . . . . . . . . . . . . . .   8
      4.2.  Content Caching . . . . . . . . . . . . . . . . . . . . .   8
@@ -93,7 +93,6 @@ Table of Contents
                 publication) . . . . . . . . . . . . . . . . . . . .  10
      A.1.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  10
      A.2.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  10
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  11
 
 1.  Introduction
 
@@ -109,9 +108,10 @@ Table of Contents
 
 
 
-Young                     Expires May 31, 2014                  [Page 2]
+
+Young                     Expires June 30, 2014                 [Page 2]
 
-Internet-Draft           Metadata Query Protocol           November 2013
+Internet-Draft           Metadata Query Protocol           December 2013
 
 
 1.1.  Notation and Conventions
@@ -165,9 +165,9 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
 
 
-Young                     Expires May 31, 2014                  [Page 3]
+Young                     Expires June 30, 2014                 [Page 3]
 
-Internet-Draft           Metadata Query Protocol           November 2013
+Internet-Draft           Metadata Query Protocol           December 2013
 
 
    All metadata query requests MUST include the following HTTP headers:
@@ -212,42 +212,41 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
    This protocol uses the following HTTP status codes:
 
-      200 - standard response code when returning requested metadata
+      200 "OK" - standard response code when returning requested
+      metadata
 
-      304 - response code indicating requested metadata has not been
-      updated since the last request
-
-
-
+      304 "Not Modified" - response code indicating requested metadata
+      has not been updated since the last request
 
 
-Young                     Expires May 31, 2014                  [Page 4]
+
+
+Young                     Expires June 30, 2014                 [Page 4]
 
-Internet-Draft           Metadata Query Protocol           November 2013
+Internet-Draft           Metadata Query Protocol           December 2013
 
 
-      400 - response code indicating that the requester's request was
-      malformed in some fashion
+      400 "Bad Request" - response code indicating that the requester's
+      request was malformed in some fashion
 
-      401 - response code indicating the request must be authenticated
-      before requesting metadata
+      401 "Unauthorized" - response code indicating the request must be
+      authenticated before requesting metadata
 
-      404 - indicates that the requested metadata could not be found;
-      this MUST NOT be used in order to indicate a general service
-      error.
+      404 "Not Found" - indicates that the requested metadata could not
+      be found; this MUST NOT be used in order to indicate a general
+      service error.
 
-      405 - response code indicating that a non-GET method was used
+      405 "Method Not Allowed" - response code indicating that a non-GET
+      method was used
 
-      406 - response code indicating that metadata is not available in
-      the request content-type
+      406 "Not Acceptable" - response code indicating that metadata is
+      not available in the request content-type
 
-      500 - standard response code when something goes wrong within the
-      responder
+      501 "Not Implemented" - response code indicating that a given
+      extended identifier is not supported
 
-      501 - response code indicating that a given extended identifier is
-      not supported
-
-      505 - response code indicating that HTTP/1.1 was not used
+      505 "HTTP Version Not Supported" - response code indicating that
+      HTTP/1.1 was not used
 
 2.7.  Base URL
 
@@ -277,9 +276,10 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
 
 
-Young                     Expires May 31, 2014                  [Page 5]
+
+Young                     Expires June 30, 2014                 [Page 5]
 
-Internet-Draft           Metadata Query Protocol           November 2013
+Internet-Draft           Metadata Query Protocol           December 2013
 
 
 3.1.  Identifiers
@@ -297,13 +297,11 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
    id       = basicid / extid
 
-
    Identifiers starting with anything other than "{" are basic
    identifiers:
 
    basicid  = notlb *idchar
    notlb    = %x00-7a / %x7c-7f ; anything other than a "{"
-
 
    An identifier starting with "{" (ASCII 0x7B) is an extended
    identifier, and MUST match the "extid" production in the following
@@ -317,7 +315,6 @@ Internet-Draft           Metadata Query Protocol           November 2013
    ALPHA    = %x41-5a / %x61-7a
    DIGIT    = %x30-39
 
-
    The particular extension to be used is named by the "extname" value.
    This value is case sensitive; "Example" and "example" would name
    different extensions.  Each extension may define its own additional
@@ -329,17 +326,17 @@ Internet-Draft           Metadata Query Protocol           November 2013
       An identifier starting with "{" does not match the "extid"
       production.
 
-
-
-
-
-Young                     Expires May 31, 2014                  [Page 6]
-
-Internet-Draft           Metadata Query Protocol           November 2013
-
-
       Either the "extarg" or "extmore" components fail to meet the
       requirements for the named extension.
+
+
+
+
+
+Young                     Expires June 30, 2014                 [Page 6]
+
+Internet-Draft           Metadata Query Protocol           December 2013
+
 
    A responder MUST return a 501 (not implemented) status code if the
    "extname" value is not supported by the responder.
@@ -367,7 +364,6 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
    http://example.org/mdq/entities/foo
 
-
    If more than one identifier is used the returned metadata MUST have
    been labelled with each identifier.  That is to say a search with
    multiple identifiers results in the intersection of the metadata that
@@ -377,24 +373,26 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
    The response to a metadata query request MUST be a document that
    provides metadata for the given request identifiers in the format
-   described by the request's Content-Type header.  Note, in the event
-   that multiple identifiers were used in the request, it is the
-   responder's responsibility to ensure that the metadata returned is
-   valid.  If the responder can not create a valid document it MUST
-   respond with a 500 status code.  An example of such an error would be
+   described by the request's Content-Type header.
+
+   The responder is responsible for ensuring that the metadata returned
+   is valid.  If the responder can not create a valid document it MUST
+   respond with a 406 status code.  An example of such an error would be
    the case where the result of the query is metadata for multiple
    entities but the request content type does not support returning
    multiple results in a single document.
 
-
-
-
-Young                     Expires May 31, 2014                  [Page 7]
-
-Internet-Draft           Metadata Query Protocol           November 2013
-
-
 3.2.3.  Example Request and Response
+
+
+
+
+
+
+Young                     Expires June 30, 2014                 [Page 7]
+
+Internet-Draft           Metadata Query Protocol           December 2013
+
 
    GET /service/entities/http%3A%2F%2Fexample.org%2Fidp HTTP/1.1
    Host: metadata.example.org
@@ -445,9 +443,11 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
 
 
-Young                     Expires May 31, 2014                  [Page 8]
+
+
+Young                     Expires June 30, 2014                 [Page 8]
 
-Internet-Draft           Metadata Query Protocol           November 2013
+Internet-Draft           Metadata Query Protocol           December 2013
 
 
    Requesters SHOULD support, and advertise support for, gzip
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol           November 2013
 
 
 
-Young                     Expires May 31, 2014                  [Page 9]
+Young                     Expires June 30, 2014                 [Page 9]
 
-Internet-Draft           Metadata Query Protocol           November 2013
+Internet-Draft           Metadata Query Protocol           December 2013
 
 
    Special acknowledgement is due to Chad LaJoie (Covisint) for his work
@@ -512,7 +512,7 @@ Internet-Draft           Metadata Query Protocol           November 2013
 8.  Normative References
 
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels ", BCP 14, RFC 2119, March 1997.
+              Requirement Levels", BCP 14, RFC 2119, March 1997.
 
    [RFC2616]  Fielding, R., Gettys, J., Mogul, J., Frystyk, H.,
               Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
@@ -545,22 +545,26 @@ A.1.  Since draft-young-md-query-00
    Replace transformed identifier concept with extended identifiers.
    Add grammar to distinguish basic from extended identifiers.
 
+   Change the required response when the result can not be validly
+   expressed in the requested format from 500 to 406.
+
 A.2.  Since draft-lajoie-md-query-01
 
    Adopted as base for draft-young-md-query-00.
 
    Updated author and list of contributors.
 
+
+
+
+Young                     Expires June 30, 2014                [Page 10]
+
+Internet-Draft           Metadata Query Protocol           December 2013
+
+
    Changed ipr from "pre5378Trust200902" to "trust200902", submission
    type from IETF to independent and category from experimental to
    informational.
-
-
-
-Young                     Expires May 31, 2014                 [Page 10]
-
-Internet-Draft           Metadata Query Protocol           November 2013
-
 
    Added empty IANA considerations section.
 
@@ -572,7 +576,7 @@ Author's Address
    Ian A. Young (editor)
    Independent
 
-   Email: ian@iay.org.uk
+   EMail: ian@iay.org.uk
 
 
 
@@ -609,8 +613,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                     Expires May 31, 2014                 [Page 11]
+Young                     Expires June 30, 2014                [Page 11]
