@@ -154,7 +154,7 @@
             </section>
         </section>
         <section title="Metadata Query Protocol">
-            <t>The metadata query protocol retrieves metadata based on one or more "tag" or "keyword" identifiers.  A request may return information for none, one, or a collection of entities.</t>
+            <t>The metadata query protocol retrieves metadata based on a single "tag" or "keyword" identifier.  A request may return information for none, one, or a collection of entities.</t>
 
             <section title="Identifiers">
                 <t>
@@ -231,10 +231,7 @@ DIGIT    = %x30-39
                             <t>The responder's base URL.</t>
                             <t>A single "/" character, unless the base URL already ends in a "/".</t>
                             <t>The string "entities/".</t>
-                            <t>
-                                At least one URL-encoded identifier.
-                                If more than one identifier is present, they are separated by unencoded "+" characters.
-                            </t>
+                            <t>A single URL-encoded identifier.</t>
                         </list>
                     </t>
                     <t>
@@ -242,22 +239,17 @@ DIGIT    = %x30-39
                         identifier <spanx style="verb">foo</spanx> would be performed by an HTTP GET request to the
                         following URL:
                     </t>
-                        <figure>
-                            <artwork><![CDATA[
+                    <figure>
+                        <artwork><![CDATA[
 http://example.org/mdq/entities/foo
-                            ]]></artwork>
-                        </figure>
-                    <t>
-                        If more than one identifier is used the returned metadata MUST have been labelled with each identifier.
-                        That is to say a search with multiple identifiers results in the intersection of the metadata that would
-                        be retrieved by searching for each identifier individually.
-                    </t>
+                        ]]></artwork>
+                    </figure>
                 </section>
 
                 <section title="Response">
                     <t>
                         The response to a metadata query request MUST be a document that provides metadata for the given
-                        request identifiers in the format described by the request's Content-Type header.
+                        request identifier in the format described by the request's Content-Type header.
                     </t>
                     <t>
                         The responder is responsible for ensuring that the metadata returned is valid. If the responder can not
@@ -459,8 +451,12 @@ Content-Length: 1234
                     Add grammar to distinguish basic from extended identifiers.
                 </t>
                 <t>
-                    Change the required response when the result can not be validly expressed in the requested
+                    Changed the required response when the result can not be validly expressed in the requested
                     format from 500 to 406.
+                </t>
+                <t>
+                    Removed the '+' operator and all references to multiple identifiers in queries. If more complex queries
+                    are required, these will be reintroduced at a different path under the base URL.
                 </t>
             </section>
 
