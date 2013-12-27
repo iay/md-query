@@ -189,10 +189,9 @@ notlb    = %x00-7a / %x7c-7f ; anything other than a "{"
                 </t>
                 <figure>
                     <artwork type="abnf"><![CDATA[
-extid    = "{" extname [ ":" extarg ] "}" extmore
+extid    = "{" extname "}" extarg
 extname  = ALPHA *( ALPHA / DIGIT / "+" / "-" / "." )
-extarg   = 1*( %x00-7c / %x7e-7f ) ; anything other than a "}"
-extmore  = *idchar
+extarg   = *idchar
 idchar   = %x00-ff ; any encodable character
 ALPHA    = %x41-5a / %x61-7a
 DIGIT    = %x30-39
@@ -202,7 +201,7 @@ DIGIT    = %x30-39
                     The particular extension to be used is named by the <spanx style="verb">extname</spanx> value.
                     This value is case sensitive; "Example" and "example" would name different extensions.
                     Each extension may define its own additional rules for the
-                    <spanx style="verb">extarg</spanx> and <spanx style="verb">extmore</spanx> components.
+                    <spanx style="verb">extarg</spanx> component.
                 </t>
                 <t>
                     A responder MUST return a 400 (bad request) status code if either of the following
@@ -210,8 +209,8 @@ DIGIT    = %x30-39
                     <list>
                         <t>An identifier starting with "{" does not match the <spanx style="verb">extid</spanx> production.</t>
                         <t>
-                            Either the <spanx style="verb">extarg</spanx> or <spanx style="verb">extmore</spanx>
-                            components fail to meet the requirements for the named extension.
+                            The <spanx style="verb">extarg</spanx>
+                            component fails to meet the requirements for the named extension.
                         </t>
                     </list>
                 </t>
