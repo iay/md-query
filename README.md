@@ -59,6 +59,9 @@ requirements are:
 * metadata format agnostic &mdash; we started with SAML metadata but it shouldn't be the only format we support
 * good net citizen &mdash; we need to work well with proxies, caching infrastructure, etc.
 
+The chosen route has been to define the query protocol as a RESTian web service
+running over HTTP.
+
 ## Building the Documents
 
 The canonical source of the document is the `.xml` source file.  The
@@ -67,5 +70,5 @@ XML.  Submission to the IETF datatracker requires the `.txt` version but I
 always supply the `.xml` as well.
 
 I'm using the included `Makefile` to build the HTML and text forms of the
-document.  This requires a locally installed copy of the `xml2rfc` tool.  An
+document.  This requires a locally installed copy of the [`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).  An
 [online version](http://xml.resource.org) of `xml2rfc` is also available.
