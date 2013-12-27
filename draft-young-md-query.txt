@@ -82,17 +82,18 @@ Table of Contents
      4.1.  Conditional Retrieval . . . . . . . . . . . . . . . . . .   8
      4.2.  Content Caching . . . . . . . . . . . . . . . . . . . . .   8
      4.3.  Content Compression . . . . . . . . . . . . . . . . . . .   8
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   9
-     5.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   9
-     5.2.  Confidentiality . . . . . . . . . . . . . . . . . . . . .   9
-     5.3.  Authentication  . . . . . . . . . . . . . . . . . . . . .   9
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
-   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   9
-   8.  Normative References  . . . . . . . . . . . . . . . . . . . .  10
+   5.  Protocol Extension Points . . . . . . . . . . . . . . . . . .   8
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   9
+     6.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   9
+     6.2.  Confidentiality . . . . . . . . . . . . . . . . . . . . .   9
+     6.3.  Authentication  . . . . . . . . . . . . . . . . . . . . .   9
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   9
+   9.  Normative References  . . . . . . . . . . . . . . . . . . . .  10
    Appendix A.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .  10
      A.1.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  10
-     A.2.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  10
+     A.2.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  11
 
 1.  Introduction
 
@@ -105,7 +106,6 @@ Table of Contents
    meant to make it easy for clients to perform queries, to be efficient
    for both requesters and responders, and to allow the responder to
    scale in various ways.
-
 
 
 
@@ -269,8 +269,8 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 3.  Metadata Query Protocol
 
-   The metadata query protocol retrieves metadata based on one or more
-   "tag" or "keyword" identifiers.  A request may return information for
+   The metadata query protocol retrieves metadata based on a single
+   "tag" or "keyword" identifier.  A request may return information for
    none, one, or a collection of entities.
 
 
@@ -307,10 +307,9 @@ Internet-Draft           Metadata Query Protocol           December 2013
    identifier, and MUST match the "extid" production in the following
    ABNF grammar:
 
-   extid    = "{" extname [ ":" extarg ] "}" extmore
+   extid    = "{" extname "}" extarg
    extname  = ALPHA *( ALPHA / DIGIT / "+" / "-" / "." )
-   extarg   = 1*( %x00-7c / %x7e-7f ) ; anything other than a "}"
-   extmore  = *idchar
+   extarg   = *idchar
    idchar   = %x00-ff ; any encodable character
    ALPHA    = %x41-5a / %x61-7a
    DIGIT    = %x30-39
@@ -318,18 +317,19 @@ Internet-Draft           Metadata Query Protocol           December 2013
    The particular extension to be used is named by the "extname" value.
    This value is case sensitive; "Example" and "example" would name
    different extensions.  Each extension may define its own additional
-   rules for the "extarg" and "extmore" components.
+   rules for the "extarg" component.
 
    A responder MUST return a 400 (bad request) status code if either of
    the following conditions hold:
 
-      An identifier starting with "{" does not match the "extid"
+   o  An identifier starting with "{" does not match the "extid"
       production.
 
-      Either the "extarg" or "extmore" components fail to meet the
-      requirements for the named extension.
+   o  The "extarg" component fails to meet the requirements for the
+      named extension.
 
-
+   A responder MUST return a 501 (not implemented) status code if the
+   "extname" value is not supported by the responder.
 
 
 
@@ -337,9 +337,6 @@ Young                     Expires June 30, 2014                 [Page 6]
 
 Internet-Draft           Metadata Query Protocol           December 2013
 
-
-   A responder MUST return a 501 (not implemented) status code if the
-   "extname" value is not supported by the responder.
 
 3.2.  Protocol
 
@@ -355,8 +352,7 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
    o  The string "entities/".
 
-   o  At least one URL-encoded identifier.  If more than one identifier
-      is present, they are separated by unencoded "+" characters.
+   o  A single URL-encoded identifier.
 
    For example, with a base URL of "http://example.org/mdq", a query for
    the identifier "foo" would be performed by an HTTP GET request to the
@@ -364,15 +360,10 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
    http://example.org/mdq/entities/foo
 
-   If more than one identifier is used the returned metadata MUST have
-   been labelled with each identifier.  That is to say a search with
-   multiple identifiers results in the intersection of the metadata that
-   would be retrieved by searching for each identifier individually.
-
 3.2.2.  Response
 
    The response to a metadata query request MUST be a document that
-   provides metadata for the given request identifiers in the format
+   provides metadata for the given request identifier in the format
    described by the request's Content-Type header.
 
    The responder is responsible for ensuring that the metadata returned
@@ -384,6 +375,15 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 3.2.3.  Example Request and Response
 
+   GET /service/entities/http%3A%2F%2Fexample.org%2Fidp HTTP/1.1
+   Host: metadata.example.org
+   Accept: application/samlmetadata+xml
+
+                      Example Metadata Query Request
+
+
+
+
 
 
 
@@ -393,12 +393,6 @@ Young                     Expires June 30, 2014                 [Page 7]
 
 Internet-Draft           Metadata Query Protocol           December 2013
 
-
-   GET /service/entities/http%3A%2F%2Fexample.org%2Fidp HTTP/1.1
-   Host: metadata.example.org
-   Accept: application/samlmetadata+xml
-
-                      Example Metadata Query Request
 
    HTTP/1.x 200 OK
    Content-Type: application/samlmetadata+xml
@@ -441,6 +435,12 @@ Internet-Draft           Metadata Query Protocol           December 2013
    recognition that some metadata documents can be quite large or
    fetched with relatively high frequency.
 
+   Requesters SHOULD support, and advertise support for, gzip
+   compression unless such usage would put exceptional demands on
+   constrained environments.  Responders MUST support gzip compression.
+   Requesters and responders MAY support other compression algorithms.
+
+5.  Protocol Extension Points
 
 
 
@@ -450,14 +450,19 @@ Young                     Expires June 30, 2014                 [Page 8]
 Internet-Draft           Metadata Query Protocol           December 2013
 
 
-   Requesters SHOULD support, and advertise support for, gzip
-   compression unless such usage would put exceptional demands on
-   constrained environments.  Responders MUST support gzip compression.
-   Requesters and responders MAY support other compression algorithms.
+   The Metadata Query Protocol is extensible using the following
+   protocol extension points:
 
-5.  Security Considerations
+   o  The "extension identifier" syntax described in the Identifiers
+      section above is intended for relatively simple extensions such as
+      transformed identifiers.
 
-5.1.  Integrity
+   o  More complex extensions may be implemented by defining additional
+      paths (other than "entities/") below the base URL.
+
+6.  Security Considerations
+
+6.1.  Integrity
 
    As metadata often contains information necessary for the secure
    operation of interacting services it is RECOMMENDED that some form of
@@ -465,7 +470,7 @@ Internet-Draft           Metadata Query Protocol           December 2013
    SSL/TLS at the transport layer, digital signatures present within the
    metadata document, or any other such mechanism.
 
-5.2.  Confidentiality
+6.2.  Confidentiality
 
    In many cases service metadata is public information and therefore
    confidentiality is not required.  In the cases where such
@@ -473,18 +478,18 @@ Internet-Draft           Metadata Query Protocol           December 2013
    and responder support SSL/TLS.  Other mechanisms, such as XML
    encryption, MAY also be supported.
 
-5.3.  Authentication
+6.3.  Authentication
 
    All responders which require client authentication to view retrieved
    information MUST support the use of HTTP basic authentication over
    SSL/TLS.  Responders SHOULD also support the use of X.509 client
    certificate authentication.
 
-6.  IANA Considerations
+7.  IANA Considerations
 
    This document has no actions for IANA.
 
-7.  Acknowledgements
+8.  Acknowledgements
 
    The editor would like to acknowledge the following individuals for
    their contributions to this document:
@@ -493,11 +498,6 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
       Leif Johansson (SUNET)
 
-      Thomas Lenggenhager (SWITCH)
-
-      Joe St Sauver (University of Oregon)
-
-      Tom Scavo (Internet2)
 
 
 
@@ -506,10 +506,16 @@ Young                     Expires June 30, 2014                 [Page 9]
 Internet-Draft           Metadata Query Protocol           December 2013
 
 
+      Thomas Lenggenhager (SWITCH)
+
+      Joe St Sauver (University of Oregon)
+
+      Tom Scavo (Internet2)
+
    Special acknowledgement is due to Chad LaJoie (Covisint) for his work
    in editing previous versions of this specification.
 
-8.  Normative References
+9.  Normative References
 
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
@@ -518,15 +524,17 @@ Internet-Draft           Metadata Query Protocol           December 2013
               Masinter, L., Leach, P., and T. Berners-Lee, "Hypertext
               Transfer Protocol -- HTTP/1.1", RFC 2616, June 1999.
 
-   [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
-              (SHA1)", RFC 3174, September 2001.
-
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234, January 2008.
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
 A.1.  Since draft-young-md-query-00
+
+   Split into two documents: this one is as agnostic as possible around
+   questions such as metadata format and higher level protocol use
+   cases, a new layered document describes the detailed requirements for
+   SAML support.
 
    Rewrite Section 3.2.1 to clarify construction of the request URL and
    its relationship to the base URL.
@@ -539,20 +547,12 @@ A.1.  Since draft-young-md-query-00
 
    Added Change Log modelled on draft-ietf-httpbis-http2.
 
-   Added a normative reference for SHA-1 [RFC3174].
-
    Added a reference to [STD68].  Use ABNF to describe request syntax.
-   Replace transformed identifier concept with extended identifiers.
-   Add grammar to distinguish basic from extended identifiers.
+   Replace transformed identifier concept with extended identifiers
+   (this also resulted in the removal of any discussion of specific
+   transformed identifier formats).  Add grammar to distinguish basic
+   from extended identifiers.
 
-   Change the required response when the result can not be validly
-   expressed in the requested format from 500 to 406.
-
-A.2.  Since draft-lajoie-md-query-01
-
-   Adopted as base for draft-young-md-query-00.
-
-   Updated author and list of contributors.
 
 
 
@@ -561,6 +561,21 @@ Young                     Expires June 30, 2014                [Page 10]
 
 Internet-Draft           Metadata Query Protocol           December 2013
 
+
+   Changed the required response when the result can not be validly
+   expressed in the requested format from 500 to 406.
+
+   Removed the '+' operator and all references to multiple identifiers
+   in queries.  If more complex queries are required, these will be
+   reintroduced at a different path under the base URL.
+
+   Added a section describing Protocol Extension Points.
+
+A.2.  Since draft-lajoie-md-query-01
+
+   Adopted as base for draft-young-md-query-00.
+
+   Updated author and list of contributors.
 
    Changed ipr from "pre5378Trust200902" to "trust200902", submission
    type from IETF to independent and category from experimental to
@@ -577,21 +592,6 @@ Author's Address
    Independent
 
    EMail: ian@iay.org.uk
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
