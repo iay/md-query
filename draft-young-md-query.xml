@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc compact="yes"?>
+<?rfc subcompact="no" ?>
+<?rfc linkmailto="no" ?>
+<?rfc editing="no" ?>
+<?rfc comments="yes" ?>
+<?rfc inline="yes"?>
+<?rfc rfcedstyle="yes"?>
+<?rfc-ext allow-markup-in-artwork="yes" ?>
+<?rfc-ext include-index="no" ?>
 
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
