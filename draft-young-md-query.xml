@@ -134,15 +134,15 @@
                 <t>
                     This protocol uses the following HTTP status codes:
                     <list>
-                        <t>200 - standard response code when returning requested metadata</t>
-                        <t>304 - response code indicating requested metadata has not been updated since the last request</t>
-                        <t>400 - response code indicating that the requester's request was malformed in some fashion</t>
-                        <t>401 - response code indicating the request must be authenticated before requesting metadata</t>
-                        <t>404 - indicates that the requested metadata could not be found; this MUST NOT be used in order to indicate a general service error.</t>
-                        <t>405 - response code indicating that a non-GET method was used</t>
-                        <t>406 - response code indicating that metadata is not available in the request content-type</t>
-                        <t>501 - response code indicating that a given extended identifier is not supported</t>
-                        <t>505 - response code indicating that HTTP/1.1 was not used</t>
+                        <t>200 "OK" - standard response code when returning requested metadata</t>
+                        <t>304 "Not Modified" - response code indicating requested metadata has not been updated since the last request</t>
+                        <t>400 "Bad Request" - response code indicating that the requester's request was malformed in some fashion</t>
+                        <t>401 "Unauthorized" - response code indicating the request must be authenticated before requesting metadata</t>
+                        <t>404 "Not Found" - indicates that the requested metadata could not be found; this MUST NOT be used in order to indicate a general service error.</t>
+                        <t>405 "Method Not Allowed" - response code indicating that a non-GET method was used</t>
+                        <t>406 "Not Acceptable" - response code indicating that metadata is not available in the request content-type</t>
+                        <t>501 "Not Implemented" - response code indicating that a given extended identifier is not supported</t>
+                        <t>505 "HTTP Version Not Supported" - response code indicating that HTTP/1.1 was not used</t>
                     </list>
                 </t>
             </section>
