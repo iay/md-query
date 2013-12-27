@@ -141,7 +141,6 @@
                         <t>404 - indicates that the requested metadata could not be found; this MUST NOT be used in order to indicate a general service error.</t>
                         <t>405 - response code indicating that a non-GET method was used</t>
                         <t>406 - response code indicating that metadata is not available in the request content-type</t>
-                        <t>500 - standard response code when something goes wrong within the responder</t>
                         <t>501 - response code indicating that a given extended identifier is not supported</t>
                         <t>505 - response code indicating that HTTP/1.1 was not used</t>
                     </list>
@@ -256,7 +255,16 @@ http://example.org/mdq/entities/foo
                 </section>
 
                 <section title="Response">
-                    <t>The response to a metadata query request MUST be a document that provides metadata for the given request identifiers in the format described by the request's Content-Type header.  Note, in the event that multiple identifiers were used in the request, it is the responder's responsibility to ensure that the metadata returned is valid.  If the responder can not create a valid document it MUST respond with a 500 status code.  An example of such an error would be the case where the result of the query is metadata for multiple entities but the request content type does not support returning multiple results in a single document.</t>
+                    <t>
+                        The response to a metadata query request MUST be a document that provides metadata for the given
+                        request identifiers in the format described by the request's Content-Type header.
+                    </t>
+                    <t>
+                        The responder is responsible for ensuring that the metadata returned is valid. If the responder can not
+                        create a valid document it MUST respond with a 406 status code.  An example of such an error would be
+                        the case where the result of the query is metadata for multiple entities but the request content type
+                        does not support returning multiple results in a single document.
+                    </t>
                 </section>
 
                 <section title="Example Request and Response">
@@ -449,6 +457,10 @@ Content-Length: 1234
                     Use ABNF to describe request syntax.
                     Replace transformed identifier concept with extended identifiers.
                     Add grammar to distinguish basic from extended identifiers.
+                </t>
+                <t>
+                    Change the required response when the result can not be validly expressed in the requested
+                    format from 500 to 406.
                 </t>
             </section>
 
