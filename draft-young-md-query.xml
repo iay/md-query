@@ -413,21 +413,6 @@ Content-Length: 1234
                 <format type='XML' octets='493420' target='http://xml.resource.org/public/rfc/xml/rfc2616.xml' />
             </reference>
 
-            <reference anchor='RFC3174'>
-                <front>
-                    <title>US Secure Hash Algorithm 1 (SHA1)</title>
-                    <author initials='D.' surname='Eastlake' fullname='D. Eastlake'>
-                        <organization/>
-                    </author>
-                    <author initials='P.' surname='Jones' fullname='P. Jones'>
-                        <organization/>
-                    </author>
-                    <date year='2001' month='September'/>
-                </front>
-                <seriesInfo name='RFC' value='3174'/>
-                <format type='TXT' octets='35525' target='ftp://ftp.isi.edu/in-notes/rfc3174.txt'/>
-            </reference>
-
             <reference anchor="STD68">
                 <front>
                     <title>Augmented BNF for Syntax Specifications: ABNF</title>
@@ -445,6 +430,11 @@ Content-Length: 1234
 
             <section title="Since draft-young-md-query-00" anchor="changes.since.draft-young-md-query-00">
                 <t>
+                    Split into two documents: this one is as agnostic as possible around questions such as
+                    metadata format and higher level protocol use cases, a new layered document describes the
+                    detailed requirements for SAML support.
+                </t>
+                <t>
                     Rewrite <xref target="protocol_request"/> to clarify construction of the request URL and its relationship
                     to the base URL.
                 </t>
@@ -459,12 +449,10 @@ Content-Length: 1234
                     Added Change Log modelled on draft-ietf-httpbis-http2.
                 </t>
                 <t>
-                    Added a normative reference for <xref target="RFC3174">SHA-1</xref>.
-                </t>
-                <t>
                     Added a reference to <xref target="STD68"/>.
                     Use ABNF to describe request syntax.
-                    Replace transformed identifier concept with extended identifiers.
+                    Replace transformed identifier concept with extended identifiers (this also resulted in the removal
+                    of any discussion of specific transformed identifier formats).
                     Add grammar to distinguish basic from extended identifiers.
                 </t>
                 <t>
