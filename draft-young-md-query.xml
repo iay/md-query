@@ -207,7 +207,7 @@ DIGIT    = %x30-39
                 <t>
                     A responder MUST return a 400 (bad request) status code if either of the following
                     conditions hold:
-                    <list>
+                    <list style="symbols">
                         <t>An identifier starting with "{" does not match the <spanx style="verb">extid</spanx> production.</t>
                         <t>
                             The <spanx style="verb">extarg</spanx>
@@ -305,7 +305,8 @@ Content-Length: 1234
                 The Metadata Query Protocol is extensible using the following protocol extension points:
                 <list style="symbols">
                     <t>
-                        The "extension identifier" syntax described in the <xref target="sec_identifiers" format="title"/> section above is intended for relatively simple extensions such as transformed identifiers.
+                        The "extension identifier" syntax described in the <xref target="sec_identifiers" format="title"/> section
+                        above is intended for relatively simple extensions such as transformed identifiers.
                     </t>
                     <t>
                         More complex extensions may be implemented by defining additional paths (other than "entities/") below the base URL.
