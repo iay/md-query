@@ -153,10 +153,11 @@
                 <t>As there may be many representations for a given piece of metadata, agent-driven content negotiation is used to ensure the proper representation is delivered to the requester. In addition to the required usage of the Accept header a responder SHOULD also support the use of the Accept-Charset header.</t>
             </section>
         </section>
+
         <section title="Metadata Query Protocol">
             <t>The metadata query protocol retrieves metadata based on a single "tag" or "keyword" identifier.  A request may return information for none, one, or a collection of entities.</t>
 
-            <section title="Identifiers">
+            <section title="Identifiers" anchor="sec_identifiers">
                 <t>
                     The query protocol uses identifiers to "tag" metadata for single- and multi-entity metadata collections.
                     The assignment of such identifiers to a particular metadata document is the responsibility of the query
@@ -285,6 +286,7 @@ Content-Length: 1234
                 </section>
             </section>
         </section>
+
         <section title="Efficient Retrieval and Caching">
             <section title="Conditional Retrieval">
                 <t>Upon a successful response the responder is required to return an ETag header and may return a Last-Modified header as well.  Requesters SHOULD use either or both, with the ETag being preferred, in any subsequent requests for the same resource.  In the event that a resource has not changed since the previous request, the requester will receive a 304 (Not Modified) status code as a response.</t>
@@ -296,6 +298,20 @@ Content-Length: 1234
                 <t>As should be apparent from the required request and response headers this protocol encourages the use of content compression.  This is in recognition that some metadata documents can be quite large or fetched with relatively high frequency.</t>
                 <t>Requesters SHOULD support, and advertise support for, gzip compression unless such usage would put exceptional demands on constrained environments. Responders MUST support gzip compression.  Requesters and responders MAY support other compression algorithms.</t>
             </section>
+        </section>
+
+        <section title="Protocol Extension Points" anchor="sec_protocol_extension_points">
+            <t>
+                The Metadata Query Protocol is extensible using the following protocol extension points:
+                <list style="symbols">
+                    <t>
+                        The "extension identifier" syntax described in the <xref target="sec_identifiers" format="title"/> section above is intended for relatively simple extensions such as transformed identifiers.
+                    </t>
+                    <t>
+                        More complex extensions may be implemented by defining additional paths (other than "entities/") below the base URL.
+                    </t>
+                </list>
+            </t>
         </section>
 
         <section title="Security Considerations" anchor="sec_cons">
@@ -333,6 +349,7 @@ Content-Length: 1234
         </section>
 
     </middle>
+
     <back>
         <references title="Normative References">
 
@@ -456,6 +473,9 @@ Content-Length: 1234
                 <t>
                     Removed the '+' operator and all references to multiple identifiers in queries. If more complex queries
                     are required, these will be reintroduced at a different path under the base URL.
+                </t>
+                <t>
+                    Added a section describing <xref target="sec_protocol_extension_points" format="title"/>.
                 </t>
             </section>
 
