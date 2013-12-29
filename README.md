@@ -7,15 +7,20 @@ and plain text forms.
 The specification is broken into two parts, one for the base protocol and one
 for a SAML-specific profile.
 
-The protocol document's current status in the IETF process can be viewed at
-[its tracker page](https://datatracker.ietf.org/doc/draft-young-md-query/).
+The current IETF process status for these documents can be viewed at
+their tracker pages:
+
+* Base protocol:
+[draft-young-md-query](https://datatracker.ietf.org/doc/draft-young-md-query/)
+
+* SAML profile:
+[draft-young-md-query-saml](http://datatracker.ietf.org/doc/draft-young-md-query-saml/)
+
 The editor's working copy may be fresher, but less stable, than the most
 recent formally submitted Internet Draft.
 
 Prior versions submitted as Internet Drafts are also archived in the `history`
 directory here for quick comparison between versions.
-
-The SAML profile document has not yet been submitted as an Internet Draft.
 
 ## Terminology
 
