@@ -75,5 +75,6 @@ XML.  Submission to the IETF datatracker requires the `.txt` version but I
 always supply the `.xml` as well.
 
 I'm using the included `Makefile` to build the HTML and text forms of the
-document.  This requires a locally installed copy of the [`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).  An
+document.  This requires a locally installed copy of version 2.x of the
+[`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).  An
 [online version](http://xml.resource.org) of `xml2rfc` is also available.
