@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                         December 29, 2013
-Expires: July 2, 2014
+Intended status: Informational                            March 26, 2014
+Expires: September 27, 2014
 
 
                         Metadata Query Protocol
@@ -33,11 +33,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 2, 2014.
+   This Internet-Draft will expire on September 27, 2014.
 
 Copyright Notice
 
-   Copyright (c) 2013 IETF Trust and the persons identified as the
+   Copyright (c) 2014 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young                     Expires July 2, 2014                  [Page 1]
+Young                  Expires September 27, 2014               [Page 1]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
 Table of Contents
@@ -98,9 +98,9 @@ Table of Contents
 1.  Introduction
 
    Many clients of web-based services are capable of consuming
-   descriptive metadata about a service in order to customize or
-   information the client's connection parameters.  While the form of
-   the metadata (e.g., JSON, XML) and content varies between services
+   descriptive metadata about a service in order to customize or obtain
+   information about the client's connection parameters.  While the form
+   of the metadata (e.g., JSON, XML) and content varies between services
    this document specifies a set of semantics for HTTP [RFC2616] that
    allow clients to rely on certain behavior.  The defined behavior is
    meant to make it easy for clients to perform queries, to be efficient
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                     Expires July 2, 2014                  [Page 2]
+Young                  Expires September 27, 2014               [Page 2]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
 1.1.  Notation and Conventions
@@ -165,9 +165,9 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 
 
-Young                     Expires July 2, 2014                  [Page 3]
+Young                  Expires September 27, 2014               [Page 3]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
    All metadata query requests MUST include the following HTTP headers:
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 
 
-Young                     Expires July 2, 2014                  [Page 4]
+Young                  Expires September 27, 2014               [Page 4]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
       400 "Bad Request" - response code indicating that the requester's
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 
 
-Young                     Expires July 2, 2014                  [Page 5]
+Young                  Expires September 27, 2014               [Page 5]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
 3.1.  Identifiers
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 
 
-Young                     Expires July 2, 2014                  [Page 6]
+Young                  Expires September 27, 2014               [Page 6]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
 3.2.  Protocol
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 
 
-Young                     Expires July 2, 2014                  [Page 7]
+Young                  Expires September 27, 2014               [Page 7]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
    HTTP/1.x 200 OK
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 
 
-Young                     Expires July 2, 2014                  [Page 8]
+Young                  Expires September 27, 2014               [Page 8]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
    The Metadata Query Protocol is extensible using the following
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol           December 2013
 
 
 
-Young                     Expires July 2, 2014                  [Page 9]
+Young                  Expires September 27, 2014               [Page 9]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
       Thomas Lenggenhager (SWITCH)
@@ -557,9 +557,9 @@ A.1.  Since draft-young-md-query-00
 
 
 
-Young                     Expires July 2, 2014                 [Page 10]
+Young                  Expires September 27, 2014              [Page 10]
 
-Internet-Draft           Metadata Query Protocol           December 2013
+Internet-Draft           Metadata Query Protocol              March 2014
 
 
    Changed the required response when the result can not be validly
@@ -613,4 +613,4 @@ Author's Address
 
 
 
-Young                     Expires July 2, 2014                 [Page 11]
+Young                  Expires September 27, 2014              [Page 11]
