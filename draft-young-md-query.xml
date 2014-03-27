@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-01" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-02" submissionType="independent" category="info">
     <front>
         <title>Metadata Query Protocol</title>
 
@@ -495,14 +495,17 @@ Content-Length: 1234
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
+            <section title="Since draft-young-md-query-01" anchor="changes.since.draft-young-md-query-01">
+                <t>
+                    Added REFEDS RFC stream boilerplate.
+                </t>
+            </section>
+
             <section title="Since draft-young-md-query-00" anchor="changes.since.draft-young-md-query-00">
                 <t>
                     Split into two documents: this one is as agnostic as possible around questions such as
                     metadata format and higher level protocol use cases, a new layered document describes the
                     detailed requirements for SAML support.
-                </t>
-                <t>
-                    Added REFEDS RFC stream boilerplate.
                 </t>
                 <t>
                     Rewrite <xref target="protocol_request"/> to clarify construction of the request URL and its relationship

@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-saml-00" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-saml-01" submissionType="independent" category="info">
     <front>
         <title>SAML Profile for the Metadata Query Protocol</title>
 
@@ -386,6 +386,9 @@ sha1hex  = 40*HEXDIGIT
         </references>
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+            <section title="Since draft-young-md-query-saml-00" anchor="changes.since.draft-young-md-query-saml-00">
+            </section>
 
             <section title="draft-young-md-query-saml-00">
                 <t>

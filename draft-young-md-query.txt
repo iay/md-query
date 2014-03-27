@@ -9,7 +9,7 @@ Expires: September 28, 2014
 
 
                         Metadata Query Protocol
-                        draft-young-md-query-01
+                        draft-young-md-query-02
 
 Abstract
 
@@ -94,8 +94,9 @@ Table of Contents
      9.2.  Informative References  . . . . . . . . . . . . . . . . .  11
    Appendix A.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .  12
-     A.1.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  12
-     A.2.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  12
+     A.1.  Since draft-young-md-query-01 . . . . . . . . . . . . . .  12
+     A.2.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  12
+     A.3.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  12
 
 1.  Introduction
 
@@ -105,7 +106,6 @@ Table of Contents
    of the metadata (e.g., JSON, XML) and content varies between services
    this document specifies a set of semantics for HTTP [RFC2616] that
    allow clients to rely on certain behavior.  The defined behavior is
-   meant to make it easy for clients to perform queries, to be efficient
 
 
 
@@ -114,6 +114,7 @@ Young                  Expires September 28, 2014               [Page 2]
 Internet-Draft           Metadata Query Protocol              March 2014
 
 
+   meant to make it easy for clients to perform queries, to be efficient
    for both requesters and responders, and to allow the responder to
    scale in various ways.
 
@@ -161,7 +162,6 @@ Internet-Draft           Metadata Query Protocol              March 2014
    The metadata query protocol makes use of the HTTP protocol to
    transmit requests and responses.  The underlying HTTP connection may
    make use of any appropriate transport protocol.  In particular, the
-   HTTP connection MAY make use of either TCP or SSL/TLS at the
 
 
 
@@ -170,6 +170,7 @@ Young                  Expires September 28, 2014               [Page 3]
 Internet-Draft           Metadata Query Protocol              March 2014
 
 
+   HTTP connection MAY make use of either TCP or SSL/TLS at the
    transport layer.  See the Security Considerations section for
    guidance in choosing an appropriate transport protocol.
 
@@ -216,7 +217,6 @@ Internet-Draft           Metadata Query Protocol              March 2014
       Content-Type
 
       ETag
-
 
 
 
@@ -620,14 +620,16 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
-A.1.  Since draft-young-md-query-00
+A.1.  Since draft-young-md-query-01
+
+   Added REFEDS RFC stream boilerplate.
+
+A.2.  Since draft-young-md-query-00
 
    Split into two documents: this one is as agnostic as possible around
    questions such as metadata format and higher level protocol use
    cases, a new layered document describes the detailed requirements for
    SAML support.
-
-   Added REFEDS RFC stream boilerplate.
 
    Rewrite Section 3.2.1 to clarify construction of the request URL and
    its relationship to the base URL.
@@ -655,7 +657,7 @@ A.1.  Since draft-young-md-query-00
 
    Added a section describing Protocol Extension Points.
 
-A.2.  Since draft-lajoie-md-query-01
+A.3.  Since draft-lajoie-md-query-01
 
    Adopted as base for draft-young-md-query-00.
 
@@ -665,14 +667,14 @@ A.2.  Since draft-lajoie-md-query-01
    type from IETF to independent and category from experimental to
    informational.
 
-   Added empty IANA considerations section.
-
 
 
 Young                  Expires September 28, 2014              [Page 12]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
+
+   Added empty IANA considerations section.
 
    Minor typographical nits but (intentionally) no substantive content
    changes.
@@ -683,8 +685,6 @@ Author's Address
    Independent
 
    EMail: ian@iay.org.uk
-
-
 
 
 
