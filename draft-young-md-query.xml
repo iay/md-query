@@ -38,6 +38,9 @@
                 The goal of the protocol is to profile various aspects of HTTP to allow requesters to rely on
                 certain, rigorously defined, behaviour.
             </t>
+            <t>
+                This document is a product of the Research and Education Federations (REFEDS) Working Group process.
+            </t>
         </abstract>
     </front>
 
@@ -50,6 +53,24 @@
                 semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.
                 The defined behavior is meant to make it easy for clients to perform queries, to be efficient for
                 both requesters and responders, and to allow the responder to scale in various ways.
+            </t>
+            <t>
+                The Research and Education Federations group (<xref target="REFEDS"/>)
+                is the voice that articulates the mutual needs of research and education
+                identity federations worldwide. It aims to represent the requirements of
+                research and education in the ever-growing space of access and identity
+                management.
+            </t>
+            <t>
+                From time to time REFEDS
+                will wish to publish a document in the Internet RFC series.  Such
+                documents will be published as part of the RFC Independent Submission
+                Stream <xref target="RFC4844"/>; however the REFEDS working group sign-off process will
+                have been followed for these documents, as described in
+                the <xref target="REFEDS.agreement">REFEDS Participant's Agreement</xref>.
+            </t>
+            <t>
+                This document is a product of the REFEDS Working Group process.
             </t>
 
             <section title="Notation and Conventions">
@@ -433,6 +454,45 @@ Content-Length: 1234
 
         </references>
 
+        <references title="Informative References">
+
+            <reference anchor='RFC4844'>
+                <front>
+                    <title>The RFC Series and RFC Editor</title>
+                    <author initials='L.' surname='Daigle' fullname='L. Daigle'>
+                        <organization />
+                    </author>
+                    <author>
+                        <organization>Internet Architecture Board</organization>
+                    </author>
+                    <date year='2007' month='July' />
+                </front>
+                <seriesInfo name='RFC' value='4844' />
+                <format type='TXT' octets='38752' target='http://www.rfc-editor.org/rfc/rfc4844.txt' />
+            </reference>
+
+            <reference anchor="REFEDS" target="http://www.refeds.org/">
+                <front>
+                    <title>REFEDS Home Page</title>
+                    <author>
+                        <organization>Research and Education Federations</organization>
+                    </author>
+                    <date/>
+                </front>
+            </reference>
+
+            <reference anchor="REFEDS.agreement" target="https://refeds.org/about/about_agreement.html">
+                <front>
+                    <title>REFEDS Participant's Agreement</title>
+                    <author>
+                        <organization>Research and Education Federations</organization>
+                    </author>
+                    <date/>
+                </front>
+            </reference>
+
+        </references>
+
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
             <section title="Since draft-young-md-query-00" anchor="changes.since.draft-young-md-query-00">
@@ -440,6 +500,9 @@ Content-Length: 1234
                     Split into two documents: this one is as agnostic as possible around questions such as
                     metadata format and higher level protocol use cases, a new layered document describes the
                     detailed requirements for SAML support.
+                </t>
+                <t>
+                    Added REFEDS RFC stream boilerplate.
                 </t>
                 <t>
                     Rewrite <xref target="protocol_request"/> to clarify construction of the request URL and its relationship
