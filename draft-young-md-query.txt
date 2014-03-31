@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            March 27, 2014
-Expires: September 28, 2014
+Intended status: Informational                            March 31, 2014
+Expires: October 2, 2014
 
 
                         Metadata Query Protocol
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 28, 2014.
+   This Internet-Draft will expire on October 2, 2014.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Young                  Expires September 28, 2014               [Page 1]
+Young                    Expires October 2, 2014                [Page 1]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Young                  Expires September 28, 2014               [Page 2]
+Young                    Expires October 2, 2014                [Page 2]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -160,12 +160,12 @@ Internet-Draft           Metadata Query Protocol              March 2014
 2.1.  Transport Protocol
 
    The metadata query protocol makes use of the HTTP protocol to
-   transmit requests and responses.  The underlying HTTP connection may
+   transmit requests and responses.  The underlying HTTP connection MAY
    make use of any appropriate transport protocol.  In particular, the
 
 
 
-Young                  Expires September 28, 2014               [Page 3]
+Young                    Expires October 2, 2014                [Page 3]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -221,7 +221,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                  Expires September 28, 2014               [Page 4]
+Young                    Expires October 2, 2014                [Page 4]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -277,7 +277,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                  Expires September 28, 2014               [Page 5]
+Young                    Expires October 2, 2014                [Page 5]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -297,7 +297,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 3.  Metadata Query Protocol
 
    The metadata query protocol retrieves metadata based on a single
-   "tag" or "keyword" identifier.  A request may return information for
+   "tag" or "keyword" identifier.  A request returns information for
    none, one, or a collection of entities.
 
 3.1.  Identifiers
@@ -333,7 +333,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                  Expires September 28, 2014               [Page 6]
+Young                    Expires October 2, 2014                [Page 6]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -389,7 +389,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                  Expires September 28, 2014               [Page 7]
+Young                    Expires October 2, 2014                [Page 7]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -432,12 +432,12 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 4.1.  Conditional Retrieval
 
-   Upon a successful response the responder is required to return an
-   ETag header and may return a Last-Modified header as well.
-   Requesters SHOULD use either or both, with the ETag being preferred,
-   in any subsequent requests for the same resource.  In the event that
-   a resource has not changed since the previous request, the requester
-   will receive a 304 (Not Modified) status code as a response.
+   Upon a successful response the responder MUST return an ETag header
+   and MAY return a Last-Modified header as well.  Requesters SHOULD use
+   either or both, with the ETag being preferred, in any subsequent
+   requests for the same resource.  In the event that a resource has not
+   changed since the previous request, the requester will receive a 304
+   (Not Modified) status code as a response.
 
 
 
@@ -445,7 +445,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                  Expires September 28, 2014               [Page 8]
+Young                    Expires October 2, 2014                [Page 8]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -501,7 +501,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                  Expires September 28, 2014               [Page 9]
+Young                    Expires October 2, 2014                [Page 9]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -557,7 +557,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                  Expires September 28, 2014              [Page 10]
+Young                    Expires October 2, 2014               [Page 10]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -613,7 +613,7 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                  Expires September 28, 2014              [Page 11]
+Young                    Expires October 2, 2014               [Page 11]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
@@ -623,6 +623,8 @@ Appendix A.  Change Log (to be removed by RFC Editor before publication)
 A.1.  Since draft-young-md-query-01
 
    Added REFEDS RFC stream boilerplate.
+
+   Tidied up some normative language.
 
 A.2.  Since draft-young-md-query-00
 
@@ -663,16 +665,18 @@ A.3.  Since draft-lajoie-md-query-01
 
    Updated author and list of contributors.
 
-   Changed ipr from "pre5378Trust200902" to "trust200902", submission
-   type from IETF to independent and category from experimental to
-   informational.
 
 
 
-Young                  Expires September 28, 2014              [Page 12]
+
+Young                    Expires October 2, 2014               [Page 12]
 
 Internet-Draft           Metadata Query Protocol              March 2014
 
+
+   Changed ipr from "pre5378Trust200902" to "trust200902", submission
+   type from IETF to independent and category from experimental to
+   informational.
 
    Added empty IANA considerations section.
 
@@ -721,8 +725,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                  Expires September 28, 2014              [Page 13]
+Young                    Expires October 2, 2014               [Page 13]

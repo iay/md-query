@@ -99,7 +99,7 @@
             <section title="Transport Protocol" anchor="transport_protocol">
                 <t>
                     The metadata query protocol makes use of the HTTP protocol to transmit requests and responses.
-                    The underlying HTTP connection may make use of any appropriate transport protocol.
+                    The underlying HTTP connection MAY make use of any appropriate transport protocol.
                     In particular, the HTTP connection MAY make use of either TCP or SSL/TLS at the transport layer.
                     See the <xref target="sec_cons" format="title"/> section for guidance in choosing an
                     appropriate transport protocol.
@@ -183,7 +183,10 @@
         </section>
 
         <section title="Metadata Query Protocol">
-            <t>The metadata query protocol retrieves metadata based on a single "tag" or "keyword" identifier.  A request may return information for none, one, or a collection of entities.</t>
+            <t>
+                The metadata query protocol retrieves metadata based on a single "tag" or "keyword" identifier.
+                A request returns information for none, one, or a collection of entities.
+            </t>
 
             <section title="Identifiers" anchor="sec_identifiers">
                 <t>
@@ -316,9 +319,16 @@ Content-Length: 1234
         </section>
 
         <section title="Efficient Retrieval and Caching">
+
             <section title="Conditional Retrieval">
-                <t>Upon a successful response the responder is required to return an ETag header and may return a Last-Modified header as well.  Requesters SHOULD use either or both, with the ETag being preferred, in any subsequent requests for the same resource.  In the event that a resource has not changed since the previous request, the requester will receive a 304 (Not Modified) status code as a response.</t>
+                <t>
+                    Upon a successful response the responder MUST return an ETag header and MAY return a Last-Modified header as well.
+                    Requesters SHOULD use either or both, with the ETag being preferred, in any subsequent requests for the same resource.
+                    In the event that a resource has not changed since the previous request, the requester will receive
+                    a 304 (Not Modified) status code as a response.
+                </t>
             </section>
+
             <section title="Content Caching">
                 <t>Responders SHOULD include cache control information with successful (200 status code) responses, assuming the responder knows when retrieved metadata is meant to expire.  The responder should also include cache control information with 404 Not Found responses.  This allows the requester to create and maintain a negative-response cache.  When cache controls are used only the 'max-age' directive SHOULD be used.</t>
             </section>
@@ -498,6 +508,9 @@ Content-Length: 1234
             <section title="Since draft-young-md-query-01" anchor="changes.since.draft-young-md-query-01">
                 <t>
                     Added REFEDS RFC stream boilerplate.
+                </t>
+                <t>
+                    Tidied up some normative language.
                 </t>
             </section>
 
