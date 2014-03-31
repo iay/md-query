@@ -36,6 +36,9 @@
                 This document profiles the <xref target="I-D.young-md-query">Metadata Query Protocol</xref> for use
                 with <xref target="SAML2Meta">SAML metadata</xref>.
             </t>
+            <t>
+                This document is a product of the Research and Education Federations (REFEDS) Working Group process.
+            </t>
         </abstract>
     </front>
 
@@ -45,6 +48,24 @@
             <t>
                 This document profiles the <xref target="I-D.young-md-query">Metadata Query Protocol</xref> for use
                 with <xref target="SAML2Meta">SAML metadata</xref>.
+            </t>
+            <t>
+                The Research and Education Federations group (<xref target="REFEDS"/>)
+                is the voice that articulates the mutual needs of research and education
+                identity federations worldwide. It aims to represent the requirements of
+                research and education in the ever-growing space of access and identity
+                management.
+            </t>
+            <t>
+                From time to time REFEDS
+                will wish to publish a document in the Internet RFC series.  Such
+                documents will be published as part of the RFC Independent Submission
+                Stream <xref target="RFC4844"/>; however the REFEDS working group sign-off process will
+                have been followed for these documents, as described in
+                the <xref target="REFEDS.agreement">REFEDS Participant's Agreement</xref>.
+            </t>
+            <t>
+                This document is a product of the REFEDS Working Group process.
             </t>
 
             <section title="Notation and Conventions">
@@ -349,6 +370,41 @@ sha1hex  = 40*HEXDIGIT
 
         <references title="Informative References">
 
+            <reference anchor='RFC4844'>
+                <front>
+                    <title>The RFC Series and RFC Editor</title>
+                    <author initials='L.' surname='Daigle' fullname='L. Daigle'>
+                        <organization />
+                    </author>
+                    <author>
+                        <organization>Internet Architecture Board</organization>
+                    </author>
+                    <date year='2007' month='July' />
+                </front>
+                <seriesInfo name='RFC' value='4844' />
+                <format type='TXT' octets='38752' target='http://www.rfc-editor.org/rfc/rfc4844.txt' />
+            </reference>
+
+            <reference anchor="REFEDS" target="http://www.refeds.org/">
+                <front>
+                    <title>REFEDS Home Page</title>
+                    <author>
+                        <organization>Research and Education Federations</organization>
+                    </author>
+                    <date/>
+                </front>
+            </reference>
+
+            <reference anchor="REFEDS.agreement" target="https://refeds.org/about/about_agreement.html">
+                <front>
+                    <title>REFEDS Participant's Agreement</title>
+                    <author>
+                        <organization>Research and Education Federations</organization>
+                    </author>
+                    <date/>
+                </front>
+            </reference>
+
             <reference anchor="SAML2Core"
                     target="http://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">
                 <front>
@@ -388,6 +444,9 @@ sha1hex  = 40*HEXDIGIT
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
             <section title="Since draft-young-md-query-saml-00" anchor="changes.since.draft-young-md-query-saml-00">
+                <t>
+                    Added REFEDS RFC stream boilerplate.
+                </t>
             </section>
 
             <section title="draft-young-md-query-saml-00">
