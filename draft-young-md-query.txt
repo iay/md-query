@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            March 31, 2014
-Expires: October 2, 2014
+Intended status: Informational                            April 22, 2014
+Expires: October 24, 2014
 
 
                         Metadata Query Protocol
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 2, 2014.
+   This Internet-Draft will expire on October 24, 2014.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young                    Expires October 2, 2014                [Page 1]
+Young                   Expires October 24, 2014                [Page 1]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                    Expires October 2, 2014                [Page 2]
+Young                   Expires October 24, 2014                [Page 2]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
    meant to make it easy for clients to perform queries, to be efficient
@@ -165,9 +165,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 3]
+Young                   Expires October 24, 2014                [Page 3]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
    HTTP connection MAY make use of either TCP or SSL/TLS at the
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 4]
+Young                   Expires October 24, 2014                [Page 4]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
    All metadata retrieval responses SHOULD include the following
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 5]
+Young                   Expires October 24, 2014                [Page 5]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
    include a port as well as a path.  It MUST NOT include URL fragments.
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 6]
+Young                   Expires October 24, 2014                [Page 6]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
    extid    = "{" extname "}" extarg
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 7]
+Young                   Expires October 24, 2014                [Page 7]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
 3.2.2.  Response
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 8]
+Young                   Expires October 24, 2014                [Page 8]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
 4.2.  Content Caching
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 9]
+Young                   Expires October 24, 2014                [Page 9]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
 6.2.  Confidentiality
@@ -557,9 +557,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014               [Page 10]
+Young                   Expires October 24, 2014               [Page 10]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
@@ -613,9 +613,9 @@ Internet-Draft           Metadata Query Protocol              March 2014
 
 
 
-Young                    Expires October 2, 2014               [Page 11]
+Young                   Expires October 24, 2014               [Page 11]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -669,9 +669,9 @@ A.3.  Since draft-lajoie-md-query-01
 
 
 
-Young                    Expires October 2, 2014               [Page 12]
+Young                   Expires October 24, 2014               [Page 12]
 
-Internet-Draft           Metadata Query Protocol              March 2014
+Internet-Draft           Metadata Query Protocol              April 2014
 
 
    Changed ipr from "pre5378Trust200902" to "trust200902", submission
@@ -725,4 +725,4 @@ Author's Address
 
 
 
-Young                    Expires October 2, 2014               [Page 13]
+Young                   Expires October 24, 2014               [Page 13]

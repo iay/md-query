@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            March 31, 2014
-Expires: October 2, 2014
+Intended status: Informational                            April 22, 2014
+Expires: October 24, 2014
 
 
               SAML Profile for the Metadata Query Protocol
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 2, 2014.
+   This Internet-Draft will expire on October 24, 2014.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young                    Expires October 2, 2014                [Page 1]
+Young                   Expires October 24, 2014                [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2014
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                    Expires October 2, 2014                [Page 2]
+Young                   Expires October 24, 2014                [Page 2]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2014
 
 
 1.1.  Notation and Conventions
@@ -165,9 +165,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 3]
+Young                   Expires October 24, 2014                [Page 3]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2014
 
 
    In the above, the "sha1hex" component encodes the 20-octet (160-bit)
@@ -221,9 +221,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 4]
+Young                   Expires October 24, 2014                [Page 4]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2014
 
 
    children.  Responses MUST NOT contain nested "EntitiesDescriptor"
@@ -277,9 +277,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 5]
+Young                   Expires October 24, 2014                [Page 5]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2014
 
 
    Implementations may guard against this possibility by treating two
@@ -333,9 +333,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 6]
+Young                   Expires October 24, 2014                [Page 6]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2014
 
 
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
@@ -389,9 +389,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
 
 
 
-Young                    Expires October 2, 2014                [Page 7]
+Young                   Expires October 24, 2014                [Page 7]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    March 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2014
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -445,4 +445,4 @@ Author's Address
 
 
 
-Young                    Expires October 2, 2014                [Page 8]
+Young                   Expires October 24, 2014                [Page 8]
