@@ -174,9 +174,22 @@
                     </list>
                 </t>
             </section>
-            <section title="Base URL">
-                <t>Requests defined in this document are performed by issuing an HTTP GET request to a particular URL. The final component of the path to which requests are issued is defined by the requests specified within this document. A base URL precedes such paths. Such a base URL MUST contain at least the scheme and host name components. It MAY also include a port as well as a path. It MUST NOT include URL fragments. If a path is included the path required by the particular defined request is appended to the path in the base URL.</t>
+
+            <section title="Base URL" anchor="base.url">
+                <t>
+                    Requests defined in this document are performed by issuing an HTTP GET request to a
+                    particular URL (<xref target="STD66"/>).
+                    The final component of the path to which requests are issued is defined
+                    by the requests specified within this document.
+                    A base URL precedes such paths. Such a base URL:
+                    <list style="symbols">
+                        <t>MUST contain the scheme and authority components.</t>
+                        <t>MUST contain a path component ending with a slash ('/') character.</t>
+                        <t>MUST NOT include URL fragments.</t>
+                    </list>
+                </t>
             </section>
+
             <section title="Content Negotiation">
                 <t>As there may be many representations for a given piece of metadata, agent-driven content negotiation is used to ensure the proper representation is delivered to the requester. In addition to the required usage of the Accept header a responder SHOULD also support the use of the Accept-Charset header.</t>
             </section>
@@ -260,7 +273,6 @@ DIGIT    = %x30-39
                         of the following components:
                         <list style="symbols">
                             <t>The responder's base URL.</t>
-                            <t>A single "/" character, unless the base URL already ends in a "/".</t>
                             <t>The string "entities/".</t>
                             <t>A single URL-encoded identifier.</t>
                         </list>
@@ -451,6 +463,19 @@ Content-Length: 1234
                 <format type='XML' octets='493420' target='http://xml.resource.org/public/rfc/xml/rfc2616.xml' />
             </reference>
 
+            <reference anchor="STD66">
+                <front>
+                    <title abbrev="URI Generic Syntax">Uniform Resource Identifier (URI): Generic
+                        Syntax</title>
+                    <author initials="T." surname="Berners-Lee" fullname="Tim Berners-Lee"></author>
+                    <author initials="R." surname="Fielding" fullname="Roy T. Fielding"></author>
+                    <author initials="L." surname="Masinter" fullname="Larry Masinter"></author>
+                    <date year="2005" month="January" />
+                </front>
+                <seriesInfo name="STD" value="66" />
+                <seriesInfo name="RFC" value="3986" />
+            </reference>
+
             <reference anchor="STD68">
                 <front>
                     <title>Augmented BNF for Syntax Specifications: ABNF</title>
@@ -506,6 +531,13 @@ Content-Length: 1234
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
             <section title="Since draft-young-md-query-02" anchor="changes.since.draft-young-md-query-02">
+                <t>
+                    Introduced a normative reference to <xref target="STD66"/>.
+                </t>
+                <t>
+                    Rework the definition of the base URL so that a non-empty path ending with '/'
+                    is required. This allows the definition of request URLs to be simplified.
+                </t>
             </section>
 
             <section title="Since draft-young-md-query-01" anchor="changes.since.draft-young-md-query-01">
