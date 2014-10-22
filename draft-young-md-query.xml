@@ -305,6 +305,9 @@ http://example.org/mdq/entities/foo
 
                 <section title="Example Request and Response" anchor="query.example">
                     <t>
+                        The following example demonstrates a metadata query request using a base URL
+                        of <spanx style="verb">http://metadata.exampl.org/service/</spanx> and the
+                        identifier <spanx style="verb">http://example.org/idp</spanx>.
                         <figure title="Example Metadata Query Request">
                             <artwork><![CDATA[
 GET /service/entities/http%3A%2F%2Fexample.org%2Fidp HTTP/1.1
@@ -545,7 +548,8 @@ Content-Length: 1234
                 </t>
                 <t>
                     Corrected an example in <xref target="query.example"/> to include the
-                    required double quotes in the value of an ETag header.
+                    required double quotes in the value of an ETag header. Added text to clarify
+                    the base URL and identifier being used in the example.
                 </t>
             </section>
 
