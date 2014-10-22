@@ -185,7 +185,8 @@
                     <list style="symbols">
                         <t>MUST contain the scheme and authority components.</t>
                         <t>MUST contain a path component ending with a slash ('/') character.</t>
-                        <t>MUST NOT include URL fragments.</t>
+                        <t>MUST NOT include a query component.</t>
+                        <t>MUST NOT include a fragment identifier component.</t>
                     </list>
                 </t>
             </section>
@@ -535,8 +536,12 @@ Content-Length: 1234
                     Introduced a normative reference to <xref target="STD66"/>.
                 </t>
                 <t>
-                    Rework the definition of the base URL so that a non-empty path ending with '/'
+                    Reworked the definition of the base URL so that a non-empty path ending with '/'
                     is required. This allows the definition of request URLs to be simplified.
+                </t>
+                <t>
+                    Clarified the definition of the base URL to exclude a query component; corrected
+                    the terminology for the fragment identifier component.
                 </t>
             </section>
 
