@@ -303,7 +303,7 @@ http://example.org/mdq/entities/foo
                     </t>
                 </section>
 
-                <section title="Example Request and Response">
+                <section title="Example Request and Response" anchor="query.example">
                     <t>
                         <figure title="Example Metadata Query Request">
                             <artwork><![CDATA[
@@ -316,7 +316,7 @@ Accept: application/samlmetadata+xml
                             <artwork><![CDATA[
 HTTP/1.x 200 OK
 Content-Type: application/samlmetadata+xml
-ETag: abcdefg
+ETag: "abcdefg"
 Last-Modified: Thu, 15 Apr 2010 12:45:26 GMT
 Content-Length: 1234
 
@@ -542,6 +542,10 @@ Content-Length: 1234
                 <t>
                     Clarified the definition of the base URL to exclude a query component; corrected
                     the terminology for the fragment identifier component.
+                </t>
+                <t>
+                    Corrected an example in <xref target="query.example"/> to include the
+                    required double quotes in the value of an ETag header.
                 </t>
             </section>
 
