@@ -142,7 +142,7 @@
             </section>
             <section title="Response Headers">
                 <t>
-                    All successful metadata query responses (even those that return no results) MUST include the following headers: 
+                    All successful metadata query responses (even those that return no results) MUST include the following headers:
                     <list>
                         <t>Content-Encoding - required if, and only if, content is compressed</t>
                         <t>Content-Type</t>
@@ -196,9 +196,11 @@
             </section>
         </section>
 
-        <section title="Metadata Query Protocol">
+        <section title="Metadata Query Protocol" anchor="protocol">
             <t>
-                The metadata query protocol retrieves metadata based on a single "tag" or "keyword" identifier.
+                The metadata query protocol retrieves metadata
+                either for all entities known to the responder or for a named collection
+                based on a single "tag" or "keyword" identifier.
                 A request returns information for none, one, or a collection of entities.
             </t>
 
@@ -268,9 +270,10 @@ DIGIT    = %x30-39
 
             <section title="Protocol">
 
-                <section title="Request" anchor="protocol_request">
+                <section title="Request by Identifier" anchor="protocol.request.identifier">
                     <t>
-                        A metadata query request is performed by issuing an HTTP GET request to a URL constructed as the concatenation
+                        A metadata query request for all entities tagged with a particular identifier is
+                        performed by issuing an HTTP GET request to a URL constructed as the concatenation
                         of the following components:
                         <list style="symbols">
                             <t>The responder's base URL.</t>
@@ -279,7 +282,7 @@ DIGIT    = %x30-39
                         </list>
                     </t>
                     <t>
-                        For example, with a base URL of <spanx style="verb">http://example.org/mdq</spanx>, a query for the
+                        For example, with a base URL of <spanx style="verb">http://example.org/mdq/</spanx>, a query for the
                         identifier <spanx style="verb">foo</spanx> would be performed by an HTTP GET request to the
                         following URL:
                     </t>
@@ -290,10 +293,32 @@ http://example.org/mdq/entities/foo
                     </figure>
                 </section>
 
+                <section title="Request All Entities" anchor="protocol.request.all">
+                    <t>
+                        A metadata query request for all entities known to the responder is performed by
+                        issuing an HTTP GET request to a URL constructed as the concatenation of the
+                        following components:
+                        <list style="symbols">
+                            <t>The responder's base URL.</t>
+                            <t>The string "entities".</t>
+                        </list>
+                    </t>
+                    <t>
+                        For example, with a base URL of <spanx style="verb">http://example.org/mdq/</spanx>, a query for
+                        all entities would be performed by an HTTP GET request to the
+                        following URL:
+                    </t>
+                    <figure>
+                        <artwork><![CDATA[
+http://example.org/mdq/entities
+                        ]]></artwork>
+                    </figure>
+                </section>
+
                 <section title="Response">
                     <t>
                         The response to a metadata query request MUST be a document that provides metadata for the given
-                        request identifier in the format described by the request's Content-Type header.
+                        request in the format described by the request's Content-Type header.
                     </t>
                     <t>
                         The responder is responsible for ensuring that the metadata returned is valid. If the responder can not
@@ -547,6 +572,10 @@ Content-Length: 1234
                     the terminology for the fragment identifier component.
                 </t>
                 <t>
+                    Added the definition for the query for all entities in
+                    <xref target="protocol.request.all"/>.
+                </t>
+                <t>
                     Corrected an example in <xref target="query.example"/> to include the
                     required double quotes in the value of an ETag header. Added text to clarify
                     the base URL and identifier being used in the example.
@@ -569,8 +598,8 @@ Content-Length: 1234
                     detailed requirements for SAML support.
                 </t>
                 <t>
-                    Rewrite <xref target="protocol_request"/> to clarify construction of the request URL and its relationship
-                    to the base URL.
+                    Rewrite <xref target="protocol.request.identifier"/> to clarify construction of the
+                    request URL and its relationship to the base URL.
                 </t>
                 <t>
                     Added <xref target="transport_protocol"/> to clarify that the transport protocol underlying HTTP
