@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-02" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-03" submissionType="independent" category="info">
     <front>
         <title>Metadata Query Protocol</title>
 
@@ -504,6 +504,9 @@ Content-Length: 1234
         </references>
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+            <section title="Since draft-young-md-query-02" anchor="changes.since.draft-young-md-query-02">
+            </section>
 
             <section title="Since draft-young-md-query-01" anchor="changes.since.draft-young-md-query-01">
                 <t>
