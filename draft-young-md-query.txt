@@ -9,7 +9,7 @@ Expires: April 26, 2015
 
 
                         Metadata Query Protocol
-                        draft-young-md-query-03
+                        draft-young-md-query-04
 
 Abstract
 
@@ -95,17 +95,17 @@ Table of Contents
      9.2.  Informative References  . . . . . . . . . . . . . . . . .  10
    Appendix A.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .  12
-     A.1.  Since draft-young-md-query-02 . . . . . . . . . . . . . .  12
-     A.2.  Since draft-young-md-query-01 . . . . . . . . . . . . . .  12
-     A.3.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  12
-     A.4.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  13
+     A.1.  Since draft-young-md-query-03 . . . . . . . . . . . . . .  12
+     A.2.  Since draft-young-md-query-02 . . . . . . . . . . . . . .  12
+     A.3.  Since draft-young-md-query-01 . . . . . . . . . . . . . .  12
+     A.4.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  12
+     A.5.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  13
 
 1.  Introduction
 
    Many clients of web-based services are capable of consuming
    descriptive metadata about a service in order to customize or obtain
    information about the client's connection parameters.  While the form
-   of the metadata (e.g., JSON, XML) and content varies between services
 
 
 
@@ -114,6 +114,7 @@ Young                    Expires April 26, 2015                 [Page 2]
 Internet-Draft           Metadata Query Protocol            October 2014
 
 
+   of the metadata (e.g., JSON, XML) and content varies between services
    this document specifies a set of semantics for HTTP [RFC2616] that
    allow clients to rely on certain behavior.  The defined behavior is
    meant to make it easy for clients to perform queries, to be efficient
@@ -158,7 +159,6 @@ Internet-Draft           Metadata Query Protocol            October 2014
    The metadata query protocol seeks to fully employ the features of the
    HTTP protocol.  Additionally this specification makes mandatory some
    optional HTTP features.
-
 
 
 
@@ -321,7 +321,7 @@ Internet-Draft           Metadata Query Protocol            October 2014
    An identifier used in the query protocol is a non-empty sequence of
    arbitrary 8-bit characters:
 
-   id       = *idchar
+   id       = 1*idchar
    idchar   = %x00-ff ; any encodable character
 
 3.2.  Protocol
@@ -620,7 +620,11 @@ Internet-Draft           Metadata Query Protocol            October 2014
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
-A.1.  Since draft-young-md-query-02
+A.1.  Since draft-young-md-query-03
+
+   Correct a typo in the identifier grammar.
+
+A.2.  Since draft-young-md-query-02
 
    Introduced a normative reference to [STD66].
 
@@ -648,24 +652,20 @@ A.1.  Since draft-young-md-query-02
    Remove status code 501 ("not implemented") as it is no longer
    referenced.
 
-A.2.  Since draft-young-md-query-01
+A.3.  Since draft-young-md-query-01
 
    Added REFEDS RFC stream boilerplate.
 
    Tidied up some normative language.
 
-A.3.  Since draft-young-md-query-00
+A.4.  Since draft-young-md-query-00
 
    Split into two documents: this one is as agnostic as possible around
    questions such as metadata format and higher level protocol use
    cases, a new layered document describes the detailed requirements for
    SAML support.
 
-   Rewrite Section 3.2.1 to clarify construction of the request URL and
-   its relationship to the base URL.
 
-   Added Section 2.1 to clarify that the transport protocol underlying
-   HTTP may be either TCP or SSL/TLS.
 
 
 
@@ -673,6 +673,12 @@ Young                    Expires April 26, 2015                [Page 12]
 
 Internet-Draft           Metadata Query Protocol            October 2014
 
+
+   Rewrite Section 3.2.1 to clarify construction of the request URL and
+   its relationship to the base URL.
+
+   Added Section 2.1 to clarify that the transport protocol underlying
+   HTTP may be either TCP or SSL/TLS.
 
    Clarify position on HTTP versions (Section 2.2) which may be used to
    underly this protocol.
@@ -694,7 +700,7 @@ Internet-Draft           Metadata Query Protocol            October 2014
 
    Added a section describing Protocol Extension Points.
 
-A.4.  Since draft-lajoie-md-query-01
+A.5.  Since draft-lajoie-md-query-01
 
    Adopted as base for draft-young-md-query-00.
 
@@ -715,12 +721,6 @@ Author's Address
    Independent
 
    EMail: ian@iay.org.uk
-
-
-
-
-
-
 
 
 

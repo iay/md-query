@@ -9,7 +9,7 @@ Expires: April 26, 2015
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-02
+                      draft-young-md-query-saml-03
 
 Abstract
 
@@ -71,11 +71,11 @@ Table of Contents
    3.  Response Profile  . . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  Response Cardinality  . . . . . . . . . . . . . . . . . .   4
        3.1.1.  No Entity Descriptors Returned  . . . . . . . . . . .   4
-       3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   4
+       3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   5
        3.1.3.  More Than One Entity Descriptor Returned  . . . . . .   5
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
      4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   5
-     4.2.  Use of SHA-1 in Transformed Identifiers . . . . . . . . .   5
+     4.2.  Use of SHA-1 in Transformed Identifiers . . . . . . . . .   6
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
    6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
@@ -83,9 +83,10 @@ Table of Contents
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
    Appendix A.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .   8
-     A.1.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   8
-     A.2.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   8
-     A.3.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   8
+     A.1.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   8
+     A.2.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   8
+     A.3.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   8
+     A.4.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -105,7 +106,6 @@ Table of Contents
    documents, as described in the REFEDS Participant's Agreement
    [REFEDS.agreement].
 
-   This document is a product of the REFEDS Working Group process.
 
 
 
@@ -113,6 +113,8 @@ Young                    Expires April 26, 2015                 [Page 2]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
+
+   This document is a product of the REFEDS Working Group process.
 
 1.1.  Notation and Conventions
 
@@ -156,11 +158,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
    the following ABNF grammar, and treat such an identifier as
    equivalent to the corresponding untransformed identifier:
 
-   SHA1     = %x73 %x68 %x61 %x31 ; lower case "sha1"
-   DIGIT    = %x30-39
-   HEXDIGIT = DIGIT | %x61-66 ; lower case a-f
-   sha1id   = "{" SHA1 "}" sha1hex
-   sha1hex  = 40*HEXDIGIT
+
+
+
 
 
 
@@ -169,6 +169,12 @@ Young                    Expires April 26, 2015                 [Page 3]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
+
+   SHA1     = %x73 %x68 %x61 %x31 ; lower case "sha1"
+   DIGIT    = %x30-39
+   HEXDIGIT = DIGIT | %x61-66 ; lower case a-f
+   sha1id   = "{" SHA1 "}" sha1hex
+   sha1hex  = 40*HEXDIGIT
 
    In the above, the "sha1hex" component encodes the 20-octet (160-bit)
    binary SHA-1 hash value as a sequence of 40 lower case hexadecimal
@@ -209,6 +215,17 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
    A response which returns no "EntityDescriptor" elements MUST be
    represented by an HTTP status code of 404 ("not found").
 
+
+
+
+
+
+
+Young                    Expires April 26, 2015                 [Page 4]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+
+
 3.1.2.  One Entity Descriptor Returned
 
    A response which returns a single "EntityDescriptor" element MUST use
@@ -218,13 +235,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
    Such a response MUST include the following HTTP header to indicate
    that the metadata returned is SAML metadata:
-
-
-
-Young                    Expires April 26, 2015                 [Page 4]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
-
 
    Content-Type: application/samlmetadata+xml
 
@@ -264,6 +274,14 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
    o  MUST NOT use the MD5 cryptographic hash algorithm as a digest
       algorithm.
 
+
+
+
+Young                    Expires April 26, 2015                 [Page 5]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+
+
    o  SHOULD otherwise follow current cryptographic best practices in
       algorithm selection.
 
@@ -274,13 +292,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
    SHA-1 is now regarded as weak enough to exclude it from use in new
    cryptographic systems, its use in this profile is necessary for full
    support of the SAML 2.0 standard.
-
-
-
-Young                    Expires April 26, 2015                 [Page 5]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
-
 
    Because the SHA-1 cryptographic hash is not being used within this
    profile in the context of a digital signature, it is not believed to
@@ -317,9 +328,19 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
 
+
+
+
+
+
+Young                    Expires April 26, 2015                 [Page 6]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+
+
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-03 (work in progress), October 2014.
+              query-04 (work in progress), October 2014.
 
    [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
               (SHA1)", RFC 3174, September 2001.
@@ -329,14 +350,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
               Maler, "Bindings for the Security Assertion Markup
               Language (SAML) V2.0", OASIS Standard saml-bindings-
               2.0-os, March 2005.
-
-
-
-
-Young                    Expires April 26, 2015                 [Page 6]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
-
 
    [SAML2Meta]
               Cantor, S., Moreh, J., Philpott, R., and E. Maler,
@@ -376,19 +389,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 Young                    Expires April 26, 2015                 [Page 7]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
@@ -396,7 +396,11 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
-A.1.  Since draft-young-md-query-saml-01
+A.1.  Since draft-young-md-query-saml-02
+
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
+
+A.2.  Since draft-young-md-query-saml-01
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
@@ -406,11 +410,11 @@ A.1.  Since draft-young-md-query-saml-01
    gives implementers more latitude in the way that they handle the
    feature.
 
-A.2.  Since draft-young-md-query-saml-00
+A.3.  Since draft-young-md-query-saml-00
 
    Added REFEDS RFC stream boilerplate.
 
-A.3.  draft-young-md-query-saml-00
+A.4.  draft-young-md-query-saml-00
 
    Initial version.
 
@@ -420,10 +424,6 @@ Author's Address
    Independent
 
    EMail: ian@iay.org.uk
-
-
-
-
 
 
 
