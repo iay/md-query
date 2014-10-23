@@ -327,7 +327,7 @@ Content-Length: 1234
             </section>
 
             <section title="Content Caching">
-                <t>Responders SHOULD include cache control information with successful (200 status code) responses, assuming the responder knows when retrieved metadata is meant to expire.  The responder should also include cache control information with 404 Not Found responses.  This allows the requester to create and maintain a negative-response cache.  When cache controls are used only the 'max-age' directive SHOULD be used.</t>
+                <t>Responders SHOULD include cache control information with successful (200 status code) responses, assuming the responder knows when retrieved metadata is meant to expire.  The responder SHOULD also include cache control information with 404 Not Found responses.  This allows the requester to create and maintain a negative-response cache.  When cache controls are used only the 'max-age' directive SHOULD be used.</t>
             </section>
             <section title="Content Compression">
                 <t>As should be apparent from the required request and response headers this protocol encourages the use of content compression.  This is in recognition that some metadata documents can be quite large or fetched with relatively high frequency.</t>
