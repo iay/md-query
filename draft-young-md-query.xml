@@ -169,7 +169,6 @@
                         <t>404 "Not Found" - indicates that the requested metadata could not be found; this MUST NOT be used in order to indicate a general service error.</t>
                         <t>405 "Method Not Allowed" - response code indicating that a non-GET method was used</t>
                         <t>406 "Not Acceptable" - response code indicating that metadata is not available in the request content-type</t>
-                        <t>501 "Not Implemented" - response code indicating that a given extended identifier is not supported</t>
                         <t>505 "HTTP Version Not Supported" - response code indicating that HTTP/1.1 was not used</t>
                     </list>
                 </t>
@@ -547,6 +546,9 @@ Content-Length: 1234
                 </t>
                 <t>
                     Remove incidental references to SSL.
+                </t>
+                <t>
+                    Remove status code 501 ("not implemented") as it is no longer referenced.
                 </t>
             </section>
 
