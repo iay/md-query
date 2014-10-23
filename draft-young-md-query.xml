@@ -100,7 +100,7 @@
                 <t>
                     The metadata query protocol makes use of the HTTP protocol to transmit requests and responses.
                     The underlying HTTP connection MAY make use of any appropriate transport protocol.
-                    In particular, the HTTP connection MAY make use of either TCP or SSL/TLS at the transport layer.
+                    In particular, the HTTP connection MAY make use of either TCP or TLS at the transport layer.
                     See the <xref target="sec_cons" format="title"/> section for guidance in choosing an
                     appropriate transport protocol.
                 </t>
@@ -214,58 +214,15 @@
                     Any given metadata collection MAY have more than one identifier associated with it.
                 </t>
                 <t>
-                    An identifier used in the query protocol is either a basic identifier or an extended
-                    identifier:
+                    An identifier used in the query protocol is a non-empty sequence of
+                    arbitrary 8-bit characters:
                 </t>
                 <figure>
                     <artwork type="abnf"><![CDATA[
-id       = basicid / extid
-]]></artwork>
-                </figure>
-                <t>
-                    Identifiers starting with anything other than "{" are basic identifiers:
-                </t>
-                <figure>
-                    <artwork type="abnf"><![CDATA[
-basicid  = notlb *idchar
-notlb    = %x00-7a / %x7c-7f ; anything other than a "{"
-]]></artwork>
-                </figure>
-                <t>
-                    An identifier starting with "{" (ASCII 0x7B) is an extended identifier, and MUST match
-                    the <spanx style="verb">extid</spanx> production in the following ABNF grammar:
-                </t>
-                <figure>
-                    <artwork type="abnf"><![CDATA[
-extid    = "{" extname "}" extarg
-extname  = ALPHA *( ALPHA / DIGIT / "+" / "-" / "." )
-extarg   = *idchar
+id       = *idchar
 idchar   = %x00-ff ; any encodable character
-ALPHA    = %x41-5a / %x61-7a
-DIGIT    = %x30-39
 ]]></artwork>
                 </figure>
-                <t>
-                    The particular extension to be used is named by the <spanx style="verb">extname</spanx> value.
-                    This value is case sensitive; "Example" and "example" would name different extensions.
-                    Each extension may define its own additional rules for the
-                    <spanx style="verb">extarg</spanx> component.
-                </t>
-                <t>
-                    A responder MUST return a 400 (bad request) status code if either of the following
-                    conditions hold:
-                    <list style="symbols">
-                        <t>An identifier starting with "{" does not match the <spanx style="verb">extid</spanx> production.</t>
-                        <t>
-                            The <spanx style="verb">extarg</spanx>
-                            component fails to meet the requirements for the named extension.
-                        </t>
-                    </list>
-                </t>
-                <t>
-                    A responder MUST return a 501 (not implemented) status code if the <spanx style="verb">extname</spanx>
-                    value is not supported by the responder.
-                </t>
             </section>
 
             <section title="Protocol">
@@ -384,11 +341,13 @@ Content-Length: 1234
                 The Metadata Query Protocol is extensible using the following protocol extension points:
                 <list style="symbols">
                     <t>
-                        The "extension identifier" syntax described in the <xref target="sec_identifiers" format="title"/> section
-                        above is intended for relatively simple extensions such as transformed identifiers.
+                        Profiles of this specification may assign semantics to specific identifiers,
+                        or to identifiers structured in particular ways.
                     </t>
                     <t>
-                        More complex extensions may be implemented by defining additional paths (other than "entities/") below the base URL.
+                        Profiles of this specification may define additional paths
+                        (other than <spanx style="verb">entities</spanx>
+                        and <spanx style="verb">entities/</spanx>) below the base URL.
                     </t>
                 </list>
             </t>
@@ -396,13 +355,13 @@ Content-Length: 1234
 
         <section title="Security Considerations" anchor="sec_cons">
             <section title="Integrity">
-                <t>As metadata often contains information necessary for the secure operation of interacting services it is RECOMMENDED that some form of content integrity checking be performed. This may include the use of SSL/TLS at the transport layer, digital signatures present within the metadata document, or any other such mechanism.</t>
+                <t>As metadata often contains information necessary for the secure operation of interacting services it is RECOMMENDED that some form of content integrity checking be performed. This may include the use of TLS at the transport layer, digital signatures present within the metadata document, or any other such mechanism.</t>
             </section>
             <section title="Confidentiality">
-                <t>In many cases service metadata is public information and therefore confidentiality is not required.  In the cases where such functionality is required, it is RECOMMENDED that both the requester and responder support SSL/TLS.  Other mechanisms, such as XML encryption, MAY also be supported.</t>
+                <t>In many cases service metadata is public information and therefore confidentiality is not required.  In the cases where such functionality is required, it is RECOMMENDED that both the requester and responder support TLS.  Other mechanisms, such as XML encryption, MAY also be supported.</t>
             </section>
             <section title="Authentication">
-                <t>All responders which require client authentication to view retrieved information MUST support the use of HTTP basic authentication over SSL/TLS. Responders SHOULD also support the use of X.509 client certificate authentication.</t>
+                <t>All responders which require client authentication to view retrieved information MUST support the use of HTTP basic authentication over TLS. Responders SHOULD also support the use of X.509 client certificate authentication.</t>
             </section>
         </section>
 
@@ -579,6 +538,15 @@ Content-Length: 1234
                     Corrected an example in <xref target="query.example"/> to include the
                     required double quotes in the value of an ETag header. Added text to clarify
                     the base URL and identifier being used in the example.
+                </t>
+                <t>
+                    Simplified the definition of identifiers, so that any non-empty identifier
+                    is accepted and no semantics are defined for particular structures. Extended
+                    syntaxes such as the <spanx style="verb">{sha1}</spanx> notation for
+                    transformed identifiers are now left to profiles.
+                </t>
+                <t>
+                    Remove incidental references to SSL.
                 </t>
             </section>
 
