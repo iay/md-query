@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-03" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-04" submissionType="independent" category="info">
     <front>
         <title>Metadata Query Protocol</title>
 
@@ -218,7 +218,7 @@
                 </t>
                 <figure>
                     <artwork type="abnf"><![CDATA[
-id       = *idchar
+id       = 1*idchar
 idchar   = %x00-ff ; any encodable character
 ]]></artwork>
                 </figure>
@@ -516,6 +516,12 @@ Content-Length: 1234
         </references>
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+            <section title="Since draft-young-md-query-03">
+                <t>
+                    Correct a typo in the identifier grammar.
+                </t>
+            </section>
 
             <section title="Since draft-young-md-query-02" anchor="changes.since.draft-young-md-query-02">
                 <t>
