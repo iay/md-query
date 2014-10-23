@@ -93,63 +93,75 @@
                 </figure>
             </section>
 
-            <section title="Identifiers">
-                <t>
-                    Each identifier in a request may be either:
-                    <list style="symbols">
-                        <t>
-                            The unique identifier of an entity, corresponding to the <spanx style="verb">entityID</spanx>
-                            attribute of the entity's <spanx style="verb">EntityDescriptor</spanx> element in SAML metadata, or
-                        </t>
-                        <t>
-                            The responder-defined identifier of an arbitrary group of entities.
-                        </t>
-                    </list>
-                </t>
-                <t>
-                    <xref target="SAML2Core">SAML 2.0</xref> includes profiles based on the transfer of an "artifact" containing the 
-                    unique identifier of a SAML entity transformed by means of the <xref target="RFC3174">SHA-1</xref>
-                    hash algorithm (see <xref target="SAML2Bind"/> sections 3.6 and 3.6.4).
-                </t>
-                <t>
-                    In order to support use cases in which clients may be in possession of only such a transformed
-                    representation of a SAML entity's unique identifier without any way to establish the original
-                    entity identifier,
-                    a responder compliant with this profile MUST accept an extended identifier matching the
-                    <spanx style="verb">sha1id</spanx> production in the following ABNF grammar as as equivalent to
-                    the corresponding untransformed identifier:
-                </t>
-                <figure>
-                    <artwork type="abnf"><![CDATA[
+            <section title="Identifiers" anchor="request.identifiers">
+
+                <section title="Unique Identifier">
+                    <t>
+                        Each entity known to the responder MUST be associated with the unique identifier
+                        of the entity, corresponding to the <spanx style="verb">entityID</spanx> attribute
+                        of the entity's <spanx style="verb">EntityDescriptor</spanx> element in SAML metadata.
+                    </t>
+                </section>
+
+                <section title="Transformed Identifier">
+                    <t>
+                        <xref target="SAML2Core">SAML 2.0</xref> includes profiles based on the transfer
+                        of an "artifact" containing the unique identifier of a SAML entity transformed by
+                        means of the
+                        <xref target="RFC3174">SHA-1</xref> hash algorithm (see <xref target="SAML2Bind"/>
+                        sections 3.6 and 3.6.4).
+                    </t>
+                    <t>
+                        In order to support use cases in which clients may be in possession of only such a transformed
+                        representation of a SAML entity's unique identifier without any way to establish the original
+                        entity identifier, a responder compliant with this profile MUST associate each entity
+                        with an identifier matching the
+                        <spanx style="verb">sha1id</spanx> production in the following ABNF grammar, and treat
+                        such an identifier as equivalent to
+                        the corresponding untransformed identifier:
+                    </t>
+                    <figure>
+                        <artwork type="abnf"><![CDATA[
 SHA1     = %x73 %x68 %x61 %x31 ; lower case "sha1"
 DIGIT    = %x30-39
 HEXDIGIT = DIGIT | %x61-66 ; lower case a-f
 sha1id   = "{" SHA1 "}" sha1hex
 sha1hex  = 40*HEXDIGIT
 ]]></artwork>
-                </figure>
-                <t>
-                    In the above, the <spanx style="verb">sha1hex</spanx> component encodes the 20-octet
-                    (160-bit) binary SHA-1 hash value as a sequence of 40 lower case hexadecimal digits.
-                </t>
-                <t>
-                    For example, the identifier
-                </t>
-                <figure>
-                    <artwork>http://example.org/service</artwork>
-                </figure>
-                <t>
-                    transformed by means of SHA-1 hashing would become
-                </t>
-                <figure>
-                    <artwork>{sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb</artwork>
-                </figure>
-                <t>
-                    Malformed SHA-1 transformed extended identifiers, for example where the string of characters
-                    following the "}" contains characters other than hexadecimal digits, or is other than
-                    exactly 40 characters in length, MUST result in an HTTP status code of 400
-                    ("bad request").
-                </t>
+                    </figure>
+                    <t>
+                        In the above, the <spanx style="verb">sha1hex</spanx> component encodes the 20-octet
+                        (160-bit) binary SHA-1 hash value as a sequence of 40 lower case hexadecimal digits.
+                    </t>
+                    <t>
+                        For example, the identifier
+                    </t>
+                    <figure>
+                        <artwork>http://example.org/service</artwork>
+                    </figure>
+                    <t>
+                        transformed by means of SHA-1 hashing would become
+                    </t>
+                    <figure>
+                        <artwork>{sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb</artwork>
+                    </figure>
+                    <t>
+                        Responder implementations MAY detect malformed SHA-1 transformed identifiers
+                        (for example where the string of characters
+                        following the "}" contains characters other than hexadecimal digits, or is other than
+                        exactly 40 characters in length) and return an HTTP status code of 400
+                        ("bad request"). Alternatively, implementations MAY process these as normal
+                        identifiers and return an HTTP status code of 404 ("not found") if appropriate.
+                    </t>
+                </section>
+
+                <section title="Additional Identifiers">
+                    <t>
+                        Entities MAY also be associated with any number of additional responder-defined
+                        identifiers naming arbitrary groups of entities.
+                    </t>
+                </section>
+
             </section>
 
         </section>
@@ -446,6 +458,12 @@ sha1hex  = 40*HEXDIGIT
             <section title="Since draft-young-md-query-saml-01" anchor="changes.since.draft-young-md-query-saml-01">
                 <t>
                     Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+                <t>
+                    Rework <xref target="request.identifiers"/> to make the role of transformed identifiers
+                    clearer. This changes the semantics slightly (malformed transformed identifiers
+                    may now result in a 404 return rather than 400) but this gives implementers more
+                    latitude in the way that they handle the feature.
                 </t>
             </section>
 
