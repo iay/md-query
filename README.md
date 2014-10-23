@@ -19,9 +19,6 @@ their tracker pages:
 The editor's working copy may be fresher, but less stable, than the most
 recent formally submitted Internet Draft.
 
-Prior versions submitted as Internet Drafts are also archived in the `history`
-directory here for quick comparison between versions.
-
 ## Terminology
 
 Please don't use the term "MDX" to refer to this specification or the protocol specified by it.  "MDX" as an acronym for MetaData eXchange refers to a more general concept of which the Metadata Query Protocol is just one component.
