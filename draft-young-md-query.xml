@@ -287,7 +287,7 @@ http://example.org/mdq/entities
                 <section title="Example Request and Response" anchor="query.example">
                     <t>
                         The following example demonstrates a metadata query request using a base URL
-                        of <spanx style="verb">http://metadata.exampl.org/service/</spanx> and the
+                        of <spanx style="verb">http://metadata.example.org/service/</spanx> and the
                         identifier <spanx style="verb">http://example.org/idp</spanx>.
                         <figure title="Example Metadata Query Request">
                             <artwork><![CDATA[
