@@ -411,47 +411,6 @@ Content-Length: 1234
                 <format type='XML' octets='5777' target='http://xml.resource.org/public/rfc/xml/rfc2119.xml' />
             </reference>
 
-            <reference anchor='RFC2616'>
-                <front>
-                    <title abbrev='HTTP/1.1'>Hypertext Transfer Protocol -- HTTP/1.1</title>
-                    <author initials='R.' surname='Fielding' fullname='Roy T. Fielding'>
-                        <organization abbrev='UC Irvine'>Department of Information and Computer Science</organization>
-                        <address><email>fielding@ics.uci.edu</email></address>
-                    </author>
-                    <author initials='J.' surname='Gettys' fullname='James Gettys'>
-                        <organization abbrev='Compaq/W3C'>World Wide Web Consortium</organization>
-                        <address><email>jg@w3.org</email></address>
-                    </author>
-                    <author initials='J.' surname='Mogul' fullname='Jeffrey C. Mogul'>
-                        <organization abbrev='Compaq'>Compaq Computer Corporation</organization>
-                        <address><email>mogul@wrl.dec.com</email></address>
-                    </author>
-                    <author initials='H.' surname='Frystyk' fullname='Henrik Frystyk Nielsen'>
-                        <organization abbrev='W3C/MIT'>World Wide Web Consortium</organization>
-                        <address><email>frystyk@w3.org</email></address>
-                    </author>
-                    <author initials='L.' surname='Masinter' fullname='Larry Masinter'>
-                        <organization abbrev='Xerox'>Xerox Corporation</organization>
-                        <address><email>masinter@parc.xerox.com</email></address>
-                    </author>
-                    <author initials='P.' surname='Leach' fullname='Paul J. Leach'>
-                        <organization abbrev='Microsoft'>Microsoft Corporation</organization>
-                        <address><email>paulle@microsoft.com</email></address>
-                    </author>
-                    <author initials='T.' surname='Berners-Lee' fullname='Tim Berners-Lee'>
-                        <organization abbrev='W3C/MIT'>World Wide Web Consortium</organization>
-                        <address><email>timbl@w3.org</email></address>
-                    </author>
-                    <date year='1999' month='June' />
-                </front>
-                <seriesInfo name='RFC' value='2616' />
-                <format type='TXT' octets='422317' target='http://www.rfc-editor.org/rfc/rfc2616.txt' />
-                <format type='PS' octets='5529857' target='http://www.rfc-editor.org/rfc/rfc2616.ps' />
-                <format type='PDF' octets='550558' target='http://www.rfc-editor.org/rfc/rfc2616.pdf' />
-                <format type='HTML' octets='637302' target='http://xml.resource.org/public/rfc/html/rfc2616.html' />
-                <format type='XML' octets='493420' target='http://xml.resource.org/public/rfc/xml/rfc2616.xml' />
-            </reference>
-
             <reference anchor='RFC7230'>
                 <front>
                     <title>Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</title>
@@ -672,7 +631,7 @@ Content-Length: 1234
                     Updated to rely on the new definition of HTTP/1.1 in
                     <xref target="RFC7230"/>, <xref target="RFC7231"/>, <xref target="RFC7232"/>,
                     <xref target="RFC7233"/>, <xref target="RFC7234"/> and <xref target="RFC7235"/>
-                    instead of <xref target="RFC2616"/>.
+                    instead of RFC 2616.
                 </t>
             </section>
 
