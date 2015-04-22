@@ -50,7 +50,9 @@
                 Many clients of web-based services are capable of consuming descriptive metadata about a service in
                 order to customize or obtain information about the client's connection parameters.  While the form of
                 the metadata (e.g., JSON, XML) and content varies between services this document specifies a set of
-                semantics for <xref target="RFC2616">HTTP</xref> that allow clients to rely on certain behavior.
+                semantics for HTTP (<xref target="RFC7230"/>, <xref target="RFC7231"/>, <xref target="RFC7232"/>,
+                <xref target="RFC7233"/>, <xref target="RFC7234"/>, <xref target="RFC7235"/>)
+                that allow clients to rely on certain behavior.
                 The defined behavior is meant to make it easy for clients to perform queries, to be efficient for
                 both requesters and responders, and to allow the responder to scale in various ways.
             </t>
@@ -134,7 +136,7 @@
                     </list>
                 </t>
                 <t>
-                    A metadata request to the same URL, after an initial request, MUST include the following header per section 13.3.4 of <xref target="RFC2616">RFC 2616</xref>:
+                    A metadata request to the same URL, after an initial request, MUST include the following header per section 3.2 of <xref target="RFC7232">RFC 7232</xref>:
                     <list>
                         <t>If-None-Match</t>
                     </list>
@@ -450,6 +452,154 @@ Content-Length: 1234
                 <format type='XML' octets='493420' target='http://xml.resource.org/public/rfc/xml/rfc2616.xml' />
             </reference>
 
+            <reference anchor='RFC7230'>
+                <front>
+                    <title>Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</title>
+                    <author initials='R.' surname='Fielding' fullname='R. Fielding'>
+                        <organization />
+                    </author>
+                    <author initials='J.' surname='Reschke' fullname='J. Reschke'>
+                        <organization />
+                    </author>
+                    <date year='2014' month='June' />
+                    <abstract>
+                        <t>
+                            The Hypertext Transfer Protocol (HTTP) is a stateless application-level
+                            protocol for distributed, collaborative, hypertext information systems.
+                            This document provides an overview of HTTP architecture and its associated
+                            terminology, defines the "http" and "https" Uniform Resource Identifier (URI)
+                            schemes, defines the HTTP/1.1 message syntax and parsing requirements,
+                            and describes related security concerns for implementations.
+                        </t>
+                    </abstract>
+                </front>
+                <seriesInfo name='RFC' value='7230' />
+                <format type='TXT' octets='205947' target='http://www.rfc-editor.org/rfc/rfc7230.txt' />
+            </reference>
+
+            <reference anchor='RFC7231'>
+                <front>
+                    <title>Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</title>
+                    <author initials='R.' surname='Fielding' fullname='R. Fielding'>
+                        <organization />
+                    </author>
+                    <author initials='J.' surname='Reschke' fullname='J. Reschke'>
+                        <organization />
+                    </author>
+                    <date year='2014' month='June' />
+                    <abstract>
+                        <t>
+                            The Hypertext Transfer Protocol (HTTP) is a stateless application-level
+                            protocol for distributed, collaborative, hypertext information systems.
+                            This document defines the semantics of HTTP/1.1 messages, as expressed by request
+                            methods, request header fields, response status codes, and response header fields,
+                            along with the payload of messages (metadata and body content) and mechanisms for content negotiation.
+                        </t>
+                    </abstract>
+                </front>
+                <seriesInfo name='RFC' value='7231' />
+                <format type='TXT' octets='235053' target='http://www.rfc-editor.org/rfc/rfc7231.txt' />
+            </reference>
+
+            <reference anchor='RFC7232'>
+                <front>
+                    <title>Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests</title>
+                    <author initials='R.' surname='Fielding' fullname='R. Fielding'>
+                        <organization />
+                    </author>
+                    <author initials='J.' surname='Reschke' fullname='J. Reschke'>
+                        <organization />
+                    </author>
+                    <date year='2014' month='June' />
+                    <abstract>
+                        <t>
+                            The Hypertext Transfer Protocol (HTTP) is a stateless application-level
+                            protocol for distributed, collaborative, hypertext information systems.
+                            This document defines HTTP/1.1 conditional requests, including metadata header
+                            fields for indicating state changes, request header fields for making
+                            preconditions on such state, and rules for constructing the responses to a
+                            conditional request when one or more preconditions evaluate to false.
+                        </t>
+                    </abstract>
+                </front>
+                <seriesInfo name='RFC' value='7232' />
+                <format type='TXT' octets='56696' target='http://www.rfc-editor.org/rfc/rfc7232.txt' />
+            </reference>
+
+            <reference anchor='RFC7233'>
+                <front>
+                    <title>Hypertext Transfer Protocol (HTTP/1.1): Range Requests</title>
+                    <author initials='R.' surname='Fielding' fullname='R. Fielding'>
+                        <organization />
+                    </author>
+                    <author initials='Y.' surname='Lafon' fullname='Y. Lafon'>
+                        <organization />
+                    </author>
+                    <author initials='J.' surname='Reschke' fullname='J. Reschke'>
+                        <organization />
+                    </author>
+                    <date year='2014' month='June' />
+                    <abstract>
+                        <t>
+                            The Hypertext Transfer Protocol (HTTP) is a stateless application-level
+                            protocol for distributed, collaborative, hypertext information systems.
+                            This document defines range requests and the rules for constructing and
+                            combining responses to those requests.
+                        </t>
+                    </abstract>
+                </front>
+                <seriesInfo name='RFC' value='7233' />
+                <format type='TXT' octets='46933' target='http://www.rfc-editor.org/rfc/rfc7233.txt' />
+            </reference>
+
+            <reference anchor='RFC7234'>
+                <front>
+                    <title>Hypertext Transfer Protocol (HTTP/1.1): Caching</title>
+                    <author initials='R.' surname='Fielding' fullname='R. Fielding'>
+                        <organization />
+                    </author>
+                    <author initials='M.' surname='Nottingham' fullname='M. Nottingham'>
+                        <organization />
+                    </author>
+                    <author initials='J.' surname='Reschke' fullname='J. Reschke'>
+                        <organization />
+                    </author>
+                    <date year='2014' month='June' />
+                    <abstract>
+                        <t>
+                            The Hypertext Transfer Protocol (HTTP) is a stateless \%application- level
+                            protocol for distributed, collaborative, hypertext information systems.
+                            This document defines HTTP caches and the associated header fields that
+                            control cache behavior or indicate cacheable response messages.
+                        </t>
+                    </abstract>
+                </front>
+                <seriesInfo name='RFC' value='7234' />
+                <format type='TXT' octets='90647' target='http://www.rfc-editor.org/rfc/rfc7234.txt' />
+            </reference>
+
+            <reference anchor='RFC7235'>
+                <front>
+                    <title>Hypertext Transfer Protocol (HTTP/1.1): Authentication</title>
+                    <author initials='R.' surname='Fielding' fullname='R. Fielding'>
+                        <organization />
+                    </author>
+                    <author initials='J.' surname='Reschke' fullname='J. Reschke'>
+                        <organization />
+                    </author>
+                    <date year='2014' month='June' />
+                    <abstract>
+                        <t>
+                            The Hypertext Transfer Protocol (HTTP) is a stateless application-level
+                            protocol for distributed, collaborative, hypermedia information systems.
+                            This document defines the HTTP Authentication framework.
+                        </t>
+                    </abstract>
+                </front>
+                <seriesInfo name='RFC' value='7235' />
+                <format type='TXT' octets='38142' target='http://www.rfc-editor.org/rfc/rfc7235.txt' />
+            </reference>
+
             <reference anchor="STD66">
                 <front>
                     <title abbrev="URI Generic Syntax">Uniform Resource Identifier (URI): Generic
@@ -516,6 +666,15 @@ Content-Length: 1234
         </references>
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+            <section title="Since draft-young-md-query-04">
+                <t>
+                    Updated to rely on the new definition of HTTP/1.1 in
+                    <xref target="RFC7230"/>, <xref target="RFC7231"/>, <xref target="RFC7232"/>,
+                    <xref target="RFC7233"/>, <xref target="RFC7234"/> and <xref target="RFC7235"/>
+                    instead of <xref target="RFC2616"/>.
+                </t>
+            </section>
 
             <section title="Since draft-young-md-query-03">
                 <t>
