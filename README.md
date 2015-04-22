@@ -25,6 +25,30 @@ Please don't use the term "MDX" to refer to this specification or the protocol s
 
 If you need to refer to this specification, md-query or even MDQ is more appropriate.
 
+## Implementations
+
+The following software is believed to be compatible with the requester (client) role described in the current draft:
+
+* [Shibboleth Identity Provider][IdP], v3.0.0 or later:
+    * [configuration details][IdPConfig]
+* [Shibboleth Service Provider][SP], v2.4.0 or later:
+    * [configuration details][SPConfig]
+
+The following software is believed to be compatible with the responder (server) role described in the current draft:
+
+* [mdq-server][] is a Java implementation based on [Spring Boot][Boot] and the [Shibboleth Metadata Aggregator][MDA]:
+    * Configuration examples can be found in the accompanying [mdq-server-docker][] project.
+* Any standard web server configured to serve appropriate static content.
+
+[IdP]: http://shibboleth.net/products/identity-provider.html "Shibboleth IdP"
+[IdPConfig]: https://wiki.shibboleth.net/confluence/display/IDP30/DynamicHTTPMetadataProvider
+[SP]: http://shibboleth.net/products/service-provider.html "Shibboleth SP"
+[SPConfig]: https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPMetadataProvider#NativeSPMetadataProvider-DynamicMetadataProvider
+[mdq-server]: https://github.com/iay/mdq-server "mdq-server on GitHub"
+[mdq-server-docker]: https://github.com/iay/mdq-server-docker "mdq-server-docker on GitHub"
+[Boot]: http://projects.spring.io/spring-boot/ "Spring Boot"
+[MDA]: https://shibboleth.net/products/metadata-aggregator.html "Shibboleth Metadata Aggregator"
+
 ## Contributing
 
 If you wish to participate in the protocol development discussions you should
