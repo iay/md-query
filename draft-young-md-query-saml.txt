@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          October 23, 2014
-Expires: April 26, 2015
+Intended status: Informational                            April 22, 2015
+Expires: October 24, 2015
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-03
+                      draft-young-md-query-saml-04
 
 Abstract
 
@@ -34,11 +34,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 26, 2015.
+   This Internet-Draft will expire on October 24, 2015.
 
 Copyright Notice
 
-   Copyright (c) 2014 IETF Trust and the persons identified as the
+   Copyright (c) 2015 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young                    Expires April 26, 2015                 [Page 1]
+Young                   Expires October 24, 2015                [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 Table of Contents
@@ -83,10 +83,11 @@ Table of Contents
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
    Appendix A.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .   8
-     A.1.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   8
-     A.2.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   8
-     A.3.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   8
-     A.4.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   8
+     A.1.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   8
+     A.2.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   8
+     A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   8
+     A.4.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   8
+     A.5.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -108,10 +109,9 @@ Table of Contents
 
 
 
-
-Young                    Expires April 26, 2015                 [Page 2]
+Young                   Expires October 24, 2015                [Page 2]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
    This document is a product of the REFEDS Working Group process.
@@ -165,9 +165,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
 
 
-Young                    Expires April 26, 2015                 [Page 3]
+Young                   Expires October 24, 2015                [Page 3]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
    SHA1     = %x73 %x68 %x61 %x31 ; lower case "sha1"
@@ -221,9 +221,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
 
 
-Young                    Expires April 26, 2015                 [Page 4]
+Young                   Expires October 24, 2015                [Page 4]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 3.1.2.  One Entity Descriptor Returned
@@ -277,9 +277,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
 
 
-Young                    Expires April 26, 2015                 [Page 5]
+Young                   Expires October 24, 2015                [Page 5]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
    o  SHOULD otherwise follow current cryptographic best practices in
@@ -333,9 +333,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
 
 
-Young                    Expires April 26, 2015                 [Page 6]
+Young                   Expires October 24, 2015                [Page 6]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
    [I-D.young-md-query]
@@ -389,18 +389,22 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
 
 
 
-Young                    Expires April 26, 2015                 [Page 7]
+Young                   Expires October 24, 2015                [Page 7]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  October 2014
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
-A.1.  Since draft-young-md-query-saml-02
+A.1.  Since draft-young-md-query-saml-03
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
-A.2.  Since draft-young-md-query-saml-01
+A.2.  Since draft-young-md-query-saml-02
+
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
+
+A.3.  Since draft-young-md-query-saml-01
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
@@ -410,11 +414,11 @@ A.2.  Since draft-young-md-query-saml-01
    gives implementers more latitude in the way that they handle the
    feature.
 
-A.3.  Since draft-young-md-query-saml-00
+A.4.  Since draft-young-md-query-saml-00
 
    Added REFEDS RFC stream boilerplate.
 
-A.4.  draft-young-md-query-saml-00
+A.5.  draft-young-md-query-saml-00
 
    Initial version.
 
@@ -441,8 +445,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                    Expires April 26, 2015                 [Page 8]
+Young                   Expires October 24, 2015                [Page 8]
