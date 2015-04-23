@@ -83,11 +83,11 @@ Table of Contents
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
    Appendix A.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .   8
-     A.1.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   8
-     A.2.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   8
+     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   8
+     A.2.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   8
      A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   8
-     A.4.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   8
-     A.5.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   8
+     A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   8
+     A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -396,13 +396,13 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
-A.1.  Since draft-young-md-query-saml-03
+A.1.  draft-young-md-query-saml-00
 
-   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
+   Initial version.
 
-A.2.  Since draft-young-md-query-saml-02
+A.2.  Since draft-young-md-query-saml-00
 
-   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
+   Added REFEDS RFC stream boilerplate.
 
 A.3.  Since draft-young-md-query-saml-01
 
@@ -414,13 +414,13 @@ A.3.  Since draft-young-md-query-saml-01
    gives implementers more latitude in the way that they handle the
    feature.
 
-A.4.  Since draft-young-md-query-saml-00
+A.4.  Since draft-young-md-query-saml-02
 
-   Added REFEDS RFC stream boilerplate.
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
-A.5.  draft-young-md-query-saml-00
+A.5.  Since draft-young-md-query-saml-03
 
-   Initial version.
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
 Author's Address
 

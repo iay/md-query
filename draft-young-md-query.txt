@@ -95,12 +95,12 @@ Table of Contents
      9.2.  Informative References  . . . . . . . . . . . . . . . . .  11
    Appendix A.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .  12
-     A.1.  Since draft-young-md-query-04 . . . . . . . . . . . . . .  12
-     A.2.  Since draft-young-md-query-03 . . . . . . . . . . . . . .  12
-     A.3.  Since draft-young-md-query-02 . . . . . . . . . . . . . .  12
-     A.4.  Since draft-young-md-query-01 . . . . . . . . . . . . . .  12
-     A.5.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  13
-     A.6.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  13
+     A.1.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  12
+     A.2.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  12
+     A.3.  Since draft-young-md-query-01 . . . . . . . . . . . . . .  13
+     A.4.  Since draft-young-md-query-02 . . . . . . . . . . . . . .  13
+     A.5.  Since draft-young-md-query-03 . . . . . . . . . . . . . .  13
+     A.6.  Since draft-young-md-query-04 . . . . . . . . . . . . . .  13
 
 
 
@@ -152,10 +152,10 @@ Internet-Draft           Metadata Query Protocol              April 2015
 
 1.2.  Terminology
 
-      entity - A single logical construct for which metadata may be
+   entity:  A single logical construct for which metadata may be
       asserted.  Generally this is a network accessible service.
 
-      metadata - A machine readable description of certain entity
+   metadata:  A machine readable description of certain entity
       characteristics.  Generally metadata provides information such as
       end point references, service contact information, etc.
 
@@ -620,61 +620,22 @@ Internet-Draft           Metadata Query Protocol              April 2015
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
-A.1.  Since draft-young-md-query-04
+A.1.  Since draft-lajoie-md-query-01
 
-   Updated to rely on the new definition of HTTP/1.1 in [RFC7230] et
-   seq.  instead of RFC 2616.
+   Adopted as base for draft-young-md-query-00.
 
-   Corrected Section 3.2.3 to indicate that the request contains an
-   Accept header, not a Content-Type header.
+   Updated author and list of contributors.
 
-A.2.  Since draft-young-md-query-03
+   Changed ipr from "pre5378Trust200902" to "trust200902", submission
+   type from IETF to independent and category from experimental to
+   informational.
 
-   Correct a typo in the identifier grammar.
+   Added empty IANA considerations section.
 
-A.3.  Since draft-young-md-query-02
+   Minor typographical nits but (intentionally) no substantive content
+   changes.
 
-   Introduced a normative reference to [STD66].
-
-   Reworked the definition of the base URL so that a non-empty path
-   ending with '/' is required.  This allows the definition of request
-   URLs to be simplified.
-
-   Clarified the definition of the base URL to exclude a query
-   component; corrected the terminology for the fragment identifier
-   component.
-
-   Added the definition for the query for all entities in Section 3.2.2.
-
-   Corrected an example in Section 3.2.4 to include the required double
-   quotes in the value of an ETag header.  Added text to clarify the
-   base URL and identifier being used in the example.
-
-   Simplified the definition of identifiers, so that any non-empty
-   identifier is accepted and no semantics are defined for particular
-   structures.  Extended syntaxes such as the "{sha1}" notation for
-   transformed identifiers are now left to profiles.
-
-   Remove incidental references to SSL.
-
-   Remove status code 501 ("not implemented") as it is no longer
-   referenced.
-
-A.4.  Since draft-young-md-query-01
-
-   Added REFEDS RFC stream boilerplate.
-
-   Tidied up some normative language.
-
-
-
-
-Young                   Expires October 25, 2015               [Page 12]
-
-Internet-Draft           Metadata Query Protocol              April 2015
-
-
-A.5.  Since draft-young-md-query-00
+A.2.  Since draft-young-md-query-00
 
    Split into two documents: this one is as agnostic as possible around
    questions such as metadata format and higher level protocol use
@@ -705,22 +666,61 @@ A.5.  Since draft-young-md-query-00
    in queries.  If more complex queries are required, these will be
    reintroduced at a different path under the base URL.
 
+
+
+
+Young                   Expires October 25, 2015               [Page 12]
+
+Internet-Draft           Metadata Query Protocol              April 2015
+
+
    Added a section describing Protocol Extension Points.
 
-A.6.  Since draft-lajoie-md-query-01
+A.3.  Since draft-young-md-query-01
 
-   Adopted as base for draft-young-md-query-00.
+   Added REFEDS RFC stream boilerplate.
 
-   Updated author and list of contributors.
+   Tidied up some normative language.
 
-   Changed ipr from "pre5378Trust200902" to "trust200902", submission
-   type from IETF to independent and category from experimental to
-   informational.
+A.4.  Since draft-young-md-query-02
 
-   Added empty IANA considerations section.
+   Introduced a normative reference to [STD66].
 
-   Minor typographical nits but (intentionally) no substantive content
-   changes.
+   Reworked the definition of the base URL so that a non-empty path
+   ending with '/' is required.  This allows the definition of request
+   URLs to be simplified.
+
+   Clarified the definition of the base URL to exclude a query
+   component; corrected the terminology for the fragment identifier
+   component.
+
+   Added the definition for the query for all entities in Section 3.2.2.
+
+   Corrected an example in Section 3.2.4 to include the required double
+   quotes in the value of an ETag header.  Added text to clarify the
+   base URL and identifier being used in the example.
+
+   Simplified the definition of identifiers, so that any non-empty
+   identifier is accepted and no semantics are defined for particular
+   structures.  Extended syntaxes such as the "{sha1}" notation for
+   transformed identifiers are now left to profiles.
+
+   Remove incidental references to SSL.
+
+   Remove status code 501 ("not implemented") as it is no longer
+   referenced.
+
+A.5.  Since draft-young-md-query-03
+
+   Correct a typo in the identifier grammar.
+
+A.6.  Since draft-young-md-query-04
+
+   Updated to rely on the new definition of HTTP/1.1 in [RFC7230] et
+   seq.  instead of RFC 2616.
+
+   Corrected Section 3.2.3 to indicate that the request contains an
+   Accept header, not a Content-Type header.
 
 
 
