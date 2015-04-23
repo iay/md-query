@@ -484,32 +484,6 @@ Content-Length: 1234
                 <format type='TXT' octets='56696' target='http://www.rfc-editor.org/rfc/rfc7232.txt' />
             </reference>
 
-            <reference anchor='RFC7233'>
-                <front>
-                    <title>Hypertext Transfer Protocol (HTTP/1.1): Range Requests</title>
-                    <author initials='R.' surname='Fielding' fullname='R. Fielding'>
-                        <organization />
-                    </author>
-                    <author initials='Y.' surname='Lafon' fullname='Y. Lafon'>
-                        <organization />
-                    </author>
-                    <author initials='J.' surname='Reschke' fullname='J. Reschke'>
-                        <organization />
-                    </author>
-                    <date year='2014' month='June' />
-                    <abstract>
-                        <t>
-                            The Hypertext Transfer Protocol (HTTP) is a stateless application-level
-                            protocol for distributed, collaborative, hypertext information systems.
-                            This document defines range requests and the rules for constructing and
-                            combining responses to those requests.
-                        </t>
-                    </abstract>
-                </front>
-                <seriesInfo name='RFC' value='7233' />
-                <format type='TXT' octets='46933' target='http://www.rfc-editor.org/rfc/rfc7233.txt' />
-            </reference>
-
             <reference anchor='RFC7234'>
                 <front>
                     <title>Hypertext Transfer Protocol (HTTP/1.1): Caching</title>
@@ -629,7 +603,7 @@ Content-Length: 1234
                 <t>
                     Updated to rely on the new definition of HTTP/1.1 in
                     <xref target="RFC7230"/>, <xref target="RFC7231"/>, <xref target="RFC7232"/>,
-                    <xref target="RFC7233"/>, <xref target="RFC7234"/> and <xref target="RFC7235"/>
+                    <xref target="RFC7234"/> and <xref target="RFC7235"/>
                     instead of RFC 2616.
                 </t>
             </section>
