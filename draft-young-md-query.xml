@@ -272,10 +272,10 @@ http://example.org/mdq/entities
                     </figure>
                 </section>
 
-                <section title="Response">
+                <section title="Response" anchor="protocol.response">
                     <t>
                         The response to a metadata query request MUST be a document that provides metadata for the given
-                        request in the format described by the request's Content-Type header.
+                        request in the format described by the request's Accept header.
                     </t>
                     <t>
                         The responder is responsible for ensuring that the metadata returned is valid. If the responder can not
@@ -605,6 +605,10 @@ Content-Length: 1234
                     <xref target="RFC7230"/>, <xref target="RFC7231"/>, <xref target="RFC7232"/>,
                     <xref target="RFC7234"/> and <xref target="RFC7235"/>
                     instead of RFC 2616.
+                </t>
+                <t>
+                    Corrected <xref target="protocol.response"/> to indicate that the request
+                    contains an Accept header, not a Content-Type header.
                 </t>
             </section>
 
