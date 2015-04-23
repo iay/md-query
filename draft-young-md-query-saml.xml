@@ -455,15 +455,15 @@ sha1hex  = 40*HEXDIGIT
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
-            <section title="Since draft-young-md-query-saml-03">
+            <section title="draft-young-md-query-saml-00">
                 <t>
-                    Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                    Initial version.
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-saml-02">
+            <section title="Since draft-young-md-query-saml-00" anchor="changes.since.draft-young-md-query-saml-00">
                 <t>
-                    Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                    Added REFEDS RFC stream boilerplate.
                 </t>
             </section>
 
@@ -479,15 +479,15 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-saml-00" anchor="changes.since.draft-young-md-query-saml-00">
+            <section title="Since draft-young-md-query-saml-02">
                 <t>
-                    Added REFEDS RFC stream boilerplate.
+                    Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
             </section>
 
-            <section title="draft-young-md-query-saml-00">
+            <section title="Since draft-young-md-query-saml-03">
                 <t>
-                    Initial version.
+                    Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
             </section>
 
