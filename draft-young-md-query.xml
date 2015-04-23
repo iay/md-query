@@ -50,8 +50,7 @@
                 Many clients of web-based services are capable of consuming descriptive metadata about a service in
                 order to customize or obtain information about the client's connection parameters.  While the form of
                 the metadata (e.g., JSON, XML) and content varies between services this document specifies a set of
-                semantics for HTTP (<xref target="RFC7230"/>, <xref target="RFC7231"/>, <xref target="RFC7232"/>,
-                <xref target="RFC7233"/>, <xref target="RFC7234"/>, <xref target="RFC7235"/>)
+                semantics for HTTP (<xref target="RFC7230"/> et seq.)
                 that allow clients to rely on certain behavior.
                 The defined behavior is meant to make it easy for clients to perform queries, to be efficient for
                 both requesters and responders, and to allow the responder to scale in various ways.
