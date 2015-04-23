@@ -379,7 +379,8 @@ Content-Length: 1234
                     All responders which require client authentication to view retrieved information MUST support
                     the use of HTTP basic authentication (<xref target="RFC7235"/>,
                     <xref target="RFC2617"/>/<xref target="I-D.basicauth"/>) over TLS.
-                    Responders SHOULD also support the use of X.509 client certificate authentication.</t>
+                    Responders SHOULD also support the use of X.509 client certificate authentication.
+                </t>
             </section>
         </section>
 
