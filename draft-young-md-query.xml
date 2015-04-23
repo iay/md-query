@@ -99,7 +99,8 @@
 
             <section title="Transport Protocol" anchor="transport_protocol">
                 <t>
-                    The metadata query protocol makes use of the HTTP protocol to transmit requests and responses.
+                    The metadata query protocol makes use of the HTTP protocol (<xref target="RFC7230"/>)
+                    to transmit requests and responses.
                     The underlying HTTP connection MAY make use of any appropriate transport protocol.
                     In particular, the HTTP connection MAY make use of either TCP or TLS at the transport layer.
                     See the <xref target="sec_cons" format="title"/> section for guidance in choosing an
@@ -124,20 +125,24 @@
                 <t>
                     All metadata query requests MUST include the following HTTP headers:
                     <list>
-                        <t>Accept - this header MUST contain the content-type identifying the type, or form, of metadata to be retrieved</t>
+                        <t>
+                            Accept - this header MUST contain the content-type identifying the type, or form,
+                            of metadata to be retrieved.
+                            See section 5.3.2 of <xref target="RFC7231"/>.
+                        </t>
                     </list>
                 </t>
                 <t>
                     All metadata query requests SHOULD include the following HTTP headers:
                     <list>
-                        <t>Accept-Charset</t>
-                        <t>Accept-Encoding</t>
+                        <t>Accept-Charset, see section 5.3.3 of <xref target="RFC7231"/></t>
+                        <t>Accept-Encoding, see section 5.3.4 of <xref target="RFC7231"/></t>
                     </list>
                 </t>
                 <t>
-                    A metadata request to the same URL, after an initial request, MUST include the following header per section 3.2 of <xref target="RFC7232">RFC 7232</xref>:
+                    A metadata request to the same URL, after an initial request, MUST include the following header:
                     <list>
-                        <t>If-None-Match</t>
+                        <t>If-None-Match, see section 3.2 of <xref target="RFC7232"/>.</t>
                     </list>
                 </t>
             </section>
@@ -145,17 +150,20 @@
                 <t>
                     All successful metadata query responses (even those that return no results) MUST include the following headers:
                     <list>
-                        <t>Content-Encoding - required if, and only if, content is compressed</t>
-                        <t>Content-Type</t>
-                        <t>ETag</t>
+                        <t>
+                            Content-Encoding - required if, and only if, content is compressed.
+                            See section 3.1.2.2 of <xref target="RFC7231"/>.
+                        </t>
+                        <t>Content-Type, see section 3.1.1.5 of <xref target="RFC7231"/>.</t>
+                        <t>ETag, see section 2.3 of <xref target="RFC7232"/>.</t>
                     </list>
                 </t>
                 <t>
                     All metadata retrieval responses SHOULD include the following headers:
                     <list>
-                        <t>Cache-Control</t>
-                        <t>Content-Length</t>
-                        <t>Last-Modified</t>
+                        <t>Cache-Control, see section 5.2 of <xref target="RFC7234"/>.</t>
+                        <t>Content-Length, see section 3.3.2 of <xref target="RFC7230"/></t>
+                        <t>Last-Modified, see section 2.2 of <xref target="RFC7232"/>.</t>
                     </list>
                 </t>
             </section>
@@ -361,7 +369,11 @@ Content-Length: 1234
                 <t>In many cases service metadata is public information and therefore confidentiality is not required.  In the cases where such functionality is required, it is RECOMMENDED that both the requester and responder support TLS.  Other mechanisms, such as XML encryption, MAY also be supported.</t>
             </section>
             <section title="Authentication">
-                <t>All responders which require client authentication to view retrieved information MUST support the use of HTTP basic authentication over TLS. Responders SHOULD also support the use of X.509 client certificate authentication.</t>
+                <t>
+                    All responders which require client authentication to view retrieved information MUST support
+                    the use of HTTP basic authentication (<xref target="RFC7235"/>,
+                    <xref target="RFC2617"/>/<xref target="I-D.basicauth"/>) over TLS.
+                    Responders SHOULD also support the use of X.509 client certificate authentication.</t>
             </section>
         </section>
 
@@ -408,6 +420,24 @@ Content-Length: 1234
                 <format type='TXT' octets='4723' target='http://www.rfc-editor.org/rfc/rfc2119.txt' />
                 <format type='HTML' octets='17970' target='http://xml.resource.org/public/rfc/html/rfc2119.html' />
                 <format type='XML' octets='5777' target='http://xml.resource.org/public/rfc/xml/rfc2119.xml' />
+            </reference>
+
+            <reference anchor='RFC2617'>
+                <front>
+                    <title abbrev='HTTP Authentication'>HTTP Authentication: Basic and Digest Access Authentication</title>
+                    <author initials='J.' surname='Franks' fullname='John Franks'/>
+                    <author initials='P.M.' surname='Hallam-Baker' fullname='Phillip M. Hallam-Baker'/>
+                    <author initials='J.L.' surname='Hostetler' fullname='Jeffery L. Hostetler'/>
+                    <author initials='S.D.' surname='Lawrence' fullname='Scott D. Lawrence'/>
+                    <author initials='P.J.' surname='Leach' fullname='Paul J. Leach'/>
+                    <author initials='A.' surname='Luotonen' fullname='Ari Luotonen'/>
+                    <author initials='L.' surname='Stewart' fullname='Lawrence C. Stewart'/>
+                    <date year='1999' month='June' />
+                </front>
+                <seriesInfo name='RFC' value='2617' />
+                <format type='TXT' octets='77638' target='http://www.rfc-editor.org/rfc/rfc2617.txt' />
+                <format type='HTML' octets='117260' target='http://xml.resource.org/public/rfc/html/rfc2617.html' />
+                <format type='XML' octets='88198' target='http://xml.resource.org/public/rfc/xml/rfc2617.xml' />
             </reference>
 
             <reference anchor='RFC7230'>
@@ -532,6 +562,15 @@ Content-Length: 1234
                 <format type='TXT' octets='38142' target='http://www.rfc-editor.org/rfc/rfc7235.txt' />
             </reference>
 
+            <reference anchor="I-D.basicauth">
+                <front>
+                    <title>The 'Basic' HTTP Authentication Scheme</title>
+                    <author initials='J.' surname='Reschke' fullname='J. Reschke'/>
+                    <date year='2015' month='February'/>
+                </front>
+                <seriesInfo name="Internet-Draft" value="draft-ietf-httpauth-basicauth-update-07"/>
+            </reference>
+
             <reference anchor="STD66">
                 <front>
                     <title abbrev="URI Generic Syntax">Uniform Resource Identifier (URI): Generic
@@ -601,9 +640,7 @@ Content-Length: 1234
 
             <section title="Since draft-young-md-query-04">
                 <t>
-                    Updated to rely on the new definition of HTTP/1.1 in
-                    <xref target="RFC7230"/>, <xref target="RFC7231"/>, <xref target="RFC7232"/>,
-                    <xref target="RFC7234"/> and <xref target="RFC7235"/>
+                    Updated to rely on the new definition of HTTP/1.1 in <xref target="RFC7230"/> et seq.
                     instead of RFC 2616.
                 </t>
                 <t>
