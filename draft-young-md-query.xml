@@ -87,9 +87,15 @@
 
             <section title="Terminology">
                 <t>
-                    <list>
-                        <t>entity - A single logical construct for which metadata may be asserted. Generally this is a network accessible service.</t>
-                        <t>metadata - A machine readable description of certain entity characteristics. Generally metadata provides information such as end point references, service contact information, etc.</t>
+                    <list style="hanging">
+                        <t hangText="entity:">
+                            A single logical construct for which metadata may be asserted. Generally this is a
+                            network accessible service.
+                        </t>
+                        <t hangText="metadata:">
+                            A machine readable description of certain entity characteristics. Generally metadata
+                            provides information such as end point references, service contact information, etc.
+                        </t>
                     </list>
                 </t>
             </section>
