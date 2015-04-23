@@ -312,7 +312,7 @@ sha1hex  = 40*HEXDIGIT
                 <front>
                     <title>Metadata Query Protocol</title>
                     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
-                    <date year='2014' month='October'/>
+                    <date year='2015' month='April'/>
                 </front>
                 <seriesInfo name="Internet-Draft" value="draft-young-md-query-04"/>
             </reference>
