@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            April 22, 2015
-Expires: October 24, 2015
+Intended status: Informational                            April 23, 2015
+Expires: October 25, 2015
 
 
                         Metadata Query Protocol
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 24, 2015.
+   This Internet-Draft will expire on October 25, 2015.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Young                   Expires October 24, 2015                [Page 1]
+Young                   Expires October 25, 2015                [Page 1]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
@@ -87,7 +87,7 @@ Table of Contents
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .   9
      6.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   9
      6.2.  Confidentiality . . . . . . . . . . . . . . . . . . . . .   9
-     6.3.  Authentication  . . . . . . . . . . . . . . . . . . . . .   9
+     6.3.  Authentication  . . . . . . . . . . . . . . . . . . . . .  10
    7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
    8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
    9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  10
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Young                   Expires October 24, 2015                [Page 2]
+Young                   Expires October 25, 2015                [Page 2]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
@@ -120,12 +120,11 @@ Internet-Draft           Metadata Query Protocol              April 2015
    descriptive metadata about a service in order to customize or obtain
    information about the client's connection parameters.  While the form
    of the metadata (e.g., JSON, XML) and content varies between services
-   this document specifies a set of semantics for HTTP ([RFC7230],
-   [RFC7231], [RFC7232], [RFC7233], [RFC7234], [RFC7235]) that allow
-   clients to rely on certain behavior.  The defined behavior is meant
-   to make it easy for clients to perform queries, to be efficient for
-   both requesters and responders, and to allow the responder to scale
-   in various ways.
+   this document specifies a set of semantics for HTTP ([RFC7230] et
+   seq.) that allow clients to rely on certain behavior.  The defined
+   behavior is meant to make it easy for clients to perform queries, to
+   be efficient for both requesters and responders, and to allow the
+   responder to scale in various ways.
 
    The Research and Education Federations group ([REFEDS]) is the voice
    that articulates the mutual needs of research and education identity
@@ -165,7 +164,8 @@ Internet-Draft           Metadata Query Protocol              April 2015
 
 
 
-Young                   Expires October 24, 2015                [Page 3]
+
+Young                   Expires October 25, 2015                [Page 3]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
@@ -178,12 +178,12 @@ Internet-Draft           Metadata Query Protocol              April 2015
 
 2.1.  Transport Protocol
 
-   The metadata query protocol makes use of the HTTP protocol to
-   transmit requests and responses.  The underlying HTTP connection MAY
-   make use of any appropriate transport protocol.  In particular, the
-   HTTP connection MAY make use of either TCP or TLS at the transport
-   layer.  See the Security Considerations section for guidance in
-   choosing an appropriate transport protocol.
+   The metadata query protocol makes use of the HTTP protocol
+   ([RFC7230]) to transmit requests and responses.  The underlying HTTP
+   connection MAY make use of any appropriate transport protocol.  In
+   particular, the HTTP connection MAY make use of either TCP or TLS at
+   the transport layer.  See the Security Considerations section for
+   guidance in choosing an appropriate transport protocol.
 
 2.2.  HTTP Version
 
@@ -203,25 +203,25 @@ Internet-Draft           Metadata Query Protocol              April 2015
    All metadata query requests MUST include the following HTTP headers:
 
       Accept - this header MUST contain the content-type identifying the
-      type, or form, of metadata to be retrieved
+      type, or form, of metadata to be retrieved.  See section 5.3.2 of
+      [RFC7231].
 
    All metadata query requests SHOULD include the following HTTP
    headers:
 
-      Accept-Charset
+      Accept-Charset, see section 5.3.3 of [RFC7231]
 
-      Accept-Encoding
+      Accept-Encoding, see section 5.3.4 of [RFC7231]
 
    A metadata request to the same URL, after an initial request, MUST
-   include the following header per section 3.2 of RFC 7232 [RFC7232]:
+   include the following header:
 
-      If-None-Match
-
-
+      If-None-Match, see section 3.2 of [RFC7232].
 
 
 
-Young                   Expires October 24, 2015                [Page 4]
+
+Young                   Expires October 25, 2015                [Page 4]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
@@ -231,20 +231,21 @@ Internet-Draft           Metadata Query Protocol              April 2015
    All successful metadata query responses (even those that return no
    results) MUST include the following headers:
 
-      Content-Encoding - required if, and only if, content is compressed
+      Content-Encoding - required if, and only if, content is
+      compressed.  See section 3.1.2.2 of [RFC7231].
 
-      Content-Type
+      Content-Type, see section 3.1.1.5 of [RFC7231].
 
-      ETag
+      ETag, see section 2.3 of [RFC7232].
 
    All metadata retrieval responses SHOULD include the following
    headers:
 
-      Cache-Control
+      Cache-Control, see section 5.2 of [RFC7234].
 
-      Content-Length
+      Content-Length, see section 3.3.2 of [RFC7230]
 
-      Last-Modified
+      Last-Modified, see section 2.2 of [RFC7232].
 
 2.6.  Status Codes
 
@@ -272,15 +273,17 @@ Internet-Draft           Metadata Query Protocol              April 2015
       406 "Not Acceptable" - response code indicating that metadata is
       not available in the request content-type
 
-      505 "HTTP Version Not Supported" - response code indicating that
-      HTTP/1.1 was not used
 
 
 
-Young                   Expires October 24, 2015                [Page 5]
+
+Young                   Expires October 25, 2015                [Page 5]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
+
+      505 "HTTP Version Not Supported" - response code indicating that
+      HTTP/1.1 was not used
 
 2.7.  Base URL
 
@@ -326,17 +329,17 @@ Internet-Draft           Metadata Query Protocol              April 2015
    An identifier used in the query protocol is a non-empty sequence of
    arbitrary 8-bit characters:
 
-   id       = 1*idchar
-   idchar   = %x00-ff ; any encodable character
 
 
 
 
-
-Young                   Expires October 24, 2015                [Page 6]
+Young                   Expires October 25, 2015                [Page 6]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
+
+   id       = 1*idchar
+   idchar   = %x00-ff ; any encodable character
 
 3.2.  Protocol
 
@@ -378,21 +381,22 @@ Internet-Draft           Metadata Query Protocol              April 2015
 
    The response to a metadata query request MUST be a document that
    provides metadata for the given request in the format described by
-   the request's Content-Type header.
+   the request's Accept header.
 
    The responder is responsible for ensuring that the metadata returned
    is valid.  If the responder can not create a valid document it MUST
    respond with a 406 status code.  An example of such an error would be
-   the case where the result of the query is metadata for multiple
-   entities but the request content type does not support returning
-   multiple results in a single document.
 
 
 
-Young                   Expires October 24, 2015                [Page 7]
+Young                   Expires October 25, 2015                [Page 7]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
+
+   the case where the result of the query is metadata for multiple
+   entities but the request content type does not support returning
+   multiple results in a single document.
 
 3.2.4.  Example Request and Response
 
@@ -437,18 +441,17 @@ Internet-Draft           Metadata Query Protocol              April 2015
    retrieved metadata is meant to expire.  The responder SHOULD also
    include cache control information with 404 Not Found responses.  This
    allows the requester to create and maintain a negative-response
-   cache.  When cache controls are used only the 'max-age' directive
-   SHOULD be used.
 
 
 
 
-
-
-Young                   Expires October 24, 2015                [Page 8]
+Young                   Expires October 25, 2015                [Page 8]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
+
+   cache.  When cache controls are used only the 'max-age' directive
+   SHOULD be used.
 
 4.3.  Content Compression
 
@@ -491,20 +494,24 @@ Internet-Draft           Metadata Query Protocol              April 2015
    and responder support TLS.  Other mechanisms, such as XML encryption,
    MAY also be supported.
 
-6.3.  Authentication
-
-   All responders which require client authentication to view retrieved
-   information MUST support the use of HTTP basic authentication over
-   TLS.  Responders SHOULD also support the use of X.509 client
-   certificate authentication.
 
 
 
 
-Young                   Expires October 24, 2015                [Page 9]
+
+
+
+Young                   Expires October 25, 2015                [Page 9]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
+
+6.3.  Authentication
+
+   All responders which require client authentication to view retrieved
+   information MUST support the use of HTTP basic authentication
+   ([RFC7235], [RFC2617]/[I-D.basicauth]) over TLS.  Responders SHOULD
+   also support the use of X.509 client certificate authentication.
 
 7.  IANA Considerations
 
@@ -535,6 +542,26 @@ Internet-Draft           Metadata Query Protocol              April 2015
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
 
+   [I-D.basicauth]
+              Reschke, J., "The 'Basic' HTTP Authentication Scheme",
+              draft-ietf-httpauth-basicauth-update-07 (work in
+              progress), February 2015.
+
+   [RFC2617]  Franks, J., Hallam-Baker, P., Hostetler, J., Lawrence, S.,
+              Leach, P., Luotonen, A., and L. Stewart, "HTTP
+              Authentication: Basic and Digest Access Authentication",
+              RFC 2617, June 1999.
+
+
+
+
+
+
+Young                   Expires October 25, 2015               [Page 10]
+
+Internet-Draft           Metadata Query Protocol              April 2015
+
+
    [RFC7230]  Fielding, R. and J. Reschke, "Hypertext Transfer Protocol
               (HTTP/1.1): Message Syntax and Routing", RFC 7230, June
               2014.
@@ -545,22 +572,9 @@ Internet-Draft           Metadata Query Protocol              April 2015
    [RFC7232]  Fielding, R. and J. Reschke, "Hypertext Transfer Protocol
               (HTTP/1.1): Conditional Requests", RFC 7232, June 2014.
 
-   [RFC7233]  Fielding, R., Lafon, Y., and J. Reschke, "Hypertext
-              Transfer Protocol (HTTP/1.1): Range Requests", RFC 7233,
-              June 2014.
-
    [RFC7234]  Fielding, R., Nottingham, M., and J. Reschke, "Hypertext
               Transfer Protocol (HTTP/1.1): Caching", RFC 7234, June
               2014.
-
-
-
-
-
-Young                   Expires October 24, 2015               [Page 10]
-
-Internet-Draft           Metadata Query Protocol              April 2015
-
 
    [RFC7235]  Fielding, R. and J. Reschke, "Hypertext Transfer Protocol
               (HTTP/1.1): Authentication", RFC 7235, June 2014.
@@ -599,21 +613,7 @@ Internet-Draft           Metadata Query Protocol              April 2015
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                   Expires October 24, 2015               [Page 11]
+Young                   Expires October 25, 2015               [Page 11]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
@@ -622,9 +622,11 @@ Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
 A.1.  Since draft-young-md-query-04
 
-   Updated to rely on the new definition of HTTP/1.1 in [RFC7230],
-   [RFC7231], [RFC7232], [RFC7233], [RFC7234] and [RFC7235] instead of
-   RFC 2616.
+   Updated to rely on the new definition of HTTP/1.1 in [RFC7230] et
+   seq.  instead of RFC 2616.
+
+   Corrected Section 3.2.3 to indicate that the request contains an
+   Accept header, not a Content-Type header.
 
 A.2.  Since draft-young-md-query-03
 
@@ -667,9 +669,7 @@ A.4.  Since draft-young-md-query-01
 
 
 
-
-
-Young                   Expires October 24, 2015               [Page 12]
+Young                   Expires October 25, 2015               [Page 12]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
@@ -725,7 +725,7 @@ A.6.  Since draft-lajoie-md-query-01
 
 
 
-Young                   Expires October 24, 2015               [Page 13]
+Young                   Expires October 25, 2015               [Page 13]
 
 Internet-Draft           Metadata Query Protocol              April 2015
 
@@ -781,4 +781,4 @@ Author's Address
 
 
 
-Young                   Expires October 24, 2015               [Page 14]
+Young                   Expires October 25, 2015               [Page 14]

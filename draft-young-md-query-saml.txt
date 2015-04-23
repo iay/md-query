@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            April 22, 2015
-Expires: October 24, 2015
+Intended status: Informational                            April 23, 2015
+Expires: October 25, 2015
 
 
               SAML Profile for the Metadata Query Protocol
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 24, 2015.
+   This Internet-Draft will expire on October 25, 2015.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Young                   Expires October 24, 2015                [Page 1]
+Young                   Expires October 25, 2015                [Page 1]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Young                   Expires October 24, 2015                [Page 2]
+Young                   Expires October 25, 2015                [Page 2]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -165,7 +165,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 24, 2015                [Page 3]
+Young                   Expires October 25, 2015                [Page 3]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -221,7 +221,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 24, 2015                [Page 4]
+Young                   Expires October 25, 2015                [Page 4]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -277,7 +277,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 24, 2015                [Page 5]
+Young                   Expires October 25, 2015                [Page 5]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -333,14 +333,14 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 24, 2015                [Page 6]
+Young                   Expires October 25, 2015                [Page 6]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-04 (work in progress), October 2014.
+              query-04 (work in progress), April 2015.
 
    [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
               (SHA1)", RFC 3174, September 2001.
@@ -389,7 +389,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 24, 2015                [Page 7]
+Young                   Expires October 25, 2015                [Page 7]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -445,4 +445,4 @@ Author's Address
 
 
 
-Young                   Expires October 24, 2015                [Page 8]
+Young                   Expires October 25, 2015                [Page 8]
