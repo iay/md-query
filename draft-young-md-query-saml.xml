@@ -40,6 +40,22 @@
                 This document is a product of the Research and Education Federations (REFEDS) Working Group process.
             </t>
         </abstract>
+
+        <note title="Editorial Note (To be removed by RFC Editor before publication)">
+            <t>
+                Discussion of this draft takes place on the MDX
+                mailing list (mdx@lists.iay.org.uk), which is accessed from
+                <xref target="MDX.list"/>.
+            </t>
+            <t>
+                XML versions, latest edits and the issues list for this document
+                are available from <xref target="md-query"/>.
+            </t>
+            <t>
+                The changes in this draft are summarized in <xref target="changes.since.03"/>.
+            </t>
+        </note>
+
     </front>
 
     <middle>
@@ -451,6 +467,22 @@ sha1hex  = 40*HEXDIGIT
                 <seriesInfo name="OASIS Standard" value="saml-core-2.0-os"/>
             </reference>
 
+            <reference anchor="MDX.list" target="http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk">
+                <front>
+                    <title>MDX Mailing List</title>
+                    <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
+                    <date/>
+                </front>
+            </reference>
+
+            <reference anchor="md-query" target="https://github.com/iay/md-query">
+                <front>
+                    <title>md-query Project</title>
+                    <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
+                    <date/>
+                </front>
+            </reference>
+
         </references>
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
@@ -485,9 +517,13 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-saml-03">
+            <section title="Since draft-young-md-query-saml-03" anchor="changes.since.03">
                 <t>
                     Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+                <t>
+                    Added an Editorial Note to help direct readers
+                    back to the discussion.
                 </t>
             </section>
 
