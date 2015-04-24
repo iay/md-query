@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            April 23, 2015
-Expires: October 25, 2015
+Intended status: Informational                            April 24, 2015
+Expires: October 26, 2015
 
 
               SAML Profile for the Metadata Query Protocol
@@ -18,6 +18,16 @@ Abstract
 
    This document is a product of the Research and Education Federations
    (REFEDS) Working Group process.
+
+Editorial Note (To be removed by RFC Editor before publication)
+
+   Discussion of this draft takes place on the MDX mailing list
+   (mdx@lists.iay.org.uk), which is accessed from [MDX.list].
+
+   XML versions, latest edits and the issues list for this document are
+   available from [md-query].
+
+   The changes in this draft are summarized in Appendix A.5.
 
 Status of This Memo
 
@@ -34,7 +44,19 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 25, 2015.
+   This Internet-Draft will expire on October 26, 2015.
+
+
+
+
+
+
+
+
+Young                   Expires October 26, 2015                [Page 1]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
 
 Copyright Notice
 
@@ -48,16 +70,6 @@ Copyright Notice
    carefully, as they describe your rights and restrictions with respect
    to this document.
 
-
-
-
-
-
-Young                   Expires October 25, 2015                [Page 1]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
-
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
@@ -70,7 +82,7 @@ Table of Contents
        2.2.3.  Additional Identifiers  . . . . . . . . . . . . . . .   4
    3.  Response Profile  . . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  Response Cardinality  . . . . . . . . . . . . . . . . . .   4
-       3.1.1.  No Entity Descriptors Returned  . . . . . . . . . . .   4
+       3.1.1.  No Entity Descriptors Returned  . . . . . . . . . . .   5
        3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   5
        3.1.3.  More Than One Entity Descriptor Returned  . . . . . .   5
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
@@ -78,21 +90,29 @@ Table of Contents
      4.2.  Use of SHA-1 in Transformed Identifiers . . . . . . . . .   6
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
    6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
    Appendix A.  Change Log (to be removed by RFC Editor before
-                publication) . . . . . . . . . . . . . . . . . . . .   8
-     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   8
-     A.2.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   8
-     A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   8
-     A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   8
-     A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   8
+                publication) . . . . . . . . . . . . . . . . . . . .   9
+     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   9
+     A.2.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   9
+     A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   9
+     A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   9
+     A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   9
 
 1.  Introduction
 
    This document profiles the Metadata Query Protocol
    [I-D.young-md-query] for use with SAML metadata [SAML2Meta].
+
+
+
+
+Young                   Expires October 26, 2015                [Page 2]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
 
    The Research and Education Federations group ([REFEDS]) is the voice
    that articulates the mutual needs of research and education identity
@@ -106,13 +126,6 @@ Table of Contents
    working group sign-off process will have been followed for these
    documents, as described in the REFEDS Participant's Agreement
    [REFEDS.agreement].
-
-
-
-Young                   Expires October 25, 2015                [Page 2]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
    This document is a product of the REFEDS Working Group process.
 
@@ -150,6 +163,13 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    transformed by means of the SHA-1 [RFC3174] hash algorithm (see
    [SAML2Bind] sections 3.6 and 3.6.4).
 
+
+
+Young                   Expires October 26, 2015                [Page 3]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
    In order to support use cases in which clients may be in possession
    of only such a transformed representation of a SAML entity's unique
    identifier without any way to establish the original entity
@@ -157,18 +177,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    each entity with an identifier matching the "sha1id" production in
    the following ABNF grammar, and treat such an identifier as
    equivalent to the corresponding untransformed identifier:
-
-
-
-
-
-
-
-
-Young                   Expires October 25, 2015                [Page 3]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
    SHA1     = %x73 %x68 %x61 %x31 ; lower case "sha1"
    DIGIT    = %x30-39
@@ -210,21 +218,18 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    appropriate representation described below depending on the number of
    "EntityDescriptor" elements returned.
 
+
+
+
+Young                   Expires October 26, 2015                [Page 4]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
 3.1.1.  No Entity Descriptors Returned
 
    A response which returns no "EntityDescriptor" elements MUST be
    represented by an HTTP status code of 404 ("not found").
-
-
-
-
-
-
-
-Young                   Expires October 25, 2015                [Page 4]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
 3.1.2.  One Entity Descriptor Returned
 
@@ -268,19 +273,20 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    o  SHOULD use an RSA keypair whose modulus is no less than 2048 bits
       in length.
 
+
+
+
+
+Young                   Expires October 26, 2015                [Page 5]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
    o  SHOULD NOT use the SHA-1 cryptographic hash algorithm as a digest
       algorithm.
 
    o  MUST NOT use the MD5 cryptographic hash algorithm as a digest
       algorithm.
-
-
-
-
-Young                   Expires October 25, 2015                [Page 5]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
    o  SHOULD otherwise follow current cryptographic best practices in
       algorithm selection.
@@ -321,22 +327,23 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
       Tom Scavo (Internet2)
 
+
+
+
+
+
+
+Young                   Expires October 26, 2015                [Page 6]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
 7.  References
 
 7.1.  Normative References
 
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
-
-
-
-
-
-
-Young                   Expires October 25, 2015                [Page 6]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
@@ -362,6 +369,10 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 7.2.  Informative References
 
+   [MDX.list]
+              Young, I., Ed., "MDX Mailing List",
+              <http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk>.
+
    [REFEDS]   Research and Education Federations, "REFEDS Home Page",
               <http://www.refeds.org/>.
 
@@ -373,6 +384,16 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, July 2007.
 
+
+
+
+
+
+Young                   Expires October 26, 2015                [Page 7]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
    [SAML2Core]
               Cantor, S., Kemp, J., Philpott, R., and E. Maler,
               "Assertions and Protocol for the OASIS Security Assertion
@@ -380,6 +401,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
               2.0-os, March 2005, <http://docs.oasis-
               open.org/security/saml/v2.0/saml-core-2.0-os.pdf>.
 
+   [md-query]
+              Young, I., Ed., "md-query Project",
+              <https://github.com/iay/md-query>.
 
 
 
@@ -389,7 +413,39 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 25, 2015                [Page 7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                   Expires October 26, 2015                [Page 8]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -422,6 +478,9 @@ A.5.  Since draft-young-md-query-saml-03
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
+   Added an Editorial Note to help direct readers back to the
+   discussion.
+
 Author's Address
 
    Ian A. Young (editor)
@@ -442,7 +501,4 @@ Author's Address
 
 
 
-
-
-
-Young                   Expires October 25, 2015                [Page 8]
+Young                   Expires October 26, 2015                [Page 9]
