@@ -527,7 +527,7 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-saml-03" anchor="changes.since.04">
+            <section title="Since draft-young-md-query-saml-04" anchor="changes.since.04">
                 <t>
                     Fix reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
