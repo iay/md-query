@@ -54,7 +54,7 @@
                 are available from <xref target="md-query"/>.
             </t>
             <t>
-                The changes in this draft are summarized in <xref target="changes.since.04"/>.
+                The changes in this draft are summarized in <xref target="latest.changes"/>.
             </t>
         </note>
 
@@ -788,7 +788,7 @@ Content-Length: 1234
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-04" anchor="changes.since.04">
+            <section title="Since draft-young-md-query-04" anchor="latest.changes">
                 <t>
                     Updated to rely on the new definition of HTTP/1.1 in <xref target="RFC7230"/> et seq.
                     instead of RFC 2616.
