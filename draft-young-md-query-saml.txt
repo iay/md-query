@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            April 24, 2015
-Expires: October 26, 2015
+Intended status: Informational                            April 28, 2015
+Expires: October 30, 2015
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-04
+                      draft-young-md-query-saml-05
 
 Abstract
 
@@ -27,7 +27,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.5.
+   The changes in this draft are summarized in Appendix A.6.
 
 Status of This Memo
 
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 26, 2015.
+   This Internet-Draft will expire on October 30, 2015.
 
 
 
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Young                   Expires October 26, 2015                [Page 1]
+Young                   Expires October 30, 2015                [Page 1]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -72,16 +72,16 @@ Copyright Notice
 
 Table of Contents
 
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
      1.1.  Notation and Conventions  . . . . . . . . . . . . . . . .   3
    2.  Request Profile . . . . . . . . . . . . . . . . . . . . . . .   3
      2.1.  Content Type  . . . . . . . . . . . . . . . . . . . . . .   3
      2.2.  Identifiers . . . . . . . . . . . . . . . . . . . . . . .   3
        2.2.1.  Unique Identifier . . . . . . . . . . . . . . . . . .   3
-       2.2.2.  Transformed Identifier  . . . . . . . . . . . . . . .   3
+       2.2.2.  Transformed Identifier  . . . . . . . . . . . . . . .   4
        2.2.3.  Additional Identifiers  . . . . . . . . . . . . . . .   4
-   3.  Response Profile  . . . . . . . . . . . . . . . . . . . . . .   4
-     3.1.  Response Cardinality  . . . . . . . . . . . . . . . . . .   4
+   3.  Response Profile  . . . . . . . . . . . . . . . . . . . . . .   5
+     3.1.  Response Cardinality  . . . . . . . . . . . . . . . . . .   5
        3.1.1.  No Entity Descriptors Returned  . . . . . . . . . . .   5
        3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   5
        3.1.3.  More Than One Entity Descriptor Returned  . . . . . .   5
@@ -100,19 +100,24 @@ Table of Contents
      A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   9
      A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   9
      A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   9
+     A.6.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   9
+
+
+
+
+
+
+
+
+Young                   Expires October 30, 2015                [Page 2]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
 
 1.  Introduction
 
    This document profiles the Metadata Query Protocol
    [I-D.young-md-query] for use with SAML metadata [SAML2Meta].
-
-
-
-
-Young                   Expires October 26, 2015                [Page 2]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
    The Research and Education Federations group ([REFEDS]) is the voice
    that articulates the mutual needs of research and education identity
@@ -156,19 +161,21 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    identifier of the entity, corresponding to the "entityID" attribute
    of the entity's "EntityDescriptor" element in SAML metadata.
 
+
+
+
+
+Young                   Expires October 30, 2015                [Page 3]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
 2.2.2.  Transformed Identifier
 
    SAML 2.0 [SAML2Core] includes profiles based on the transfer of an
    "artifact" containing the unique identifier of a SAML entity
    transformed by means of the SHA-1 [RFC3174] hash algorithm (see
    [SAML2Bind] sections 3.6 and 3.6.4).
-
-
-
-Young                   Expires October 26, 2015                [Page 3]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
    In order to support use cases in which clients may be in possession
    of only such a transformed representation of a SAML entity's unique
@@ -209,6 +216,16 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    Entities MAY also be associated with any number of additional
    responder-defined identifiers naming arbitrary groups of entities.
 
+
+
+
+
+
+Young                   Expires October 30, 2015                [Page 4]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
 3.  Response Profile
 
 3.1.  Response Cardinality
@@ -217,14 +234,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    including none.  Responses compliant with this profile MUST use the
    appropriate representation described below depending on the number of
    "EntityDescriptor" elements returned.
-
-
-
-
-Young                   Expires October 26, 2015                [Page 4]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
 3.1.1.  No Entity Descriptors Returned
 
@@ -264,6 +273,15 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
    operation of interacting services it is strongly RECOMMENDED that a
    mechanism for integrity checking is provided to clients.
 
+
+
+
+
+Young                   Expires October 30, 2015                [Page 5]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
    It is RECOMMENDED that the integrity checking mechanism provided by a
    responder is a digital signature embedded in the returned metadata
    document, as defined by [SAML2Meta] section 3.
@@ -272,15 +290,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
    o  SHOULD use an RSA keypair whose modulus is no less than 2048 bits
       in length.
-
-
-
-
-
-Young                   Expires October 26, 2015                [Page 5]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
    o  SHOULD NOT use the SHA-1 cryptographic hash algorithm as a digest
       algorithm.
@@ -321,22 +330,19 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
       Scott Cantor (The Ohio State University)
 
+
+
+
+Young                   Expires October 30, 2015                [Page 6]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+
+
       Leif Johansson (SUNET)
 
       Joe St Sauver (University of Oregon)
 
       Tom Scavo (Internet2)
-
-
-
-
-
-
-
-Young                   Expires October 26, 2015                [Page 6]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
-
 
 7.  References
 
@@ -347,7 +353,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-04 (work in progress), April 2015.
+              query-05 (work in progress), April 2015.
 
    [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
               (SHA1)", RFC 3174, September 2001.
@@ -381,18 +387,15 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
               Agreement", <https://refeds.org/about/
               about_agreement.html>.
 
-   [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
-              Series and RFC Editor", RFC 4844, July 2007.
 
 
-
-
-
-
-Young                   Expires October 26, 2015                [Page 7]
+Young                   Expires October 30, 2015                [Page 7]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
+
+   [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
+              Series and RFC Editor", RFC 4844, July 2007.
 
    [SAML2Core]
               Cantor, S., Kemp, J., Philpott, R., and E. Maler,
@@ -442,10 +445,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-
-
-
-Young                   Expires October 26, 2015                [Page 8]
+Young                   Expires October 30, 2015                [Page 8]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
@@ -481,6 +481,10 @@ A.5.  Since draft-young-md-query-saml-03
    Added an Editorial Note to help direct readers back to the
    discussion.
 
+A.6.  Since draft-young-md-query-saml-03
+
+   Fix reference to the Metadata Query Protocol [I-D.young-md-query].
+
 Author's Address
 
    Ian A. Young (editor)
@@ -497,8 +501,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                   Expires October 26, 2015                [Page 9]
+Young                   Expires October 30, 2015                [Page 9]
