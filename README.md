@@ -33,6 +33,8 @@ The following software is believed to be compatible with the requester (client) 
     * [configuration details][IdPConfig]
 * [Shibboleth Service Provider][SP], v2.4.0 or later:
     * [configuration details][SPConfig]
+* [SimpleSAMLphp][SSP], v1.14.0 or later:
+	* [pull request](https://github.com/simplesamlphp/simplesamlphp/pull/146)
 
 The following software is believed to be compatible with the responder (server) role described in the current draft:
 
@@ -48,6 +50,7 @@ The following software is believed to be compatible with the responder (server) 
 [mdq-server-docker]: https://github.com/iay/mdq-server-docker "mdq-server-docker on GitHub"
 [Boot]: http://projects.spring.io/spring-boot/ "Spring Boot"
 [MDA]: https://shibboleth.net/products/metadata-aggregator.html "Shibboleth Metadata Aggregator"
+[SSP]: https://simplesamlphp.org/ "SimpleSAMLphp"
 
 ## Contributing
 
