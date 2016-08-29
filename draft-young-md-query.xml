@@ -830,18 +830,18 @@ Content-Length: 1234
             </section>
 
             <section title="Since draft-young-md-query-05" anchor="latest.changes">
-              <t>
-                  Remove unnecessary percent-encoding of a ':' character in the
-                  example in <xref target="query.example"/>.
-              </t>
-              <t>
-                  Removed use of the ambiguous term "URL-encoded" in
-                  <xref target="protocol.request.identifier"/>.
-                  Instead, indicate that the encoding must correspond to the
-                  rules for encoding a URL path segment specifically, and call
-                  out some of the more important implications arising from that.
-                  Added a new example illustrating these implications.
-              </t>
+                <t>
+                    Remove unnecessary percent-encoding of a ':' character in the
+                    example in <xref target="query.example"/>.
+                </t>
+                <t>
+                    Removed use of the ambiguous term "URL-encoded" in
+                    <xref target="protocol.request.identifier"/>.
+                    Instead, indicate that the encoding must correspond to the
+                    rules for encoding a URL path segment specifically, and call
+                    out some of the more important implications arising from that.
+                    Added a new example illustrating these implications.
+                </t>
             </section>
 
         </section>
