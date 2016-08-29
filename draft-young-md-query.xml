@@ -322,7 +322,7 @@ http://example.org/mdq/entities
                         identifier <spanx style="verb">http://example.org/idp</spanx>.
                         <figure title="Example Metadata Query Request">
                             <artwork><![CDATA[
-GET /service/entities/http%3A%2F%2Fexample.org%2Fidp HTTP/1.1
+GET /service/entities/http:%2F%2Fexample.org%2Fidp HTTP/1.1
 Host: metadata.example.org
 Accept: application/samlmetadata+xml
                             ]]></artwork>
@@ -805,6 +805,8 @@ Content-Length: 1234
 
             <section title="Since draft-young-md-query-05" anchor="latest.changes">
               <t>
+                  Remove unnecessary percent-encoding of a ':' character in the
+                  example in <xref target="query.example"/>.
               </t>
             </section>
 
