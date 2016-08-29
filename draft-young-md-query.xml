@@ -265,7 +265,11 @@ idchar   = %x00-ff ; any encodable character
                         <list style="symbols">
                             <t>The responder's base URL.</t>
                             <t>The string "entities/".</t>
-                            <t>A single URL-encoded identifier.</t>
+                            <t>
+                                A single identifier, percent-encoded appropriately
+                                for use as a URL path segment
+                                (see sections 2.1 and 3.3 of <xref target="STD66"/>).
+                            </t>
                         </list>
                     </t>
                     <t>
@@ -276,6 +280,28 @@ idchar   = %x00-ff ; any encodable character
                     <figure>
                         <artwork><![CDATA[
 http://example.org/mdq/entities/foo
+                        ]]></artwork>
+                    </figure>
+                    <t>
+                        Correct encoding of the identifier as a URL path segment
+                        is critical for interoperability. In particular:
+                        <list>
+                            <t>The character '/' MUST be percent-encoded.</t>
+                            <t>
+                                The space character MUST be encoded as '%20'
+                                and MUST NOT be encoded as '+' as would be
+                                required in a query parameter.
+                            </t>
+                        </list>
+                    </t>
+                    <t>
+                        For example, with a base URL of <spanx style="verb">http://example.org/mdq/</spanx>, a query for the
+                        identifier "<spanx style="verb">blue/green+light blue</spanx>" would be performed by an HTTP GET request to the
+                        following URL:
+                    </t>
+                    <figure>
+                        <artwork><![CDATA[
+http://example.org/mdq/entities/blue%2Fgreen+light%20blue
                         ]]></artwork>
                     </figure>
                 </section>
@@ -807,6 +833,14 @@ Content-Length: 1234
               <t>
                   Remove unnecessary percent-encoding of a ':' character in the
                   example in <xref target="query.example"/>.
+              </t>
+              <t>
+                  Removed use of the ambiguous term "URL-encoded" in
+                  <xref target="protocol.request.identifier"/>.
+                  Instead, indicate that the encoding must correspond to the
+                  rules for encoding a URL path segment specifically, and call
+                  out some of the more important implications arising from that.
+                  Added a new example illustrating these implications.
               </t>
             </section>
 
