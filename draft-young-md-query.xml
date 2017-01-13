@@ -374,11 +374,13 @@ Content-Length: 1234
 
         <section title="Efficient Retrieval and Caching">
 
-            <section title="Conditional Retrieval">
+            <section title="Conditional Retrieval" anchor="retrieval.conditional">
                 <t>
                     Upon a successful response the responder MUST return an ETag header and MAY return a Last-Modified header as well.
                     Requesters SHOULD use either or both, with the ETag being preferred, in any subsequent requests for the same resource.
-                    In the event that a resource has not changed since the previous request, the requester will receive
+                </t>
+                <t>
+                    In the event that a resource has not changed since the previous request, the responder SHOULD send
                     a 304 (Not Modified) status code as a response.
                 </t>
             </section>
@@ -841,6 +843,13 @@ Content-Length: 1234
                     rules for encoding a URL path segment specifically, and call
                     out some of the more important implications arising from that.
                     Added a new example illustrating these implications.
+                </t>
+                <t>
+                    Updated the description of conditional retrieval in
+                    <xref target="retrieval.conditional"/> to make the use
+                    of a 304 (Not Modified) status code a normative but
+                    non-mandatory obligation on the responder, not simply a
+                    description of what the requester will receive.
                 </t>
             </section>
 

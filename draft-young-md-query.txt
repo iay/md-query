@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                           August 29, 2016
-Expires: March 2, 2017
+Intended status: Informational                          January 13, 2017
+Expires: July 17, 2017
 
 
                         Metadata Query Protocol
@@ -46,21 +46,21 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 2, 2017.
+   This Internet-Draft will expire on July 17, 2017.
 
 
 
 
 
 
-Young                     Expires March 2, 2017                 [Page 1]
+Young                     Expires July 17, 2017                 [Page 1]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
 Copyright Notice
 
-   Copyright (c) 2016 IETF Trust and the persons identified as the
+   Copyright (c) 2017 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                     Expires March 2, 2017                 [Page 2]
+Young                     Expires July 17, 2017                 [Page 2]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
                 publication) . . . . . . . . . . . . . . . . . . . .  13
@@ -165,9 +165,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                 [Page 3]
+Young                     Expires July 17, 2017                 [Page 3]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
 1.2.  Terminology
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                 [Page 4]
+Young                     Expires July 17, 2017                 [Page 4]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
       Accept-Charset, see section 5.3.3 of [RFC7231]
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                 [Page 5]
+Young                     Expires July 17, 2017                 [Page 5]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
       404 "Not Found" - indicates that the requested metadata could not
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                 [Page 6]
+Young                     Expires July 17, 2017                 [Page 6]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
 3.1.  Identifiers
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                 [Page 7]
+Young                     Expires July 17, 2017                 [Page 7]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
    http://example.org/mdq/entities/blue%2Fgreen+light%20blue
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                 [Page 8]
+Young                     Expires July 17, 2017                 [Page 8]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
    HTTP/1.x 200 OK
@@ -470,9 +470,11 @@ Internet-Draft           Metadata Query Protocol             August 2016
    Upon a successful response the responder MUST return an ETag header
    and MAY return a Last-Modified header as well.  Requesters SHOULD use
    either or both, with the ETag being preferred, in any subsequent
-   requests for the same resource.  In the event that a resource has not
-   changed since the previous request, the requester will receive a 304
-   (Not Modified) status code as a response.
+   requests for the same resource.
+
+   In the event that a resource has not changed since the previous
+   request, the responder SHOULD send a 304 (Not Modified) status code
+   as a response.
 
 4.2.  Content Caching
 
@@ -499,11 +501,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-
-
-Young                     Expires March 2, 2017                 [Page 9]
+Young                     Expires July 17, 2017                 [Page 9]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
 5.  Protocol Extension Points
@@ -557,9 +557,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                [Page 10]
+Young                     Expires July 17, 2017                [Page 10]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
       Thomas Lenggenhager (SWITCH)
@@ -613,9 +613,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                [Page 11]
+Young                     Expires July 17, 2017                [Page 11]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
@@ -669,9 +669,9 @@ Internet-Draft           Metadata Query Protocol             August 2016
 
 
 
-Young                     Expires March 2, 2017                [Page 12]
+Young                     Expires July 17, 2017                [Page 12]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -725,9 +725,9 @@ A.2.  Since draft-young-md-query-00
 
 
 
-Young                     Expires March 2, 2017                [Page 13]
+Young                     Expires July 17, 2017                [Page 13]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
    Added a section describing Protocol Extension Points.
@@ -781,9 +781,9 @@ A.6.  Since draft-young-md-query-04
 
 
 
-Young                     Expires March 2, 2017                [Page 14]
+Young                     Expires July 17, 2017                [Page 14]
 
-Internet-Draft           Metadata Query Protocol             August 2016
+Internet-Draft           Metadata Query Protocol            January 2017
 
 
    Added an Editorial Note to help direct readers back to the
@@ -799,6 +799,11 @@ A.7.  Since draft-young-md-query-05
    encoding a URL path segment specifically, and call out some of the
    more important implications arising from that.  Added a new example
    illustrating these implications.
+
+   Updated the description of conditional retrieval in Section 4.1 to
+   make the use of a 304 (Not Modified) status code a normative but non-
+   mandatory obligation on the responder, not simply a description of
+   what the requester will receive.
 
 Author's Address
 
@@ -832,9 +837,4 @@ Author's Address
 
 
 
-
-
-
-
-
-Young                     Expires March 2, 2017                [Page 15]
+Young                     Expires July 17, 2017                [Page 15]
