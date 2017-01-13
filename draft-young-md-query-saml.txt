@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            April 28, 2015
-Expires: October 30, 2015
+Intended status: Informational                          January 13, 2017
+Expires: July 17, 2017
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-05
+                      draft-young-md-query-saml-06
 
 Abstract
 
@@ -27,7 +27,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.6.
+   The changes in this draft are summarized in Appendix A.7.
 
 Status of This Memo
 
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 30, 2015.
+   This Internet-Draft will expire on July 17, 2017.
 
 
 
@@ -53,14 +53,14 @@ Status of This Memo
 
 
 
-Young                   Expires October 30, 2015                [Page 1]
+Young                     Expires July 17, 2017                 [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2017
 
 
 Copyright Notice
 
-   Copyright (c) 2015 IETF Trust and the persons identified as the
+   Copyright (c) 2017 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -100,7 +100,8 @@ Table of Contents
      A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   9
      A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   9
      A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   9
-     A.6.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   9
+     A.6.  Since draft-young-md-query-saml-04  . . . . . . . . . . .   9
+     A.7.  Since draft-young-md-query-saml-05  . . . . . . . . . . .   9
 
 
 
@@ -108,10 +109,9 @@ Table of Contents
 
 
 
-
-Young                   Expires October 30, 2015                [Page 2]
+Young                     Expires July 17, 2017                 [Page 2]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2017
 
 
 1.  Introduction
@@ -165,9 +165,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 30, 2015                [Page 3]
+Young                     Expires July 17, 2017                 [Page 3]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2017
 
 
 2.2.2.  Transformed Identifier
@@ -221,9 +221,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 30, 2015                [Page 4]
+Young                     Expires July 17, 2017                 [Page 4]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2017
 
 
 3.  Response Profile
@@ -277,9 +277,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 30, 2015                [Page 5]
+Young                     Expires July 17, 2017                 [Page 5]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2017
 
 
    It is RECOMMENDED that the integrity checking mechanism provided by a
@@ -333,9 +333,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 30, 2015                [Page 6]
+Young                     Expires July 17, 2017                 [Page 6]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2017
 
 
       Leif Johansson (SUNET)
@@ -353,7 +353,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-05 (work in progress), April 2015.
+              query-06 (work in progress), June 2016.
 
    [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
               (SHA1)", RFC 3174, September 2001.
@@ -389,9 +389,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 30, 2015                [Page 7]
+Young                     Expires July 17, 2017                 [Page 7]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2017
 
 
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
@@ -445,9 +445,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
 
 
 
-Young                   Expires October 30, 2015                [Page 8]
+Young                     Expires July 17, 2017                 [Page 8]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol    April 2015
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2017
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -481,9 +481,13 @@ A.5.  Since draft-young-md-query-saml-03
    Added an Editorial Note to help direct readers back to the
    discussion.
 
-A.6.  Since draft-young-md-query-saml-03
+A.6.  Since draft-young-md-query-saml-04
 
    Fix reference to the Metadata Query Protocol [I-D.young-md-query].
+
+A.7.  Since draft-young-md-query-saml-05
+
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
 Author's Address
 
@@ -497,8 +501,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                   Expires October 30, 2015                [Page 9]
+Young                     Expires July 17, 2017                 [Page 9]
