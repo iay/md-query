@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          January 13, 2017
-Expires: July 17, 2017
+Intended status: Informational                             July 18, 2017
+Expires: January 19, 2018
 
 
                         Metadata Query Protocol
-                        draft-young-md-query-06
+                        draft-young-md-query-07
 
 Abstract
 
@@ -29,7 +29,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.7.
+   The changes in this draft are summarized in Appendix A.8.
 
 Status of This Memo
 
@@ -46,16 +46,16 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 17, 2017.
+   This Internet-Draft will expire on January 19, 2018.
 
 
 
 
 
 
-Young                     Expires July 17, 2017                 [Page 1]
+Young                   Expires January 19, 2018                [Page 1]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                     Expires July 17, 2017                 [Page 2]
+Young                   Expires January 19, 2018                [Page 2]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
                 publication) . . . . . . . . . . . . . . . . . . . .  13
@@ -122,6 +122,8 @@ Internet-Draft           Metadata Query Protocol            January 2017
      A.5.  Since draft-young-md-query-03 . . . . . . . . . . . . . .  14
      A.6.  Since draft-young-md-query-04 . . . . . . . . . . . . . .  14
      A.7.  Since draft-young-md-query-05 . . . . . . . . . . . . . .  15
+     A.8.  Since draft-young-md-query-06 . . . . . . . . . . . . . .  15
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  15
 
 1.  Introduction
 
@@ -163,11 +165,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-
-
-Young                     Expires July 17, 2017                 [Page 3]
+Young                   Expires January 19, 2018                [Page 3]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
 1.2.  Terminology
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-Young                     Expires July 17, 2017                 [Page 4]
+Young                   Expires January 19, 2018                [Page 4]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
       Accept-Charset, see section 5.3.3 of [RFC7231]
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-Young                     Expires July 17, 2017                 [Page 5]
+Young                   Expires January 19, 2018                [Page 5]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
       404 "Not Found" - indicates that the requested metadata could not
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-Young                     Expires July 17, 2017                 [Page 6]
+Young                   Expires January 19, 2018                [Page 6]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
 3.1.  Identifiers
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-Young                     Expires July 17, 2017                 [Page 7]
+Young                   Expires January 19, 2018                [Page 7]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
    http://example.org/mdq/entities/blue%2Fgreen+light%20blue
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-Young                     Expires July 17, 2017                 [Page 8]
+Young                   Expires January 19, 2018                [Page 8]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
    HTTP/1.x 200 OK
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-Young                     Expires July 17, 2017                 [Page 9]
+Young                   Expires January 19, 2018                [Page 9]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
 5.  Protocol Extension Points
@@ -557,9 +557,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-Young                     Expires July 17, 2017                [Page 10]
+Young                   Expires January 19, 2018               [Page 10]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
       Thomas Lenggenhager (SWITCH)
@@ -606,22 +606,26 @@ Internet-Draft           Metadata Query Protocol            January 2017
               (HTTP/1.1): Authentication", RFC 7235, June 2014.
 
    [STD66]    Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
-              Resource Identifier (URI): Generic Syntax", STD 66, RFC
-              3986, January 2005.
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              RFC 3986, January 2005.
 
 
 
 
 
-Young                     Expires July 17, 2017                [Page 11]
+Young                   Expires January 19, 2018               [Page 11]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234, January 2008.
 
 9.2.  Informative References
+
+   [md-query]
+              Young, I., Ed., "md-query Project",
+              <https://github.com/iay/md-query>.
 
    [MDX.list]
               Young, I., Ed., "MDX Mailing List",
@@ -638,9 +642,6 @@ Internet-Draft           Metadata Query Protocol            January 2017
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, July 2007.
 
-   [md-query]
-              Young, I., Ed., "md-query Project",
-              <https://github.com/iay/md-query>.
 
 
 
@@ -668,10 +669,9 @@ Internet-Draft           Metadata Query Protocol            January 2017
 
 
 
-
-Young                     Expires July 17, 2017                [Page 12]
+Young                   Expires January 19, 2018               [Page 12]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -725,9 +725,9 @@ A.2.  Since draft-young-md-query-00
 
 
 
-Young                     Expires July 17, 2017                [Page 13]
+Young                   Expires January 19, 2018               [Page 13]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
    Added a section describing Protocol Extension Points.
@@ -781,9 +781,9 @@ A.6.  Since draft-young-md-query-04
 
 
 
-Young                     Expires July 17, 2017                [Page 14]
+Young                   Expires January 19, 2018               [Page 14]
 
-Internet-Draft           Metadata Query Protocol            January 2017
+Internet-Draft           Metadata Query Protocol               July 2017
 
 
    Added an Editorial Note to help direct readers back to the
@@ -804,6 +804,10 @@ A.7.  Since draft-young-md-query-05
    make the use of a 304 (Not Modified) status code a normative but non-
    mandatory obligation on the responder, not simply a description of
    what the requester will receive.
+
+A.8.  Since draft-young-md-query-06
+
+   No substantive changes.
 
 Author's Address
 
@@ -833,8 +837,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                     Expires July 17, 2017                [Page 15]
+Young                   Expires January 19, 2018               [Page 15]

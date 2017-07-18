@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-06" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-07" submissionType="independent" category="info">
     <front>
         <title>Metadata Query Protocol</title>
 
@@ -831,7 +831,7 @@ Content-Length: 1234
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-05" anchor="latest.changes">
+            <section title="Since draft-young-md-query-05">
                 <t>
                     Remove unnecessary percent-encoding of a ':' character in the
                     example in <xref target="query.example"/>.
@@ -850,6 +850,12 @@ Content-Length: 1234
                     of a 304 (Not Modified) status code a normative but
                     non-mandatory obligation on the responder, not simply a
                     description of what the requester will receive.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-06" anchor="latest.changes">
+                <t>
+                    No substantive changes.
                 </t>
             </section>
 
