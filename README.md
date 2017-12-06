@@ -34,13 +34,14 @@ The following software is believed to be compatible with the requester (client) 
 * [Shibboleth Service Provider][SP], v2.4.0 or later:
     * [configuration details][SPConfig]
 * [SimpleSAMLphp][SSP], v1.14.0 or later:
-	* [pull request](https://github.com/simplesamlphp/simplesamlphp/pull/146)
+    * [pull request](https://github.com/simplesamlphp/simplesamlphp/pull/146)
 
 The following software is believed to be compatible with the responder (server) role described in the current draft:
 
 * [mdq-server][] is a Java implementation based on [Spring Boot][Boot] and the [Shibboleth Metadata Aggregator][MDA]:
     * Configuration examples can be found in the accompanying [mdq-server-docker][] project.
 * Any standard web server configured to serve appropriate static content.
+* [pyff.io][pyFF]
 
 [IdP]: http://shibboleth.net/products/identity-provider.html "Shibboleth IdP"
 [IdPConfig]: https://wiki.shibboleth.net/confluence/display/IDP30/DynamicHTTPMetadataProvider
@@ -51,6 +52,7 @@ The following software is believed to be compatible with the responder (server) 
 [Boot]: http://projects.spring.io/spring-boot/ "Spring Boot"
 [MDA]: https://shibboleth.net/products/metadata-aggregator.html "Shibboleth Metadata Aggregator"
 [SSP]: https://simplesamlphp.org/ "SimpleSAMLphp"
+[pyFF]: https://pyff.io/ "Python Federation Feeder"
 
 ## Contributing
 
