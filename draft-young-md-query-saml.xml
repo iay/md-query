@@ -328,9 +328,9 @@ sha1hex  = 40*HEXDIGIT
                 <front>
                     <title>Metadata Query Protocol</title>
                     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
-                    <date year='2016' month='June'/>
+                    <date year='2018' month='January'/>
                 </front>
-                <seriesInfo name="Internet-Draft" value="draft-young-md-query-07"/>
+                <seriesInfo name="Internet-Draft" value="draft-young-md-query-08"/>
             </reference>
 
             <reference anchor="SAML2Bind">
@@ -546,6 +546,9 @@ sha1hex  = 40*HEXDIGIT
             </section>
 
             <section title="Since draft-young-md-query-saml-07" anchor="latest.changes">
+                <t>
+                  Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
             </section>
 
         </section>

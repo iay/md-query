@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-07" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-08" submissionType="independent" category="info">
     <front>
         <title>Metadata Query Protocol</title>
 
@@ -853,7 +853,13 @@ Content-Length: 1234
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-06" anchor="latest.changes">
+            <section title="Since draft-young-md-query-06">
+                <t>
+                    No substantive changes.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-07" anchor="latest.changes">
                 <t>
                     No substantive changes.
                 </t>
