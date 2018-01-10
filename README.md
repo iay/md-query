@@ -93,10 +93,10 @@ running over HTTP.
 
 ## Building the Documents
 
-The canonical source of the document is the `.xml` source file.  The
-repository always includes that form plus `.txt` versions rendered from the
-XML.  Submission to the IETF datatracker requires the `.txt` version but I
-always supply the `.xml` as well.
+The canonical source of each document is the `.xml` source file, which is
+required for submission to the IETF datatracker.
+The repository always includes that form plus `.txt` versions rendered from the
+XML.
 
 I'm using the included `Makefile` to build the HTML and text forms of the
 document.  This requires a locally installed copy of version 2.x of the
