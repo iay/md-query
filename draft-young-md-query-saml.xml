@@ -125,10 +125,11 @@
                         of an "artifact" containing the unique identifier of a SAML entity transformed by
                         means of the
                         <xref target="RFC3174">SHA-1</xref> hash algorithm (see <xref target="SAML2Bind"/>
-                        sections 3.6 and 3.6.4).
+                        sections 3.6 and 3.6.4). In rare cases, arbitrary identifiers of the same size
+                        may be encountered in place of a hash.
                     </t>
                     <t>
-                        In order to support use cases in which clients may be in possession of only such a transformed
+                        In order to support use cases in which clients may be in possession of only such a transformed or mapped
                         representation of a SAML entity's unique identifier without any way to establish the original
                         entity identifier, a responder compliant with this profile MUST associate each entity
                         with an identifier matching the
@@ -160,6 +161,26 @@ sha1hex  = 40*HEXDIGIT
                     </t>
                     <figure>
                         <artwork>{sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb</artwork>
+                    </figure>
+                    <t>
+                        Responder implementations MAY support arbitrary mappings of entity identifiers
+                        to SAML artifact SourceID values that are not actual digest values. Because clients
+                        have no way to distinguish such cases, they would be expressed with the same
+                        syntax.
+                    </t>
+                    <t>
+                        For example, if the entity with the identifier
+                    </t>
+                    <figure>
+                        <artwork>http://example.org/service</artwork>
+                    </figure>
+                    <t>
+                        issues artifacts with a SourceID (expressed in hexadecimal)
+                        of "a49e4491276c3592d5855b71e16153ff8a6747bd", then it would
+                        be represented as
+                    </t>
+                    <figure>
+                        <artwork>{sha1}a49e4491276c3592d5855b71e16153ff8a6747bd</artwork>
                     </figure>
                     <t>
                         Responder implementations MAY detect malformed SHA-1 transformed identifiers
