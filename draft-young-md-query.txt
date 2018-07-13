@@ -157,11 +157,11 @@ Internet-Draft           Metadata Query Protocol               July 2018
 1.1.  Notation and Conventions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC 2119 [BCP14].
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
 
-   This document makes use of the Augmented BNF metalanguage defined in
-   [STD68].
 
 
 
@@ -169,6 +169,9 @@ Young                   Expires January 14, 2019                [Page 3]
 
 Internet-Draft           Metadata Query Protocol               July 2018
 
+
+   This document makes use of the Augmented BNF metalanguage defined in
+   [STD68].
 
 1.2.  Terminology
 
@@ -215,9 +218,6 @@ Internet-Draft           Metadata Query Protocol               July 2018
       type, or form, of metadata to be retrieved.  See section 5.3.2 of
       [RFC7231].
 
-   All metadata query requests SHOULD include the following HTTP
-   headers:
-
 
 
 
@@ -225,6 +225,9 @@ Young                   Expires January 14, 2019                [Page 4]
 
 Internet-Draft           Metadata Query Protocol               July 2018
 
+
+   All metadata query requests SHOULD include the following HTTP
+   headers:
 
       Accept-Charset, see section 5.3.3 of [RFC7231]
 
@@ -271,9 +274,6 @@ Internet-Draft           Metadata Query Protocol               July 2018
 
       401 "Unauthorized" - response code indicating the request must be
       authenticated before requesting metadata
-
-
-
 
 
 
@@ -575,13 +575,15 @@ Internet-Draft           Metadata Query Protocol               July 2018
 
 9.1.  Normative References
 
-   [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
-
    [I-D.basicauth]
               Reschke, J., "The 'Basic' HTTP Authentication Scheme",
               draft-ietf-httpauth-basicauth-update-07 (work in
               progress), February 2015.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
 
    [RFC2617]  Franks, J., Hallam-Baker, P., Hostetler, J., Lawrence, S.,
               Leach, P., Luotonen, A., and L. Stewart, "HTTP
@@ -605,11 +607,9 @@ Internet-Draft           Metadata Query Protocol               July 2018
    [RFC7235]  Fielding, R. and J. Reschke, "Hypertext Transfer Protocol
               (HTTP/1.1): Authentication", RFC 7235, June 2014.
 
-   [STD66]    Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
-              Resource Identifier (URI): Generic Syntax", STD 66,
-              RFC 3986, January 2005.
-
-
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
 
 
@@ -617,6 +617,10 @@ Young                   Expires January 14, 2019               [Page 11]
 
 Internet-Draft           Metadata Query Protocol               July 2018
 
+
+   [STD66]    Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              RFC 3986, January 2005.
 
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234, January 2008.
@@ -641,10 +645,6 @@ Internet-Draft           Metadata Query Protocol               July 2018
 
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, July 2007.
-
-
-
-
 
 
 
@@ -815,7 +815,7 @@ A.9.  Since draft-young-md-query-07
 
 A.10.  Since draft-young-md-query-08
 
-   No substantive changes.
+   Modernise normative language to include [RFC8174].
 
 Author's Address
 

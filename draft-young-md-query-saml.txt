@@ -137,8 +137,10 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 1.1.  Notation and Conventions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC 2119 [BCP14].
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
 
    This document makes use of the Augmented BNF metalanguage defined in
    [STD68].
@@ -160,8 +162,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
    Each entity known to the responder MUST be associated with the unique
    identifier of the entity, corresponding to the "entityID" attribute
    of the entity's "EntityDescriptor" element in SAML metadata.
-
-
 
 
 
@@ -348,15 +348,21 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 7.1.  Normative References
 
-   [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
-
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
               query-09 (work in progress), January 2018.
 
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
    [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
               (SHA1)", RFC 3174, September 2001.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [SAML2Bind]
               Cantor, S., Hirsch, F., Kemp, J., Philpott, R., and E.
@@ -379,12 +385,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
               Young, I., Ed., "md-query Project",
               <https://github.com/iay/md-query>.
 
-   [MDX.list]
-              Young, I., Ed., "MDX Mailing List",
-              <http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk>.
-
-   [REFEDS]   Research and Education Federations, "REFEDS Home Page",
-              <http://www.refeds.org/>.
 
 
 
@@ -393,6 +393,13 @@ Young                   Expires January 14, 2019                [Page 7]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
+
+   [MDX.list]
+              Young, I., Ed., "MDX Mailing List",
+              <http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk>.
+
+   [REFEDS]   Research and Education Federations, "REFEDS Home Page",
+              <http://www.refeds.org/>.
 
    [REFEDS.agreement]
               Research and Education Federations, "REFEDS Participant's
@@ -408,13 +415,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
               Markup Language (SAML) V2.0", OASIS Standard saml-core-
               2.0-os, March 2005, <http://docs.oasis-
               open.org/security/saml/v2.0/saml-core-2.0-os.pdf>.
-
-
-
-
-
-
-
 
 
 
@@ -510,14 +510,14 @@ A.10.  Since draft-young-md-query-saml-08
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
+   Modernise normative language to include [RFC8174].
+
 Author's Address
 
    Ian A. Young (editor)
    Independent
 
    EMail: ian@iay.org.uk
-
-
 
 
 

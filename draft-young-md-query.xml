@@ -92,9 +92,11 @@
 
             <section title="Notation and Conventions">
                 <t>
-                    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
-                    "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in
-                    <xref target="BCP14">RFC 2119</xref>.
+                    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+                    NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
+                    "MAY", and "OPTIONAL" in this document are to be interpreted as
+                    described in BCP&nbsp;14 <xref target="RFC2119"/> <xref target="RFC8174"/>
+                    when, and only when, they appear in all capitals, as shown here.
                 </t>
                 <t>
                     This document makes use of the Augmented BNF metalanguage defined in <xref target="STD68"/>.
@@ -455,23 +457,7 @@ Content-Length: 1234
     <back>
         <references title="Normative References">
 
-            <reference anchor="BCP14">
-                <front>
-                    <title>
-                        Key words for use in RFCs to Indicate Requirement Levels
-                    </title>
-                    <author initials="S." surname="Bradner" fullname="Scott Bradner">
-                        <organization>Harvard University</organization>
-                        <address><email>sob@harvard.edu</email></address>
-                    </author>
-                    <date month="March" year="1997"/>
-                </front>
-                <seriesInfo name="BCP" value="14"/>
-                <seriesInfo name="RFC" value="2119"/>
-                <format type='TXT' octets='4723' target='http://www.rfc-editor.org/rfc/rfc2119.txt' />
-                <format type='HTML' octets='17970' target='http://xml.resource.org/public/rfc/html/rfc2119.html' />
-                <format type='XML' octets='5777' target='http://xml.resource.org/public/rfc/xml/rfc2119.xml' />
-            </reference>
+            <?rfc include="reference.RFC.2119"?>
 
             <reference anchor='RFC2617'>
                 <front>
@@ -612,6 +598,8 @@ Content-Length: 1234
                 <seriesInfo name='RFC' value='7235' />
                 <format type='TXT' octets='38142' target='http://www.rfc-editor.org/rfc/rfc7235.txt' />
             </reference>
+
+            <?rfc include="reference.RFC.8174"?>
 
             <reference anchor="I-D.basicauth">
                 <front>
@@ -867,7 +855,7 @@ Content-Length: 1234
 
             <section title="Since draft-young-md-query-08" anchor="latest.changes">
                 <t>
-                    No substantive changes.
+                    Modernise normative language to include <xref target="RFC8174"/>.
                 </t>
             </section>
 
