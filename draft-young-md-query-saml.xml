@@ -302,17 +302,7 @@ sha1hex  = 40*HEXDIGIT
         <references title="Normative References">
 
             <?rfc include="reference.RFC.2119"?>
-
-            <reference anchor='RFC3174'>
-                <front>
-                    <title>US Secure Hash Algorithm 1 (SHA1)</title>
-                    <author initials='D.' surname='Eastlake' fullname='D. Eastlake'/>
-                    <author initials='P.' surname='Jones' fullname='P. Jones'/>
-                    <date year='2001' month='September'/>
-                </front>
-                <seriesInfo name='RFC' value='3174'/>
-            </reference>
-
+            <?rfc include="reference.RFC.3174"?>
             <?rfc include="reference.RFC.8174"?>
 
             <reference anchor="I-D.young-md-query">
@@ -389,20 +379,7 @@ sha1hex  = 40*HEXDIGIT
 
         <references title="Informative References">
 
-            <reference anchor='RFC4844'>
-                <front>
-                    <title>The RFC Series and RFC Editor</title>
-                    <author initials='L.' surname='Daigle' fullname='L. Daigle'>
-                        <organization />
-                    </author>
-                    <author>
-                        <organization>Internet Architecture Board</organization>
-                    </author>
-                    <date year='2007' month='July' />
-                </front>
-                <seriesInfo name='RFC' value='4844' />
-                <format type='TXT' octets='38752' target='http://www.rfc-editor.org/rfc/rfc4844.txt' />
-            </reference>
+            <?rfc include="reference.RFC.4844"?>
 
             <reference anchor="REFEDS" target="http://www.refeds.org/">
                 <front>
@@ -548,6 +525,9 @@ sha1hex  = 40*HEXDIGIT
                 </t>
                 <t>
                     Modernise normative language to include <xref target="RFC8174"/>.
+                </t>
+                <t>
+                    Improved references to RFCs.
                 </t>
             </section>
 

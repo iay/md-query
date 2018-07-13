@@ -357,8 +357,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
-   [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
-              (SHA1)", RFC 3174, September 2001.
+   [RFC3174]  Eastlake 3rd, D. and P. Jones, "US Secure Hash Algorithm 1
+              (SHA1)", RFC 3174, DOI 10.17487/RFC3174, September 2001,
+              <https://www.rfc-editor.org/info/rfc3174>.
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -388,7 +389,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
 
-
 Young                   Expires January 14, 2019                [Page 7]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
@@ -406,8 +406,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
               Agreement",
               <https://refeds.org/about/about_agreement.html>.
 
-   [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
-              Series and RFC Editor", RFC 4844, July 2007.
+   [RFC4844]  Daigle, L., Ed. and Internet Architecture Board, "The RFC
+              Series and RFC Editor", RFC 4844, DOI 10.17487/RFC4844,
+              July 2007, <https://www.rfc-editor.org/info/rfc4844>.
 
    [SAML2Core]
               Cantor, S., Kemp, J., Philpott, R., and E. Maler,
@@ -415,7 +416,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
               Markup Language (SAML) V2.0", OASIS Standard saml-core-
               2.0-os, March 2005, <http://docs.oasis-
               open.org/security/saml/v2.0/saml-core-2.0-os.pdf>.
-
 
 
 
@@ -512,14 +512,14 @@ A.10.  Since draft-young-md-query-saml-08
 
    Modernise normative language to include [RFC8174].
 
+   Improved references to RFCs.
+
 Author's Address
 
    Ian A. Young (editor)
    Independent
 
    EMail: ian@iay.org.uk
-
-
 
 
 
