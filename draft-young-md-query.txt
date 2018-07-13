@@ -629,10 +629,13 @@ Internet-Draft           Metadata Query Protocol               July 2018
 
    [STD66]    Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
               Resource Identifier (URI): Generic Syntax", STD 66,
-              RFC 3986, January 2005.
+              RFC 3986, DOI 10.17487/RFC3986, January 2005,
+              <https://www.rfc-editor.org/info/rfc3986>.
 
-   [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
-              Specifications: ABNF", STD 68, RFC 5234, January 2008.
+   [STD68]    Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, RFC 5234,
+              DOI 10.17487/RFC5234, January 2008,
+              <https://www.rfc-editor.org/info/rfc5234>.
 
 9.2.  Informative References
 
@@ -655,9 +658,6 @@ Internet-Draft           Metadata Query Protocol               July 2018
    [RFC4844]  Daigle, L., Ed. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, DOI 10.17487/RFC4844,
               July 2007, <https://www.rfc-editor.org/info/rfc4844>.
-
-
-
 
 
 

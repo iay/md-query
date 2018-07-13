@@ -475,28 +475,29 @@ Content-Length: 1234
                 <seriesInfo name="Internet-Draft" value="draft-ietf-httpauth-basicauth-update-07"/>
             </reference>
 
-            <reference anchor="STD66">
+            <reference anchor="STD66" target="https://www.rfc-editor.org/info/rfc3986">
                 <front>
-                    <title abbrev="URI Generic Syntax">Uniform Resource Identifier (URI): Generic
-                        Syntax</title>
-                    <author initials="T." surname="Berners-Lee" fullname="Tim Berners-Lee"></author>
-                    <author initials="R." surname="Fielding" fullname="Roy T. Fielding"></author>
-                    <author initials="L." surname="Masinter" fullname="Larry Masinter"></author>
-                    <date year="2005" month="January" />
+                    <title>Uniform Resource Identifier (URI): Generic Syntax</title>
+                    <author initials="T." surname="Berners-Lee" fullname="T. Berners-Lee"/>
+                    <author initials="R." surname="Fielding" fullname="R. Fielding"/>
+                    <author initials="L." surname="Masinter" fullname="L. Masinter"/>
+                    <date year="2005" month="January"/>
                 </front>
-                <seriesInfo name="STD" value="66" />
-                <seriesInfo name="RFC" value="3986" />
+                <seriesInfo name="STD" value="66"/>
+                <seriesInfo name="RFC" value="3986"/>
+                <seriesInfo name="DOI" value="10.17487/RFC3986"/>
             </reference>
 
-            <reference anchor="STD68">
+            <reference anchor="STD68" target="https://www.rfc-editor.org/info/rfc5234">
                 <front>
                     <title>Augmented BNF for Syntax Specifications: ABNF</title>
-                    <author initials="D." surname="Crocker" fullname="D. Crocker"/>
+                    <author initials="D." surname="Crocker" fullname="D. Crocker" role="editor"/>
                     <author initials="P." surname="Overell" fullname="P. Overell"/>
                     <date year="2008" month="January"/>
                 </front>
                 <seriesInfo name="STD" value="68"/>
                 <seriesInfo name="RFC" value="5234"/>
+                <seriesInfo name="DOI" value="10.17487/RFC5234"/>
             </reference>
 
         </references>
