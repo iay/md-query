@@ -21,13 +21,17 @@ recent formally submitted Internet Draft.
 
 ## Terminology
 
-Please don't use the term "MDX" to refer to this specification or the protocol specified by it.  "MDX" as an acronym for MetaData eXchange refers to a more general concept of which the Metadata Query Protocol is just one component.
+Please don't use the term "MDX" to refer to this specification or the protocol
+specified by it.  "MDX" as an acronym for MetaData eXchange refers to a more
+general concept of which the Metadata Query Protocol is just one component.
 
-If you need to refer to this specification, md-query or even MDQ is more appropriate.
+If you need to refer to this specification, "md-query" or even "MDQ" is more
+appropriate.
 
 ## Implementations
 
-The following software is believed to be compatible with the requester (client) role described in the current draft:
+The following software is believed to be compatible with the requester (client)
+role described in the current draft:
 
 * [Shibboleth Identity Provider][IdP], v3.0.0 or later:
     * [configuration details][IdPConfig]
@@ -36,7 +40,8 @@ The following software is believed to be compatible with the requester (client) 
 * [SimpleSAMLphp][SSP], v1.14.0 or later:
     * [pull request](https://github.com/simplesamlphp/simplesamlphp/pull/146)
 
-The following software is believed to be compatible with the responder (server) role described in the current draft:
+The following software is believed to be compatible with the responder (server)
+role described in the current draft:
 
 * [mdq-server][] is a Java implementation based on [Spring Boot][Boot] and the [Shibboleth Metadata Aggregator][MDA]:
     * Configuration examples can be found in the accompanying [mdq-server-docker][] project.
@@ -90,8 +95,8 @@ requirements are:
 * metadata format agnostic &mdash; we started with SAML metadata but it shouldn't be the only format we support
 * good net citizen &mdash; we need to work well with proxies, caching infrastructure, etc.
 
-The chosen route has been to define the query protocol as a RESTian web service
-running over HTTP.
+The chosen route has been to define the query protocol as a REST-like web
+service running over HTTP.
 
 ## Building the Documents
 
@@ -101,6 +106,6 @@ The repository always includes that form plus `.txt` versions rendered from the
 XML.
 
 I'm using the included `Makefile` to build the HTML and text forms of the
-document.  This requires a locally installed copy of version 2.x of the
+document.  This requires a locally installed copy of version 2.9.x of the
 [`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).  An
 [online version](http://xml.resource.org) of `xml2rfc` is also available.
