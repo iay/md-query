@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          January 10, 2018
-Expires: July 14, 2018
+Intended status: Informational                             July 13, 2018
+Expires: January 14, 2019
 
 
                         Metadata Query Protocol
-                        draft-young-md-query-08
+                        draft-young-md-query-09
 
 Abstract
 
@@ -29,7 +29,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.9.
+   The changes in this draft are summarized in Appendix A.10.
 
 Status of This Memo
 
@@ -39,23 +39,23 @@ Status of This Memo
    Internet-Drafts are working documents of the Internet Engineering
    Task Force (IETF).  Note that other groups may also distribute
    working documents as Internet-Drafts.  The list of current Internet-
-   Drafts is at http://datatracker.ietf.org/drafts/current/.
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
 
    Internet-Drafts are draft documents valid for a maximum of six months
    and may be updated, replaced, or obsoleted by other documents at any
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 14, 2018.
+   This Internet-Draft will expire on January 14, 2019.
 
 
 
 
 
 
-Young                     Expires July 14, 2018                 [Page 1]
+Young                   Expires January 14, 2019                [Page 1]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
 Copyright Notice
@@ -65,7 +65,7 @@ Copyright Notice
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
-   (http://trustee.ietf.org/license-info) in effect on the date of
+   (https://trustee.ietf.org/license-info) in effect on the date of
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                     Expires July 14, 2018                 [Page 2]
+Young                   Expires January 14, 2019                [Page 2]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
                 publication) . . . . . . . . . . . . . . . . . . . .  13
@@ -124,6 +124,7 @@ Internet-Draft           Metadata Query Protocol            January 2018
      A.7.  Since draft-young-md-query-05 . . . . . . . . . . . . . .  15
      A.8.  Since draft-young-md-query-06 . . . . . . . . . . . . . .  15
      A.9.  Since draft-young-md-query-07 . . . . . . . . . . . . . .  15
+     A.10. Since draft-young-md-query-08 . . . . . . . . . . . . . .  15
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  15
 
 1.  Introduction
@@ -164,10 +165,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-
-Young                     Expires July 14, 2018                 [Page 3]
+Young                   Expires January 14, 2019                [Page 3]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
 1.2.  Terminology
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 4]
+Young                   Expires January 14, 2019                [Page 4]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
       Accept-Charset, see section 5.3.3 of [RFC7231]
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 5]
+Young                   Expires January 14, 2019                [Page 5]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
       404 "Not Found" - indicates that the requested metadata could not
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 6]
+Young                   Expires January 14, 2019                [Page 6]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
 3.1.  Identifiers
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 7]
+Young                   Expires January 14, 2019                [Page 7]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
    http://example.org/mdq/entities/blue%2Fgreen+light%20blue
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 8]
+Young                   Expires January 14, 2019                [Page 8]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
    HTTP/1.x 200 OK
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 9]
+Young                   Expires January 14, 2019                [Page 9]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
 5.  Protocol Extension Points
@@ -557,9 +557,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                [Page 10]
+Young                   Expires January 14, 2019               [Page 10]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
       Thomas Lenggenhager (SWITCH)
@@ -613,9 +613,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                [Page 11]
+Young                   Expires January 14, 2019               [Page 11]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
    [STD68]    Crocker, D. and P. Overell, "Augmented BNF for Syntax
@@ -636,8 +636,8 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
    [REFEDS.agreement]
               Research and Education Federations, "REFEDS Participant's
-              Agreement", <https://refeds.org/about/
-              about_agreement.html>.
+              Agreement",
+              <https://refeds.org/about/about_agreement.html>.
 
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, July 2007.
@@ -669,9 +669,9 @@ Internet-Draft           Metadata Query Protocol            January 2018
 
 
 
-Young                     Expires July 14, 2018                [Page 12]
+Young                   Expires January 14, 2019               [Page 12]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -725,9 +725,9 @@ A.2.  Since draft-young-md-query-00
 
 
 
-Young                     Expires July 14, 2018                [Page 13]
+Young                   Expires January 14, 2019               [Page 13]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
    Added a section describing Protocol Extension Points.
@@ -781,9 +781,9 @@ A.6.  Since draft-young-md-query-04
 
 
 
-Young                     Expires July 14, 2018                [Page 14]
+Young                   Expires January 14, 2019               [Page 14]
 
-Internet-Draft           Metadata Query Protocol            January 2018
+Internet-Draft           Metadata Query Protocol               July 2018
 
 
    Added an Editorial Note to help direct readers back to the
@@ -813,6 +813,10 @@ A.9.  Since draft-young-md-query-07
 
    No substantive changes.
 
+A.10.  Since draft-young-md-query-08
+
+   No substantive changes.
+
 Author's Address
 
    Ian A. Young (editor)
@@ -833,8 +837,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                     Expires July 14, 2018                [Page 15]
+Young                   Expires January 14, 2019               [Page 15]

@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          January 10, 2018
-Expires: July 14, 2018
+Intended status: Informational                             July 13, 2018
+Expires: January 14, 2019
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-08
+                      draft-young-md-query-saml-09
 
 Abstract
 
@@ -27,7 +27,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.9.
+   The changes in this draft are summarized in Appendix A.10.
 
 Status of This Memo
 
@@ -37,14 +37,14 @@ Status of This Memo
    Internet-Drafts are working documents of the Internet Engineering
    Task Force (IETF).  Note that other groups may also distribute
    working documents as Internet-Drafts.  The list of current Internet-
-   Drafts is at http://datatracker.ietf.org/drafts/current/.
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
 
    Internet-Drafts are draft documents valid for a maximum of six months
    and may be updated, replaced, or obsoleted by other documents at any
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 14, 2018.
+   This Internet-Draft will expire on January 14, 2019.
 
 
 
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Young                     Expires July 14, 2018                 [Page 1]
+Young                   Expires January 14, 2019                [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
 Copyright Notice
@@ -65,7 +65,7 @@ Copyright Notice
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
-   (http://trustee.ietf.org/license-info) in effect on the date of
+   (https://trustee.ietf.org/license-info) in effect on the date of
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.
@@ -104,14 +104,14 @@ Table of Contents
      A.7.  Since draft-young-md-query-saml-05  . . . . . . . . . . .   9
      A.8.  Since draft-young-md-query-saml-06  . . . . . . . . . . .   9
      A.9.  Since draft-young-md-query-saml-07  . . . . . . . . . . .   9
+     A.10. Since draft-young-md-query-saml-08  . . . . . . . . . . .  10
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
 
 
 
-
-Young                     Expires July 14, 2018                 [Page 2]
+Young                   Expires January 14, 2019                [Page 2]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
 1.  Introduction
@@ -165,9 +165,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 3]
+Young                   Expires January 14, 2019                [Page 3]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
 2.2.2.  Transformed Identifier
@@ -221,9 +221,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 4]
+Young                   Expires January 14, 2019                [Page 4]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
 3.  Response Profile
@@ -277,9 +277,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 5]
+Young                   Expires January 14, 2019                [Page 5]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
    It is RECOMMENDED that the integrity checking mechanism provided by a
@@ -333,9 +333,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 6]
+Young                   Expires January 14, 2019                [Page 6]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
       Leif Johansson (SUNET)
@@ -353,7 +353,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-08 (work in progress), January 2018.
+              query-09 (work in progress), January 2018.
 
    [RFC3174]  Eastlake, D. and P. Jones, "US Secure Hash Algorithm 1
               (SHA1)", RFC 3174, September 2001.
@@ -389,15 +389,15 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 7]
+Young                   Expires January 14, 2019                [Page 7]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
    [REFEDS.agreement]
               Research and Education Federations, "REFEDS Participant's
-              Agreement", <https://refeds.org/about/
-              about_agreement.html>.
+              Agreement",
+              <https://refeds.org/about/about_agreement.html>.
 
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, July 2007.
@@ -445,9 +445,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
 
 
 
-Young                     Expires July 14, 2018                 [Page 8]
+Young                   Expires January 14, 2019                [Page 8]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -501,10 +501,14 @@ A.9.  Since draft-young-md-query-saml-07
 
 
 
-Young                     Expires July 14, 2018                 [Page 9]
+Young                   Expires January 14, 2019                [Page 9]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
+
+A.10.  Since draft-young-md-query-saml-08
+
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
 Author's Address
 
@@ -553,8 +557,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                     Expires July 14, 2018                [Page 10]
+Young                   Expires January 14, 2019               [Page 10]
