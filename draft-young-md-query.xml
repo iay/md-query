@@ -424,7 +424,7 @@ Content-Length: 1234
                 <t>
                     All responders which require client authentication to view retrieved information MUST support
                     the use of HTTP basic authentication (<xref target="RFC7235"/>,
-                    <xref target="RFC2617"/>/<xref target="I-D.basicauth"/>) over TLS.
+                    <xref target="RFC7617"/>) over TLS.
                     Responders SHOULD also support the use of X.509 client certificate authentication.
                 </t>
             </section>
@@ -458,22 +458,13 @@ Content-Length: 1234
         <references title="Normative References">
 
             <?rfc include="reference.RFC.2119"?>
-            <?rfc include="reference.RFC.2617"?>
             <?rfc include="reference.RFC.7230"?>
             <?rfc include="reference.RFC.7231"?>
             <?rfc include="reference.RFC.7232"?>
             <?rfc include="reference.RFC.7234"?>
             <?rfc include="reference.RFC.7235"?>
+            <?rfc include="reference.RFC.7617"?>
             <?rfc include="reference.RFC.8174"?>
-
-            <reference anchor="I-D.basicauth">
-                <front>
-                    <title>The 'Basic' HTTP Authentication Scheme</title>
-                    <author initials='J.' surname='Reschke' fullname='J. Reschke'/>
-                    <date year='2015' month='February'/>
-                </front>
-                <seriesInfo name="Internet-Draft" value="draft-ietf-httpauth-basicauth-update-07"/>
-            </reference>
 
             <reference anchor="STD66" target="https://www.rfc-editor.org/info/rfc3986">
                 <front>
@@ -709,6 +700,10 @@ Content-Length: 1234
             <section title="Since draft-young-md-query-08" anchor="latest.changes">
                 <t>
                     Modernise normative language to include <xref target="RFC8174"/>.
+                </t>
+                <t>
+                    Reference <xref target="RFC7617"/> instead of the
+                    Internet-Draft.
                 </t>
                 <t>
                     Improved references to RFCs.

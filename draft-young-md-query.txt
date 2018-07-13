@@ -539,8 +539,8 @@ Internet-Draft           Metadata Query Protocol               July 2018
 
    All responders which require client authentication to view retrieved
    information MUST support the use of HTTP basic authentication
-   ([RFC7235], [RFC2617]/[I-D.basicauth]) over TLS.  Responders SHOULD
-   also support the use of X.509 client certificate authentication.
+   ([RFC7235], [RFC7617]) over TLS.  Responders SHOULD also support the
+   use of X.509 client certificate authentication.
 
 7.  IANA Considerations
 
@@ -575,21 +575,10 @@ Internet-Draft           Metadata Query Protocol               July 2018
 
 9.1.  Normative References
 
-   [I-D.basicauth]
-              Reschke, J., "The 'Basic' HTTP Authentication Scheme",
-              draft-ietf-httpauth-basicauth-update-07 (work in
-              progress), February 2015.
-
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
-
-   [RFC2617]  Franks, J., Hallam-Baker, P., Hostetler, J., Lawrence, S.,
-              Leach, P., Luotonen, A., and L. Stewart, "HTTP
-              Authentication: Basic and Digest Access Authentication",
-              RFC 2617, DOI 10.17487/RFC2617, June 1999,
-              <https://www.rfc-editor.org/info/rfc2617>.
 
    [RFC7230]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
               Protocol (HTTP/1.1): Message Syntax and Routing",
@@ -611,17 +600,23 @@ Internet-Draft           Metadata Query Protocol               July 2018
               RFC 7234, DOI 10.17487/RFC7234, June 2014,
               <https://www.rfc-editor.org/info/rfc7234>.
 
+   [RFC7235]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
+              Protocol (HTTP/1.1): Authentication", RFC 7235,
+              DOI 10.17487/RFC7235, June 2014,
+              <https://www.rfc-editor.org/info/rfc7235>.
+
+   [RFC7617]  Reschke, J., "The 'Basic' HTTP Authentication Scheme",
+              RFC 7617, DOI 10.17487/RFC7617, September 2015,
+              <https://www.rfc-editor.org/info/rfc7617>.
+
+
+
 
 
 Young                   Expires January 14, 2019               [Page 11]
 
 Internet-Draft           Metadata Query Protocol               July 2018
 
-
-   [RFC7235]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
-              Protocol (HTTP/1.1): Authentication", RFC 7235,
-              DOI 10.17487/RFC7235, June 2014,
-              <https://www.rfc-editor.org/info/rfc7235>.
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -658,6 +653,11 @@ Internet-Draft           Metadata Query Protocol               July 2018
    [RFC4844]  Daigle, L., Ed. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, DOI 10.17487/RFC4844,
               July 2007, <https://www.rfc-editor.org/info/rfc4844>.
+
+
+
+
+
 
 
 
@@ -817,6 +817,8 @@ A.10.  Since draft-young-md-query-08
 
    Modernise normative language to include [RFC8174].
 
+   Reference [RFC7617] instead of the Internet-Draft.
+
    Improved references to RFCs.
 
 Author's Address
@@ -825,8 +827,6 @@ Author's Address
    Independent
 
    EMail: ian@iay.org.uk
-
-
 
 
 
