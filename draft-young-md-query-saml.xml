@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-saml-09" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-saml-10" submissionType="independent" category="info">
     <front>
         <title>SAML Profile for the Metadata Query Protocol</title>
 
@@ -309,9 +309,9 @@ sha1hex  = 40*HEXDIGIT
                 <front>
                     <title>Metadata Query Protocol</title>
                     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
-                    <date year='2018' month='January'/>
+                    <date year='2019' month='January'/>
                 </front>
-                <seriesInfo name="Internet-Draft" value="draft-young-md-query-09"/>
+                <seriesInfo name="Internet-Draft" value="draft-young-md-query-10"/>
             </reference>
 
             <reference anchor="SAML2Bind">
@@ -520,7 +520,7 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-saml-08" anchor="latest.changes">
+            <section title="Since draft-young-md-query-saml-08">
                 <t>
                   Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
@@ -529,6 +529,12 @@ sha1hex  = 40*HEXDIGIT
                 </t>
                 <t>
                     Improved references to RFCs.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-saml-09" anchor="latest.changes">
+                <t>
+                  Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
             </section>
 

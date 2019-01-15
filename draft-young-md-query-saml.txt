@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                             July 13, 2018
-Expires: January 14, 2019
+Intended status: Informational                          January 15, 2019
+Expires: July 19, 2019
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-09
+                      draft-young-md-query-saml-10
 
 Abstract
 
@@ -27,7 +27,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.10.
+   The changes in this draft are summarized in Appendix A.11.
 
 Status of This Memo
 
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 14, 2019.
+   This Internet-Draft will expire on July 19, 2019.
 
 
 
@@ -53,14 +53,14 @@ Status of This Memo
 
 
 
-Young                   Expires January 14, 2019                [Page 1]
+Young                     Expires July 19, 2019                 [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
 
 
 Copyright Notice
 
-   Copyright (c) 2018 IETF Trust and the persons identified as the
+   Copyright (c) 2019 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -77,19 +77,19 @@ Table of Contents
    2.  Request Profile . . . . . . . . . . . . . . . . . . . . . . .   3
      2.1.  Content Type  . . . . . . . . . . . . . . . . . . . . . .   3
      2.2.  Identifiers . . . . . . . . . . . . . . . . . . . . . . .   3
-       2.2.1.  Unique Identifier . . . . . . . . . . . . . . . . . .   3
+       2.2.1.  Unique Identifier . . . . . . . . . . . . . . . . . .   4
        2.2.2.  Transformed Identifier  . . . . . . . . . . . . . . .   4
-       2.2.3.  Additional Identifiers  . . . . . . . . . . . . . . .   4
+       2.2.3.  Additional Identifiers  . . . . . . . . . . . . . . .   5
    3.  Response Profile  . . . . . . . . . . . . . . . . . . . . . .   5
      3.1.  Response Cardinality  . . . . . . . . . . . . . . . . . .   5
        3.1.1.  No Entity Descriptors Returned  . . . . . . . . . . .   5
        3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   5
        3.1.3.  More Than One Entity Descriptor Returned  . . . . . .   5
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
-     4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   5
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+     4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.2.  Use of SHA-1 in Transformed Identifiers . . . . . . . . .   6
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
-   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   6
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
+   6.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   8
@@ -105,14 +105,16 @@ Table of Contents
      A.8.  Since draft-young-md-query-saml-06  . . . . . . . . . . .   9
      A.9.  Since draft-young-md-query-saml-07  . . . . . . . . . . .   9
      A.10. Since draft-young-md-query-saml-08  . . . . . . . . . . .  10
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
+     A.11. Since draft-young-md-query-saml-09  . . . . . . . . . . .  10
 
 
 
-Young                   Expires January 14, 2019                [Page 2]
+Young                     Expires July 19, 2019                 [Page 2]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
 
+
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
 
 1.  Introduction
 
@@ -157,18 +159,22 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 2.2.  Identifiers
 
+
+
+
+
+
+
+Young                     Expires July 19, 2019                 [Page 3]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
+
+
 2.2.1.  Unique Identifier
 
    Each entity known to the responder MUST be associated with the unique
    identifier of the entity, corresponding to the "entityID" attribute
    of the entity's "EntityDescriptor" element in SAML metadata.
-
-
-
-Young                   Expires January 14, 2019                [Page 3]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
-
 
 2.2.2.  Transformed Identifier
 
@@ -211,20 +217,19 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
    these as normal identifiers and return an HTTP status code of 404
    ("not found") if appropriate.
 
+
+
+
+
+Young                     Expires July 19, 2019                 [Page 4]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
+
+
 2.2.3.  Additional Identifiers
 
    Entities MAY also be associated with any number of additional
    responder-defined identifiers naming arbitrary groups of entities.
-
-
-
-
-
-
-Young                   Expires January 14, 2019                [Page 4]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
-
 
 3.  Response Profile
 
@@ -265,6 +270,18 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
    Content-Type: application/samlmetadata+xml
 
+
+
+
+
+
+
+
+Young                     Expires July 19, 2019                 [Page 5]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
+
+
 4.  Security Considerations
 
 4.1.  Integrity
@@ -272,15 +289,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
    As SAML metadata contains information necessary for the secure
    operation of interacting services it is strongly RECOMMENDED that a
    mechanism for integrity checking is provided to clients.
-
-
-
-
-
-Young                   Expires January 14, 2019                [Page 5]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
-
 
    It is RECOMMENDED that the integrity checking mechanism provided by a
    responder is a digital signature embedded in the returned metadata
@@ -319,6 +327,17 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
    indicator of malicious intent on the part of the owner of one of the
    entities.
 
+
+
+
+
+
+
+Young                     Expires July 19, 2019                 [Page 6]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
+
+
 5.  IANA Considerations
 
    This document has no actions for IANA.
@@ -329,14 +348,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
    their contributions to this document:
 
       Scott Cantor (The Ohio State University)
-
-
-
-
-Young                   Expires January 14, 2019                [Page 6]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
-
 
       Leif Johansson (SUNET)
 
@@ -350,7 +361,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-09 (work in progress), January 2018.
+              query-10 (work in progress), January 2019.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -371,6 +382,18 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
               Language (SAML) V2.0", OASIS Standard saml-bindings-
               2.0-os, March 2005.
 
+
+
+
+
+
+
+
+Young                     Expires July 19, 2019                 [Page 7]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
+
+
    [SAML2Meta]
               Cantor, S., Moreh, J., Philpott, R., and E. Maler,
               "Metadata for the Security Assertion Markup Language
@@ -381,18 +404,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
               Specifications: ABNF", STD 68, RFC 5234,
               DOI 10.17487/RFC5234, January 2008,
               <https://www.rfc-editor.org/info/rfc5234>.
-
-
-
-
-
-
-
-
-Young                   Expires January 14, 2019                [Page 7]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
-
 
 7.2.  Informative References
 
@@ -434,20 +445,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-Young                   Expires January 14, 2019                [Page 8]
+Young                     Expires July 19, 2019                 [Page 8]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -501,9 +501,9 @@ A.9.  Since draft-young-md-query-saml-07
 
 
 
-Young                   Expires January 14, 2019                [Page 9]
+Young                     Expires July 19, 2019                 [Page 9]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2018
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2019
 
 
 A.10.  Since draft-young-md-query-saml-08
@@ -513,6 +513,10 @@ A.10.  Since draft-young-md-query-saml-08
    Modernise normative language to include [RFC8174].
 
    Improved references to RFCs.
+
+A.11.  Since draft-young-md-query-saml-09
+
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
 Author's Address
 
@@ -553,8 +557,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                   Expires January 14, 2019               [Page 10]
+Young                     Expires July 19, 2019                [Page 10]
