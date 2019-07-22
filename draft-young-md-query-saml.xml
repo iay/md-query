@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-saml-10" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-saml-11" submissionType="independent" category="info">
     <front>
         <title>SAML Profile for the Metadata Query Protocol</title>
 
@@ -33,8 +33,8 @@
 
         <abstract>
             <t>
-                This document profiles the <xref target="I-D.young-md-query">Metadata Query Protocol</xref> for use
-                with <xref target="SAML2Meta">SAML metadata</xref>.
+                This document profiles the Metadata Query Protocol for use
+                with SAML metadata.
             </t>
             <t>
                 This document is a product of the Research and Education Federations (REFEDS) Working Group process.
@@ -311,7 +311,7 @@ sha1hex  = 40*HEXDIGIT
                     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
                     <date year='2019' month='January'/>
                 </front>
-                <seriesInfo name="Internet-Draft" value="draft-young-md-query-10"/>
+                <seriesInfo name="Internet-Draft" value="draft-young-md-query-11"/>
             </reference>
 
             <reference anchor="SAML2Bind">
@@ -532,9 +532,19 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-saml-09" anchor="latest.changes">
+            <section title="Since draft-young-md-query-saml-09">
                 <t>
                   Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-saml-10" anchor="latest.changes">
+                <t>
+                  Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+                <t>
+                    Replace citations in the abstract with straight textual
+                    mentions, as required by the ID-NITS checklist.
                 </t>
             </section>
 
