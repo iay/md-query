@@ -39,6 +39,9 @@ role described in the current draft:
     * [configuration details][SPConfig]
 * [SimpleSAMLphp][SSP], v1.14.0 or later:
     * [pull request](https://github.com/simplesamlphp/simplesamlphp/pull/146)
+* [Digital Identity Labs](https://github.com/Digital-Identity-Labs) Metadata Query Tool:
+    * [`mdqt`](https://github.com/Digital-Identity-Labs/mdqt): SAML MDQ client with caching and signature verification
+    * [`mdqt-docker`](https://github.com/Digital-Identity-Labs/mdqt-container): SAML MDQ client with caching and signature verification, in a Docker container.
 
 The following software is believed to be compatible with the responder (server)
 role described in the current draft:
