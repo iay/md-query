@@ -235,7 +235,7 @@ sha1hex  = 40*HEXDIGIT
 
         <section title="Security Considerations" anchor="sec_cons">
 
-            <section title="Integrity">
+            <section title="Integrity" anchor="sec_cons_integrity">
                 <t>
                     As SAML metadata contains information necessary for the secure operation of interacting services it is
                     strongly RECOMMENDED that a mechanism for integrity checking is provided to clients.
@@ -249,7 +249,7 @@ sha1hex  = 40*HEXDIGIT
                     Such digital signatures:
                     <list style="symbols">
                         <t>SHOULD use an RSA keypair whose modulus is no less than 2048 bits in length.</t>
-                        <t>SHOULD NOT use the SHA-1 cryptographic hash algorithm as a digest algorithm.</t>
+                        <t>MUST NOT use the SHA-1 cryptographic hash algorithm as a digest algorithm.</t>
                         <t>MUST NOT use the MD5 cryptographic hash algorithm as a digest algorithm.</t>
                         <t>SHOULD otherwise follow current cryptographic best practices in algorithm selection.</t>
                     </list>
@@ -452,6 +452,22 @@ sha1hex  = 40*HEXDIGIT
                 </front>
             </reference>
 
+            <reference anchor="SHAttered" target="https://shattered.io">
+                <front>
+                    <title>SHAttered</title>
+                    <author/>
+                    <date year="2017" month="February"/>
+                </front>
+            </reference>
+
+            <reference anchor="Shambles" target="https://sha-mbles.github.io">
+                <front>
+                    <title>SHA-1 is a Shambles</title>
+                    <author/>
+                    <date year="2020" month="January"/>
+                </front>
+            </reference>
+
         </references>
 
         <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
@@ -550,7 +566,15 @@ sha1hex  = 40*HEXDIGIT
 
             <section title="Since draft-young-md-query-saml-11" anchor="latest.changes">
                 <t>
-                    No substantive changes.
+                  Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+                <t>
+                    Strengthen <xref target="sec_cons_integrity"/> so that SHA-1
+                    now MUST NOT be used in the context of digital signatures.
+                    This brings the section in line with current best practice
+                    recommendations, particularly in light of the
+                    <xref target="SHAttered"/> and more recently the
+                    <xref target="Shambles"/> attacks.
                 </t>
             </section>
 

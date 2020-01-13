@@ -299,7 +299,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
    o  SHOULD use an RSA keypair whose modulus is no less than 2048 bits
       in length.
 
-   o  SHOULD NOT use the SHA-1 cryptographic hash algorithm as a digest
+   o  MUST NOT use the SHA-1 cryptographic hash algorithm as a digest
       algorithm.
 
    o  MUST NOT use the MD5 cryptographic hash algorithm as a digest
@@ -434,12 +434,12 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
               2.0-os, March 2005, <http://docs.oasis-
               open.org/security/saml/v2.0/saml-core-2.0-os.pdf>.
 
+   [Shambles]
+              "SHA-1 is a Shambles", January 2020,
+              <https://sha-mbles.github.io>.
 
-
-
-
-
-
+   [SHAttered]
+              "SHAttered", February 2017, <https://shattered.io>.
 
 
 
@@ -527,7 +527,12 @@ A.12.  Since draft-young-md-query-saml-10
 
 A.13.  Since draft-young-md-query-saml-11
 
-   No substantive changes.
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
+
+   Strengthen Section 4.1 so that SHA-1 now MUST NOT be used in the
+   context of digital signatures.  This brings the section in line with
+   current best practice recommendations, particularly in light of the
+   [SHAttered] and more recently the [Shambles] attacks.
 
 Author's Address
 
@@ -535,11 +540,6 @@ Author's Address
    Independent
 
    EMail: ian@iay.org.uk
-
-
-
-
-
 
 
 
