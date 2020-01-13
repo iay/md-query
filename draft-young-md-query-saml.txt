@@ -94,18 +94,18 @@ Table of Contents
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   8
    Appendix A.  Change Log (to be removed by RFC Editor before
-                publication) . . . . . . . . . . . . . . . . . . . .   9
-     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   9
-     A.2.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   9
-     A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   9
-     A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   9
-     A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   9
-     A.6.  Since draft-young-md-query-saml-04  . . . . . . . . . . .   9
-     A.7.  Since draft-young-md-query-saml-05  . . . . . . . . . . .   9
-     A.8.  Since draft-young-md-query-saml-06  . . . . . . . . . . .   9
-     A.9.  Since draft-young-md-query-saml-07  . . . . . . . . . . .   9
-     A.10. Since draft-young-md-query-saml-08  . . . . . . . . . . .  10
-     A.11. Since draft-young-md-query-saml-09  . . . . . . . . . . .  10
+                publication) . . . . . . . . . . . . . . . . . . . .  10
+     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .  10
+     A.2.  Since draft-young-md-query-saml-00  . . . . . . . . . . .  10
+     A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .  10
+     A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .  10
+     A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .  10
+     A.6.  Since draft-young-md-query-saml-04  . . . . . . . . . . .  10
+     A.7.  Since draft-young-md-query-saml-05  . . . . . . . . . . .  10
+     A.8.  Since draft-young-md-query-saml-06  . . . . . . . . . . .  10
+     A.9.  Since draft-young-md-query-saml-07  . . . . . . . . . . .  10
+     A.10. Since draft-young-md-query-saml-08  . . . . . . . . . . .  11
+     A.11. Since draft-young-md-query-saml-09  . . . . . . . . . . .  11
 
 
 
@@ -114,9 +114,9 @@ Young                     Expires July 16, 2020                 [Page 2]
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
-     A.12. Since draft-young-md-query-saml-10  . . . . . . . . . . .  10
-     A.13. Since draft-young-md-query-saml-11  . . . . . . . . . . .  10
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
+     A.12. Since draft-young-md-query-saml-10  . . . . . . . . . . .  11
+     A.13. Since draft-young-md-query-saml-11  . . . . . . . . . . .  11
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  11
 
 1.  Introduction
 
@@ -310,26 +310,26 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 4.2.  Use of SHA-1 in Transformed Identifiers
 
-   This profile mandates the availability of a identifier synonym
+   This profile mandates the availability of an identifier synonym
    mechanism based on the SHA-1 cryptographic hash algorithm.  Although
    SHA-1 is now regarded as weak enough to exclude it from use in new
    cryptographic systems, its use in this profile is necessary for full
    support of the SAML 2.0 standard.
 
-   Because the SHA-1 cryptographic hash is not being used within this
-   profile in the context of a digital signature, it is not believed to
-   introduce a security concern over and above that which already exists
-   in SAML due to the possibility of a post-hash collision between
-   entities whose "entityID" attributes hash to the same value.
+   Both the [SAML2Bind] sections 3.6 and 3.6.4 uses of SHA-1, and its
+   resulting use in this protocol, would be vulnerable to an attack in
+   which metadata was introduced into a system by an attacker capable of
+   creating an entity identifier with the same SHA-1 hash as that of an
+   existing entity's identifier.
 
-   Implementations may guard against this possibility by treating two
-   entities whose "entityID" values have the same SHA-1 equivalent as an
-   indicator of malicious intent on the part of the owner of one of the
-   entities.
+   Such an identifier is known as a _second preimage_ of the original,
+   and SHA-1's resistance to discovery of it is referred to as SHA-1's
+   _second-preimage resistance_.
 
-
-
-
+   As demonstrated by the the [SHAttered] and [Shambles] attacks, the
+   SHA-1 algorithm is known to be have weak collision resistance.
+   However, at the time of writing no attacks are known on SHA-1's
+   second-preimage resistance; a result in this area would be required
 
 
 
@@ -337,6 +337,16 @@ Young                     Expires July 16, 2020                 [Page 6]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
+
+   to provide the basis of an attack based on duplicating the SHA-1 hash
+   of an existing identifier.  As a result, the use of SHA-1 in SAML and
+   in this protocol is not believed to introduce a security concern.
+
+   Implementations may guard against the possibility of a future
+   practical attack on the second-preimage resistance of SHA-1 by
+   treating two entities whose "entityID" values have the same SHA-1
+   equivalent as an indicator of malicious intent on the part of the
+   owner of one of the entities.
 
 5.  IANA Considerations
 
@@ -376,16 +386,6 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [SAML2Bind]
-              Cantor, S., Hirsch, F., Kemp, J., Philpott, R., and E.
-              Maler, "Bindings for the Security Assertion Markup
-              Language (SAML) V2.0", OASIS Standard saml-bindings-
-              2.0-os, March 2005.
-
-
-
-
-
 
 
 
@@ -393,6 +393,12 @@ Young                     Expires July 16, 2020                 [Page 7]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
+
+   [SAML2Bind]
+              Cantor, S., Hirsch, F., Kemp, J., Philpott, R., and E.
+              Maler, "Bindings for the Security Assertion Markup
+              Language (SAML) V2.0", OASIS Standard saml-bindings-
+              2.0-os, March 2005.
 
    [SAML2Meta]
               Cantor, S., Moreh, J., Philpott, R., and E. Maler,
@@ -434,6 +440,16 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
               2.0-os, March 2005, <http://docs.oasis-
               open.org/security/saml/v2.0/saml-core-2.0-os.pdf>.
 
+
+
+
+
+
+Young                     Expires July 16, 2020                 [Page 8]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
+
+
    [Shambles]
               "SHA-1 is a Shambles", January 2020,
               <https://sha-mbles.github.io>.
@@ -445,7 +461,47 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                     Expires July 16, 2020                 [Page 9]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -501,7 +557,7 @@ A.9.  Since draft-young-md-query-saml-07
 
 
 
-Young                     Expires July 16, 2020                 [Page 9]
+Young                     Expires July 16, 2020                [Page 10]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -532,9 +588,35 @@ A.13.  Since draft-young-md-query-saml-11
    Strengthen Section 4.1 so that SHA-1 now MUST NOT be used in the
    context of digital signatures.  This brings the section in line with
    current best practice recommendations, particularly in light of the
-   [SHAttered] and more recently the [Shambles] attacks.
+   [SHAttered] and [Shambles] attacks.
+
+   Revised Section 4.2 on the use of SHA-1 in transformed identifiers
+   to:
+
+   o  Make clear that this is a SAML-level issue, not one introduced by
+      the query protocol.
+
+   o  Reference the attacks demonstrating SHA-1's weak collision
+      resistance.
+
+   o  Identify second-preimage resistance as the potential source of the
+      attack we'd be concerned about for the query protocol.
+
+   o  Note that SHA-1's second-preimage resistance is at present
+      uncompromised.
 
 Author's Address
+
+
+
+
+
+
+
+Young                     Expires July 16, 2020                [Page 11]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
+
 
    Ian A. Young (editor)
    Independent
@@ -557,4 +639,34 @@ Author's Address
 
 
 
-Young                     Expires July 16, 2020                [Page 10]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                     Expires July 16, 2020                [Page 12]

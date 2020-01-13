@@ -121,7 +121,7 @@
                     </t>
                 </section>
 
-                <section title="Transformed Identifier">
+                <section title="Transformed Identifier" anchor="transformed_identifier">
                     <t>
                         <xref target="SAML2Core">SAML 2.0</xref> includes profiles based on the transfer
                         of an "artifact" containing the unique identifier of a SAML entity transformed by
@@ -256,21 +256,42 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Use of SHA-1 in Transformed Identifiers">
+            <section title="Use of SHA-1 in Transformed Identifiers" anchor="sec_conf_sha1">
                 <t>
-                    This profile mandates the availability of a identifier synonym mechanism based on
+                    This profile mandates the availability of an identifier synonym mechanism based on
                     the SHA-1 cryptographic hash algorithm. Although SHA-1 is now regarded as weak enough
                     to exclude it from use in new cryptographic systems, its use in this profile is
                     necessary for full support of the SAML 2.0 standard.
                 </t>
                 <t>
-                    Because the SHA-1 cryptographic hash is not being used within this profile in the context of a
-                    digital signature, it is not believed to introduce a security concern over and above that
-                    which already exists in SAML due to the possibility of a post-hash collision between entities whose
-                    <spanx style="verb">entityID</spanx> attributes hash to the same value.
+                    Both the <xref target="SAML2Bind"/> sections 3.6 and 3.6.4
+                    uses of SHA-1, and its resulting use in this protocol, would be
+                    vulnerable to an attack in which metadata was introduced
+                    into a system by an attacker capable of creating an entity
+                    identifier with the same SHA-1 hash as that of an existing
+                    entity's identifier.
                 </t>
                 <t>
-                    Implementations may guard against this possibility by treating two entities whose
+                    Such an identifier is known as a <spanx>second preimage</spanx>
+                    of the original, and SHA-1's resistance to discovery of
+                    it is referred to as SHA-1's <spanx>second-preimage
+                    resistance</spanx>.
+                </t>
+                <t>
+                    As demonstrated by the the <xref target="SHAttered"/> and
+                    <xref target="Shambles"/> attacks, the SHA-1 algorithm is
+                    known to be have weak collision resistance.
+                    However, at the time of writing no attacks are known on
+                    SHA-1's second-preimage resistance; a result in this area
+                    would be required to provide the basis of an attack based
+                    on duplicating the SHA-1 hash of an existing identifier.
+                    As a result, the use of SHA-1 in SAML and in this protocol
+                    is not believed to introduce a security concern.
+                </t>
+                <t>
+                    Implementations may guard against the possibility of a future
+                    practical attack on the second-preimage resistance of SHA-1
+                    by treating two entities whose
                     <spanx style="verb">entityID</spanx> values have the same SHA-1 equivalent as an
                     indicator of malicious intent on the part of the owner of one of the entities.
                 </t>
@@ -573,8 +594,31 @@ sha1hex  = 40*HEXDIGIT
                     now MUST NOT be used in the context of digital signatures.
                     This brings the section in line with current best practice
                     recommendations, particularly in light of the
-                    <xref target="SHAttered"/> and more recently the
+                    <xref target="SHAttered"/> and
                     <xref target="Shambles"/> attacks.
+                </t>
+                <t>
+                    Revised <xref target="sec_conf_sha1"/> on the use of SHA-1
+                    in transformed identifiers to:
+                    <list style="symbols">
+                        <t>
+                            Make clear that this is a SAML-level issue, not one
+                            introduced by the query protocol.
+                        </t>
+                        <t>
+                            Reference the attacks demonstrating SHA-1's weak
+                            collision resistance.
+                        </t>
+                        <t>
+                            Identify second-preimage resistance as the potential
+                            source of the attack we'd be concerned about for
+                            the query protocol.
+                        </t>
+                        <t>
+                            Note that SHA-1's second-preimage resistance is
+                            at present uncompromised.
+                        </t>
+                    </list>
                 </t>
             </section>
 
