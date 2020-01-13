@@ -327,9 +327,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
    _second-preimage resistance_.
 
    As demonstrated by the the [SHAttered] and [Shambles] attacks, the
-   SHA-1 algorithm is known to be have weak collision resistance.
-   However, at the time of writing no attacks are known on SHA-1's
-   second-preimage resistance; a result in this area would be required
+   SHA-1 algorithm is known to have weak collision resistance.  However,
+   at the time of writing no attacks are known on SHA-1's second-
+   preimage resistance; a result in this area would be required to
 
 
 
@@ -338,9 +338,9 @@ Young                     Expires July 16, 2020                 [Page 6]
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
-   to provide the basis of an attack based on duplicating the SHA-1 hash
-   of an existing identifier.  As a result, the use of SHA-1 in SAML and
-   in this protocol is not believed to introduce a security concern.
+   provide the basis of an attack based on duplicating the SHA-1 hash of
+   an existing identifier.  As a result, the use of SHA-1 in SAML and in
+   this protocol is not believed to introduce a security concern.
 
    Implementations may guard against the possibility of a future
    practical attack on the second-preimage resistance of SHA-1 by

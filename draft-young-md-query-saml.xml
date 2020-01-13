@@ -280,7 +280,7 @@ sha1hex  = 40*HEXDIGIT
                 <t>
                     As demonstrated by the the <xref target="SHAttered"/> and
                     <xref target="Shambles"/> attacks, the SHA-1 algorithm is
-                    known to be have weak collision resistance.
+                    known to have weak collision resistance.
                     However, at the time of writing no attacks are known on
                     SHA-1's second-preimage resistance; a result in this area
                     would be required to provide the basis of an attack based
