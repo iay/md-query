@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                             July 22, 2019
-Expires: January 23, 2020
+Intended status: Informational                          January 13, 2020
+Expires: July 16, 2020
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-11
+                      draft-young-md-query-saml-12
 
 Abstract
 
@@ -27,7 +27,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.12.
+   The changes in this draft are summarized in Appendix A.13.
 
 Status of This Memo
 
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 23, 2020.
+   This Internet-Draft will expire on July 16, 2020.
 
 
 
@@ -53,14 +53,14 @@ Status of This Memo
 
 
 
-Young                   Expires January 23, 2020                [Page 1]
+Young                     Expires July 16, 2020                 [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 Copyright Notice
 
-   Copyright (c) 2019 IETF Trust and the persons identified as the
+   Copyright (c) 2020 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,12 +109,13 @@ Table of Contents
 
 
 
-Young                   Expires January 23, 2020                [Page 2]
+Young                     Expires July 16, 2020                 [Page 2]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
      A.12. Since draft-young-md-query-saml-10  . . . . . . . . . . .  10
+     A.13. Since draft-young-md-query-saml-11  . . . . . . . . . . .  10
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
 
 1.  Introduction
@@ -164,10 +165,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
 
 
 
-
-Young                   Expires January 23, 2020                [Page 3]
+Young                     Expires July 16, 2020                 [Page 3]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 2.2.  Identifiers
@@ -221,9 +221,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 4]
+Young                     Expires July 16, 2020                 [Page 4]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 2.2.3.  Additional Identifiers
@@ -277,9 +277,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 5]
+Young                     Expires July 16, 2020                 [Page 5]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 4.  Security Considerations
@@ -333,9 +333,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 6]
+Young                     Expires July 16, 2020                 [Page 6]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 5.  IANA Considerations
@@ -361,7 +361,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-11 (work in progress), January 2019.
+              query-12 (work in progress), January 2020.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -389,9 +389,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 7]
+Young                     Expires July 16, 2020                 [Page 7]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
    [SAML2Meta]
@@ -445,9 +445,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 8]
+Young                     Expires July 16, 2020                 [Page 8]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -501,9 +501,9 @@ A.9.  Since draft-young-md-query-saml-07
 
 
 
-Young                   Expires January 23, 2020                [Page 9]
+Young                     Expires July 16, 2020                 [Page 9]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol     July 2019
+Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 A.10.  Since draft-young-md-query-saml-08
@@ -524,6 +524,10 @@ A.12.  Since draft-young-md-query-saml-10
 
    Replace citations in the abstract with straight textual mentions, as
    required by the ID-NITS checklist.
+
+A.13.  Since draft-young-md-query-saml-11
+
+   No substantive changes.
 
 Author's Address
 
@@ -553,8 +557,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                   Expires January 23, 2020               [Page 10]
+Young                     Expires July 16, 2020                [Page 10]

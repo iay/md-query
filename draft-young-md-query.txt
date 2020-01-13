@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                             July 22, 2019
-Expires: January 23, 2020
+Intended status: Informational                          January 13, 2020
+Expires: July 16, 2020
 
 
                         Metadata Query Protocol
-                        draft-young-md-query-11
+                        draft-young-md-query-12
 
 Abstract
 
@@ -29,7 +29,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.12.
+   The changes in this draft are summarized in Appendix A.13.
 
 Status of This Memo
 
@@ -46,21 +46,21 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 23, 2020.
+   This Internet-Draft will expire on July 16, 2020.
 
 
 
 
 
 
-Young                   Expires January 23, 2020                [Page 1]
+Young                     Expires July 16, 2020                 [Page 1]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
 Copyright Notice
 
-   Copyright (c) 2019 IETF Trust and the persons identified as the
+   Copyright (c) 2020 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                   Expires January 23, 2020                [Page 2]
+Young                     Expires July 16, 2020                 [Page 2]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
                 publication) . . . . . . . . . . . . . . . . . . . .  13
@@ -127,7 +127,8 @@ Internet-Draft           Metadata Query Protocol               July 2019
      A.10. Since draft-young-md-query-08 . . . . . . . . . . . . . .  15
      A.11. Since draft-young-md-query-09 . . . . . . . . . . . . . .  15
      A.12. Since draft-young-md-query-10 . . . . . . . . . . . . . .  15
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  15
+     A.13. Since draft-young-md-query-11 . . . . . . . . . . . . . .  15
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  16
 
 1.  Introduction
 
@@ -164,10 +165,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-
-Young                   Expires January 23, 2020                [Page 3]
+Young                     Expires July 16, 2020                 [Page 3]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 4]
+Young                     Expires July 16, 2020                 [Page 4]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
       Accept - this header MUST contain the content-type identifying the
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 5]
+Young                     Expires July 16, 2020                 [Page 5]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
       400 "Bad Request" - response code indicating that the requester's
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 6]
+Young                     Expires July 16, 2020                 [Page 6]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
    single "tag" or "keyword" identifier.  A request returns information
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 7]
+Young                     Expires July 16, 2020                 [Page 7]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
    For example, with a base URL of "http://example.org/mdq/", a query
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 8]
+Young                     Expires July 16, 2020                 [Page 8]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
    HTTP/1.x 200 OK
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020                [Page 9]
+Young                     Expires July 16, 2020                 [Page 9]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
 5.  Protocol Extension Points
@@ -557,9 +557,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020               [Page 10]
+Young                     Expires July 16, 2020                [Page 10]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
       Thomas Lenggenhager (SWITCH)
@@ -613,9 +613,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020               [Page 11]
+Young                     Expires July 16, 2020                [Page 11]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
@@ -669,9 +669,9 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-Young                   Expires January 23, 2020               [Page 12]
+Young                     Expires July 16, 2020                [Page 12]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -725,9 +725,9 @@ A.2.  Since draft-young-md-query-00
 
 
 
-Young                   Expires January 23, 2020               [Page 13]
+Young                     Expires July 16, 2020                [Page 13]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
    Added a section describing Protocol Extension Points.
@@ -781,9 +781,9 @@ A.6.  Since draft-young-md-query-04
 
 
 
-Young                   Expires January 23, 2020               [Page 14]
+Young                     Expires July 16, 2020                [Page 14]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
 
    Added an Editorial Note to help direct readers back to the
@@ -829,18 +829,20 @@ A.12.  Since draft-young-md-query-10
 
    No substantive changes.
 
-Author's Address
+A.13.  Since draft-young-md-query-11
+
+   No substantive changes.
 
 
 
 
 
-
-
-Young                   Expires January 23, 2020               [Page 15]
+Young                     Expires July 16, 2020                [Page 15]
 
-Internet-Draft           Metadata Query Protocol               July 2019
+Internet-Draft           Metadata Query Protocol            January 2020
 
+
+Author's Address
 
    Ian A. Young (editor)
    Independent
@@ -891,6 +893,4 @@ Internet-Draft           Metadata Query Protocol               July 2019
 
 
 
-
-
-Young                   Expires January 23, 2020               [Page 16]
+Young                     Expires July 16, 2020                [Page 16]
