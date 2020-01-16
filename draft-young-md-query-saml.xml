@@ -264,8 +264,8 @@ sha1hex  = 40*HEXDIGIT
                     necessary for full support of the SAML 2.0 standard.
                 </t>
                 <t>
-                    Both the <xref target="SAML2Bind"/> sections 3.6 and 3.6.4
-                    uses of SHA-1, and its resulting use in this protocol, would be
+                    The use of SHA-1 in section 3.6.4 of <xref target="SAML2Bind"/>,
+                    and its resulting use in this protocol, would be
                     vulnerable to an attack in which metadata was introduced
                     into a system by an attacker capable of creating an entity
                     identifier with the same SHA-1 hash as that of an existing

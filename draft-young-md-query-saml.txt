@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          January 13, 2020
-Expires: July 16, 2020
+Intended status: Informational                          January 16, 2020
+Expires: July 19, 2020
 
 
               SAML Profile for the Metadata Query Protocol
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 16, 2020.
+   This Internet-Draft will expire on July 19, 2020.
 
 
 
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Young                     Expires July 16, 2020                 [Page 1]
+Young                     Expires July 19, 2020                 [Page 1]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Young                     Expires July 16, 2020                 [Page 2]
+Young                     Expires July 19, 2020                 [Page 2]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -165,7 +165,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 3]
+Young                     Expires July 19, 2020                 [Page 3]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -221,7 +221,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 4]
+Young                     Expires July 19, 2020                 [Page 4]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -277,7 +277,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 5]
+Young                     Expires July 19, 2020                 [Page 5]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -316,9 +316,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
    cryptographic systems, its use in this profile is necessary for full
    support of the SAML 2.0 standard.
 
-   Both the [SAML2Bind] sections 3.6 and 3.6.4 uses of SHA-1, and its
-   resulting use in this protocol, would be vulnerable to an attack in
-   which metadata was introduced into a system by an attacker capable of
+   The use of SHA-1 in section 3.6.4 of [SAML2Bind], and its resulting
+   use in this protocol, would be vulnerable to an attack in which
+   metadata was introduced into a system by an attacker capable of
    creating an entity identifier with the same SHA-1 hash as that of an
    existing entity's identifier.
 
@@ -333,7 +333,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 6]
+Young                     Expires July 19, 2020                 [Page 6]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -389,7 +389,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 7]
+Young                     Expires July 19, 2020                 [Page 7]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -445,7 +445,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 8]
+Young                     Expires July 19, 2020                 [Page 8]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -501,7 +501,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 9]
+Young                     Expires July 19, 2020                 [Page 9]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -557,7 +557,7 @@ A.9.  Since draft-young-md-query-saml-07
 
 
 
-Young                     Expires July 16, 2020                [Page 10]
+Young                     Expires July 19, 2020                [Page 10]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -613,7 +613,7 @@ Author's Address
 
 
 
-Young                     Expires July 16, 2020                [Page 11]
+Young                     Expires July 19, 2020                [Page 11]
 
 Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
@@ -669,4 +669,4 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2020
 
 
 
-Young                     Expires July 16, 2020                [Page 12]
+Young                     Expires July 19, 2020                [Page 12]
