@@ -4,8 +4,8 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          January 13, 2020
-Expires: July 16, 2020
+Intended status: Informational                          January 16, 2020
+Expires: July 19, 2020
 
 
                         Metadata Query Protocol
@@ -46,14 +46,14 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 16, 2020.
+   This Internet-Draft will expire on July 19, 2020.
 
 
 
 
 
 
-Young                     Expires July 16, 2020                 [Page 1]
+Young                     Expires July 19, 2020                 [Page 1]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Young                     Expires July 16, 2020                 [Page 2]
+Young                     Expires July 19, 2020                 [Page 2]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -165,7 +165,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 3]
+Young                     Expires July 19, 2020                 [Page 3]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -221,7 +221,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 4]
+Young                     Expires July 19, 2020                 [Page 4]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -277,7 +277,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 5]
+Young                     Expires July 19, 2020                 [Page 5]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -333,7 +333,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 6]
+Young                     Expires July 19, 2020                 [Page 6]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -389,7 +389,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 7]
+Young                     Expires July 19, 2020                 [Page 7]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -445,7 +445,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 8]
+Young                     Expires July 19, 2020                 [Page 8]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -501,7 +501,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                 [Page 9]
+Young                     Expires July 19, 2020                 [Page 9]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -557,7 +557,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                [Page 10]
+Young                     Expires July 19, 2020                [Page 10]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -613,7 +613,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                [Page 11]
+Young                     Expires July 19, 2020                [Page 11]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -669,7 +669,7 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 16, 2020                [Page 12]
+Young                     Expires July 19, 2020                [Page 12]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -725,7 +725,7 @@ A.2.  Since draft-young-md-query-00
 
 
 
-Young                     Expires July 16, 2020                [Page 13]
+Young                     Expires July 19, 2020                [Page 13]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -781,7 +781,7 @@ A.6.  Since draft-young-md-query-04
 
 
 
-Young                     Expires July 16, 2020                [Page 14]
+Young                     Expires July 19, 2020                [Page 14]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -837,7 +837,7 @@ A.13.  Since draft-young-md-query-11
 
 
 
-Young                     Expires July 16, 2020                [Page 15]
+Young                     Expires July 19, 2020                [Page 15]
 
 Internet-Draft           Metadata Query Protocol            January 2020
 
@@ -893,4 +893,4 @@ Author's Address
 
 
 
-Young                     Expires July 16, 2020                [Page 16]
+Young                     Expires July 19, 2020                [Page 16]
