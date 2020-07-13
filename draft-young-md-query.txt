@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          January 16, 2020
-Expires: July 19, 2020
+Intended status: Informational                             July 13, 2020
+Expires: January 14, 2021
 
 
                         Metadata Query Protocol
-                        draft-young-md-query-12
+                        draft-young-md-query-13
 
 Abstract
 
@@ -29,7 +29,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.13.
+   The changes in this draft are summarized in Appendix A.14.
 
 Status of This Memo
 
@@ -46,16 +46,16 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 19, 2020.
+   This Internet-Draft will expire on January 14, 2021.
 
 
 
 
 
 
-Young                     Expires July 19, 2020                 [Page 1]
+Young                   Expires January 14, 2021                [Page 1]
 
-Internet-Draft           Metadata Query Protocol            January 2020
+Internet-Draft           Metadata Query Protocol               July 2020
 
 
 Copyright Notice
@@ -73,35 +73,35 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
-     1.1.  Notation and Conventions  . . . . . . . . . . . . . . . .   3
+     1.1.  Notation and Conventions  . . . . . . . . . . . . . . . .   4
      1.2.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   4
    2.  Protocol Transport  . . . . . . . . . . . . . . . . . . . . .   4
      2.1.  Transport Protocol  . . . . . . . . . . . . . . . . . . .   4
      2.2.  HTTP Version  . . . . . . . . . . . . . . . . . . . . . .   4
-     2.3.  HTTP Method . . . . . . . . . . . . . . . . . . . . . . .   4
-     2.4.  Request Headers . . . . . . . . . . . . . . . . . . . . .   4
+     2.3.  HTTP Method . . . . . . . . . . . . . . . . . . . . . . .   5
+     2.4.  Request Headers . . . . . . . . . . . . . . . . . . . . .   5
      2.5.  Response Headers  . . . . . . . . . . . . . . . . . . . .   5
-     2.6.  Status Codes  . . . . . . . . . . . . . . . . . . . . . .   5
+     2.6.  Status Codes  . . . . . . . . . . . . . . . . . . . . . .   6
      2.7.  Base URL  . . . . . . . . . . . . . . . . . . . . . . . .   6
-     2.8.  Content Negotiation . . . . . . . . . . . . . . . . . . .   6
-   3.  Metadata Query Protocol . . . . . . . . . . . . . . . . . . .   6
+     2.8.  Content Negotiation . . . . . . . . . . . . . . . . . . .   7
+   3.  Metadata Query Protocol . . . . . . . . . . . . . . . . . . .   7
      3.1.  Identifiers . . . . . . . . . . . . . . . . . . . . . . .   7
      3.2.  Protocol  . . . . . . . . . . . . . . . . . . . . . . . .   7
        3.2.1.  Request by Identifier . . . . . . . . . . . . . . . .   7
        3.2.2.  Request All Entities  . . . . . . . . . . . . . . . .   8
        3.2.3.  Response  . . . . . . . . . . . . . . . . . . . . . .   8
-       3.2.4.  Example Request and Response  . . . . . . . . . . . .   8
+       3.2.4.  Example Request and Response  . . . . . . . . . . . .   9
    4.  Efficient Retrieval and Caching . . . . . . . . . . . . . . .   9
      4.1.  Conditional Retrieval . . . . . . . . . . . . . . . . . .   9
      4.2.  Content Caching . . . . . . . . . . . . . . . . . . . . .   9
-     4.3.  Content Compression . . . . . . . . . . . . . . . . . . .   9
+     4.3.  Content Compression . . . . . . . . . . . . . . . . . . .  10
    5.  Protocol Extension Points . . . . . . . . . . . . . . . . . .  10
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .  10
      6.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .  10
      6.2.  Confidentiality . . . . . . . . . . . . . . . . . . . . .  10
      6.3.  Authentication  . . . . . . . . . . . . . . . . . . . . .  10
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  11
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  11
    9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  11
      9.1.  Normative References  . . . . . . . . . . . . . . . . . .  11
      9.2.  Informative References  . . . . . . . . . . . . . . . . .  12
@@ -109,26 +109,27 @@ Table of Contents
 
 
 
-Young                     Expires July 19, 2020                 [Page 2]
+Young                   Expires January 14, 2021                [Page 2]
 
-Internet-Draft           Metadata Query Protocol            January 2020
+Internet-Draft           Metadata Query Protocol               July 2020
 
 
-                publication) . . . . . . . . . . . . . . . . . . . .  13
-     A.1.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  13
-     A.2.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  13
-     A.3.  Since draft-young-md-query-01 . . . . . . . . . . . . . .  14
-     A.4.  Since draft-young-md-query-02 . . . . . . . . . . . . . .  14
-     A.5.  Since draft-young-md-query-03 . . . . . . . . . . . . . .  14
-     A.6.  Since draft-young-md-query-04 . . . . . . . . . . . . . .  14
-     A.7.  Since draft-young-md-query-05 . . . . . . . . . . . . . .  15
-     A.8.  Since draft-young-md-query-06 . . . . . . . . . . . . . .  15
-     A.9.  Since draft-young-md-query-07 . . . . . . . . . . . . . .  15
-     A.10. Since draft-young-md-query-08 . . . . . . . . . . . . . .  15
-     A.11. Since draft-young-md-query-09 . . . . . . . . . . . . . .  15
-     A.12. Since draft-young-md-query-10 . . . . . . . . . . . . . .  15
-     A.13. Since draft-young-md-query-11 . . . . . . . . . . . . . .  15
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  16
+                publication) . . . . . . . . . . . . . . . . . . . .  14
+     A.1.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  14
+     A.2.  Since draft-young-md-query-00 . . . . . . . . . . . . . .  14
+     A.3.  Since draft-young-md-query-01 . . . . . . . . . . . . . .  15
+     A.4.  Since draft-young-md-query-02 . . . . . . . . . . . . . .  15
+     A.5.  Since draft-young-md-query-03 . . . . . . . . . . . . . .  15
+     A.6.  Since draft-young-md-query-04 . . . . . . . . . . . . . .  15
+     A.7.  Since draft-young-md-query-05 . . . . . . . . . . . . . .  16
+     A.8.  Since draft-young-md-query-06 . . . . . . . . . . . . . .  16
+     A.9.  Since draft-young-md-query-07 . . . . . . . . . . . . . .  16
+     A.10. Since draft-young-md-query-08 . . . . . . . . . . . . . .  16
+     A.11. Since draft-young-md-query-09 . . . . . . . . . . . . . .  16
+     A.12. Since draft-young-md-query-10 . . . . . . . . . . . . . .  16
+     A.13. Since draft-young-md-query-11 . . . . . . . . . . . . . .  16
+     A.14. Since draft-young-md-query-12 . . . . . . . . . . . . . .  17
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
 
 1.  Introduction
 
@@ -157,19 +158,23 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
    This document is a product of the REFEDS Working Group process.
 
+
+
+
+
+
+
+
+Young                   Expires January 14, 2021                [Page 3]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
 1.1.  Notation and Conventions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
    "OPTIONAL" in this document are to be interpreted as described in
-
-
-
-Young                     Expires July 19, 2020                 [Page 3]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
-
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
@@ -209,6 +214,18 @@ Internet-Draft           Metadata Query Protocol            January 2020
    Protocol responders MUST support requests using HTTP version 1.1, and
    MAY support later versions.
 
+
+
+
+
+
+
+
+Young                   Expires January 14, 2021                [Page 4]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
 2.3.  HTTP Method
 
    All metadata query requests MUST use the GET method.
@@ -216,15 +233,6 @@ Internet-Draft           Metadata Query Protocol            January 2020
 2.4.  Request Headers
 
    All metadata query requests MUST include the following HTTP headers:
-
-
-
-
-
-Young                     Expires July 19, 2020                 [Page 4]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
 
       Accept - this header MUST contain the content-type identifying the
       type, or form, of metadata to be retrieved.  See section 5.3.2 of
@@ -263,6 +271,17 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
       Last-Modified, see section 2.2 of [RFC7232].
 
+
+
+
+
+
+
+Young                   Expires January 14, 2021                [Page 5]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
 2.6.  Status Codes
 
    This protocol uses the following HTTP status codes:
@@ -272,15 +291,6 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
       304 "Not Modified" - response code indicating requested metadata
       has not been updated since the last request
-
-
-
-
-
-Young                     Expires July 19, 2020                 [Page 5]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
 
       400 "Bad Request" - response code indicating that the requester's
       request was malformed in some fashion
@@ -317,6 +327,17 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
    o  MUST NOT include a fragment identifier component.
 
+
+
+
+
+
+
+Young                   Expires January 14, 2021                [Page 6]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
 2.8.  Content Negotiation
 
    As there may be many representations for a given piece of metadata,
@@ -329,15 +350,6 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
    The metadata query protocol retrieves metadata either for all
    entities known to the responder or for a named collection based on a
-
-
-
-
-Young                     Expires July 19, 2020                 [Page 6]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
-
    single "tag" or "keyword" identifier.  A request returns information
    for none, one, or a collection of entities.
 
@@ -372,6 +384,16 @@ Internet-Draft           Metadata Query Protocol            January 2020
    o  A single identifier, percent-encoded appropriately for use as a
       URL path segment (see sections 2.1 and 3.3 of [STD66]).
 
+
+
+
+
+
+Young                   Expires January 14, 2021                [Page 7]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
    For example, with a base URL of "http://example.org/mdq/", a query
    for the identifier "foo" would be performed by an HTTP GET request to
    the following URL:
@@ -385,14 +407,6 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
       The space character MUST be encoded as '%20' and MUST NOT be
       encoded as '+' as would be required in a query parameter.
-
-
-
-
-Young                     Expires July 19, 2020                 [Page 7]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
 
    For example, with a base URL of "http://example.org/mdq/", a query
    for the identifier ""blue/green+light blue"" would be performed by an
@@ -429,6 +443,13 @@ Internet-Draft           Metadata Query Protocol            January 2020
    entities but the request content type does not support returning
    multiple results in a single document.
 
+
+
+Young                   Expires January 14, 2021                [Page 8]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
 3.2.4.  Example Request and Response
 
    The following example demonstrates a metadata query request using a
@@ -440,15 +461,6 @@ Internet-Draft           Metadata Query Protocol            January 2020
    Accept: application/samlmetadata+xml
 
                       Example Metadata Query Request
-
-
-
-
-
-Young                     Expires July 19, 2020                 [Page 8]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
 
    HTTP/1.x 200 OK
    Content-Type: application/samlmetadata+xml
@@ -486,6 +498,14 @@ Internet-Draft           Metadata Query Protocol            January 2020
    cache.  When cache controls are used only the 'max-age' directive
    SHOULD be used.
 
+
+
+
+Young                   Expires January 14, 2021                [Page 9]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
 4.3.  Content Compression
 
    As should be apparent from the required request and response headers
@@ -497,14 +517,6 @@ Internet-Draft           Metadata Query Protocol            January 2020
    compression unless such usage would put exceptional demands on
    constrained environments.  Responders MUST support gzip compression.
    Requesters and responders MAY support other compression algorithms.
-
-
-
-
-Young                     Expires July 19, 2020                 [Page 9]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
 
 5.  Protocol Extension Points
 
@@ -542,6 +554,14 @@ Internet-Draft           Metadata Query Protocol            January 2020
    ([RFC7235], [RFC7617]) over TLS.  Responders SHOULD also support the
    use of X.509 client certificate authentication.
 
+
+
+
+Young                   Expires January 14, 2021               [Page 10]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
 7.  IANA Considerations
 
    This document has no actions for IANA.
@@ -554,13 +574,6 @@ Internet-Draft           Metadata Query Protocol            January 2020
       Scott Cantor (The Ohio State University)
 
       Leif Johansson (SUNET)
-
-
-
-Young                     Expires July 19, 2020                [Page 10]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
 
       Thomas Lenggenhager (SWITCH)
 
@@ -595,6 +608,16 @@ Internet-Draft           Metadata Query Protocol            January 2020
               DOI 10.17487/RFC7232, June 2014,
               <https://www.rfc-editor.org/info/rfc7232>.
 
+
+
+
+
+
+Young                   Expires January 14, 2021               [Page 11]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
    [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "Hypertext Transfer Protocol (HTTP/1.1): Caching",
               RFC 7234, DOI 10.17487/RFC7234, June 2014,
@@ -608,15 +631,6 @@ Internet-Draft           Metadata Query Protocol            January 2020
    [RFC7617]  Reschke, J., "The 'Basic' HTTP Authentication Scheme",
               RFC 7617, DOI 10.17487/RFC7617, September 2015,
               <https://www.rfc-editor.org/info/rfc7617>.
-
-
-
-
-
-Young                     Expires July 19, 2020                [Page 11]
-
-Internet-Draft           Metadata Query Protocol            January 2020
-
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -650,6 +664,16 @@ Internet-Draft           Metadata Query Protocol            January 2020
               Agreement",
               <https://refeds.org/about/about_agreement.html>.
 
+
+
+
+
+
+Young                   Expires January 14, 2021               [Page 12]
+
+Internet-Draft           Metadata Query Protocol               July 2020
+
+
    [RFC4844]  Daigle, L., Ed. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, DOI 10.17487/RFC4844,
               July 2007, <https://www.rfc-editor.org/info/rfc4844>.
@@ -669,9 +693,41 @@ Internet-Draft           Metadata Query Protocol            January 2020
 
 
 
-Young                     Expires July 19, 2020                [Page 12]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young                   Expires January 14, 2021               [Page 13]
 
-Internet-Draft           Metadata Query Protocol            January 2020
+Internet-Draft           Metadata Query Protocol               July 2020
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -725,9 +781,9 @@ A.2.  Since draft-young-md-query-00
 
 
 
-Young                     Expires July 19, 2020                [Page 13]
+Young                   Expires January 14, 2021               [Page 14]
 
-Internet-Draft           Metadata Query Protocol            January 2020
+Internet-Draft           Metadata Query Protocol               July 2020
 
 
    Added a section describing Protocol Extension Points.
@@ -781,9 +837,9 @@ A.6.  Since draft-young-md-query-04
 
 
 
-Young                     Expires July 19, 2020                [Page 14]
+Young                   Expires January 14, 2021               [Page 15]
 
-Internet-Draft           Metadata Query Protocol            January 2020
+Internet-Draft           Metadata Query Protocol               July 2020
 
 
    Added an Editorial Note to help direct readers back to the
@@ -837,10 +893,14 @@ A.13.  Since draft-young-md-query-11
 
 
 
-Young                     Expires July 19, 2020                [Page 15]
+Young                   Expires January 14, 2021               [Page 16]
 
-Internet-Draft           Metadata Query Protocol            January 2020
+Internet-Draft           Metadata Query Protocol               July 2020
 
+
+A.14.  Since draft-young-md-query-12
+
+   No substantive changes.
 
 Author's Address
 
@@ -889,8 +949,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                     Expires July 19, 2020                [Page 16]
+Young                   Expires January 14, 2021               [Page 17]
