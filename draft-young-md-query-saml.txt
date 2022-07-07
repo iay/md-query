@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                          January 10, 2022
-Expires: July 14, 2022
+Intended status: Informational                              July 7, 2022
+Expires: January 8, 2023
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-16
+                      draft-young-md-query-saml-17
 
 Abstract
 
@@ -27,7 +27,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.17.
+   The changes in this draft are summarized in Appendix A.18.
 
 Status of This Memo
 
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 14, 2022.
+   This Internet-Draft will expire on January 8, 2023.
 
 
 
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Young                     Expires July 14, 2022                 [Page 1]
+Young                    Expires January 8, 2023                [Page 1]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                     Expires July 14, 2022                 [Page 2]
+Young                    Expires January 8, 2023                [Page 2]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
      A.12. Since draft-young-md-query-saml-10  . . . . . . . . . . .  11
@@ -120,6 +120,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
      A.15. Since draft-young-md-query-saml-13  . . . . . . . . . . .  12
      A.16. Since draft-young-md-query-saml-14  . . . . . . . . . . .  12
      A.17. Since draft-young-md-query-saml-15  . . . . . . . . . . .  12
+     A.18. Since draft-young-md-query-saml-16  . . . . . . . . . . .  12
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
 
 1.  Introduction
@@ -161,14 +162,15 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
    header to indicate that the metadata returned should be SAML metadata
    (see Appendix A of [SAML2Meta]):
 
-   Accept: application/samlmetadata+xml
 
 
 
-Young                     Expires July 14, 2022                 [Page 3]
+Young                    Expires January 8, 2023                [Page 3]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
+
+   Accept: application/samlmetadata+xml
 
 2.2.  Identifiers
 
@@ -216,15 +218,16 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
    "}" contains characters other than hexadecimal digits, or is other
    than exactly 40 characters in length) and return an HTTP status code
    of 400 ("bad request").  Alternatively, implementations MAY process
+
+
+
+Young                    Expires January 8, 2023                [Page 4]
+
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
+
+
    these as normal identifiers and return an HTTP status code of 404
    ("not found") if appropriate.
-
-
-
-Young                     Expires July 14, 2022                 [Page 4]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
-
 
 2.2.3.  Additional Identifiers
 
@@ -274,12 +277,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
 
 
 
-
-
-
-Young                     Expires July 14, 2022                 [Page 5]
+Young                    Expires January 8, 2023                [Page 5]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
 4.  Security Considerations
@@ -333,9 +333,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
 
 
 
-Young                     Expires July 14, 2022                 [Page 6]
+Young                    Expires January 8, 2023                [Page 6]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
    provide the basis of an attack based on duplicating the SHA-1 hash of
@@ -371,7 +371,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
 
    [I-D.young-md-query]
               Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-16 (work in progress), January 2022.
+              query-17 (work in progress), July 2022.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -389,9 +389,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
 
 
 
-Young                     Expires July 14, 2022                 [Page 7]
+Young                    Expires January 8, 2023                [Page 7]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
    [SAML2Bind]
@@ -445,9 +445,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
 
 
 
-Young                     Expires July 14, 2022                 [Page 8]
+Young                    Expires January 8, 2023                [Page 8]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
    [Shambles]
@@ -501,9 +501,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
 
 
 
-Young                     Expires July 14, 2022                 [Page 9]
+Young                    Expires January 8, 2023                [Page 9]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -557,9 +557,9 @@ A.9.  Since draft-young-md-query-saml-07
 
 
 
-Young                     Expires July 14, 2022                [Page 10]
+Young                    Expires January 8, 2023               [Page 10]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
 A.10.  Since draft-young-md-query-saml-08
@@ -613,9 +613,9 @@ A.14.  Since draft-young-md-query-saml-12
 
 
 
-Young                     Expires July 14, 2022                [Page 11]
+Young                    Expires January 8, 2023               [Page 11]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2022
+Internet-DraftSAML Profile for the Metadata Query Protocol     July 2022
 
 
 A.15.  Since draft-young-md-query-saml-13
@@ -627,6 +627,10 @@ A.16.  Since draft-young-md-query-saml-14
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
 A.17.  Since draft-young-md-query-saml-15
+
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
+
+A.18.  Since draft-young-md-query-saml-16
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
@@ -665,8 +669,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                     Expires July 14, 2022                [Page 12]
+Young                    Expires January 8, 2023               [Page 12]
