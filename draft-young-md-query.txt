@@ -4,12 +4,12 @@
 
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                              July 7, 2022
-Expires: January 8, 2023
+Intended status: Informational                           January 6, 2023
+Expires: July 10, 2023
 
 
                         Metadata Query Protocol
-                        draft-young-md-query-17
+                        draft-young-md-query-18
 
 Abstract
 
@@ -29,7 +29,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.18.
+   The changes in this draft are summarized in Appendix A.19.
 
 Status of This Memo
 
@@ -46,21 +46,21 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 8, 2023.
+   This Internet-Draft will expire on July 10, 2023.
 
 
 
 
 
 
-Young                    Expires January 8, 2023                [Page 1]
+Young                     Expires July 10, 2023                 [Page 1]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 Copyright Notice
 
-   Copyright (c) 2022 IETF Trust and the persons identified as the
+   Copyright (c) 2023 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                    Expires January 8, 2023                [Page 2]
+Young                     Expires July 10, 2023                 [Page 2]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
                 publication) . . . . . . . . . . . . . . . . . . . .  14
@@ -133,6 +133,7 @@ Internet-Draft           Metadata Query Protocol               July 2022
      A.16. Since draft-young-md-query-14 . . . . . . . . . . . . . .  17
      A.17. Since draft-young-md-query-15 . . . . . . . . . . . . . .  17
      A.18. Since draft-young-md-query-16 . . . . . . . . . . . . . .  17
+     A.19. Since draft-young-md-query-17 . . . . . . . . . . . . . .  17
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  17
 
 1.  Introduction
@@ -164,10 +165,9 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-
-Young                    Expires January 8, 2023                [Page 3]
+Young                     Expires July 10, 2023                 [Page 3]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 1.1.  Notation and Conventions
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023                [Page 4]
+Young                     Expires July 10, 2023                 [Page 4]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 2.3.  HTTP Method
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023                [Page 5]
+Young                     Expires July 10, 2023                 [Page 5]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 2.6.  Status Codes
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023                [Page 6]
+Young                     Expires July 10, 2023                 [Page 6]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 2.8.  Content Negotiation
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023                [Page 7]
+Young                     Expires July 10, 2023                 [Page 7]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
    For example, with a base URL of "http://example.org/mdq/", a query
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023                [Page 8]
+Young                     Expires July 10, 2023                 [Page 8]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 3.2.4.  Example Request and Response
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023                [Page 9]
+Young                     Expires July 10, 2023                 [Page 9]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 4.3.  Content Compression
@@ -557,9 +557,9 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023               [Page 10]
+Young                     Expires July 10, 2023                [Page 10]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 7.  IANA Considerations
@@ -588,24 +588,24 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 9.1.  Normative References
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
+   [RFC2119]  Bradner, S. and RFC Publisher, "Key words for use in RFCs
+              to Indicate Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
-   [RFC7230]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
-              Protocol (HTTP/1.1): Message Syntax and Routing",
-              RFC 7230, DOI 10.17487/RFC7230, June 2014,
+   [RFC7230]  Fielding, R., Ed., Reschke, J., Ed., and RFC Publisher,
+              "Hypertext Transfer Protocol (HTTP/1.1): Message Syntax
+              and Routing", RFC 7230, DOI 10.17487/RFC7230, June 2014,
               <https://www.rfc-editor.org/info/rfc7230>.
 
-   [RFC7231]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
-              Protocol (HTTP/1.1): Semantics and Content", RFC 7231,
-              DOI 10.17487/RFC7231, June 2014,
+   [RFC7231]  Fielding, R., Ed., Reschke, J., Ed., and RFC Publisher,
+              "Hypertext Transfer Protocol (HTTP/1.1): Semantics and
+              Content", RFC 7231, DOI 10.17487/RFC7231, June 2014,
               <https://www.rfc-editor.org/info/rfc7231>.
 
-   [RFC7232]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
-              Protocol (HTTP/1.1): Conditional Requests", RFC 7232,
-              DOI 10.17487/RFC7232, June 2014,
+   [RFC7232]  Fielding, R., Ed., Reschke, J., Ed., and RFC Publisher,
+              "Hypertext Transfer Protocol (HTTP/1.1): Conditional
+              Requests", RFC 7232, DOI 10.17487/RFC7232, June 2014,
               <https://www.rfc-editor.org/info/rfc7232>.
 
 
@@ -613,28 +613,29 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023               [Page 11]
+Young                     Expires July 10, 2023                [Page 11]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
-   [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "Hypertext Transfer Protocol (HTTP/1.1): Caching",
-              RFC 7234, DOI 10.17487/RFC7234, June 2014,
-              <https://www.rfc-editor.org/info/rfc7234>.
+   [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., Reschke, J., Ed.,
+              and RFC Publisher, "Hypertext Transfer Protocol
+              (HTTP/1.1): Caching", RFC 7234, DOI 10.17487/RFC7234, June
+              2014, <https://www.rfc-editor.org/info/rfc7234>.
 
-   [RFC7235]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
-              Protocol (HTTP/1.1): Authentication", RFC 7235,
-              DOI 10.17487/RFC7235, June 2014,
+   [RFC7235]  Fielding, R., Ed., Reschke, J., Ed., and RFC Publisher,
+              "Hypertext Transfer Protocol (HTTP/1.1): Authentication",
+              RFC 7235, DOI 10.17487/RFC7235, June 2014,
               <https://www.rfc-editor.org/info/rfc7235>.
 
-   [RFC7617]  Reschke, J., "The 'Basic' HTTP Authentication Scheme",
-              RFC 7617, DOI 10.17487/RFC7617, September 2015,
-              <https://www.rfc-editor.org/info/rfc7617>.
+   [RFC7617]  Reschke, J. and RFC Publisher, "The 'Basic' HTTP
+              Authentication Scheme", RFC 7617, DOI 10.17487/RFC7617,
+              September 2015, <https://www.rfc-editor.org/info/rfc7617>.
 
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+   [RFC8174]  Leiba, B. and RFC Publisher, "Ambiguity of Uppercase vs
+              Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174,
+              DOI 10.17487/RFC8174, May 2017,
+              <https://www.rfc-editor.org/info/rfc8174>.
 
    [STD66]    Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
               Resource Identifier (URI): Generic Syntax", STD 66,
@@ -668,19 +669,15 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-
-Young                    Expires January 8, 2023               [Page 12]
+Young                     Expires July 10, 2023                [Page 12]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
-   [RFC4844]  Daigle, L., Ed. and Internet Architecture Board, "The RFC
-              Series and RFC Editor", RFC 4844, DOI 10.17487/RFC4844,
-              July 2007, <https://www.rfc-editor.org/info/rfc4844>.
-
-
-
-
+   [RFC4844]  Daigle, L., Ed., Internet Architecture Board, and RFC
+              Publisher, "The RFC Series and RFC Editor", RFC 4844,
+              DOI 10.17487/RFC4844, July 2007,
+              <https://www.rfc-editor.org/info/rfc4844>.
 
 
 
@@ -725,9 +722,12 @@ Internet-Draft           Metadata Query Protocol               July 2022
 
 
 
-Young                    Expires January 8, 2023               [Page 13]
+
+
+
+Young                     Expires July 10, 2023                [Page 13]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -781,9 +781,9 @@ A.2.  Since draft-young-md-query-00
 
 
 
-Young                    Expires January 8, 2023               [Page 14]
+Young                     Expires July 10, 2023                [Page 14]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
    Added a section describing Protocol Extension Points.
@@ -837,9 +837,9 @@ A.6.  Since draft-young-md-query-04
 
 
 
-Young                    Expires January 8, 2023               [Page 15]
+Young                     Expires July 10, 2023                [Page 15]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
    Added an Editorial Note to help direct readers back to the
@@ -893,9 +893,9 @@ A.13.  Since draft-young-md-query-11
 
 
 
-Young                    Expires January 8, 2023               [Page 16]
+Young                     Expires July 10, 2023                [Page 16]
 
-Internet-Draft           Metadata Query Protocol               July 2022
+Internet-Draft           Metadata Query Protocol            January 2023
 
 
 A.14.  Since draft-young-md-query-12
@@ -915,6 +915,10 @@ A.17.  Since draft-young-md-query-15
    No substantive changes.
 
 A.18.  Since draft-young-md-query-16
+
+   No substantive changes.
+
+A.19.  Since draft-young-md-query-17
 
    No substantive changes.
 
@@ -945,8 +949,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                    Expires January 8, 2023               [Page 17]
+Young                     Expires July 10, 2023                [Page 17]
