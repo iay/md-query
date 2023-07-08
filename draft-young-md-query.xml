@@ -12,7 +12,7 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-18" submissionType="independent" category="info"
+<rfc ipr="trust200902" docName="draft-young-md-query-19" submissionType="independent" category="info"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <front>
         <title>Metadata Query Protocol</title>
@@ -765,9 +765,15 @@ Content-Length: 1234
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-17" anchor="latest.changes">
+            <section title="Since draft-young-md-query-17">
                 <t>
                     No substantive changes.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-18" anchor="latest.changes">
+                <t>
+                    Formatting changes to allow rendering with <tt>xml2rfx</tt> version 3.
                 </t>
             </section>
 

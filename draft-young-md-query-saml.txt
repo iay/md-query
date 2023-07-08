@@ -2,14 +2,14 @@
 
 
 
-Network Working Group                                      I. Young, Ed.
+Network Working Group                                    I.A. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                           January 6, 2023
-Expires: July 10, 2023
+Intended status: Informational                               8 July 2023
+Expires: 9 January 2024
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-18
+                      draft-young-md-query-saml-19
 
 Abstract
 
@@ -27,7 +27,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.19.
+   The changes in this draft are summarized in Appendix A.20.
 
 Status of This Memo
 
@@ -44,31 +44,25 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 10, 2023.
-
-
-
-
-
-
-
-
-Young                     Expires July 10, 2023                 [Page 1]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
+   This Internet-Draft will expire on 9 January 2024.
 
 Copyright Notice
 
    Copyright (c) 2023 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
+
+
+Young                    Expires 9 January 2024                 [Page 1]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
+
    This document is subject to BCP 78 and the IETF Trust's Legal
-   Provisions Relating to IETF Documents
-   (https://trustee.ietf.org/license-info) in effect on the date of
-   publication of this document.  Please review these documents
-   carefully, as they describe your rights and restrictions with respect
-   to this document.
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.
 
 Table of Contents
 
@@ -76,7 +70,7 @@ Table of Contents
      1.1.  Notation and Conventions  . . . . . . . . . . . . . . . .   3
    2.  Request Profile . . . . . . . . . . . . . . . . . . . . . . .   3
      2.1.  Content Type  . . . . . . . . . . . . . . . . . . . . . .   3
-     2.2.  Identifiers . . . . . . . . . . . . . . . . . . . . . . .   4
+     2.2.  Identifiers . . . . . . . . . . . . . . . . . . . . . . .   3
        2.2.1.  Unique Identifier . . . . . . . . . . . . . . . . . .   4
        2.2.2.  Transformed Identifier  . . . . . . . . . . . . . . .   4
        2.2.3.  Additional Identifiers  . . . . . . . . . . . . . . .   5
@@ -85,7 +79,7 @@ Table of Contents
        3.1.1.  No Entity Descriptors Returned  . . . . . . . . . . .   5
        3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   5
        3.1.3.  More Than One Entity Descriptor Returned  . . . . . .   5
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
      4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.2.  Use of SHA-1 in Transformed Identifiers . . . . . . . . .   6
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
@@ -94,35 +88,36 @@ Table of Contents
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   8
    Appendix A.  Change Log (to be removed by RFC Editor before
-                publication) . . . . . . . . . . . . . . . . . . . .  10
-     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .  10
-     A.2.  Since draft-young-md-query-saml-00  . . . . . . . . . . .  10
-     A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .  10
-     A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .  10
-     A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .  10
-     A.6.  Since draft-young-md-query-saml-04  . . . . . . . . . . .  10
+           publication)  . . . . . . . . . . . . . . . . . . . . . .   9
+     A.1.  draft-young-md-query-saml-00  . . . . . . . . . . . . . .   9
+     A.2.  Since draft-young-md-query-saml-00  . . . . . . . . . . .   9
+     A.3.  Since draft-young-md-query-saml-01  . . . . . . . . . . .   9
+     A.4.  Since draft-young-md-query-saml-02  . . . . . . . . . . .   9
+     A.5.  Since draft-young-md-query-saml-03  . . . . . . . . . . .   9
+     A.6.  Since draft-young-md-query-saml-04  . . . . . . . . . . .   9
      A.7.  Since draft-young-md-query-saml-05  . . . . . . . . . . .  10
      A.8.  Since draft-young-md-query-saml-06  . . . . . . . . . . .  10
      A.9.  Since draft-young-md-query-saml-07  . . . . . . . . . . .  10
-     A.10. Since draft-young-md-query-saml-08  . . . . . . . . . . .  11
-     A.11. Since draft-young-md-query-saml-09  . . . . . . . . . . .  11
-
-
-
-Young                     Expires July 10, 2023                 [Page 2]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
-
-     A.12. Since draft-young-md-query-saml-10  . . . . . . . . . . .  11
-     A.13. Since draft-young-md-query-saml-11  . . . . . . . . . . .  11
+     A.10. Since draft-young-md-query-saml-08  . . . . . . . . . . .  10
+     A.11. Since draft-young-md-query-saml-09  . . . . . . . . . . .  10
+     A.12. Since draft-young-md-query-saml-10  . . . . . . . . . . .  10
+     A.13. Since draft-young-md-query-saml-11  . . . . . . . . . . .  10
      A.14. Since draft-young-md-query-saml-12  . . . . . . . . . . .  11
-     A.15. Since draft-young-md-query-saml-13  . . . . . . . . . . .  12
-     A.16. Since draft-young-md-query-saml-14  . . . . . . . . . . .  12
-     A.17. Since draft-young-md-query-saml-15  . . . . . . . . . . .  12
-     A.18. Since draft-young-md-query-saml-16  . . . . . . . . . . .  12
-     A.19. Since draft-young-md-query-saml-17  . . . . . . . . . . .  12
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
+     A.15. Since draft-young-md-query-saml-13  . . . . . . . . . . .  11
+     A.16. Since draft-young-md-query-saml-14  . . . . . . . . . . .  11
+     A.17. Since draft-young-md-query-saml-15  . . . . . . . . . . .  11
+
+
+
+Young                    Expires 9 January 2024                 [Page 2]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
+
+     A.18. Since draft-young-md-query-saml-16  . . . . . . . . . . .  11
+     A.19. Since draft-young-md-query-saml-17  . . . . . . . . . . .  11
+     A.20. Since draft-young-md-query-18 . . . . . . . . . . . . . .  11
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  11
 
 1.  Introduction
 
@@ -163,22 +158,23 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
    header to indicate that the metadata returned should be SAML metadata
    (see Appendix A of [SAML2Meta]):
 
-
-
-Young                     Expires July 10, 2023                 [Page 3]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
-
    Accept: application/samlmetadata+xml
 
 2.2.  Identifiers
 
+
+
+
+Young                    Expires 9 January 2024                 [Page 3]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
+
 2.2.1.  Unique Identifier
 
    Each entity known to the responder MUST be associated with the unique
-   identifier of the entity, corresponding to the "entityID" attribute
-   of the entity's "EntityDescriptor" element in SAML metadata.
+   identifier of the entity, corresponding to the entityID attribute of
+   the entity's EntityDescriptor element in SAML metadata.
 
 2.2.2.  Transformed Identifier
 
@@ -191,9 +187,9 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
    of only such a transformed representation of a SAML entity's unique
    identifier without any way to establish the original entity
    identifier, a responder compliant with this profile MUST associate
-   each entity with an identifier matching the "sha1id" production in
-   the following ABNF grammar, and treat such an identifier as
-   equivalent to the corresponding untransformed identifier:
+   each entity with an identifier matching the sha1id production in the
+   following ABNF grammar, and treat such an identifier as equivalent to
+   the corresponding untransformed identifier:
 
    SHA1     = %x73 %x68 %x61 %x31 ; lower case "sha1"
    DIGIT    = %x30-39
@@ -201,7 +197,7 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
    sha1id   = "{" SHA1 "}" sha1hex
    sha1hex  = 40*HEXDIGIT
 
-   In the above, the "sha1hex" component encodes the 20-octet (160-bit)
+   In the above, the sha1hex component encodes the 20-octet (160-bit)
    binary SHA-1 hash value as a sequence of 40 lower case hexadecimal
    digits.
 
@@ -218,16 +214,17 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
    "}" contains characters other than hexadecimal digits, or is other
    than exactly 40 characters in length) and return an HTTP status code
    of 400 ("bad request").  Alternatively, implementations MAY process
-
-
-
-Young                     Expires July 10, 2023                 [Page 4]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
-
    these as normal identifiers and return an HTTP status code of 404
    ("not found") if appropriate.
+
+
+
+
+
+Young                    Expires 9 January 2024                 [Page 4]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
 
 2.2.3.  Additional Identifiers
 
@@ -241,18 +238,18 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
    A request may return information for any number of entities,
    including none.  Responses compliant with this profile MUST use the
    appropriate representation described below depending on the number of
-   "EntityDescriptor" elements returned.
+   EntityDescriptor elements returned.
 
 3.1.1.  No Entity Descriptors Returned
 
-   A response which returns no "EntityDescriptor" elements MUST be
+   A response which returns no EntityDescriptor elements MUST be
    represented by an HTTP status code of 404 ("not found").
 
 3.1.2.  One Entity Descriptor Returned
 
-   A response which returns a single "EntityDescriptor" element MUST use
+   A response which returns a single EntityDescriptor element MUST use
    that element as its document element.  The responder MUST NOT make
-   use of a "EntitiesDescriptor" element in this situation (see
+   use of a EntitiesDescriptor element in this situation (see
    [SAML2Meta] section 2.3).
 
    Such a response MUST include the following HTTP header to indicate
@@ -262,27 +259,28 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
 
 3.1.3.  More Than One Entity Descriptor Returned
 
-   A response which returns more than one "EntityDescriptor" element
-   MUST consist of a document element which is an "EntitiesDescriptor"
-   element, containing the returned "EntityDescriptor" elements as
-   children.  Responses MUST NOT contain nested "EntitiesDescriptor"
-   elements.
+   A response which returns more than one EntityDescriptor element MUST
+   consist of a document element which is an EntitiesDescriptor element,
+   containing the returned EntityDescriptor elements as children.
+   Responses MUST NOT contain nested EntitiesDescriptor elements.
 
    Such a response MUST include the following HTTP header to indicate
    that the metadata returned is SAML metadata:
 
    Content-Type: application/samlmetadata+xml
 
-
-
-
-
-Young                     Expires July 10, 2023                 [Page 5]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
-
 4.  Security Considerations
+
+
+
+
+
+
+
+Young                    Expires 9 January 2024                 [Page 5]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
 
 4.1.  Integrity
 
@@ -296,16 +294,16 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
 
    Such digital signatures:
 
-   o  SHOULD use an RSA keypair whose modulus is no less than 2048 bits
+   *  SHOULD use an RSA keypair whose modulus is no less than 2048 bits
       in length.
 
-   o  MUST NOT use the SHA-1 cryptographic hash algorithm as a digest
+   *  MUST NOT use the SHA-1 cryptographic hash algorithm as a digest
       algorithm.
 
-   o  MUST NOT use the MD5 cryptographic hash algorithm as a digest
+   *  MUST NOT use the MD5 cryptographic hash algorithm as a digest
       algorithm.
 
-   o  SHOULD otherwise follow current cryptographic best practices in
+   *  SHOULD otherwise follow current cryptographic best practices in
       algorithm selection.
 
 4.2.  Use of SHA-1 in Transformed Identifiers
@@ -326,25 +324,31 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
    and SHA-1's resistance to discovery of it is referred to as SHA-1's
    _second-preimage resistance_.
 
+
+
+
+
+
+
+
+
+
+Young                    Expires 9 January 2024                 [Page 6]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
+
    As demonstrated by the the [SHAttered] and [Shambles] attacks, the
    SHA-1 algorithm is known to have weak collision resistance.  However,
    at the time of writing no attacks are known on SHA-1's second-
    preimage resistance; a result in this area would be required to
-
-
-
-Young                     Expires July 10, 2023                 [Page 6]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
-
    provide the basis of an attack based on duplicating the SHA-1 hash of
    an existing identifier.  As a result, the use of SHA-1 in SAML and in
    this protocol is not believed to introduce a security concern.
 
    Implementations may guard against the possibility of a future
    practical attack on the second-preimage resistance of SHA-1 by
-   treating two entities whose "entityID" values have the same SHA-1
+   treating two entities whose entityID values have the same SHA-1
    equivalent as an indicator of malicious intent on the part of the
    owner of one of the entities.
 
@@ -370,29 +374,33 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
 7.1.  Normative References
 
    [I-D.young-md-query]
-              Young, I., Ed., "Metadata Query Protocol", draft-young-md-
-              query-18 (work in progress), January 2023.
+              Young, I.A., Ed., "Metadata Query Protocol", Work in
+              Progress, Internet-Draft, draft-young-md-query-19, July
+              2023, <https://datatracker.ietf.org/doc/html/draft-young-
+              md-query-19>.
 
-   [RFC2119]  Bradner, S. and RFC Publisher, "Key words for use in RFCs
-              to Indicate Requirement Levels", BCP 14, RFC 2119,
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
-   [RFC3174]  Eastlake 3rd, D., Jones, P., and RFC Publisher, "US Secure
-              Hash Algorithm 1 (SHA1)", RFC 3174, DOI 10.17487/RFC3174,
-              September 2001, <https://www.rfc-editor.org/info/rfc3174>.
-
-   [RFC8174]  Leiba, B. and RFC Publisher, "Ambiguity of Uppercase vs
-              Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174,
-              DOI 10.17487/RFC8174, May 2017,
-              <https://www.rfc-editor.org/info/rfc8174>.
 
 
 
-Young                     Expires July 10, 2023                 [Page 7]
+
+
+Young                    Expires 9 January 2024                 [Page 7]
 
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
 
+
+   [RFC3174]  Eastlake 3rd, D. and P. Jones, "US Secure Hash Algorithm 1
+              (SHA1)", RFC 3174, DOI 10.17487/RFC3174, September 2001,
+              <https://www.rfc-editor.org/info/rfc3174>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [SAML2Bind]
               Cantor, S., Hirsch, F., Kemp, J., Philpott, R., and E.
@@ -404,7 +412,8 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
               Cantor, S., Moreh, J., Philpott, R., and E. Maler,
               "Metadata for the Security Assertion Markup Language
               (SAML) V2.0", OASIS Standard saml-metadata-2.0-os, March
-              2005.
+              2005, <http://docs.oasis-open.org/security/saml/v2.0/saml-
+              metadata-2.0-os.pdf>.
 
    [STD68]    Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234,
@@ -413,12 +422,10 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
 
 7.2.  Informative References
 
-   [md-query]
-              Young, I., Ed., "md-query Project",
+   [md-query] Young, I.A., Ed., "md-query Project",
               <https://github.com/iay/md-query>.
 
-   [MDX.list]
-              Young, I., Ed., "MDX Mailing List",
+   [MDX.list] Young, I.A., Ed., "MDX Mailing List",
               <http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk>.
 
    [REFEDS]   Research and Education Federations, "REFEDS Home Page",
@@ -429,10 +436,19 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
               Agreement",
               <https://refeds.org/about/about_agreement.html>.
 
-   [RFC4844]  Daigle, L., Ed., Internet Architecture Board, and RFC
-              Publisher, "The RFC Series and RFC Editor", RFC 4844,
-              DOI 10.17487/RFC4844, July 2007,
+   [RFC4844]  Daigle, L., Ed. and IAB, "The RFC Series and RFC Editor",
+              RFC 4844, DOI 10.17487/RFC4844, July 2007,
               <https://www.rfc-editor.org/info/rfc4844>.
+
+
+
+
+
+
+Young                    Expires 9 January 2024                 [Page 8]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
 
    [SAML2Core]
               Cantor, S., Kemp, J., Philpott, R., and E. Maler,
@@ -441,70 +457,11 @@ Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
               2.0-os, March 2005, <http://docs.oasis-
               open.org/security/saml/v2.0/saml-core-2.0-os.pdf>.
 
-
-
-
-
-Young                     Expires July 10, 2023                 [Page 8]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
-
-   [Shambles]
-              "SHA-1 is a Shambles", January 2020,
+   [Shambles] "SHA-1 is a Shambles", January 2020,
               <https://sha-mbles.github.io>.
 
    [SHAttered]
               "SHAttered", February 2017, <https://shattered.io>.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires July 10, 2023                 [Page 9]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
 
@@ -541,6 +498,14 @@ A.6.  Since draft-young-md-query-saml-04
 
    Fix reference to the Metadata Query Protocol [I-D.young-md-query].
 
+
+
+
+Young                    Expires 9 January 2024                 [Page 9]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
+
 A.7.  Since draft-young-md-query-saml-05
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
@@ -552,15 +517,6 @@ A.8.  Since draft-young-md-query-saml-06
 A.9.  Since draft-young-md-query-saml-07
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
-
-
-
-
-
-Young                     Expires July 10, 2023                [Page 10]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
 
 A.10.  Since draft-young-md-query-saml-08
 
@@ -593,30 +549,28 @@ A.13.  Since draft-young-md-query-saml-11
    Revised Section 4.2 on the use of SHA-1 in transformed identifiers
    to:
 
-   o  Make clear that this is a SAML-level issue, not one introduced by
+   *  Make clear that this is a SAML-level issue, not one introduced by
       the query protocol.
 
-   o  Reference the attacks demonstrating SHA-1's weak collision
+   *  Reference the attacks demonstrating SHA-1's weak collision
       resistance.
 
-   o  Identify second-preimage resistance as the potential source of the
+
+
+Young                    Expires 9 January 2024                [Page 10]
+
+Internet-Draft  SAML Profile for the Metadata Query Prot       July 2023
+
+
+   *  Identify second-preimage resistance as the potential source of the
       attack we'd be concerned about for the query protocol.
 
-   o  Note that SHA-1's second-preimage resistance is at present
+   *  Note that SHA-1's second-preimage resistance is at present
       uncompromised.
 
 A.14.  Since draft-young-md-query-saml-12
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
-
-
-
-
-
-Young                     Expires July 10, 2023                [Page 11]
-
-Internet-DraftSAML Profile for the Metadata Query Protocol  January 2023
-
 
 A.15.  Since draft-young-md-query-saml-13
 
@@ -638,13 +592,17 @@ A.19.  Since draft-young-md-query-saml-17
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
+A.20.  Since draft-young-md-query-18
+
+   Formatting changes to allow rendering with xml2rfx version 3.
+
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
+
 Author's Address
 
    Ian A. Young (editor)
    Independent
-
-   EMail: ian@iay.org.uk
-
+   Email: ian@iay.org.uk
 
 
 
@@ -655,18 +613,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young                     Expires July 10, 2023                [Page 12]
+Young                    Expires 9 January 2024                [Page 11]
