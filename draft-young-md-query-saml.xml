@@ -12,10 +12,8 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 
-<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
-]>
-
-<rfc ipr="trust200902" docName="draft-young-md-query-saml-18" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-md-query-saml-18" submissionType="independent" category="info"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
     <front>
         <title>SAML Profile for the Metadata Query Protocol</title>
 
@@ -89,7 +87,7 @@
                     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
                     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
                     "MAY", and "OPTIONAL" in this document are to be interpreted as
-                    described in BCP&nbsp;14 <xref target="RFC2119"/> <xref target="RFC8174"/>
+                    described in BCP&#160;14 <xref target="RFC2119"/> <xref target="RFC8174"/>
                     when, and only when, they appear in all capitals, as shown here.
                 </t>
                 <t>
@@ -116,8 +114,8 @@
                 <section title="Unique Identifier">
                     <t>
                         Each entity known to the responder MUST be associated with the unique identifier
-                        of the entity, corresponding to the <spanx style="verb">entityID</spanx> attribute
-                        of the entity's <spanx style="verb">EntityDescriptor</spanx> element in SAML metadata.
+                        of the entity, corresponding to the <tt>entityID</tt> attribute
+                        of the entity's <tt>EntityDescriptor</tt> element in SAML metadata.
                     </t>
                 </section>
 
@@ -134,7 +132,7 @@
                         representation of a SAML entity's unique identifier without any way to establish the original
                         entity identifier, a responder compliant with this profile MUST associate each entity
                         with an identifier matching the
-                        <spanx style="verb">sha1id</spanx> production in the following ABNF grammar, and treat
+                        <tt>sha1id</tt> production in the following ABNF grammar, and treat
                         such an identifier as equivalent to
                         the corresponding untransformed identifier:
                     </t>
@@ -148,7 +146,7 @@ sha1hex  = 40*HEXDIGIT
 ]]></artwork>
                     </figure>
                     <t>
-                        In the above, the <spanx style="verb">sha1hex</spanx> component encodes the 20-octet
+                        In the above, the <tt>sha1hex</tt> component encodes the 20-octet
                         (160-bit) binary SHA-1 hash value as a sequence of 40 lower case hexadecimal digits.
                     </t>
                     <t>
@@ -190,19 +188,19 @@ sha1hex  = 40*HEXDIGIT
                 <t>
                     A request may return information for any number of entities, including none. Responses compliant with
                     this profile MUST use the appropriate representation described below depending on the number of
-                    <spanx style="verb">EntityDescriptor</spanx> elements returned.
+                    <tt>EntityDescriptor</tt> elements returned.
                 </t>
                 <section title="No Entity Descriptors Returned">
                     <t>
-                        A response which returns no <spanx style="verb">EntityDescriptor</spanx> elements
+                        A response which returns no <tt>EntityDescriptor</tt> elements
                         MUST be represented by an HTTP status code of 404 ("not found").
                     </t>
                 </section>
                 <section title="One Entity Descriptor Returned">
                     <t>
-                        A response which returns a single <spanx style="verb">EntityDescriptor</spanx> element
+                        A response which returns a single <tt>EntityDescriptor</tt> element
                         MUST use that element as its document element.
-                        The responder MUST NOT make use of a <spanx style="verb">EntitiesDescriptor</spanx>
+                        The responder MUST NOT make use of a <tt>EntitiesDescriptor</tt>
                         element in this situation (see <xref target="SAML2Meta"/> section 2.3).
                     </t>
                     <t>
@@ -215,10 +213,10 @@ sha1hex  = 40*HEXDIGIT
                 </section>
                 <section title="More Than One Entity Descriptor Returned">
                     <t>
-                        A response which returns more than one <spanx style="verb">EntityDescriptor</spanx> element
-                        MUST consist of a document element which is an <spanx style="verb">EntitiesDescriptor</spanx>
-                        element, containing the returned <spanx style="verb">EntityDescriptor</spanx> elements
-                        as children. Responses MUST NOT contain nested <spanx style="verb">EntitiesDescriptor</spanx>
+                        A response which returns more than one <tt>EntityDescriptor</tt> element
+                        MUST consist of a document element which is an <tt>EntitiesDescriptor</tt>
+                        element, containing the returned <tt>EntityDescriptor</tt> elements
+                        as children. Responses MUST NOT contain nested <tt>EntitiesDescriptor</tt>
                         elements.
                     </t>
                     <t>
@@ -272,10 +270,10 @@ sha1hex  = 40*HEXDIGIT
                     entity's identifier.
                 </t>
                 <t>
-                    Such an identifier is known as a <spanx>second preimage</spanx>
+                    Such an identifier is known as a <em>second preimage</em>
                     of the original, and SHA-1's resistance to discovery of
-                    it is referred to as SHA-1's <spanx>second-preimage
-                    resistance</spanx>.
+                    it is referred to as SHA-1's <em>second-preimage
+                    resistance</em>.
                 </t>
                 <t>
                     As demonstrated by the the <xref target="SHAttered"/> and
@@ -292,7 +290,7 @@ sha1hex  = 40*HEXDIGIT
                     Implementations may guard against the possibility of a future
                     practical attack on the second-preimage resistance of SHA-1
                     by treating two entities whose
-                    <spanx style="verb">entityID</spanx> values have the same SHA-1 equivalent as an
+                    <tt>entityID</tt> values have the same SHA-1 equivalent as an
                     indicator of malicious intent on the part of the owner of one of the entities.
                 </t>
             </section>
@@ -322,9 +320,12 @@ sha1hex  = 40*HEXDIGIT
 
         <references title="Normative References">
 
-            <?rfc include="reference.RFC.2119"?>
-            <?rfc include="reference.RFC.3174"?>
-            <?rfc include="reference.RFC.8174"?>
+            <xi:include
+                href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+            <xi:include
+                href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3174.xml"/>
+            <xi:include
+                href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
 
             <reference anchor="I-D.young-md-query">
                 <front>
@@ -401,7 +402,8 @@ sha1hex  = 40*HEXDIGIT
 
         <references title="Informative References">
 
-            <?rfc include="reference.RFC.4844"?>
+            <xi:include
+                href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4844.xml"/>
 
             <reference anchor="REFEDS" target="http://www.refeds.org/">
                 <front>

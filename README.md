@@ -34,20 +34,20 @@ The following software is believed to be compatible with the requester (client)
 role described in the current draft:
 
 * [Shibboleth Identity Provider][IdP], v3.0.0 or later:
-    * [configuration details][IdPConfig]
+  * [configuration details][IdPConfig]
 * [Shibboleth Service Provider][SP], v2.4.0 or later:
-    * [configuration details][SPConfig]
+  * [configuration details][SPConfig]
 * [SimpleSAMLphp][SSP], v1.14.0 or later:
-    * [pull request](https://github.com/simplesamlphp/simplesamlphp/pull/146)
+  * [pull request](https://github.com/simplesamlphp/simplesamlphp/pull/146)
 * [Digital Identity Labs](https://github.com/Digital-Identity-Labs) Metadata Query Tool:
-    * [`mdqt`](https://github.com/Digital-Identity-Labs/mdqt): SAML MDQ client with caching and signature verification
-    * [`mdqt-docker`](https://github.com/Digital-Identity-Labs/mdqt-container): SAML MDQ client with caching and signature verification, in a Docker container.
+  * [`mdqt`](https://github.com/Digital-Identity-Labs/mdqt): SAML MDQ client with caching and signature verification
+  * [`mdqt-docker`](https://github.com/Digital-Identity-Labs/mdqt-container): SAML MDQ client with caching and signature verification, in a Docker container.
 
 The following software is believed to be compatible with the responder (server)
 role described in the current draft:
 
 * [mdq-server][] is a Java implementation based on [Spring Boot][Boot] and the [Shibboleth Metadata Aggregator][MDA]:
-    * Configuration examples can be found in the accompanying [mdq-server-docker][] project.
+  * Configuration examples can be found in the accompanying [mdq-server-docker][] project.
 * Any standard web server configured to serve appropriate static content.
 * [pyff.io][pyFF]
 
@@ -109,6 +109,6 @@ The repository always includes that form plus `.txt` versions rendered from the
 XML.
 
 I'm using the included `Makefile` to build the HTML and text forms of the
-document.  This requires a locally installed copy of version 2.9.x of the
+document.  This requires a locally installed copy of version 3.15.x of the
 [`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).  An
 [online version](http://xml.resource.org) of `xml2rfc` is also available.
