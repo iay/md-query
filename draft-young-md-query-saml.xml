@@ -12,7 +12,7 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-saml-19" submissionType="independent" category="info"
+<rfc ipr="trust200902" docName="draft-young-md-query-saml-20" submissionType="independent" category="info"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <front>
         <title>SAML Profile for the Metadata Query Protocol</title>
@@ -660,10 +660,16 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-18" anchor="latest.changes">
+            <section title="Since draft-young-md-query-18">
                 <t>
-                    Formatting changes to allow rendering with <tt>xml2rfx</tt> version 3.
+                    Formatting changes to allow rendering with <tt>xml2rfc</tt> version 3.
                 </t>
+                <t>
+                  Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-19" anchor="latest.changes">
                 <t>
                   Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
