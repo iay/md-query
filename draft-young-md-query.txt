@@ -4,12 +4,12 @@
 
 Network Working Group                                    I.A. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            7 January 2024
-Expires: 10 July 2024
+Intended status: Informational                               8 July 2024
+Expires: 9 January 2025
 
 
                         Metadata Query Protocol
-                        draft-young-md-query-20
+                        draft-young-md-query-21
 
 Abstract
 
@@ -29,7 +29,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.21.
+   The changes in this draft are summarized in Appendix A.22.
 
 Status of This Memo
 
@@ -46,16 +46,16 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 July 2024.
+   This Internet-Draft will expire on 9 January 2025.
 
 
 
 
 
 
-Young                     Expires 10 July 2024                  [Page 1]
+Young                    Expires 9 January 2025                 [Page 1]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                     Expires 10 July 2024                  [Page 2]
+Young                    Expires 9 January 2025                 [Page 2]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
      A.1.  Since draft-lajoie-md-query-01  . . . . . . . . . . . . .  13
@@ -135,6 +135,7 @@ Internet-Draft           Metadata Query Protocol            January 2024
      A.19. Since draft-young-md-query-17 . . . . . . . . . . . . . .  16
      A.20. Since draft-young-md-query-18 . . . . . . . . . . . . . .  16
      A.21. Since draft-young-md-query-19 . . . . . . . . . . . . . .  16
+     A.22. Since draft-young-md-query-20 . . . . . . . . . . . . . .  16
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  16
 
 1.  Introduction
@@ -164,10 +165,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-
-Young                     Expires 10 July 2024                  [Page 3]
+Young                    Expires 9 January 2025                 [Page 3]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
    This document is a product of the REFEDS Working Group process.
@@ -221,9 +221,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                  [Page 4]
+Young                    Expires 9 January 2025                 [Page 4]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 2.3.  HTTP Method
@@ -277,9 +277,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                  [Page 5]
+Young                    Expires 9 January 2025                 [Page 5]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 2.6.  Status Codes
@@ -333,9 +333,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                  [Page 6]
+Young                    Expires 9 January 2025                 [Page 6]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 2.8.  Content Negotiation
@@ -389,9 +389,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                  [Page 7]
+Young                    Expires 9 January 2025                 [Page 7]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
    For example, with a base URL of http://example.org/mdq/, a query for
@@ -445,9 +445,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                  [Page 8]
+Young                    Expires 9 January 2025                 [Page 8]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 3.2.4.  Example Request and Response
@@ -501,9 +501,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                  [Page 9]
+Young                    Expires 9 January 2025                 [Page 9]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 4.3.  Content Compression
@@ -557,9 +557,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                 [Page 10]
+Young                    Expires 9 January 2025                [Page 10]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 7.  IANA Considerations
@@ -613,9 +613,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                 [Page 11]
+Young                    Expires 9 January 2025                [Page 11]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
    [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
@@ -669,9 +669,9 @@ Internet-Draft           Metadata Query Protocol            January 2024
 
 
 
-Young                     Expires 10 July 2024                 [Page 12]
+Young                    Expires 9 January 2025                [Page 12]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 Appendix A.  Change Log (to be removed by RFC Editor before publication)
@@ -725,9 +725,9 @@ A.2.  Since draft-young-md-query-00
 
 
 
-Young                     Expires 10 July 2024                 [Page 13]
+Young                    Expires 9 January 2025                [Page 13]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
    Added a section describing Protocol Extension Points.
@@ -781,9 +781,9 @@ A.6.  Since draft-young-md-query-04
 
 
 
-Young                     Expires 10 July 2024                 [Page 14]
+Young                    Expires 9 January 2025                [Page 14]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
    Added an Editorial Note to help direct readers back to the
@@ -837,9 +837,9 @@ A.13.  Since draft-young-md-query-11
 
 
 
-Young                     Expires 10 July 2024                 [Page 15]
+Young                    Expires 9 January 2025                [Page 15]
 
-Internet-Draft           Metadata Query Protocol            January 2024
+Internet-Draft           Metadata Query Protocol               July 2024
 
 
 A.14.  Since draft-young-md-query-12
@@ -874,6 +874,10 @@ A.21.  Since draft-young-md-query-19
 
    No substantive changes.
 
+A.22.  Since draft-young-md-query-20
+
+   No substantive changes.
+
 Author's Address
 
    Ian A. Young (editor)
@@ -889,8 +893,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                     Expires 10 July 2024                 [Page 16]
+Young                    Expires 9 January 2025                [Page 16]
