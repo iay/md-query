@@ -3,6 +3,8 @@
 # Stop on any error.
 set -e
 
+export GPG_TTY=$(tty)
+
 FILE=draft-young-md-query.xml
 TAG=$(grep docName ${FILE} | sed "s/.*docName=\"//" | sed "s/\".*//")
 git tag -s ${TAG} -m "Tag ${TAG}"
