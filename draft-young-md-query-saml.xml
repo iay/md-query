@@ -12,10 +12,10 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-saml-21" submissionType="independent" category="info"
+<rfc ipr="trust200902" docName="draft-young-md-query-saml-22" submissionType="independent" category="info"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <front>
-        <title>SAML Profile for the Metadata Query Protocol</title>
+        <title abbrev="SAML Profile for MDQ Protocol">SAML Profile for the Metadata Query Protocol</title>
 
         <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
             <organization>Independent</organization>
@@ -331,9 +331,9 @@ sha1hex  = 40*HEXDIGIT
                 <front>
                     <title>Metadata Query Protocol</title>
                     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
-                    <date year='2024' month='July'/>
+                    <date year='2025' month='January'/>
                 </front>
-                <seriesInfo name="Internet-Draft" value="draft-young-md-query-20"/>
+                <seriesInfo name="Internet-Draft" value="draft-young-md-query-22"/>
             </reference>
 
             <reference anchor="SAML2Bind">
@@ -660,7 +660,7 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-18">
+            <section title="Since draft-young-md-query-saml-18">
                 <t>
                     Formatting changes to allow rendering with <tt>xml2rfc</tt> version 3.
                 </t>
@@ -669,15 +669,28 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-19">
+            <section title="Since draft-young-md-query-saml-19">
                 <t>
                   Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-20" anchor="latest.changes">
+            <section title="Since draft-young-md-query-saml-20">
                 <t>
                   Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-saml-21" anchor="latest.changes">
+                <t>
+                  Added an <tt>abbrev</tt> to the <tt>title</tt> element to satisfy a
+                  recommendation from <tt>xml2rfc</tt>.
+                </t>
+                <t>
+                  Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+                <t>
+                  Minor typographical corrections in change log.
                 </t>
             </section>
 
