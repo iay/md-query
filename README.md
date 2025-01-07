@@ -109,6 +109,15 @@ The repository always includes that form plus `.txt` versions rendered from the
 XML.
 
 I'm using the included `Makefile` to build the HTML and text forms of the
-document.  This requires a locally installed copy of version 3.15.x of the
-[`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).  An
-[online version](http://xml.resource.org) of `xml2rfc` is also available.
+document.  This requires a locally installed copy of version 3 of the
+[`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).
+
+You can install `xml2rfc` in a local Python environment as follows:
+
+```bash
+python3 -m venv env
+. env/bin/activate
+pip3 install xml2rfc
+```
+
+An [online version](http://xml.resource.org) of `xml2rfc` is available.
