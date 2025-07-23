@@ -12,7 +12,7 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-saml-22" submissionType="independent" category="info"
+<rfc ipr="trust200902" docName="draft-young-md-query-saml-23" submissionType="independent" category="info"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <front>
         <title abbrev="SAML Profile for MDQ Protocol">SAML Profile for the Metadata Query Protocol</title>
@@ -681,7 +681,7 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-saml-21" anchor="latest.changes">
+            <section title="Since draft-young-md-query-saml-21">
                 <t>
                   Added an <tt>abbrev</tt> to the <tt>title</tt> element to satisfy a
                   recommendation from <tt>xml2rfc</tt>.
@@ -691,6 +691,12 @@ sha1hex  = 40*HEXDIGIT
                 </t>
                 <t>
                   Minor typographical corrections in change log.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-saml-22" anchor="latest.changes">
+                <t>
+                  Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
             </section>
 

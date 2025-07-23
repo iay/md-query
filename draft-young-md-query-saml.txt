@@ -4,12 +4,12 @@
 
 Network Working Group                                    I.A. Young, Ed.
 Internet-Draft                                               Independent
-Intended status: Informational                            7 January 2025
-Expires: 11 July 2025
+Intended status: Informational                              23 July 2025
+Expires: 24 January 2026
 
 
               SAML Profile for the Metadata Query Protocol
-                      draft-young-md-query-saml-22
+                      draft-young-md-query-saml-23
 
 Abstract
 
@@ -27,7 +27,7 @@ Editorial Note (To be removed by RFC Editor before publication)
    XML versions, latest edits and the issues list for this document are
    available from [md-query].
 
-   The changes in this draft are summarized in Appendix A.23.
+   The changes in this draft are summarized in Appendix A.24.
 
 Status of This Memo
 
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 July 2025.
+   This Internet-Draft will expire on 24 January 2026.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young                     Expires 11 July 2025                  [Page 1]
+Young                    Expires 24 January 2026                [Page 1]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -79,7 +79,7 @@ Table of Contents
        3.1.1.  No Entity Descriptors Returned  . . . . . . . . . . .   5
        3.1.2.  One Entity Descriptor Returned  . . . . . . . . . . .   5
        3.1.3.  More Than One Entity Descriptor Returned  . . . . . .   5
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
      4.1.  Integrity . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.2.  Use of SHA-1 in Transformed Identifiers . . . . . . . . .   6
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young                     Expires 11 July 2025                  [Page 2]
+Young                    Expires 24 January 2026                [Page 2]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
 
      A.18. Since draft-young-md-query-saml-16  . . . . . . . . . . .  11
@@ -120,6 +120,7 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
      A.21. Since draft-young-md-query-saml-19  . . . . . . . . . . .  11
      A.22. Since draft-young-md-query-saml-20  . . . . . . . . . . .  11
      A.23. Since draft-young-md-query-saml-21  . . . . . . . . . . .  11
+     A.24. Since draft-young-md-query-saml-22  . . . . . . . . . . .  12
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
 
 1.  Introduction
@@ -161,14 +162,15 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
    header to indicate that the metadata returned should be SAML metadata
    (see Appendix A of [SAML2Meta]):
 
-   Accept: application/samlmetadata+xml
 
 
 
-Young                     Expires 11 July 2025                  [Page 3]
+Young                    Expires 24 January 2026                [Page 3]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
+
+   Accept: application/samlmetadata+xml
 
 2.2.  Identifiers
 
@@ -211,6 +213,19 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
 
    {sha1}11d72e8cf351eb6c75c721e838f469677ab41bdb
 
+
+
+
+
+
+
+
+
+Young                    Expires 24 January 2026                [Page 4]
+
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
+
+
    Responder implementations MAY detect malformed SHA-1 transformed
    identifiers (for example where the string of characters following the
    "}" contains characters other than hexadecimal digits, or is other
@@ -218,13 +233,6 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
    of 400 ("bad request").  Alternatively, implementations MAY process
    these as normal identifiers and return an HTTP status code of 404
    ("not found") if appropriate.
-
-
-
-Young                     Expires 11 July 2025                  [Page 4]
-
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
-
 
 2.2.3.  Additional Identifiers
 
@@ -267,20 +275,16 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
    Such a response MUST include the following HTTP header to indicate
    that the metadata returned is SAML metadata:
 
+
+
+Young                    Expires 24 January 2026                [Page 5]
+
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
+
+
    Content-Type: application/samlmetadata+xml
 
 4.  Security Considerations
-
-
-
-
-
-
-
-Young                     Expires 11 July 2025                  [Page 5]
-
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
-
 
 4.1.  Integrity
 
@@ -329,13 +333,9 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
 
 
 
-
-
-
-
-Young                     Expires 11 July 2025                  [Page 6]
+Young                    Expires 24 January 2026                [Page 6]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
 
    As demonstrated by the the [SHAttered] and [Shambles] attacks, the
@@ -375,9 +375,9 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
 
    [I-D.young-md-query]
               Young, I.A., Ed., "Metadata Query Protocol", Work in
-              Progress, Internet-Draft, draft-young-md-query-21, January
+              Progress, Internet-Draft, draft-young-md-query-22, January
               2025, <https://datatracker.ietf.org/doc/html/draft-young-
-              md-query-21>.
+              md-query-22>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -389,9 +389,9 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
 
 
 
-Young                     Expires 11 July 2025                  [Page 7]
+Young                    Expires 24 January 2026                [Page 7]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
 
    [RFC3174]  Eastlake 3rd, D. and P. Jones, "US Secure Hash Algorithm 1
@@ -445,9 +445,9 @@ Internet-Draft        SAML Profile for MDQ Protocol         January 2025
 
 
 
-Young                     Expires 11 July 2025                  [Page 8]
+Young                    Expires 24 January 2026                [Page 8]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
 
    [SAML2Core]
@@ -501,9 +501,9 @@ A.6.  Since draft-young-md-query-saml-04
 
 
 
-Young                     Expires 11 July 2025                  [Page 9]
+Young                    Expires 24 January 2026                [Page 9]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
 
 A.7.  Since draft-young-md-query-saml-05
@@ -557,9 +557,9 @@ A.13.  Since draft-young-md-query-saml-11
 
 
 
-Young                     Expires 11 July 2025                 [Page 10]
+Young                    Expires 24 January 2026               [Page 10]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
 
    *  Identify second-preimage resistance as the potential source of the
@@ -613,14 +613,18 @@ A.23.  Since draft-young-md-query-saml-21
 
 
 
-Young                     Expires 11 July 2025                 [Page 11]
+Young                    Expires 24 January 2026               [Page 11]
 
-Internet-Draft        SAML Profile for MDQ Protocol         January 2025
+Internet-Draft        SAML Profile for MDQ Protocol            July 2025
 
 
    Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
    Minor typographical corrections in change log.
+
+A.24.  Since draft-young-md-query-saml-22
+
+   Bump reference to the Metadata Query Protocol [I-D.young-md-query].
 
 Author's Address
 
@@ -665,8 +669,4 @@ Author's Address
 
 
 
-
-
-
-
-Young                     Expires 11 July 2025                 [Page 12]
+Young                    Expires 24 January 2026               [Page 12]
