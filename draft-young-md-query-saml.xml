@@ -12,7 +12,7 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-saml-23" submissionType="independent" category="info"
+<rfc ipr="trust200902" docName="draft-young-md-query-saml-24" submissionType="independent" category="info"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <front>
         <title abbrev="SAML Profile for MDQ Protocol">SAML Profile for the Metadata Query Protocol</title>
@@ -331,9 +331,9 @@ sha1hex  = 40*HEXDIGIT
                 <front>
                     <title>Metadata Query Protocol</title>
                     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
-                    <date year='2025' month='January'/>
+                    <date year='2026' month='January'/>
                 </front>
-                <seriesInfo name="Internet-Draft" value="draft-young-md-query-22"/>
+                <seriesInfo name="Internet-Draft" value="draft-young-md-query-23"/>
             </reference>
 
             <reference anchor="SAML2Bind">
@@ -694,7 +694,13 @@ sha1hex  = 40*HEXDIGIT
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-saml-22" anchor="latest.changes">
+            <section title="Since draft-young-md-query-saml-22">
+                <t>
+                  Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-saml-23" anchor="latest.changes">
                 <t>
                   Bump reference to the <xref target="I-D.young-md-query">Metadata Query Protocol</xref>.
                 </t>
