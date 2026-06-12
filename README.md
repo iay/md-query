@@ -64,19 +64,12 @@ role described in the current draft:
 
 ## Contributing
 
-If you wish to participate in the protocol development discussions you should
-join the mailing list.  You can do this by means of
-[this webform](http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk)
-and then sending emails to [mdx@lists.iay.org.uk](mailto:mdx@lists.iay.org.uk).
-
-If you'd like to contribute specific text to the document, you can submit a
-ticket to the project's [issue tracker](https://github.com/iay/md-query/issues).
+Any contributions to or discussions about this specification should be
+done through the [issue tracker](https://github.com/iay/md-query/issues).
 GitHub pull requests are fine as well but are probably a bit of overkill here.
 
-Please don't use the GitHub issue tracking system for substantive discussion;
-that should always be done on the mailing list.  The issue tracker is used
-only to organize the outstanding substantive issues and to process minor
-editorial changes.
+The mailing list previously associated with this work was retired by
+the hosting provider in mid-2026.
 
 ## Background
 
