@@ -8,9 +8,9 @@ export GPG_TTY=$(tty)
 FILE=draft-young-md-query.xml
 TAG=$(grep docName ${FILE} | sed "s/.*docName=\"//" | sed "s/\".*//")
 git tag -s ${TAG} -m "Tag ${TAG}"
-git push origin ${TAG}
+git push --force origin ${TAG}
 
 FILE=draft-young-md-query-saml.xml
 TAG=$(grep docName ${FILE} | sed "s/.*docName=\"//" | sed "s/\".*//")
 git tag -s ${TAG} -m "Tag ${TAG}"
-git push origin ${TAG}
+git push --force origin ${TAG}
