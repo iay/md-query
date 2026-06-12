@@ -12,7 +12,7 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 
-<rfc ipr="trust200902" docName="draft-young-md-query-24" submissionType="independent" category="info"
+<rfc ipr="trust200902" docName="draft-young-md-query-25" submissionType="independent" category="info"
     xmlns:xi="http://www.w3.org/2001/XInclude">
     <front>
         <title>Metadata Query Protocol</title>
@@ -44,8 +44,8 @@
         <note title="Editorial Note (To be removed by RFC Editor before publication)">
             <t>
                 Discussion of this draft takes place on the MDX
-                mailing list (mdx@lists.iay.org.uk), which is accessed from
-                <xref target="MDX.list"/>.
+                project issue tracker, which is accessed from
+                <xref target="MDX.issues"/>.
             </t>
             <t>
                 XML versions, latest edits and the issues list for this document
@@ -524,9 +524,9 @@ Content-Length: 1234
                 </front>
             </reference>
 
-            <reference anchor="MDX.list" target="http://lists.iay.org.uk/listinfo.cgi/mdx-iay.org.uk">
+            <reference anchor="MDX.issues" target="https://github.com/iay/md-query/issues">
                 <front>
-                    <title>MDX Mailing List</title>
+                    <title>MDX issue tracker</title>
                     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor"/>
                     <date/>
                 </front>
@@ -801,9 +801,17 @@ Content-Length: 1234
                 </t>
             </section>
 
-            <section title="Since draft-young-md-query-23" anchor="latest.changes">
+            <section title="Since draft-young-md-query-23">
                 <t>
                     No substantive changes.
+                </t>
+            </section>
+
+            <section title="Since draft-young-md-query-24" anchor="latest.changes">
+                <t>
+                    Removed reference to a discussion mailing list, which has
+                    been retired by the hosting provider. Added a link to
+                    the issue tracker for the source repository as an alternative.
                 </t>
             </section>
         </section>
